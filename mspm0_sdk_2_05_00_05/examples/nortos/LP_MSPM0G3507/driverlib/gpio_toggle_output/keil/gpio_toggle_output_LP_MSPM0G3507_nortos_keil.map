@@ -1,0 +1,501 @@
+Component: Arm Compiler for Embedded 6.21 Tool: armlink [5ec1fa00]
+
+==============================================================================
+
+Section Cross References
+
+    gpio_toggle_output.o(.text.main) refers to ti_msp_dl_config.o(.text.SYSCFG_DL_init) for SYSCFG_DL_init
+    gpio_toggle_output.o(.text.main) refers to gpio_toggle_output.o(.text.DL_GPIO_clearPins) for DL_GPIO_clearPins
+    gpio_toggle_output.o(.text.main) refers to gpio_toggle_output.o(.text.DL_GPIO_setPins) for DL_GPIO_setPins
+    gpio_toggle_output.o(.text.main) refers to dl_common.o(.text.DL_Common_delayCycles) for DL_Common_delayCycles
+    gpio_toggle_output.o(.text.main) refers to gpio_toggle_output.o(.text.DL_GPIO_togglePins) for DL_GPIO_togglePins
+    gpio_toggle_output.o(.ARM.exidx.text.main) refers to gpio_toggle_output.o(.text.main) for [Anonymous Symbol]
+    gpio_toggle_output.o(.ARM.exidx.text.DL_GPIO_clearPins) refers to gpio_toggle_output.o(.text.DL_GPIO_clearPins) for [Anonymous Symbol]
+    gpio_toggle_output.o(.ARM.exidx.text.DL_GPIO_setPins) refers to gpio_toggle_output.o(.text.DL_GPIO_setPins) for [Anonymous Symbol]
+    gpio_toggle_output.o(.ARM.exidx.text.DL_GPIO_togglePins) refers to gpio_toggle_output.o(.text.DL_GPIO_togglePins) for [Anonymous Symbol]
+    startup_mspm0g350x_uvision.o(RESET) refers to startup_mspm0g350x_uvision.o(STACK) for __initial_sp
+    startup_mspm0g350x_uvision.o(RESET) refers to startup_mspm0g350x_uvision.o(.text) for Reset_Handler
+    startup_mspm0g350x_uvision.o(.text) refers to entry.o(.ARM.Collect$$$$00000000) for __main
+    ti_msp_dl_config.o(.text.SYSCFG_DL_init) refers to ti_msp_dl_config.o(.text.SYSCFG_DL_initPower) for SYSCFG_DL_initPower
+    ti_msp_dl_config.o(.text.SYSCFG_DL_init) refers to ti_msp_dl_config.o(.text.SYSCFG_DL_GPIO_init) for SYSCFG_DL_GPIO_init
+    ti_msp_dl_config.o(.text.SYSCFG_DL_init) refers to ti_msp_dl_config.o(.text.SYSCFG_DL_SYSCTL_init) for SYSCFG_DL_SYSCTL_init
+    ti_msp_dl_config.o(.text.SYSCFG_DL_init) refers to ti_msp_dl_config.o(.text.SYSCFG_DL_SYSTICK_init) for SYSCFG_DL_SYSTICK_init
+    ti_msp_dl_config.o(.ARM.exidx.text.SYSCFG_DL_init) refers to ti_msp_dl_config.o(.text.SYSCFG_DL_init) for [Anonymous Symbol]
+    ti_msp_dl_config.o(.text.SYSCFG_DL_initPower) refers to ti_msp_dl_config.o(.text.DL_GPIO_reset) for DL_GPIO_reset
+    ti_msp_dl_config.o(.text.SYSCFG_DL_initPower) refers to ti_msp_dl_config.o(.text.DL_GPIO_enablePower) for DL_GPIO_enablePower
+    ti_msp_dl_config.o(.text.SYSCFG_DL_initPower) refers to dl_common.o(.text.DL_Common_delayCycles) for DL_Common_delayCycles
+    ti_msp_dl_config.o(.ARM.exidx.text.SYSCFG_DL_initPower) refers to ti_msp_dl_config.o(.text.SYSCFG_DL_initPower) for [Anonymous Symbol]
+    ti_msp_dl_config.o(.text.SYSCFG_DL_GPIO_init) refers to ti_msp_dl_config.o(.text.DL_GPIO_initPeripheralAnalogFunction) for DL_GPIO_initPeripheralAnalogFunction
+    ti_msp_dl_config.o(.text.SYSCFG_DL_GPIO_init) refers to ti_msp_dl_config.o(.text.DL_GPIO_initDigitalOutput) for DL_GPIO_initDigitalOutput
+    ti_msp_dl_config.o(.text.SYSCFG_DL_GPIO_init) refers to ti_msp_dl_config.o(.text.DL_GPIO_clearPins) for DL_GPIO_clearPins
+    ti_msp_dl_config.o(.text.SYSCFG_DL_GPIO_init) refers to ti_msp_dl_config.o(.text.DL_GPIO_enableOutput) for DL_GPIO_enableOutput
+    ti_msp_dl_config.o(.ARM.exidx.text.SYSCFG_DL_GPIO_init) refers to ti_msp_dl_config.o(.text.SYSCFG_DL_GPIO_init) for [Anonymous Symbol]
+    ti_msp_dl_config.o(.text.SYSCFG_DL_SYSCTL_init) refers to ti_msp_dl_config.o(.text.DL_SYSCTL_setBORThreshold) for DL_SYSCTL_setBORThreshold
+    ti_msp_dl_config.o(.text.SYSCFG_DL_SYSCTL_init) refers to ti_msp_dl_config.o(.text.DL_SYSCTL_setFlashWaitState) for DL_SYSCTL_setFlashWaitState
+    ti_msp_dl_config.o(.text.SYSCFG_DL_SYSCTL_init) refers to ti_msp_dl_config.o(.text.DL_SYSCTL_setSYSOSCFreq) for DL_SYSCTL_setSYSOSCFreq
+    ti_msp_dl_config.o(.text.SYSCFG_DL_SYSCTL_init) refers to ti_msp_dl_config.o(.text.DL_SYSCTL_disableHFXT) for DL_SYSCTL_disableHFXT
+    ti_msp_dl_config.o(.text.SYSCFG_DL_SYSCTL_init) refers to ti_msp_dl_config.o(.text.DL_SYSCTL_disableSYSPLL) for DL_SYSCTL_disableSYSPLL
+    ti_msp_dl_config.o(.text.SYSCFG_DL_SYSCTL_init) refers to dl_sysctl_mspm0g1x0x_g3x0x.o(.text.DL_SYSCTL_setHFCLKSourceHFXTParams) for DL_SYSCTL_setHFCLKSourceHFXTParams
+    ti_msp_dl_config.o(.text.SYSCFG_DL_SYSCTL_init) refers to dl_sysctl_mspm0g1x0x_g3x0x.o(.text.DL_SYSCTL_configSYSPLL) for DL_SYSCTL_configSYSPLL
+    ti_msp_dl_config.o(.text.SYSCFG_DL_SYSCTL_init) refers to ti_msp_dl_config.o(.text.DL_SYSCTL_setULPCLKDivider) for DL_SYSCTL_setULPCLKDivider
+    ti_msp_dl_config.o(.text.SYSCFG_DL_SYSCTL_init) refers to dl_sysctl_mspm0g1x0x_g3x0x.o(.text.DL_SYSCTL_switchMCLKfromSYSOSCtoHSCLK) for DL_SYSCTL_switchMCLKfromSYSOSCtoHSCLK
+    ti_msp_dl_config.o(.text.SYSCFG_DL_SYSCTL_init) refers to ti_msp_dl_config.o(.rodata.gSYSPLLConfig) for [Anonymous Symbol]
+    ti_msp_dl_config.o(.ARM.exidx.text.SYSCFG_DL_SYSCTL_init) refers to ti_msp_dl_config.o(.text.SYSCFG_DL_SYSCTL_init) for [Anonymous Symbol]
+    ti_msp_dl_config.o(.text.SYSCFG_DL_SYSTICK_init) refers to ti_msp_dl_config.o(.text.SysTick_Config) for SysTick_Config
+    ti_msp_dl_config.o(.ARM.exidx.text.SYSCFG_DL_SYSTICK_init) refers to ti_msp_dl_config.o(.text.SYSCFG_DL_SYSTICK_init) for [Anonymous Symbol]
+    ti_msp_dl_config.o(.ARM.exidx.text.DL_GPIO_reset) refers to ti_msp_dl_config.o(.text.DL_GPIO_reset) for [Anonymous Symbol]
+    ti_msp_dl_config.o(.ARM.exidx.text.DL_GPIO_enablePower) refers to ti_msp_dl_config.o(.text.DL_GPIO_enablePower) for [Anonymous Symbol]
+    ti_msp_dl_config.o(.ARM.exidx.text.DL_GPIO_initPeripheralAnalogFunction) refers to ti_msp_dl_config.o(.text.DL_GPIO_initPeripheralAnalogFunction) for [Anonymous Symbol]
+    ti_msp_dl_config.o(.ARM.exidx.text.DL_GPIO_initDigitalOutput) refers to ti_msp_dl_config.o(.text.DL_GPIO_initDigitalOutput) for [Anonymous Symbol]
+    ti_msp_dl_config.o(.ARM.exidx.text.DL_GPIO_clearPins) refers to ti_msp_dl_config.o(.text.DL_GPIO_clearPins) for [Anonymous Symbol]
+    ti_msp_dl_config.o(.ARM.exidx.text.DL_GPIO_enableOutput) refers to ti_msp_dl_config.o(.text.DL_GPIO_enableOutput) for [Anonymous Symbol]
+    ti_msp_dl_config.o(.ARM.exidx.text.DL_SYSCTL_setBORThreshold) refers to ti_msp_dl_config.o(.text.DL_SYSCTL_setBORThreshold) for [Anonymous Symbol]
+    ti_msp_dl_config.o(.text.DL_SYSCTL_setFlashWaitState) refers to ti_msp_dl_config.o(.text.DL_Common_updateReg) for DL_Common_updateReg
+    ti_msp_dl_config.o(.ARM.exidx.text.DL_SYSCTL_setFlashWaitState) refers to ti_msp_dl_config.o(.text.DL_SYSCTL_setFlashWaitState) for [Anonymous Symbol]
+    ti_msp_dl_config.o(.text.DL_SYSCTL_setSYSOSCFreq) refers to ti_msp_dl_config.o(.text.DL_Common_updateReg) for DL_Common_updateReg
+    ti_msp_dl_config.o(.ARM.exidx.text.DL_SYSCTL_setSYSOSCFreq) refers to ti_msp_dl_config.o(.text.DL_SYSCTL_setSYSOSCFreq) for [Anonymous Symbol]
+    ti_msp_dl_config.o(.ARM.exidx.text.DL_SYSCTL_disableHFXT) refers to ti_msp_dl_config.o(.text.DL_SYSCTL_disableHFXT) for [Anonymous Symbol]
+    ti_msp_dl_config.o(.ARM.exidx.text.DL_SYSCTL_disableSYSPLL) refers to ti_msp_dl_config.o(.text.DL_SYSCTL_disableSYSPLL) for [Anonymous Symbol]
+    ti_msp_dl_config.o(.text.DL_SYSCTL_setULPCLKDivider) refers to ti_msp_dl_config.o(.text.DL_Common_updateReg) for DL_Common_updateReg
+    ti_msp_dl_config.o(.ARM.exidx.text.DL_SYSCTL_setULPCLKDivider) refers to ti_msp_dl_config.o(.text.DL_SYSCTL_setULPCLKDivider) for [Anonymous Symbol]
+    ti_msp_dl_config.o(.text.SysTick_Config) refers to ti_msp_dl_config.o(.text.__NVIC_SetPriority) for __NVIC_SetPriority
+    ti_msp_dl_config.o(.ARM.exidx.text.SysTick_Config) refers to ti_msp_dl_config.o(.text.SysTick_Config) for [Anonymous Symbol]
+    ti_msp_dl_config.o(.ARM.exidx.text.DL_Common_updateReg) refers to ti_msp_dl_config.o(.text.DL_Common_updateReg) for [Anonymous Symbol]
+    ti_msp_dl_config.o(.ARM.exidx.text.__NVIC_SetPriority) refers to ti_msp_dl_config.o(.text.__NVIC_SetPriority) for [Anonymous Symbol]
+    dl_common.o(.ARM.exidx.text.DL_Common_delayCycles) refers to dl_common.o(.text.DL_Common_delayCycles) for [Anonymous Symbol]
+    dl_sysctl_mspm0g1x0x_g3x0x.o(.ARM.exidx.text.DL_SYSCTL_configSYSPLL) refers to dl_sysctl_mspm0g1x0x_g3x0x.o(.text.DL_SYSCTL_configSYSPLL) for [Anonymous Symbol]
+    dl_sysctl_mspm0g1x0x_g3x0x.o(.ARM.exidx.text.DL_SYSCTL_setLFCLKSourceLFXT) refers to dl_sysctl_mspm0g1x0x_g3x0x.o(.text.DL_SYSCTL_setLFCLKSourceLFXT) for [Anonymous Symbol]
+    dl_sysctl_mspm0g1x0x_g3x0x.o(.ARM.exidx.text.DL_SYSCTL_switchMCLKfromSYSOSCtoLFCLK) refers to dl_sysctl_mspm0g1x0x_g3x0x.o(.text.DL_SYSCTL_switchMCLKfromSYSOSCtoLFCLK) for [Anonymous Symbol]
+    dl_sysctl_mspm0g1x0x_g3x0x.o(.ARM.exidx.text.DL_SYSCTL_switchMCLKfromLFCLKtoSYSOSC) refers to dl_sysctl_mspm0g1x0x_g3x0x.o(.text.DL_SYSCTL_switchMCLKfromLFCLKtoSYSOSC) for [Anonymous Symbol]
+    dl_sysctl_mspm0g1x0x_g3x0x.o(.ARM.exidx.text.DL_SYSCTL_switchMCLKfromSYSOSCtoHSCLK) refers to dl_sysctl_mspm0g1x0x_g3x0x.o(.text.DL_SYSCTL_switchMCLKfromSYSOSCtoHSCLK) for [Anonymous Symbol]
+    dl_sysctl_mspm0g1x0x_g3x0x.o(.ARM.exidx.text.DL_SYSCTL_switchMCLKfromHSCLKtoSYSOSC) refers to dl_sysctl_mspm0g1x0x_g3x0x.o(.text.DL_SYSCTL_switchMCLKfromHSCLKtoSYSOSC) for [Anonymous Symbol]
+    dl_sysctl_mspm0g1x0x_g3x0x.o(.ARM.exidx.text.DL_SYSCTL_setHFCLKSourceHFXT) refers to dl_sysctl_mspm0g1x0x_g3x0x.o(.text.DL_SYSCTL_setHFCLKSourceHFXT) for [Anonymous Symbol]
+    dl_sysctl_mspm0g1x0x_g3x0x.o(.ARM.exidx.text.DL_SYSCTL_setHFCLKSourceHFXTParams) refers to dl_sysctl_mspm0g1x0x_g3x0x.o(.text.DL_SYSCTL_setHFCLKSourceHFXTParams) for [Anonymous Symbol]
+    dl_sysctl_mspm0g1x0x_g3x0x.o(.ARM.exidx.text.DL_SYSCTL_configFCC) refers to dl_sysctl_mspm0g1x0x_g3x0x.o(.text.DL_SYSCTL_configFCC) for [Anonymous Symbol]
+    dl_sysctl_mspm0g1x0x_g3x0x.o(.ARM.exidx.text.DL_SYSCTL_getPowerPolicyRUNSLEEP) refers to dl_sysctl_mspm0g1x0x_g3x0x.o(.text.DL_SYSCTL_getPowerPolicyRUNSLEEP) for [Anonymous Symbol]
+    dl_sysctl_mspm0g1x0x_g3x0x.o(.ARM.exidx.text.DL_SYSCTL_getPowerPolicySTOP) refers to dl_sysctl_mspm0g1x0x_g3x0x.o(.text.DL_SYSCTL_getPowerPolicySTOP) for [Anonymous Symbol]
+    dl_sysctl_mspm0g1x0x_g3x0x.o(.ARM.exidx.text.DL_SYSCTL_getPowerPolicySTANDBY) refers to dl_sysctl_mspm0g1x0x_g3x0x.o(.text.DL_SYSCTL_getPowerPolicySTANDBY) for [Anonymous Symbol]
+    entry.o(.ARM.Collect$$$$00000000) refers (Special) to entry10a.o(.ARM.Collect$$$$0000000D) for __rt_final_cpp
+    entry.o(.ARM.Collect$$$$00000000) refers (Special) to entry11a.o(.ARM.Collect$$$$0000000F) for __rt_final_exit
+    entry.o(.ARM.Collect$$$$00000000) refers (Special) to entry7b.o(.ARM.Collect$$$$00000008) for _main_clock
+    entry.o(.ARM.Collect$$$$00000000) refers (Special) to entry8b.o(.ARM.Collect$$$$0000000A) for _main_cpp_init
+    entry.o(.ARM.Collect$$$$00000000) refers (Special) to entry9a.o(.ARM.Collect$$$$0000000B) for _main_init
+    entry.o(.ARM.Collect$$$$00000000) refers (Special) to entry5.o(.ARM.Collect$$$$00000004) for _main_scatterload
+    entry.o(.ARM.Collect$$$$00000000) refers (Special) to entry2.o(.ARM.Collect$$$$00000001) for _main_stk
+    entry2.o(.ARM.Collect$$$$00000001) refers to entry2.o(.ARM.Collect$$$$00002712) for __lit__00000000
+    entry2.o(.ARM.Collect$$$$00002712) refers to startup_mspm0g350x_uvision.o(STACK) for __initial_sp
+    entry2.o(__vectab_stack_and_reset_area) refers to startup_mspm0g350x_uvision.o(STACK) for __initial_sp
+    entry2.o(__vectab_stack_and_reset_area) refers to entry.o(.ARM.Collect$$$$00000000) for __main
+    entry5.o(.ARM.Collect$$$$00000004) refers to init.o(.text) for __scatterload
+    entry9a.o(.ARM.Collect$$$$0000000B) refers to gpio_toggle_output.o(.text.main) for main
+    entry9b.o(.ARM.Collect$$$$0000000C) refers to gpio_toggle_output.o(.text.main) for main
+    init.o(.text) refers to entry5.o(.ARM.Collect$$$$00000004) for __main_after_scatterload
+
+
+==============================================================================
+
+Removing Unused input sections from the image.
+
+    Removing gpio_toggle_output.o(.text), (0 bytes).
+    Removing gpio_toggle_output.o(.ARM.exidx.text.main), (8 bytes).
+    Removing gpio_toggle_output.o(.ARM.exidx.text.DL_GPIO_clearPins), (8 bytes).
+    Removing gpio_toggle_output.o(.ARM.exidx.text.DL_GPIO_setPins), (8 bytes).
+    Removing gpio_toggle_output.o(.ARM.exidx.text.DL_GPIO_togglePins), (8 bytes).
+    Removing gpio_toggle_output.o(.ARM.use_no_argv), (4 bytes).
+    Removing startup_mspm0g350x_uvision.o(HEAP), (8192 bytes).
+    Removing ti_msp_dl_config.o(.text), (0 bytes).
+    Removing ti_msp_dl_config.o(.ARM.exidx.text.SYSCFG_DL_init), (8 bytes).
+    Removing ti_msp_dl_config.o(.ARM.exidx.text.SYSCFG_DL_initPower), (8 bytes).
+    Removing ti_msp_dl_config.o(.ARM.exidx.text.SYSCFG_DL_GPIO_init), (8 bytes).
+    Removing ti_msp_dl_config.o(.ARM.exidx.text.SYSCFG_DL_SYSCTL_init), (8 bytes).
+    Removing ti_msp_dl_config.o(.ARM.exidx.text.SYSCFG_DL_SYSTICK_init), (8 bytes).
+    Removing ti_msp_dl_config.o(.ARM.exidx.text.DL_GPIO_reset), (8 bytes).
+    Removing ti_msp_dl_config.o(.ARM.exidx.text.DL_GPIO_enablePower), (8 bytes).
+    Removing ti_msp_dl_config.o(.ARM.exidx.text.DL_GPIO_initPeripheralAnalogFunction), (8 bytes).
+    Removing ti_msp_dl_config.o(.ARM.exidx.text.DL_GPIO_initDigitalOutput), (8 bytes).
+    Removing ti_msp_dl_config.o(.ARM.exidx.text.DL_GPIO_clearPins), (8 bytes).
+    Removing ti_msp_dl_config.o(.ARM.exidx.text.DL_GPIO_enableOutput), (8 bytes).
+    Removing ti_msp_dl_config.o(.ARM.exidx.text.DL_SYSCTL_setBORThreshold), (8 bytes).
+    Removing ti_msp_dl_config.o(.ARM.exidx.text.DL_SYSCTL_setFlashWaitState), (8 bytes).
+    Removing ti_msp_dl_config.o(.ARM.exidx.text.DL_SYSCTL_setSYSOSCFreq), (8 bytes).
+    Removing ti_msp_dl_config.o(.ARM.exidx.text.DL_SYSCTL_disableHFXT), (8 bytes).
+    Removing ti_msp_dl_config.o(.ARM.exidx.text.DL_SYSCTL_disableSYSPLL), (8 bytes).
+    Removing ti_msp_dl_config.o(.ARM.exidx.text.DL_SYSCTL_setULPCLKDivider), (8 bytes).
+    Removing ti_msp_dl_config.o(.ARM.exidx.text.SysTick_Config), (8 bytes).
+    Removing ti_msp_dl_config.o(.ARM.exidx.text.DL_Common_updateReg), (8 bytes).
+    Removing ti_msp_dl_config.o(.ARM.exidx.text.__NVIC_SetPriority), (8 bytes).
+    Removing dl_common.o(.text), (0 bytes).
+    Removing dl_common.o(.ARM.exidx.text.DL_Common_delayCycles), (8 bytes).
+    Removing dl_sysctl_mspm0g1x0x_g3x0x.o(.text), (0 bytes).
+    Removing dl_sysctl_mspm0g1x0x_g3x0x.o(.ARM.exidx.text.DL_SYSCTL_configSYSPLL), (8 bytes).
+    Removing dl_sysctl_mspm0g1x0x_g3x0x.o(.text.DL_SYSCTL_setLFCLKSourceLFXT), (80 bytes).
+    Removing dl_sysctl_mspm0g1x0x_g3x0x.o(.ARM.exidx.text.DL_SYSCTL_setLFCLKSourceLFXT), (8 bytes).
+    Removing dl_sysctl_mspm0g1x0x_g3x0x.o(.text.DL_SYSCTL_switchMCLKfromSYSOSCtoLFCLK), (60 bytes).
+    Removing dl_sysctl_mspm0g1x0x_g3x0x.o(.ARM.exidx.text.DL_SYSCTL_switchMCLKfromSYSOSCtoLFCLK), (8 bytes).
+    Removing dl_sysctl_mspm0g1x0x_g3x0x.o(.text.DL_SYSCTL_switchMCLKfromLFCLKtoSYSOSC), (40 bytes).
+    Removing dl_sysctl_mspm0g1x0x_g3x0x.o(.ARM.exidx.text.DL_SYSCTL_switchMCLKfromLFCLKtoSYSOSC), (8 bytes).
+    Removing dl_sysctl_mspm0g1x0x_g3x0x.o(.ARM.exidx.text.DL_SYSCTL_switchMCLKfromSYSOSCtoHSCLK), (8 bytes).
+    Removing dl_sysctl_mspm0g1x0x_g3x0x.o(.text.DL_SYSCTL_switchMCLKfromHSCLKtoSYSOSC), (32 bytes).
+    Removing dl_sysctl_mspm0g1x0x_g3x0x.o(.ARM.exidx.text.DL_SYSCTL_switchMCLKfromHSCLKtoSYSOSC), (8 bytes).
+    Removing dl_sysctl_mspm0g1x0x_g3x0x.o(.text.DL_SYSCTL_setHFCLKSourceHFXT), (76 bytes).
+    Removing dl_sysctl_mspm0g1x0x_g3x0x.o(.ARM.exidx.text.DL_SYSCTL_setHFCLKSourceHFXT), (8 bytes).
+    Removing dl_sysctl_mspm0g1x0x_g3x0x.o(.ARM.exidx.text.DL_SYSCTL_setHFCLKSourceHFXTParams), (8 bytes).
+    Removing dl_sysctl_mspm0g1x0x_g3x0x.o(.text.DL_SYSCTL_configFCC), (28 bytes).
+    Removing dl_sysctl_mspm0g1x0x_g3x0x.o(.ARM.exidx.text.DL_SYSCTL_configFCC), (8 bytes).
+    Removing dl_sysctl_mspm0g1x0x_g3x0x.o(.text.DL_SYSCTL_getPowerPolicyRUNSLEEP), (48 bytes).
+    Removing dl_sysctl_mspm0g1x0x_g3x0x.o(.ARM.exidx.text.DL_SYSCTL_getPowerPolicyRUNSLEEP), (8 bytes).
+    Removing dl_sysctl_mspm0g1x0x_g3x0x.o(.text.DL_SYSCTL_getPowerPolicySTOP), (52 bytes).
+    Removing dl_sysctl_mspm0g1x0x_g3x0x.o(.ARM.exidx.text.DL_SYSCTL_getPowerPolicySTOP), (8 bytes).
+    Removing dl_sysctl_mspm0g1x0x_g3x0x.o(.text.DL_SYSCTL_getPowerPolicySTANDBY), (40 bytes).
+    Removing dl_sysctl_mspm0g1x0x_g3x0x.o(.ARM.exidx.text.DL_SYSCTL_getPowerPolicySTANDBY), (8 bytes).
+
+52 unused section(s) (total 8948 bytes) removed from the image.
+
+==============================================================================
+
+Image Symbol Table
+
+    Local Symbols
+
+    Symbol Name                              Value     Ov Type        Size  Object(Section)
+
+    ../clib/microlib/init/entry.s            0x00000000   Number         0  entry.o ABSOLUTE
+    ../clib/microlib/init/entry.s            0x00000000   Number         0  entry2.o ABSOLUTE
+    ../clib/microlib/init/entry.s            0x00000000   Number         0  entry5.o ABSOLUTE
+    ../clib/microlib/init/entry.s            0x00000000   Number         0  entry7a.o ABSOLUTE
+    ../clib/microlib/init/entry.s            0x00000000   Number         0  entry7b.o ABSOLUTE
+    ../clib/microlib/init/entry.s            0x00000000   Number         0  entry8a.o ABSOLUTE
+    ../clib/microlib/init/entry.s            0x00000000   Number         0  entry8b.o ABSOLUTE
+    ../clib/microlib/init/entry.s            0x00000000   Number         0  entry9a.o ABSOLUTE
+    ../clib/microlib/init/entry.s            0x00000000   Number         0  entry9b.o ABSOLUTE
+    ../clib/microlib/init/entry.s            0x00000000   Number         0  entry10a.o ABSOLUTE
+    ../clib/microlib/init/entry.s            0x00000000   Number         0  entry10b.o ABSOLUTE
+    ../clib/microlib/init/entry.s            0x00000000   Number         0  entry11a.o ABSOLUTE
+    ../clib/microlib/init/entry.s            0x00000000   Number         0  entry11b.o ABSOLUTE
+    dc.s                                     0x00000000   Number         0  dc.o ABSOLUTE
+    dl_common.c                              0x00000000   Number         0  dl_common.o ABSOLUTE
+    dl_sysctl_mspm0g1x0x_g3x0x.c             0x00000000   Number         0  dl_sysctl_mspm0g1x0x_g3x0x.o ABSOLUTE
+    gpio_toggle_output.c                     0x00000000   Number         0  gpio_toggle_output.o ABSOLUTE
+    handlers.s                               0x00000000   Number         0  handlers.o ABSOLUTE
+    init.s                                   0x00000000   Number         0  init.o ABSOLUTE
+    startup_mspm0g350x_uvision.s             0x00000000   Number         0  startup_mspm0g350x_uvision.o ABSOLUTE
+    ti_msp_dl_config.c                       0x00000000   Number         0  ti_msp_dl_config.o ABSOLUTE
+    RESET                                    0x00000000   Section      192  startup_mspm0g350x_uvision.o(RESET)
+    .ARM.Collect$$$$00000000                 0x000000c0   Section        0  entry.o(.ARM.Collect$$$$00000000)
+    .ARM.Collect$$$$00000001                 0x000000c0   Section        4  entry2.o(.ARM.Collect$$$$00000001)
+    .ARM.Collect$$$$00000004                 0x000000c4   Section        4  entry5.o(.ARM.Collect$$$$00000004)
+    .ARM.Collect$$$$00000008                 0x000000c8   Section        0  entry7b.o(.ARM.Collect$$$$00000008)
+    .ARM.Collect$$$$0000000A                 0x000000c8   Section        0  entry8b.o(.ARM.Collect$$$$0000000A)
+    .ARM.Collect$$$$0000000B                 0x000000c8   Section        8  entry9a.o(.ARM.Collect$$$$0000000B)
+    __lit__00000000                          0x000000d0   Data           4  entry2.o(.ARM.Collect$$$$00002712)
+    .ARM.Collect$$$$0000000D                 0x000000d0   Section        0  entry10a.o(.ARM.Collect$$$$0000000D)
+    .ARM.Collect$$$$0000000F                 0x000000d0   Section        0  entry11a.o(.ARM.Collect$$$$0000000F)
+    .ARM.Collect$$$$00002712                 0x000000d0   Section        4  entry2.o(.ARM.Collect$$$$00002712)
+    .text                                    0x000000d4   Section       20  startup_mspm0g350x_uvision.o(.text)
+    .text                                    0x000000e8   Section       48  init.o(.text)
+    [Anonymous Symbol]                       0x00000118   Section        0  dl_common.o(.text.DL_Common_delayCycles)
+    DL_Common_updateReg                      0x00000123   Thumb Code    40  ti_msp_dl_config.o(.text.DL_Common_updateReg)
+    [Anonymous Symbol]                       0x00000122   Section        0  ti_msp_dl_config.o(.text.DL_Common_updateReg)
+    DL_GPIO_clearPins                        0x0000014b   Thumb Code    20  gpio_toggle_output.o(.text.DL_GPIO_clearPins)
+    [Anonymous Symbol]                       0x0000014a   Section        0  gpio_toggle_output.o(.text.DL_GPIO_clearPins)
+    DL_GPIO_clearPins                        0x0000015f   Thumb Code    20  ti_msp_dl_config.o(.text.DL_GPIO_clearPins)
+    [Anonymous Symbol]                       0x0000015e   Section        0  ti_msp_dl_config.o(.text.DL_GPIO_clearPins)
+    DL_GPIO_enableOutput                     0x00000175   Thumb Code    20  ti_msp_dl_config.o(.text.DL_GPIO_enableOutput)
+    [Anonymous Symbol]                       0x00000174   Section        0  ti_msp_dl_config.o(.text.DL_GPIO_enableOutput)
+    __arm_cp.10_0                            0x00000188   Number         4  ti_msp_dl_config.o(.text.DL_GPIO_enableOutput)
+    DL_GPIO_enablePower                      0x0000018d   Thumb Code    20  ti_msp_dl_config.o(.text.DL_GPIO_enablePower)
+    [Anonymous Symbol]                       0x0000018c   Section        0  ti_msp_dl_config.o(.text.DL_GPIO_enablePower)
+    __arm_cp.6_0                             0x000001a0   Number         4  ti_msp_dl_config.o(.text.DL_GPIO_enablePower)
+    DL_GPIO_initDigitalOutput                0x000001a5   Thumb Code    20  ti_msp_dl_config.o(.text.DL_GPIO_initDigitalOutput)
+    [Anonymous Symbol]                       0x000001a4   Section        0  ti_msp_dl_config.o(.text.DL_GPIO_initDigitalOutput)
+    DL_GPIO_initPeripheralAnalogFunction     0x000001b9   Thumb Code    20  ti_msp_dl_config.o(.text.DL_GPIO_initPeripheralAnalogFunction)
+    [Anonymous Symbol]                       0x000001b8   Section        0  ti_msp_dl_config.o(.text.DL_GPIO_initPeripheralAnalogFunction)
+    __arm_cp.7_0                             0x000001cc   Number         4  ti_msp_dl_config.o(.text.DL_GPIO_initPeripheralAnalogFunction)
+    DL_GPIO_reset                            0x000001d1   Thumb Code    16  ti_msp_dl_config.o(.text.DL_GPIO_reset)
+    [Anonymous Symbol]                       0x000001d0   Section        0  ti_msp_dl_config.o(.text.DL_GPIO_reset)
+    __arm_cp.5_0                             0x000001e0   Number         4  ti_msp_dl_config.o(.text.DL_GPIO_reset)
+    __arm_cp.5_1                             0x000001e4   Number         4  ti_msp_dl_config.o(.text.DL_GPIO_reset)
+    DL_GPIO_setPins                          0x000001e9   Thumb Code    20  gpio_toggle_output.o(.text.DL_GPIO_setPins)
+    [Anonymous Symbol]                       0x000001e8   Section        0  gpio_toggle_output.o(.text.DL_GPIO_setPins)
+    __arm_cp.2_0                             0x000001fc   Number         4  gpio_toggle_output.o(.text.DL_GPIO_setPins)
+    DL_GPIO_togglePins                       0x00000201   Thumb Code    20  gpio_toggle_output.o(.text.DL_GPIO_togglePins)
+    [Anonymous Symbol]                       0x00000200   Section        0  gpio_toggle_output.o(.text.DL_GPIO_togglePins)
+    __arm_cp.3_0                             0x00000214   Number         4  gpio_toggle_output.o(.text.DL_GPIO_togglePins)
+    [Anonymous Symbol]                       0x00000218   Section        0  dl_sysctl_mspm0g1x0x_g3x0x.o(.text.DL_SYSCTL_configSYSPLL)
+    __arm_cp.0_2                             0x000002cc   Number         4  dl_sysctl_mspm0g1x0x_g3x0x.o(.text.DL_SYSCTL_configSYSPLL)
+    __arm_cp.0_3                             0x000002d0   Number         4  dl_sysctl_mspm0g1x0x_g3x0x.o(.text.DL_SYSCTL_configSYSPLL)
+    __arm_cp.0_4                             0x000002d4   Number         4  dl_sysctl_mspm0g1x0x_g3x0x.o(.text.DL_SYSCTL_configSYSPLL)
+    DL_SYSCTL_disableHFXT                    0x000002d9   Thumb Code    12  ti_msp_dl_config.o(.text.DL_SYSCTL_disableHFXT)
+    [Anonymous Symbol]                       0x000002d8   Section        0  ti_msp_dl_config.o(.text.DL_SYSCTL_disableHFXT)
+    DL_SYSCTL_disableSYSPLL                  0x000002e5   Thumb Code    16  ti_msp_dl_config.o(.text.DL_SYSCTL_disableSYSPLL)
+    [Anonymous Symbol]                       0x000002e4   Section        0  ti_msp_dl_config.o(.text.DL_SYSCTL_disableSYSPLL)
+    __arm_cp.15_0                            0x000002f4   Number         4  ti_msp_dl_config.o(.text.DL_SYSCTL_disableSYSPLL)
+    DL_SYSCTL_setBORThreshold                0x000002f9   Thumb Code    20  ti_msp_dl_config.o(.text.DL_SYSCTL_setBORThreshold)
+    [Anonymous Symbol]                       0x000002f8   Section        0  ti_msp_dl_config.o(.text.DL_SYSCTL_setBORThreshold)
+    __arm_cp.11_0                            0x0000030c   Number         4  ti_msp_dl_config.o(.text.DL_SYSCTL_setBORThreshold)
+    DL_SYSCTL_setFlashWaitState              0x00000311   Thumb Code    28  ti_msp_dl_config.o(.text.DL_SYSCTL_setFlashWaitState)
+    [Anonymous Symbol]                       0x00000310   Section        0  ti_msp_dl_config.o(.text.DL_SYSCTL_setFlashWaitState)
+    [Anonymous Symbol]                       0x0000032c   Section        0  dl_sysctl_mspm0g1x0x_g3x0x.o(.text.DL_SYSCTL_setHFCLKSourceHFXTParams)
+    __arm_cp.7_0                             0x00000378   Number         4  dl_sysctl_mspm0g1x0x_g3x0x.o(.text.DL_SYSCTL_setHFCLKSourceHFXTParams)
+    DL_SYSCTL_setSYSOSCFreq                  0x0000037d   Thumb Code    24  ti_msp_dl_config.o(.text.DL_SYSCTL_setSYSOSCFreq)
+    [Anonymous Symbol]                       0x0000037c   Section        0  ti_msp_dl_config.o(.text.DL_SYSCTL_setSYSOSCFreq)
+    __arm_cp.13_0                            0x00000394   Number         4  ti_msp_dl_config.o(.text.DL_SYSCTL_setSYSOSCFreq)
+    DL_SYSCTL_setULPCLKDivider               0x00000399   Thumb Code    24  ti_msp_dl_config.o(.text.DL_SYSCTL_setULPCLKDivider)
+    [Anonymous Symbol]                       0x00000398   Section        0  ti_msp_dl_config.o(.text.DL_SYSCTL_setULPCLKDivider)
+    [Anonymous Symbol]                       0x000003b0   Section        0  dl_sysctl_mspm0g1x0x_g3x0x.o(.text.DL_SYSCTL_switchMCLKfromSYSOSCtoHSCLK)
+    __arm_cp.4_0                             0x000003d0   Number         4  dl_sysctl_mspm0g1x0x_g3x0x.o(.text.DL_SYSCTL_switchMCLKfromSYSOSCtoHSCLK)
+    __arm_cp.4_1                             0x000003d4   Number         4  dl_sysctl_mspm0g1x0x_g3x0x.o(.text.DL_SYSCTL_switchMCLKfromSYSOSCtoHSCLK)
+    [Anonymous Symbol]                       0x000003d8   Section        0  ti_msp_dl_config.o(.text.SYSCFG_DL_GPIO_init)
+    [Anonymous Symbol]                       0x00000418   Section        0  ti_msp_dl_config.o(.text.SYSCFG_DL_SYSCTL_init)
+    __arm_cp.3_0                             0x00000460   Number         4  ti_msp_dl_config.o(.text.SYSCFG_DL_SYSCTL_init)
+    [Anonymous Symbol]                       0x00000464   Section        0  ti_msp_dl_config.o(.text.SYSCFG_DL_SYSTICK_init)
+    __arm_cp.4_0                             0x00000470   Number         4  ti_msp_dl_config.o(.text.SYSCFG_DL_SYSTICK_init)
+    [Anonymous Symbol]                       0x00000474   Section        0  ti_msp_dl_config.o(.text.SYSCFG_DL_init)
+    [Anonymous Symbol]                       0x00000488   Section        0  ti_msp_dl_config.o(.text.SYSCFG_DL_initPower)
+    __arm_cp.1_0                             0x000004b4   Number         4  ti_msp_dl_config.o(.text.SYSCFG_DL_initPower)
+    SysTick_Config                           0x000004b9   Thumb Code    68  ti_msp_dl_config.o(.text.SysTick_Config)
+    [Anonymous Symbol]                       0x000004b8   Section        0  ti_msp_dl_config.o(.text.SysTick_Config)
+    __arm_cp.17_0                            0x000004fc   Number         4  ti_msp_dl_config.o(.text.SysTick_Config)
+    __arm_cp.17_1                            0x00000500   Number         4  ti_msp_dl_config.o(.text.SysTick_Config)
+    __arm_cp.17_2                            0x00000504   Number         4  ti_msp_dl_config.o(.text.SysTick_Config)
+    __NVIC_SetPriority                       0x00000509   Thumb Code   124  ti_msp_dl_config.o(.text.__NVIC_SetPriority)
+    [Anonymous Symbol]                       0x00000508   Section        0  ti_msp_dl_config.o(.text.__NVIC_SetPriority)
+    __arm_cp.19_0                            0x00000584   Number         4  ti_msp_dl_config.o(.text.__NVIC_SetPriority)
+    __arm_cp.19_1                            0x00000588   Number         4  ti_msp_dl_config.o(.text.__NVIC_SetPriority)
+    [Anonymous Symbol]                       0x0000058c   Section        0  gpio_toggle_output.o(.text.main)
+    __arm_cp.0_0                             0x000005c4   Number         4  gpio_toggle_output.o(.text.main)
+    __arm_cp.0_1                             0x000005c8   Number         4  gpio_toggle_output.o(.text.main)
+    i.__scatterload_copy                     0x000005d0   Section       14  handlers.o(i.__scatterload_copy)
+    i.__scatterload_null                     0x000005e0   Section        2  handlers.o(i.__scatterload_null)
+    i.__scatterload_zeroinit                 0x000005e8   Section       14  handlers.o(i.__scatterload_zeroinit)
+    gSYSPLLConfig                            0x000005f8   Data          40  ti_msp_dl_config.o(.rodata.gSYSPLLConfig)
+    [Anonymous Symbol]                       0x000005f8   Section        0  ti_msp_dl_config.o(.rodata.gSYSPLLConfig)
+    STACK                                    0x20200000   Section     8192  startup_mspm0g350x_uvision.o(STACK)
+
+    Global Symbols
+
+    Symbol Name                              Value     Ov Type        Size  Object(Section)
+
+    BuildAttributes$$THM_ISAv3M$S$PE$A:L22$X:L11$S22$IEEE1$IW$~IW$USESV6$~STKCKD$USESV7$~SHL$OTIME$EBA8$MICROLIB$REQ8$PRES8$EABIv2 0x00000000   Number         0  anon$$obj.o ABSOLUTE
+    __Vectors                                0x00000000   Data           4  startup_mspm0g350x_uvision.o(RESET)
+    __cpp_initialize__aeabi_                  - Undefined Weak Reference
+    __cxa_finalize                            - Undefined Weak Reference
+    __decompress                              - Undefined Weak Reference
+    _clock_init                               - Undefined Weak Reference
+    _microlib_exit                            - Undefined Weak Reference
+    __Vectors_End                            0x000000c0   Data           0  startup_mspm0g350x_uvision.o(RESET)
+    __Vectors_Size                           0x000000c0   Number         0  startup_mspm0g350x_uvision.o ABSOLUTE
+    __main                                   0x000000c1   Thumb Code     0  entry.o(.ARM.Collect$$$$00000000)
+    _main_stk                                0x000000c1   Thumb Code     0  entry2.o(.ARM.Collect$$$$00000001)
+    _main_scatterload                        0x000000c5   Thumb Code     0  entry5.o(.ARM.Collect$$$$00000004)
+    __main_after_scatterload                 0x000000c9   Thumb Code     0  entry5.o(.ARM.Collect$$$$00000004)
+    _main_clock                              0x000000c9   Thumb Code     0  entry7b.o(.ARM.Collect$$$$00000008)
+    _main_cpp_init                           0x000000c9   Thumb Code     0  entry8b.o(.ARM.Collect$$$$0000000A)
+    _main_init                               0x000000c9   Thumb Code     0  entry9a.o(.ARM.Collect$$$$0000000B)
+    __rt_final_cpp                           0x000000d1   Thumb Code     0  entry10a.o(.ARM.Collect$$$$0000000D)
+    __rt_final_exit                          0x000000d1   Thumb Code     0  entry11a.o(.ARM.Collect$$$$0000000F)
+    Reset_Handler                            0x000000d5   Thumb Code     4  startup_mspm0g350x_uvision.o(.text)
+    NMI_Handler                              0x000000d9   Thumb Code     2  startup_mspm0g350x_uvision.o(.text)
+    HardFault_Handler                        0x000000db   Thumb Code     2  startup_mspm0g350x_uvision.o(.text)
+    SVC_Handler                              0x000000dd   Thumb Code     2  startup_mspm0g350x_uvision.o(.text)
+    PendSV_Handler                           0x000000df   Thumb Code     2  startup_mspm0g350x_uvision.o(.text)
+    SysTick_Handler                          0x000000e1   Thumb Code     2  startup_mspm0g350x_uvision.o(.text)
+    ADC0_IRQHandler                          0x000000e3   Thumb Code     0  startup_mspm0g350x_uvision.o(.text)
+    ADC1_IRQHandler                          0x000000e3   Thumb Code     0  startup_mspm0g350x_uvision.o(.text)
+    AES_IRQHandler                           0x000000e3   Thumb Code     0  startup_mspm0g350x_uvision.o(.text)
+    CANFD0_IRQHandler                        0x000000e3   Thumb Code     0  startup_mspm0g350x_uvision.o(.text)
+    DAC0_IRQHandler                          0x000000e3   Thumb Code     0  startup_mspm0g350x_uvision.o(.text)
+    DMA_IRQHandler                           0x000000e3   Thumb Code     0  startup_mspm0g350x_uvision.o(.text)
+    Default_Handler                          0x000000e3   Thumb Code     2  startup_mspm0g350x_uvision.o(.text)
+    GROUP0_IRQHandler                        0x000000e3   Thumb Code     0  startup_mspm0g350x_uvision.o(.text)
+    GROUP1_IRQHandler                        0x000000e3   Thumb Code     0  startup_mspm0g350x_uvision.o(.text)
+    I2C0_IRQHandler                          0x000000e3   Thumb Code     0  startup_mspm0g350x_uvision.o(.text)
+    I2C1_IRQHandler                          0x000000e3   Thumb Code     0  startup_mspm0g350x_uvision.o(.text)
+    RTC_IRQHandler                           0x000000e3   Thumb Code     0  startup_mspm0g350x_uvision.o(.text)
+    SPI0_IRQHandler                          0x000000e3   Thumb Code     0  startup_mspm0g350x_uvision.o(.text)
+    SPI1_IRQHandler                          0x000000e3   Thumb Code     0  startup_mspm0g350x_uvision.o(.text)
+    TIMA0_IRQHandler                         0x000000e3   Thumb Code     0  startup_mspm0g350x_uvision.o(.text)
+    TIMA1_IRQHandler                         0x000000e3   Thumb Code     0  startup_mspm0g350x_uvision.o(.text)
+    TIMG0_IRQHandler                         0x000000e3   Thumb Code     0  startup_mspm0g350x_uvision.o(.text)
+    TIMG12_IRQHandler                        0x000000e3   Thumb Code     0  startup_mspm0g350x_uvision.o(.text)
+    TIMG6_IRQHandler                         0x000000e3   Thumb Code     0  startup_mspm0g350x_uvision.o(.text)
+    TIMG7_IRQHandler                         0x000000e3   Thumb Code     0  startup_mspm0g350x_uvision.o(.text)
+    TIMG8_IRQHandler                         0x000000e3   Thumb Code     0  startup_mspm0g350x_uvision.o(.text)
+    UART0_IRQHandler                         0x000000e3   Thumb Code     0  startup_mspm0g350x_uvision.o(.text)
+    UART1_IRQHandler                         0x000000e3   Thumb Code     0  startup_mspm0g350x_uvision.o(.text)
+    UART2_IRQHandler                         0x000000e3   Thumb Code     0  startup_mspm0g350x_uvision.o(.text)
+    UART3_IRQHandler                         0x000000e3   Thumb Code     0  startup_mspm0g350x_uvision.o(.text)
+    __scatterload                            0x000000e9   Thumb Code    38  init.o(.text)
+    __scatterload_rt2                        0x000000e9   Thumb Code     0  init.o(.text)
+    DL_Common_delayCycles                    0x00000119   Thumb Code    10  dl_common.o(.text.DL_Common_delayCycles)
+    DL_SYSCTL_configSYSPLL                   0x00000219   Thumb Code   192  dl_sysctl_mspm0g1x0x_g3x0x.o(.text.DL_SYSCTL_configSYSPLL)
+    DL_SYSCTL_setHFCLKSourceHFXTParams       0x0000032d   Thumb Code    80  dl_sysctl_mspm0g1x0x_g3x0x.o(.text.DL_SYSCTL_setHFCLKSourceHFXTParams)
+    DL_SYSCTL_switchMCLKfromSYSOSCtoHSCLK    0x000003b1   Thumb Code    40  dl_sysctl_mspm0g1x0x_g3x0x.o(.text.DL_SYSCTL_switchMCLKfromSYSOSCtoHSCLK)
+    SYSCFG_DL_GPIO_init                      0x000003d9   Thumb Code    64  ti_msp_dl_config.o(.text.SYSCFG_DL_GPIO_init)
+    SYSCFG_DL_SYSCTL_init                    0x00000419   Thumb Code    72  ti_msp_dl_config.o(.text.SYSCFG_DL_SYSCTL_init)
+    SYSCFG_DL_SYSTICK_init                   0x00000465   Thumb Code    12  ti_msp_dl_config.o(.text.SYSCFG_DL_SYSTICK_init)
+    SYSCFG_DL_init                           0x00000475   Thumb Code    20  ti_msp_dl_config.o(.text.SYSCFG_DL_init)
+    SYSCFG_DL_initPower                      0x00000489   Thumb Code    44  ti_msp_dl_config.o(.text.SYSCFG_DL_initPower)
+    main                                     0x0000058d   Thumb Code    56  gpio_toggle_output.o(.text.main)
+    __scatterload_copy                       0x000005d1   Thumb Code    14  handlers.o(i.__scatterload_copy)
+    __scatterload_null                       0x000005e1   Thumb Code     2  handlers.o(i.__scatterload_null)
+    __scatterload_zeroinit                   0x000005e9   Thumb Code    14  handlers.o(i.__scatterload_zeroinit)
+    Region$$Table$$Base                      0x00000620   Number         0  anon$$obj.o(Region$$Table)
+    Region$$Table$$Limit                     0x00000630   Number         0  anon$$obj.o(Region$$Table)
+    __initial_sp                             0x20202000   Data           0  startup_mspm0g350x_uvision.o(STACK)
+
+
+
+==============================================================================
+
+Memory Map of the image
+
+  Image Entry point : 0x000000c1
+
+  Load Region LR_IROM1 (Base: 0x00000000, Size: 0x00000630, Max: 0x00020000, ABSOLUTE)
+
+    Execution Region ER_IROM1 (Exec base: 0x00000000, Load base: 0x00000000, Size: 0x00000630, Max: 0x00020000, ABSOLUTE)
+
+    Exec Addr    Load Addr    Size         Type   Attr      Idx    E Section Name        Object
+
+    0x00000000   0x00000000   0x000000c0   Data   RO           19    RESET               startup_mspm0g350x_uvision.o
+    0x000000c0   0x000000c0   0x00000000   Code   RO          115  * .ARM.Collect$$$$00000000  mc_p.l(entry.o)
+    0x000000c0   0x000000c0   0x00000004   Code   RO          118    .ARM.Collect$$$$00000001  mc_p.l(entry2.o)
+    0x000000c4   0x000000c4   0x00000004   Code   RO          121    .ARM.Collect$$$$00000004  mc_p.l(entry5.o)
+    0x000000c8   0x000000c8   0x00000000   Code   RO          123    .ARM.Collect$$$$00000008  mc_p.l(entry7b.o)
+    0x000000c8   0x000000c8   0x00000000   Code   RO          125    .ARM.Collect$$$$0000000A  mc_p.l(entry8b.o)
+    0x000000c8   0x000000c8   0x00000008   Code   RO          126    .ARM.Collect$$$$0000000B  mc_p.l(entry9a.o)
+    0x000000d0   0x000000d0   0x00000000   Code   RO          128    .ARM.Collect$$$$0000000D  mc_p.l(entry10a.o)
+    0x000000d0   0x000000d0   0x00000000   Code   RO          130    .ARM.Collect$$$$0000000F  mc_p.l(entry11a.o)
+    0x000000d0   0x000000d0   0x00000004   Code   RO          119    .ARM.Collect$$$$00002712  mc_p.l(entry2.o)
+    0x000000d4   0x000000d4   0x00000014   Code   RO           20    .text               startup_mspm0g350x_uvision.o
+    0x000000e8   0x000000e8   0x00000030   Code   RO          132    .text               mc_p.l(init.o)
+    0x00000118   0x00000118   0x0000000a   Code   RO           75    .text.DL_Common_delayCycles  driverlib.a(dl_common.o)
+    0x00000122   0x00000122   0x00000028   Code   RO           63    .text.DL_Common_updateReg  ti_msp_dl_config.o
+    0x0000014a   0x0000014a   0x00000014   Code   RO            4    .text.DL_GPIO_clearPins  gpio_toggle_output.o
+    0x0000015e   0x0000015e   0x00000014   Code   RO           45    .text.DL_GPIO_clearPins  ti_msp_dl_config.o
+    0x00000172   0x00000172   0x00000002   PAD
+    0x00000174   0x00000174   0x00000018   Code   RO           47    .text.DL_GPIO_enableOutput  ti_msp_dl_config.o
+    0x0000018c   0x0000018c   0x00000018   Code   RO           39    .text.DL_GPIO_enablePower  ti_msp_dl_config.o
+    0x000001a4   0x000001a4   0x00000014   Code   RO           43    .text.DL_GPIO_initDigitalOutput  ti_msp_dl_config.o
+    0x000001b8   0x000001b8   0x00000018   Code   RO           41    .text.DL_GPIO_initPeripheralAnalogFunction  ti_msp_dl_config.o
+    0x000001d0   0x000001d0   0x00000018   Code   RO           37    .text.DL_GPIO_reset  ti_msp_dl_config.o
+    0x000001e8   0x000001e8   0x00000018   Code   RO            6    .text.DL_GPIO_setPins  gpio_toggle_output.o
+    0x00000200   0x00000200   0x00000018   Code   RO            8    .text.DL_GPIO_togglePins  gpio_toggle_output.o
+    0x00000218   0x00000218   0x000000c0   Code   RO           84    .text.DL_SYSCTL_configSYSPLL  driverlib.a(dl_sysctl_mspm0g1x0x_g3x0x.o)
+    0x000002d8   0x000002d8   0x0000000c   Code   RO           55    .text.DL_SYSCTL_disableHFXT  ti_msp_dl_config.o
+    0x000002e4   0x000002e4   0x00000014   Code   RO           57    .text.DL_SYSCTL_disableSYSPLL  ti_msp_dl_config.o
+    0x000002f8   0x000002f8   0x00000018   Code   RO           49    .text.DL_SYSCTL_setBORThreshold  ti_msp_dl_config.o
+    0x00000310   0x00000310   0x0000001c   Code   RO           51    .text.DL_SYSCTL_setFlashWaitState  ti_msp_dl_config.o
+    0x0000032c   0x0000032c   0x00000050   Code   RO           98    .text.DL_SYSCTL_setHFCLKSourceHFXTParams  driverlib.a(dl_sysctl_mspm0g1x0x_g3x0x.o)
+    0x0000037c   0x0000037c   0x0000001c   Code   RO           53    .text.DL_SYSCTL_setSYSOSCFreq  ti_msp_dl_config.o
+    0x00000398   0x00000398   0x00000018   Code   RO           59    .text.DL_SYSCTL_setULPCLKDivider  ti_msp_dl_config.o
+    0x000003b0   0x000003b0   0x00000028   Code   RO           92    .text.DL_SYSCTL_switchMCLKfromSYSOSCtoHSCLK  driverlib.a(dl_sysctl_mspm0g1x0x_g3x0x.o)
+    0x000003d8   0x000003d8   0x00000040   Code   RO           31    .text.SYSCFG_DL_GPIO_init  ti_msp_dl_config.o
+    0x00000418   0x00000418   0x0000004c   Code   RO           33    .text.SYSCFG_DL_SYSCTL_init  ti_msp_dl_config.o
+    0x00000464   0x00000464   0x00000010   Code   RO           35    .text.SYSCFG_DL_SYSTICK_init  ti_msp_dl_config.o
+    0x00000474   0x00000474   0x00000014   Code   RO           27    .text.SYSCFG_DL_init  ti_msp_dl_config.o
+    0x00000488   0x00000488   0x00000030   Code   RO           29    .text.SYSCFG_DL_initPower  ti_msp_dl_config.o
+    0x000004b8   0x000004b8   0x00000050   Code   RO           61    .text.SysTick_Config  ti_msp_dl_config.o
+    0x00000508   0x00000508   0x00000084   Code   RO           65    .text.__NVIC_SetPriority  ti_msp_dl_config.o
+    0x0000058c   0x0000058c   0x00000040   Code   RO            2    .text.main          gpio_toggle_output.o
+    0x000005cc   0x000005cc   0x00000004   PAD
+    0x000005d0   0x000005d0   0x0000000e   Code   RO          136    i.__scatterload_copy  mc_p.l(handlers.o)
+    0x000005de   0x000005de   0x00000002   PAD
+    0x000005e0   0x000005e0   0x00000002   Code   RO          137    i.__scatterload_null  mc_p.l(handlers.o)
+    0x000005e2   0x000005e2   0x00000006   PAD
+    0x000005e8   0x000005e8   0x0000000e   Code   RO          138    i.__scatterload_zeroinit  mc_p.l(handlers.o)
+    0x000005f6   0x000005f6   0x00000002   PAD
+    0x000005f8   0x000005f8   0x00000028   Data   RO           67    .rodata.gSYSPLLConfig  ti_msp_dl_config.o
+    0x00000620   0x00000620   0x00000010   Data   RO          135    Region$$Table       anon$$obj.o
+
+
+    Execution Region RW_IRAM2 (Exec base: 0x20200000, Load base: 0x00000630, Size: 0x00002000, Max: 0x00008000, ABSOLUTE)
+
+    Exec Addr    Load Addr    Size         Type   Attr      Idx    E Section Name        Object
+
+    0x20200000        -       0x00002000   Zero   RW           17    STACK               startup_mspm0g350x_uvision.o
+
+
+
+  Load Region LR_BCR (Base: 0x41c00000, Size: 0x00000000, Max: 0x00000100, ABSOLUTE)
+
+    Execution Region BCR_CONFIG (Exec base: 0x41c00000, Load base: 0x41c00000, Size: 0x00000000, Max: 0x000000ff, ABSOLUTE)
+
+    **** No section assigned to this execution region ****
+
+
+
+  Load Region LR_BSL (Base: 0x41c00100, Size: 0x00000000, Max: 0x00000100, ABSOLUTE)
+
+    Execution Region BSL_CONFIG (Exec base: 0x41c00100, Load base: 0x41c00100, Size: 0x00000000, Max: 0x00000080, ABSOLUTE)
+
+    **** No section assigned to this execution region ****
+
+
+==============================================================================
+
+Image component sizes
+
+
+      Code (inc. data)   RO Data    RW Data    ZI Data      Debug   Object Name
+
+       132         16          0          0          0       3806   gpio_toggle_output.o
+        20          4        192          0       8192        672   startup_mspm0g350x_uvision.o
+       748         64         40          0          0      12672   ti_msp_dl_config.o
+
+    ----------------------------------------------------------------------
+       906         88        248          0       8192      17150   Object Totals
+         0          0         16          0          0          0   (incl. Generated)
+         6          4          0          0          0          0   (incl. Padding)
+
+    ----------------------------------------------------------------------
+
+      Code (inc. data)   RO Data    RW Data    ZI Data      Debug   Library Member Name
+
+        10          0          0          0          0        802   dl_common.o
+       312         24          0          0          0      12876   dl_sysctl_mspm0g1x0x_g3x0x.o
+         0          0          0          0          0          0   entry.o
+         0          0          0          0          0          0   entry10a.o
+         0          0          0          0          0          0   entry11a.o
+         8          4          0          0          0          0   entry2.o
+         4          0          0          0          0          0   entry5.o
+         0          0          0          0          0          0   entry7b.o
+         0          0          0          0          0          0   entry8b.o
+         8          4          0          0          0          0   entry9a.o
+        30          0          0          0          0          0   handlers.o
+        48         10          0          0          0         68   init.o
+
+    ----------------------------------------------------------------------
+       430         42          0          0          0      13746   Library Totals
+        10          0          0          0          0          0   (incl. Padding)
+
+    ----------------------------------------------------------------------
+
+      Code (inc. data)   RO Data    RW Data    ZI Data      Debug   Library Name
+
+       322         24          0          0          0      13678   driverlib.a
+        98         18          0          0          0         68   mc_p.l
+
+    ----------------------------------------------------------------------
+       430         42          0          0          0      13746   Library Totals
+
+    ----------------------------------------------------------------------
+
+==============================================================================
+
+
+      Code (inc. data)   RO Data    RW Data    ZI Data      Debug   
+
+      1336        130        248          0       8192      30988   Grand Totals
+      1336        130        248          0       8192      30988   ELF Image Totals
+      1336        130        248          0          0          0   ROM Totals
+
+==============================================================================
+
+    Total RO  Size (Code + RO Data)                 1584 (   1.55kB)
+    Total RW  Size (RW Data + ZI Data)              8192 (   8.00kB)
+    Total ROM Size (Code + RO Data + RW Data)       1584 (   1.55kB)
+
+==============================================================================
+

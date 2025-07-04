@@ -1,0 +1,29 @@
+{
+    "files.associations": {
+        "systick_delay.h": "c",
+        "board_led.h": "c",
+        "ti_msp_dl_config.h": "c",
+        "stdio.h": "c",
+        "uart0.h": "c",
+        "cstddef": "c",
+        "limits": "c",
+        "uart0_debug.h": "c",
+        "driverlib.h": "c",
+        "dl_systick.h": "c",
+        "dl_common.h": "c",
+        "string.h": "c",
+        "ebtn.h": "c",
+        "dl_core.h": "c",
+        "pwm_motor.h": "c",
+        "gb37_520_333rpm.h": "c",
+        "math.h": "c",
+        "stdint.h": "c",
+        "tim_delay.h": "c",
+        "dl_timera.h": "c",
+        "systick.h": "c",
+        "encoder.h": "c",
+        "pid.h": "c",
+        "stdlib.h": "c",
+        "board_expansion_lcd.h": "c"
+    }
+}

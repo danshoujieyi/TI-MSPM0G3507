@@ -1,0 +1,119 @@
+<html>
+<body>
+<pre>
+<h1>µVision Build Log</h1>
+<h2>Tool Versions:</h2>
+IDE-Version: ¦ÌVision V5.39.0.0
+Copyright (C) 2023 ARM Ltd and ARM Germany GmbH. All rights reserved.
+License Information: eee Áõ¼Î¿¡, ee, LIC=LSNXV-PHFQW-VE7HA-18USJ-D1AV4-XBPSK
+ 
+Tool Versions:
+Toolchain:       MDK-ARM Plus  Version: 5.39.0.0
+Toolchain Path:  I:\Keil5\keil5_mdk\ARM\ARMCLANG\Bin
+C Compiler:      ArmClang.exe V6.21
+Assembler:       Armasm.exe V6.21
+Linker/Locator:  ArmLink.exe V6.21
+Library Manager: ArmAr.exe V6.21
+Hex Converter:   FromElf.exe V6.21
+CPU DLL:         SARMCM3.DLL V5.39.0.0
+Dialog DLL:      DARMCM1.DLL V1.19.6.0
+Target DLL:      Segger\JL2CM3.dll V2.99.43.0
+Dialog DLL:      TARMCM1.DLL V1.14.6.0
+ 
+<h2>Project:</h2>
+D:\GitHub_Project\TI_MSPM0G3507_Template\mspm0_sdk_2_05_00_05\MSPM0G3507_RTThread\keil\empty_LP_MSPM0G3507_nortos_keil.uvprojx
+Project File Date:  07/04/2025
+
+<h2>Output:</h2>
+*** Using Compiler 'V6.21', folder: 'I:\Keil5\keil5_mdk\ARM\ARMCLANG\Bin'
+Rebuild target 'empty_LP_MSPM0G3507_nortos_keil'
+Before Build - User command #1: cmd.exe /C "D:\GitHub_Project\TI_MSPM0G3507_Template\mspm0_sdk_2_05_00_05\MSPM0G3507_RTThread\keil\../../tools/keil/syscfg.bat 'D:\GitHub_Project\TI_MSPM0G3507_Template\mspm0_sdk_2_05_00_05\MSPM0G3507_RTThread\keil\' empty.syscfg"
+Using Sysconfig Tool from "D:\TI_SYSCONFIG\sysconfig_cli.bat"
+"Update the file located at <sdk path>/tools/keil/syscfg.bat to use a different version"
+Running script...
+Validating...
+info: TIM_delay_us(/ti/driverlib/TIMER): Peripheral does not retain register contents in STOP or STANDBY modes. User should take care to save and restore register configuration in application. See Retention Configuration section for more details.
+info: TIM_delay_ms(/ti/driverlib/TIMER): Peripheral does not retain register contents in STOP or STANDBY modes. User should take care to save and restore register configuration in application. See Retention Configuration section for more details.
+Generating Code (empty.syscfg)...
+Unchanged D:\GitHub_Project\TI_MSPM0G3507_Template\mspm0_sdk_2_05_00_05\MSPM0G3507_RTThread\ti_msp_dl_config.c...
+Unchanged D:\GitHub_Project\TI_MSPM0G3507_Template\mspm0_sdk_2_05_00_05\MSPM0G3507_RTThread\ti_msp_dl_config.h...
+Unchanged D:\GitHub_Project\TI_MSPM0G3507_Template\mspm0_sdk_2_05_00_05\MSPM0G3507_RTThread\Event.dot...
+compiling irq.c...
+compiling idle.c...
+compiling components.c...
+compiling cpuport.c...
+compiling clock.c...
+compiling ipc.c...
+compiling shell.c...
+compiling msh.c...
+assembling startup_mspm0g350x_uvision.s...
+assembling context_rvds.S...
+compiling cmd.c...
+compiling UART0_Debug.c...
+compiling ti_msp_dl_config.c...
+compiling empty.c...
+compiling board_led.c...
+compiling mempool.c...
+compiling mem.c...
+compiling kservice.c...
+compiling object.c...
+compiling scheduler.c...
+compiling thread.c...
+compiling timer.c...
+compiling board.c...
+compiling finsh_port.c...
+linking...
+Program Size: Code=15552 RO-data=1588 RW-data=68 ZI-data=14700  
+FromELF: creating hex file...
+".\Objects\empty_LP_MSPM0G3507_nortos_keil.axf" - 0 Error(s), 0 Warning(s).
+
+<h2>Software Packages used:</h2>
+
+Package Vendor: RealThread
+                https://www.rt-thread.org/download/mdk/RealThread.RT-Thread.3.1.5.pack
+                RealThread::RT-Thread@3.1.5
+                RT-Thread Software Components
+   * Component: kernel Version: 3.1.5
+   * Component: shell Version: 3.1.5
+
+Package Vendor: TexasInstruments
+                https://software-dl.ti.com/msp430/esd/MSPM0-CMSIS/MSPM0G1X0X_G3X0X/latest/exports/TexasInstruments.MSPM0G1X0X_G3X0X_DFP.1.3.1.pack
+                TexasInstruments::MSPM0G1X0X_G3X0X_DFP@1.3.1
+                Device Family Pack for Texas Instruments MSPM0G1X0X_G3X0X Series
+
+<h2>Collection of Component include folders:</h2>
+  ./RTE/RTOS
+  ./RTE/_empty_LP_MSPM0G3507_nortos_keil
+  I:/Keil5/keil5_packs/RealThread/RT-Thread/3.1.5/components/finsh
+  I:/Keil5/keil5_packs/RealThread/RT-Thread/3.1.5/include
+
+<h2>Collection of Component Files used:</h2>
+
+   * Component: RealThread::RTOS&RT-Thread:kernel@3.1.5
+      Source file:   src/thread.c
+      Source file:   src/clock.c
+      Source file:   bsp/_template/board.c
+      Source file:   src/components.c
+      Include file:  bsp/_template/rtconfig.h
+      Source file:   src/ipc.c
+      Source file:   src/irq.c
+      Source file:   src/kservice.c
+      Source file:   src/idle.c
+      Source file:   src/mempool.c
+      Source file:   src/object.c
+      Source file:   src/scheduler.c
+      Source file:   src/mem.c
+      Source file:   src/timer.c
+      Source file:   libcpu/arm/cortex-m0/context_rvds.S
+      Source file:   libcpu/arm/cortex-m0/cpuport.c
+
+   * Component: RealThread::RTOS&RT-Thread:shell@3.1.5
+      Source file:   components/finsh/finsh_port.c
+      Source file:   components/finsh/shell.c
+      Source file:   components/finsh/msh.c
+      Source file:   components/finsh/cmd.c
+      Include file:  components/finsh/finsh_config.h
+Build Time Elapsed:  00:00:03
+</pre>
+</body>
+</html>

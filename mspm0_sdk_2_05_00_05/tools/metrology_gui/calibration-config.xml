@@ -1,0 +1,298 @@
+<?xml version="1.0"?>
+<!DOCTYPE emeter-schedule SYSTEM "calibration-config.dtd">
+<!-- Example multi-meter calibrator configuration -->
+<calibration-config>
+  <password pw="FEDCBA9876543210"/>
+  <cal-defaults>
+    <phase id="1">
+      <voltage normal="18034" limp="21280"/>
+      <current normal="3920" limp="4360"/>
+      <power normal="16400"/>
+      <phase normal="0"/>
+      <correction>
+        <step current="0.000" phase="0.0" gain="1.0"/>
+        <step current="0.100" phase="0.0" gain="1.0"/>
+        <step current="0.200" phase="0.0" gain="1.0"/>
+        <step current="0.300" phase="0.0" gain="1.0"/>
+        <step current="0.400" phase="0.0" gain="1.0"/>
+        <step current="0.500" phase="0.0" gain="1.0"/>
+        <step current="0.600" phase="0.0" gain="1.0"/>
+        <step current="0.700" phase="0.0" gain="1.0"/>
+        <step current="0.800" phase="0.0" gain="1.0"/>
+        <step current="0.900" phase="0.0" gain="1.0"/>
+        <step current="1.000" phase="0.0" gain="1.0"/>
+        <step current="1.100" phase="0.0" gain="1.0"/>
+        <step current="1.200" phase="0.0" gain="1.0"/>
+        <step current="1.300" phase="0.0" gain="1.0"/>
+        <step current="1.400" phase="0.0" gain="1.0"/>
+        <step current="1.500" phase="0.0" gain="1.0"/>
+        <step current="1.600" phase="0.0" gain="1.0"/>
+        <step current="1.700" phase="0.0" gain="1.0"/>
+        <step current="1.800" phase="0.0" gain="1.0"/>
+        <step current="1.900" phase="0.0" gain="1.0"/>
+        <step current="2.000" phase="0.0" gain="1.0"/>
+        <step current="2.100" phase="0.0" gain="1.0"/>
+        <step current="2.200" phase="0.0" gain="1.0"/>
+        <step current="2.300" phase="0.0" gain="1.0"/>
+        <step current="2.400" phase="0.0" gain="1.0"/>
+        <step current="2.500" phase="0.0" gain="1.0"/>
+        <step current="2.600" phase="0.0" gain="1.0"/>
+        <step current="2.700" phase="0.0" gain="1.0"/>
+        <step current="2.800" phase="0.0" gain="1.0"/>
+        <step current="2.900" phase="0.0" gain="1.0"/>
+        <step current="3.000" phase="0.0" gain="1.0"/>
+        <step current="3.100" phase="0.0" gain="1.0"/>
+        <step current="3.200" phase="0.0" gain="1.0"/>
+        <step current="3.300" phase="0.0" gain="1.0"/>
+        <step current="3.400" phase="0.0" gain="1.0"/>
+        <step current="3.500" phase="0.0" gain="1.0"/>
+        <step current="3.600" phase="0.0" gain="1.0"/>
+        <step current="3.700" phase="0.0" gain="1.0"/>
+        <step current="3.800" phase="0.0" gain="1.0"/>
+        <step current="3.900" phase="0.0" gain="1.0"/>
+        <step current="4.000" phase="0.0" gain="1.0"/>
+        <step current="4.100" phase="0.0" gain="1.0"/>
+        <step current="4.200" phase="0.0" gain="1.0"/>
+        <step current="4.300" phase="0.0" gain="1.0"/>
+        <step current="4.400" phase="0.0" gain="1.0"/>
+        <step current="4.500" phase="0.0" gain="1.0"/>
+        <step current="4.600" phase="0.0" gain="1.0"/>
+        <step current="4.700" phase="0.0" gain="1.0"/>
+        <step current="4.800" phase="0.0" gain="1.0"/>
+        <step current="4.900" phase="0.0" gain="1.0"/>
+        <step current="5.000" phase="0.0" gain="1.0"/>
+        <step current="6.000" phase="0.0" gain="1.0"/>
+        <step current="7.000" phase="0.0" gain="1.0"/>
+        <step current="8.000" phase="0.0" gain="1.0"/>
+        <step current="9.000" phase="0.0" gain="1.0"/>
+        <step current="10.000" phase="0.0" gain="1.0"/>
+        <step current="11.000" phase="0.0" gain="1.0"/>
+        <step current="12.000" phase="0.0" gain="1.0"/>
+        <step current="13.000" phase="0.0" gain="1.0"/>
+        <step current="14.000" phase="0.0" gain="1.0"/>
+        <step current="15.000" phase="0.0" gain="1.0"/>
+        <step current="16.000" phase="0.0" gain="1.0"/>
+        <step current="17.000" phase="0.0" gain="1.0"/>
+        <step current="18.000" phase="0.0" gain="1.0"/>
+        <step current="19.000" phase="0.0" gain="1.0"/>
+        <step current="20.000" phase="0.0" gain="1.0"/>
+        <step current="21.000" phase="0.0" gain="1.0"/>
+        <step current="22.000" phase="0.0" gain="1.0"/>
+        <step current="23.000" phase="0.0" gain="1.0"/>
+        <step current="24.000" phase="0.0" gain="1.0"/>
+        <step current="25.000" phase="0.0" gain="1.0"/>
+        <step current="30.000" phase="0.0" gain="1.0"/>
+        <step current="35.000" phase="0.0" gain="1.0"/>
+        <step current="40.000" phase="0.0" gain="1.0"/>
+        <step current="45.000" phase="0.0" gain="1.0"/>
+        <step current="50.000" phase="0.0" gain="1.0"/>
+        <step current="55.000" phase="0.0" gain="1.0"/>
+      </correction>
+    </phase>
+    <phase id="2">
+      <voltage normal="18034" limp="21280"/>
+      <current normal="3920" limp="4360"/>
+      <power normal="16400"/>
+      <phase normal="0"/>
+      <correction>
+        <step current="0.000" phase="0.0" gain="1.0"/>
+        <step current="0.100" phase="0.0" gain="1.0"/>
+        <step current="0.200" phase="0.0" gain="1.0"/>
+        <step current="0.300" phase="0.0" gain="1.0"/>
+        <step current="0.400" phase="0.0" gain="1.0"/>
+        <step current="0.500" phase="0.0" gain="1.0"/>
+        <step current="0.600" phase="0.0" gain="1.0"/>
+        <step current="0.700" phase="0.0" gain="1.0"/>
+        <step current="0.800" phase="0.0" gain="1.0"/>
+        <step current="0.900" phase="0.0" gain="1.0"/>
+        <step current="1.000" phase="0.0" gain="1.0"/>
+        <step current="1.100" phase="0.0" gain="1.0"/>
+        <step current="1.200" phase="0.0" gain="1.0"/>
+        <step current="1.300" phase="0.0" gain="1.0"/>
+        <step current="1.400" phase="0.0" gain="1.0"/>
+        <step current="1.500" phase="0.0" gain="1.0"/>
+        <step current="1.600" phase="0.0" gain="1.0"/>
+        <step current="1.700" phase="0.0" gain="1.0"/>
+        <step current="1.800" phase="0.0" gain="1.0"/>
+        <step current="1.900" phase="0.0" gain="1.0"/>
+        <step current="2.000" phase="0.0" gain="1.0"/>
+        <step current="2.100" phase="0.0" gain="1.0"/>
+        <step current="2.200" phase="0.0" gain="1.0"/>
+        <step current="2.300" phase="0.0" gain="1.0"/>
+        <step current="2.400" phase="0.0" gain="1.0"/>
+        <step current="2.500" phase="0.0" gain="1.0"/>
+        <step current="2.600" phase="0.0" gain="1.0"/>
+        <step current="2.700" phase="0.0" gain="1.0"/>
+        <step current="2.800" phase="0.0" gain="1.0"/>
+        <step current="2.900" phase="0.0" gain="1.0"/>
+        <step current="3.000" phase="0.0" gain="1.0"/>
+        <step current="3.100" phase="0.0" gain="1.0"/>
+        <step current="3.200" phase="0.0" gain="1.0"/>
+        <step current="3.300" phase="0.0" gain="1.0"/>
+        <step current="3.400" phase="0.0" gain="1.0"/>
+        <step current="3.500" phase="0.0" gain="1.0"/>
+        <step current="3.600" phase="0.0" gain="1.0"/>
+        <step current="3.700" phase="0.0" gain="1.0"/>
+        <step current="3.800" phase="0.0" gain="1.0"/>
+        <step current="3.900" phase="0.0" gain="1.0"/>
+        <step current="4.000" phase="0.0" gain="1.0"/>
+        <step current="4.100" phase="0.0" gain="1.0"/>
+        <step current="4.200" phase="0.0" gain="1.0"/>
+        <step current="4.300" phase="0.0" gain="1.0"/>
+        <step current="4.400" phase="0.0" gain="1.0"/>
+        <step current="4.500" phase="0.0" gain="1.0"/>
+        <step current="4.600" phase="0.0" gain="1.0"/>
+        <step current="4.700" phase="0.0" gain="1.0"/>
+        <step current="4.800" phase="0.0" gain="1.0"/>
+        <step current="4.900" phase="0.0" gain="1.0"/>
+        <step current="5.000" phase="0.0" gain="1.0"/>
+        <step current="6.000" phase="0.0" gain="1.0"/>
+        <step current="7.000" phase="0.0" gain="1.0"/>
+        <step current="8.000" phase="0.0" gain="1.0"/>
+        <step current="9.000" phase="0.0" gain="1.0"/>
+        <step current="10.000" phase="0.0" gain="1.0"/>
+        <step current="11.000" phase="0.0" gain="1.0"/>
+        <step current="12.000" phase="0.0" gain="1.0"/>
+        <step current="13.000" phase="0.0" gain="1.0"/>
+        <step current="14.000" phase="0.0" gain="1.0"/>
+        <step current="15.000" phase="0.0" gain="1.0"/>
+        <step current="16.000" phase="0.0" gain="1.0"/>
+        <step current="17.000" phase="0.0" gain="1.0"/>
+        <step current="18.000" phase="0.0" gain="1.0"/>
+        <step current="19.000" phase="0.0" gain="1.0"/>
+        <step current="20.000" phase="0.0" gain="1.0"/>
+        <step current="21.000" phase="0.0" gain="1.0"/>
+        <step current="22.000" phase="0.0" gain="1.0"/>
+        <step current="23.000" phase="0.0" gain="1.0"/>
+        <step current="24.000" phase="0.0" gain="1.0"/>
+        <step current="25.000" phase="0.0" gain="1.0"/>
+        <step current="30.000" phase="0.0" gain="1.0"/>
+        <step current="35.000" phase="0.0" gain="1.0"/>
+        <step current="40.000" phase="0.0" gain="1.0"/>
+        <step current="45.000" phase="0.0" gain="1.0"/>
+        <step current="50.000" phase="0.0" gain="1.0"/>
+        <step current="55.000" phase="0.0" gain="1.0"/>
+      </correction>
+    </phase>
+    <phase id="3">
+      <voltage normal="18034" limp="21280"/>
+      <current normal="3920" limp="4360"/>
+      <power normal="16400"/>
+      <phase normal="0"/>
+      <correction>
+        <step current="0.000" phase="0.0" gain="1.0"/>
+        <step current="0.100" phase="0.0" gain="1.0"/>
+        <step current="0.200" phase="0.0" gain="1.0"/>
+        <step current="0.300" phase="0.0" gain="1.0"/>
+        <step current="0.400" phase="0.0" gain="1.0"/>
+        <step current="0.500" phase="0.0" gain="1.0"/>
+        <step current="0.600" phase="0.0" gain="1.0"/>
+        <step current="0.700" phase="0.0" gain="1.0"/>
+        <step current="0.800" phase="0.0" gain="1.0"/>
+        <step current="0.900" phase="0.0" gain="1.0"/>
+        <step current="1.000" phase="0.0" gain="1.0"/>
+        <step current="1.100" phase="0.0" gain="1.0"/>
+        <step current="1.200" phase="0.0" gain="1.0"/>
+        <step current="1.300" phase="0.0" gain="1.0"/>
+        <step current="1.400" phase="0.0" gain="1.0"/>
+        <step current="1.500" phase="0.0" gain="1.0"/>
+        <step current="1.600" phase="0.0" gain="1.0"/>
+        <step current="1.700" phase="0.0" gain="1.0"/>
+        <step current="1.800" phase="0.0" gain="1.0"/>
+        <step current="1.900" phase="0.0" gain="1.0"/>
+        <step current="2.000" phase="0.0" gain="1.0"/>
+        <step current="2.100" phase="0.0" gain="1.0"/>
+        <step current="2.200" phase="0.0" gain="1.0"/>
+        <step current="2.300" phase="0.0" gain="1.0"/>
+        <step current="2.400" phase="0.0" gain="1.0"/>
+        <step current="2.500" phase="0.0" gain="1.0"/>
+        <step current="2.600" phase="0.0" gain="1.0"/>
+        <step current="2.700" phase="0.0" gain="1.0"/>
+        <step current="2.800" phase="0.0" gain="1.0"/>
+        <step current="2.900" phase="0.0" gain="1.0"/>
+        <step current="3.000" phase="0.0" gain="1.0"/>
+        <step current="3.100" phase="0.0" gain="1.0"/>
+        <step current="3.200" phase="0.0" gain="1.0"/>
+        <step current="3.300" phase="0.0" gain="1.0"/>
+        <step current="3.400" phase="0.0" gain="1.0"/>
+        <step current="3.500" phase="0.0" gain="1.0"/>
+        <step current="3.600" phase="0.0" gain="1.0"/>
+        <step current="3.700" phase="0.0" gain="1.0"/>
+        <step current="3.800" phase="0.0" gain="1.0"/>
+        <step current="3.900" phase="0.0" gain="1.0"/>
+        <step current="4.000" phase="0.0" gain="1.0"/>
+        <step current="4.100" phase="0.0" gain="1.0"/>
+        <step current="4.200" phase="0.0" gain="1.0"/>
+        <step current="4.300" phase="0.0" gain="1.0"/>
+        <step current="4.400" phase="0.0" gain="1.0"/>
+        <step current="4.500" phase="0.0" gain="1.0"/>
+        <step current="4.600" phase="0.0" gain="1.0"/>
+        <step current="4.700" phase="0.0" gain="1.0"/>
+        <step current="4.800" phase="0.0" gain="1.0"/>
+        <step current="4.900" phase="0.0" gain="1.0"/>
+        <step current="5.000" phase="0.0" gain="1.0"/>
+        <step current="6.000" phase="0.0" gain="1.0"/>
+        <step current="7.000" phase="0.0" gain="1.0"/>
+        <step current="8.000" phase="0.0" gain="1.0"/>
+        <step current="9.000" phase="0.0" gain="1.0"/>
+        <step current="10.000" phase="0.0" gain="1.0"/>
+        <step current="11.000" phase="0.0" gain="1.0"/>
+        <step current="12.000" phase="0.0" gain="1.0"/>
+        <step current="13.000" phase="0.0" gain="1.0"/>
+        <step current="14.000" phase="0.0" gain="1.0"/>
+        <step current="15.000" phase="0.0" gain="1.0"/>
+        <step current="16.000" phase="0.0" gain="1.0"/>
+        <step current="17.000" phase="0.0" gain="1.0"/>
+        <step current="18.000" phase="0.0" gain="1.0"/>
+        <step current="19.000" phase="0.0" gain="1.0"/>
+        <step current="20.000" phase="0.0" gain="1.0"/>
+        <step current="21.000" phase="0.0" gain="1.0"/>
+        <step current="22.000" phase="0.0" gain="1.0"/>
+        <step current="23.000" phase="0.0" gain="1.0"/>
+        <step current="24.000" phase="0.0" gain="1.0"/>
+        <step current="25.000" phase="0.0" gain="1.0"/>
+        <step current="30.000" phase="0.0" gain="1.0"/>
+        <step current="35.000" phase="0.0" gain="1.0"/>
+        <step current="40.000" phase="0.0" gain="1.0"/>
+        <step current="45.000" phase="0.0" gain="1.0"/>
+        <step current="50.000" phase="0.0" gain="1.0"/>
+        <step current="55.000" phase="0.0" gain="1.0"/>
+      </correction>
+    </phase>
+    <temperature/>
+    <rtc/>
+  </cal-defaults>
+  <meter position="1">
+    <port name="com19" speed="9600"/>
+  </meter>
+  <reference-meter>
+    <port name="USB0::0x0A69::0x0835::A66200101281::INSTR"/>
+    <type id="chroma-66202"/>
+    <log requests="on" responses="on"/>
+    <scaling voltage="1.0" current="1.0"/>
+  </reference-meter>
+  <!--
+  <reference-meter>
+    <port name="com6"/>
+    <type id="pts3_3" speed="19200"/>
+    <log requests="on" responses="on"/>
+    <scaling voltage="1.0" current="1.0"/>
+  </reference-meter>
+  -->
+  <generator>
+    <port name="cnca1" speed="115200"/>
+    <type id="pts3_3c"/>
+    <log requests="on" responses="on"/>
+  </generator>
+  <idle voltage="230" current="5.0" phase="0" frequency="50.0"/>
+  <test-pattern>
+    <step type="idle" voltage="230" current="5.0" phase="0" frequency="50.0" duration="10"/>
+    <step type="sanity" voltage="230" current="5.0" phase="0" frequency="50.0"/>
+    <step type="check-active-leads" voltage="230" current="5.0" phase="0" frequency="50.0"/>
+    <step type="quick" voltage="230" current="5.0" phase="0" frequency="50.0"/>
+    <step type="quick" voltage="230" current="5.0" phase="60" frequency="50.0"/>
+    <step type="update-scalings" voltage="230" current="5.0" phase="0" frequency="50.0"/>
+    <step type="update-phase-correction" voltage="230" current="5.0" phase="0" frequency="50.0"/>
+  </test-pattern>
+</calibration-config>
+

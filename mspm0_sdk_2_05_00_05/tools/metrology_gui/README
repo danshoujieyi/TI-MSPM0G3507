@@ -1,0 +1,9 @@
+Energy Metrology GUI
+
+The Energy Metrology Software includes a PC GUI to monitor metrology parameters from the TIDA-010243 design. To run the GUI, follow these steps:
+- Open the file calibration-config.xml in the Energy Metrology GUI directory in a text editor program. 
+- Change the port name field within the meter tag to the corresponding COM port connected to the system.
+- Run the calibrator.exe file, located in the Energy Metrology GUI directory.
+- If the GUI connects to the design properly, the top-left button turns green. If there are problems with connections or if the code is not configured correctly, the button turns red. 
+- Click on the green button to view the results.
+- To view the meter consumption, click on the "Meter COnsumption Button" at the lower left.

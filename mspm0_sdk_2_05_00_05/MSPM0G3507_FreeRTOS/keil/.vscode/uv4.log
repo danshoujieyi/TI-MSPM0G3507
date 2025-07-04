@@ -1,0 +1,208 @@
+*** Using Compiler 'V6.21', folder: 'I:\Keil5\keil5_mdk\ARM\ARMCLANG\Bin'
+Build target 'empty_LP_MSPM0G3507_nortos_keil'
+Before Build - User command #1: cmd.exe /C "d:\TI_M0G3507\mspm0_sdk_2_05_00_05\MSPM0G3507_empty\keil\../../tools/keil/syscfg.bat 'd:\TI_M0G3507\mspm0_sdk_2_05_00_05\MSPM0G3507_empty\keil\' empty.syscfg"
+Using Sysconfig Tool from "D:\TI_SYSCONFIG\sysconfig_cli.bat"
+"Update the file located at <sdk path>/tools/keil/syscfg.bat to use a different version"
+Running script...
+Validating...
+info: PWM_MOTOR(/ti/driverlib/PWM): Peripheral does not retain register contents in STOP or STANDBY modes. User should take care to save and restore register configuration in application. See Retention Configuration section for more details.
+info: SPI_LCD(/ti/driverlib/SPI): Peripheral does not retain register contents in STOP or STANDBY modes. User should take care to save and restore register configuration in application. See Retention Configuration section for more details.
+info: UART_1(/ti/driverlib/UART): Peripheral does not retain register contents in STOP or STANDBY modes. User should take care to save and restore register configuration in application. See Retention Configuration section for more details.
+Generating Code (empty.syscfg)...
+Unchanged d:\TI_M0G3507\mspm0_sdk_2_05_00_05\MSPM0G3507_empty\ti_msp_dl_config.c...
+Unchanged d:\TI_M0G3507\mspm0_sdk_2_05_00_05\MSPM0G3507_empty\ti_msp_dl_config.h...
+Unchanged d:\TI_M0G3507\mspm0_sdk_2_05_00_05\MSPM0G3507_empty\Event.dot...
+compiling GB37_520_333rpm.c...
+compiling encoder.c...
+compiling pwm_motor.c...
+compiling board_led.c...
+compiling UART0_Debug.c...
+compiling systick_delay.c...
+compiling empty.c...
+compiling ti_msp_dl_config.c...
+USER/Module/UI/lcd_ui.c(187): warning: passing 'char[8]' to parameter of type 'const unsigned char *' converts between pointers to integer types where one is of the unique plain 'char' type and the other is not [-Wpointer-sign]
+  187 |     LCD_ShowString(20,170-34,"Speed: ",WHITE,BLUE,24,1);
+      |                              ^~~~~~~~~
+./USER/Module/Board_Expansion_Device\board_expansion_lcd.h(49): note: passing argument to parameter 'p' here
+   49 | void LCD_ShowString(unsigned int x,unsigned int y,const unsigned char *p,unsigned int fc,unsigned int bc,unsigned char sizey,unsigned char mode);//显示字符串
+      |                                                                        ^
+USER/Module/UI/lcd_ui.c(188): warning: passing 'char[9]' to parameter of type 'const unsigned char *' converts between pointers to integer types where one is of the unique plain 'char' type and the other is not [-Wpointer-sign]
+  188 |     LCD_ShowString(320-150,170-34,"Target: ",WHITE,BLUE,24,1);
+      |                                   ^~~~~~~~~~
+./USER/Module/Board_Expansion_Device\board_expansion_lcd.h(49): note: passing argument to parameter 'p' here
+   49 | void LCD_ShowString(unsigned int x,unsigned int y,const unsigned char *p,unsigned int fc,unsigned int bc,unsigned char sizey,unsigned char mode);//显示字符串
+      |                                                                        ^
+USER/Module/UI/lcd_ui.c(228): warning: passing 'unsigned char[50]' to parameter of type 'char *' converts between pointers to integer types where one is of the unique plain 'char' type and the other is not [-Wpointer-sign]
+  228 |         sprintf(show_buff, " %.2f ",p);
+      |                 ^~~~~~~~~
+I:\Keil5\keil5_mdk\ARM\ARMCLANG\Bin\..\include\stdio.h(417): note: passing argument to parameter here
+  417 | extern _ARMABI int sprintf(char * __restrict /*s*/, const char * __restrict /*format*/, ...) __attribute__((__nonnull__(1,2)));
+      |                                                   ^
+USER/Module/UI/lcd_ui.c(229): warning: passing 'unsigned char[50]' to parameter of type 'const char *' converts between pointers to integer types where one is of the unique plain 'char' type and the other is not [-Wpointer-sign]
+  229 |         txt_size = strlen(show_buff) * char_width_pixel;
+      |                           ^~~~~~~~~
+I:\Keil5\keil5_mdk\ARM\ARMCLANG\Bin\..\include\string.h(335): note: passing argument to parameter here
+  335 | extern _ARMABI size_t strlen(const char * /*s*/) __attribute__((__nonnull__(1)));
+      |                                                ^
+USER/Module/UI/lcd_ui.c(237): warning: passing 'unsigned char[50]' to parameter of type 'char *' converts between pointers to integer types where one is of the unique plain 'char' type and the other is not [-Wpointer-sign]
+  237 |         sprintf(show_buff, " %.2f ",i);
+      |                 ^~~~~~~~~
+I:\Keil5\keil5_mdk\ARM\ARMCLANG\Bin\..\include\stdio.h(417): note: passing argument to parameter here
+  417 | extern _ARMABI int sprintf(char * __restrict /*s*/, const char * __restrict /*format*/, ...) __attribute__((__nonnull__(1,2)));
+      |                                                   ^
+USER/Module/UI/lcd_ui.c(238): warning: passing 'unsigned char[50]' to parameter of type 'const char *' converts between pointers to integer types where one is of the unique plain 'char' type and the other is not [-Wpointer-sign]
+  238 |         txt_size = strlen(show_buff) * char_width_pixel;
+      |                           ^~~~~~~~~
+I:\Keil5\keil5_mdk\ARM\ARMCLANG\Bin\..\include\string.h(335): note: passing argument to parameter here
+  335 | extern _ARMABI size_t strlen(const char * /*s*/) __attribute__((__nonnull__(1)));
+      |                                                ^
+USER/Module/UI/lcd_ui.c(246): warning: passing 'unsigned char[50]' to parameter of type 'char *' converts between pointers to integer types where one is of the unique plain 'char' type and the other is not [-Wpointer-sign]
+  246 |         sprintf(show_buff, " %.2f ",d);
+      |                 ^~~~~~~~~
+I:\Keil5\keil5_mdk\ARM\ARMCLANG\Bin\..\include\stdio.h(417): note: passing argument to parameter here
+  417 | extern _ARMABI int sprintf(char * __restrict /*s*/, const char * __restrict /*format*/, ...) __attribute__((__nonnull__(1,2)));
+      |                                                   ^
+USER/Module/UI/lcd_ui.c(247): warning: passing 'unsigned char[50]' to parameter of type 'const char *' converts between pointers to integer types where one is of the unique plain 'char' type and the other is not [-Wpointer-sign]
+  247 |         txt_size = strlen(show_buff) * char_width_pixel;
+      |                           ^~~~~~~~~
+I:\Keil5\keil5_mdk\ARM\ARMCLANG\Bin\..\include\string.h(335): note: passing argument to parameter here
+  335 | extern _ARMABI size_t strlen(const char * /*s*/) __attribute__((__nonnull__(1)));
+      |                                                ^
+USER/Module/UI/lcd_ui.c(255): warning: passing 'unsigned char[50]' to parameter of type 'char *' converts between pointers to integer types where one is of the unique plain 'char' type and the other is not [-Wpointer-sign]
+  255 |         sprintf(show_buff, "%d ",speed);
+      |                 ^~~~~~~~~
+I:\Keil5\keil5_mdk\ARM\ARMCLANG\Bin\..\include\stdio.h(417): note: passing argument to parameter here
+  417 | extern _ARMABI int sprintf(char * __restrict /*s*/, const char * __restrict /*format*/, ...) __attribute__((__nonnull__(1,2)));
+      |                                                   ^
+USER/Module/UI/lcd_ui.c(261): warning: passing 'unsigned char[50]' to parameter of type 'char *' converts between pointers to integer types where one is of the unique plain 'char' type and the other is not [-Wpointer-sign]
+  261 |         sprintf(show_buff, "%d ",target);
+      |                 ^~~~~~~~~
+I:\Keil5\keil5_mdk\ARM\ARMCLANG\Bin\..\include\stdio.h(417): note: passing argument to parameter here
+  417 | extern _ARMABI int sprintf(char * __restrict /*s*/, const char * __restrict /*format*/, ...) __attribute__((__nonnull__(1,2)));
+      |                                                   ^
+USER/Module/UI/lcd_ui.c(373): warning: passing 'char[8]' to parameter of type 'const unsigned char *' converts between pointers to integer types where one is of the unique plain 'char' type and the other is not [-Wpointer-sign]
+  373 |     LCD_ShowString(20,170-34,"Angle: ",WHITE,BLUE,24,1);
+      |                              ^~~~~~~~~
+./USER/Module/Board_Expansion_Device\board_expansion_lcd.h(49): note: passing argument to parameter 'p' here
+   49 | void LCD_ShowString(unsigned int x,unsigned int y,const unsigned char *p,unsigned int fc,unsigned int bc,unsigned char sizey,unsigned char mode);//显示字符串
+      |                                                                        ^
+USER/Module/UI/lcd_ui.c(374): warning: passing 'char[9]' to parameter of type 'const unsigned char *' converts between pointers to integer types where one is of the unique plain 'char' type and the other is not [-Wpointer-sign]
+  374 |     LCD_ShowString(320-150,170-34,"Target: ",WHITE,BLUE,24,1);
+      |                                   ^~~~~~~~~~
+./USER/Module/Board_Expansion_Device\board_expansion_lcd.h(49): note: passing argument to parameter 'p' here
+   49 | void LCD_ShowString(unsigned int x,unsigned int y,const unsigned char *p,unsigned int fc,unsigned int bc,unsigned char sizey,unsigned char mode);//显示字符串
+      |                                                                        ^
+USER/Module/UI/lcd_ui.c(414): warning: passing 'unsigned char[50]' to parameter of type 'char *' converts between pointers to integer types where one is of the unique plain 'char' type and the other is not [-Wpointer-sign]
+  414 |         sprintf(show_buff, " %.2f ",p);
+      |                 ^~~~~~~~~
+I:\Keil5\keil5_mdk\ARM\ARMCLANG\Bin\..\include\stdio.h(417): note: passing argument to parameter here
+  417 | extern _ARMABI int sprintf(char * __restrict /*s*/, const char * __restrict /*format*/, ...) __attribute__((__nonnull__(1,2)));
+      |                                                   ^
+USER/Module/UI/lcd_ui.c(415): warning: passing 'unsigned char[50]' to parameter of type 'const char *' converts between pointers to integer types where one is of the unique plain 'char' type and the other is not [-Wpointer-sign]
+  415 |         txt_size = strlen(show_buff) * char_width_pixel;
+      |                           ^~~~~~~~~
+I:\Keil5\keil5_mdk\ARM\ARMCLANG\Bin\..\include\string.h(335): note: passing argument to parameter here
+  335 | extern _ARMABI size_t strlen(const char * /*s*/) __attribute__((__nonnull__(1)));
+      |                                                ^
+USER/Module/UI/lcd_ui.c(423): warning: passing 'unsigned char[50]' to parameter of type 'char *' converts between pointers to integer types where one is of the unique plain 'char' type and the other is not [-Wpointer-sign]
+  423 |         sprintf(show_buff, " %.2f ",i);
+      |                 ^~~~~~~~~
+I:\Keil5\keil5_mdk\ARM\ARMCLANG\Bin\..\include\stdio.h(417): note: passing argument to parameter here
+  417 | extern _ARMABI int sprintf(char * __restrict /*s*/, const char * __restrict /*format*/, ...) __attribute__((__nonnull__(1,2)));
+      |                                                   ^
+USER/Module/UI/lcd_ui.c(424): warning: passing 'unsigned char[50]' to parameter of type 'const char *' converts between pointers to integer types where one is of the unique plain 'char' type and the other is not [-Wpointer-sign]
+  424 |         txt_size = strlen(show_buff) * char_width_pixel;
+      |                           ^~~~~~~~~
+I:\Keil5\keil5_mdk\ARM\ARMCLANG\Bin\..\include\string.h(335): note: passing argument to parameter here
+  335 | extern _ARMABI size_t strlen(const char * /*s*/) __attribute__((__nonnull__(1)));
+      |                                                ^
+USER/Module/UI/lcd_ui.c(432): warning: passing 'unsigned char[50]' to parameter of type 'char *' converts between pointers to integer types where one is of the unique plain 'char' type and the other is not [-Wpointer-sign]
+  432 |         sprintf(show_buff, " %.2f ",d);
+      |                 ^~~~~~~~~
+I:\Keil5\keil5_mdk\ARM\ARMCLANG\Bin\..\include\stdio.h(417): note: passing argument to parameter here
+  417 | extern _ARMABI int sprintf(char * __restrict /*s*/, const char * __restrict /*format*/, ...) __attribute__((__nonnull__(1,2)));
+      |                                                   ^
+USER/Module/UI/lcd_ui.c(433): warning: passing 'unsigned char[50]' to parameter of type 'const char *' converts between pointers to integer types where one is of the unique plain 'char' type and the other is not [-Wpointer-sign]
+  433 |         txt_size = strlen(show_buff) * char_width_pixel;
+      |                           ^~~~~~~~~
+I:\Keil5\keil5_mdk\ARM\ARMCLANG\Bin\..\include\string.h(335): note: passing argument to parameter here
+  335 | extern _ARMABI size_t strlen(const char * /*s*/) __attribute__((__nonnull__(1)));
+      |                                                ^
+USER/Module/UI/lcd_ui.c(441): warning: passing 'unsigned char[50]' to parameter of type 'char *' converts between pointers to integer types where one is of the unique plain 'char' type and the other is not [-Wpointer-sign]
+  441 |         sprintf(show_buff, "%d ",distance);
+      |                 ^~~~~~~~~
+I:\Keil5\keil5_mdk\ARM\ARMCLANG\Bin\..\include\stdio.h(417): note: passing argument to parameter here
+  417 | extern _ARMABI int sprintf(char * __restrict /*s*/, const char * __restrict /*format*/, ...) __attribute__((__nonnull__(1,2)));
+      |                                                   ^
+USER/Module/UI/lcd_ui.c(447): warning: passing 'unsigned char[50]' to parameter of type 'char *' converts between pointers to integer types where one is of the unique plain 'char' type and the other is not [-Wpointer-sign]
+  447 |         sprintf(show_buff, "%d ",target);
+      |                 ^~~~~~~~~
+I:\Keil5\keil5_mdk\ARM\ARMCLANG\Bin\..\include\stdio.h(417): note: passing argument to parameter here
+  417 | extern _ARMABI int sprintf(char * __restrict /*s*/, const char * __restrict /*format*/, ...) __attribute__((__nonnull__(1,2)));
+      |                                                   ^
+20 warnings generated.
+compiling lcd_ui.c...
+USER/Module/Board_Expansion_Device/board_expansion_lcd.c(2): warning: In file included from...USER/Module/Board_Expansion_Device/lcdfont.h(405): warning: illegal character encoding in string literal [-Winvalid-source-encoding]
+  405 | "<D6><D0>",0x20,0x00,0x20,0x00,0x20,0x00,0xFE,0x03,0x22,0x02,0x22,0x02,0x22,0x02,0xFE,0x03,
+      |  ^~~~~~~~
+USER/Module/Board_Expansion_Device/lcdfont.h(407): warning: illegal character encoding in string literal [-Winvalid-source-encoding]
+  407 | "<BE><B0>",0xFC,0x01,0x04,0x01,0xFC,0x01,0x04,0x01,0xFC,0x01,0x20,0x00,0xFF,0x07,0x04,0x01,
+      |  ^~~~~~~~
+USER/Module/Board_Expansion_Device/lcdfont.h(411): warning: illegal character encoding in string literal [-Winvalid-source-encoding]
+  411 | "<B5><E7>",0x10,0x00,0x10,0x00,0xFF,0x01,0x11,0x01,0x11,0x01,0xFF,0x01,0x11,0x01,0x11,0x01,
+      |  ^~~~~~~~
+USER/Module/Board_Expansion_Device/lcdfont.h(413): warning: illegal character encoding in string literal [-Winvalid-source-encoding]
+  413 | "<D7><D3>",0x00,0x00,0xFC,0x01,0x80,0x00,0x40,0x00,0x20,0x00,0x20,0x00,0xFF,0x07,0x20,0x00,
+      |  ^~~~~~~~
+USER/Module/Board_Expansion_Device/lcdfont.h(430): warning: illegal character encoding in string literal [-Winvalid-source-encoding]
+  430 | "<C1><A2>",0x40,0x00,0x80,0x00,0x80,0x00,0x00,0x00,0xFE,0x3F,0x00,0x00,0x00,0x08,0x08,0x08,
+      |  ^~~~~~~~
+USER/Module/Board_Expansion_Device/lcdfont.h(433): warning: illegal character encoding in string literal [-Winvalid-source-encoding]
+  433 | "<B4><B4>",0x10,0x20,0x10,0x20,0x28,0x20,0x48,0x24,0x84,0x24,0x02,0x25,0x7D,0x24,0x44,0x24,
+      |  ^~~~~~~~
+USER/Module/Board_Expansion_Device/lcdfont.h(436): warning: illegal character encoding in string literal [-Winvalid-source-encoding]
+  436 | "<BF><AA>",0x00,0x00,0xFE,0x3F,0x10,0x04,0x10,0x04,0x10,0x04,0x10,0x04,0x10,0x04,0xFF,0x7F,
+      |  ^~~~~~~~
+USER/Module/Board_Expansion_Device/lcdfont.h(439): warning: illegal character encoding in string literal [-Winvalid-source-encoding]
+  439 | "<B7><A2>",0x80,0x00,0x88,0x08,0x88,0x10,0x44,0x00,0xFC,0x3F,0x40,0x00,0x20,0x00,0xE0,0x1F,
+      |  ^~~~~~~~
+USER/Module/Board_Expansion_Device/lcdfont.h(442): warning: illegal character encoding in string literal [-Winvalid-source-encoding]
+  442 | "<B0><E5>",0x08,0x10,0x08,0x38,0x88,0x07,0x88,0x00,0xBF,0x00,0x88,0x3F,0x8C,0x22,0x9C,0x22,
+      |  ^~~~~~~~
+USER/Module/Board_Expansion_Device/lcdfont.h(445): warning: illegal character encoding in string literal [-Winvalid-source-encoding]
+  445 | "<BC><F2>",0x04,0x02,0xFC,0x7E,0x12,0x09,0xA1,0x10,0x08,0x00,0xD0,0x1F,0x04,0x10,0xE4,0x13,
+      |  ^~~~~~~~
+USER/Module/Board_Expansion_Device/lcdfont.h(448): warning: illegal character encoding in string literal [-Winvalid-source-encoding]
+  448 | "<D2><D7>",0xF0,0x0F,0x10,0x08,0x10,0x08,0xF0,0x0F,0x10,0x08,0x10,0x08,0xF0,0x0F,0x20,0x00,
+      |  ^~~~~~~~
+USER/Module/Board_Expansion_Device/lcdfont.h(451): warning: illegal character encoding in string literal [-Winvalid-source-encoding]
+  451 | "<C8><EB>",0x20,0x00,0x40,0x00,0x80,0x00,0x80,0x00,0x80,0x00,0x40,0x01,0x40,0x01,0x40,0x01,
+      |  ^~~~~~~~
+USER/Module/Board_Expansion_Device/lcdfont.h(454): warning: illegal character encoding in string literal [-Winvalid-source-encoding]
+  454 | "<C3><C5>",0x04,0x00,0xC8,0x3F,0x08,0x20,0x02,0x20,0x02,0x20,0x02,0x20,0x02,0x20,0x02,0x20,
+      |  ^~~~~~~~
+USER/Module/Board_Expansion_Device/lcdfont.h(457): warning: illegal character encoding in string literal [-Winvalid-source-encoding]
+  457 | "<CC><D7>",0x80,0x00,0x80,0x00,0xFE,0x3F,0x40,0x01,0x20,0x02,0xF0,0x0F,0x2C,0x18,0xE3,0x67,
+      |  ^~~~~~~~
+USER/Module/Board_Expansion_Device/lcdfont.h(460): warning: illegal character encoding in string literal [-Winvalid-source-encoding]
+  460 | "<BC><FE>",0x10,0x04,0x10,0x04,0x90,0x04,0x88,0x04,0x88,0x3F,0x4C,0x04,0x4C,0x04,0x2A,0x04,
+      |  ^~~~~~~~
+USER/Module/Board_Expansion_Device/lcdfont.h(477): warning: illegal character encoding in string literal [-Winvalid-source-encoding]
+  477 | "<B6><A8>",0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x18,0x00,0x00,0x18,0x00,0xFC,0xFF,0x3F,0xFC,
+      |  ^~~~~~~~
+USER/Module/Board_Expansion_Device/lcdfont.h(484): warning: illegal character encoding in string literal [-Winvalid-source-encoding]
+  484 | "<CB><D9>",0x00,0x00,0x00,0x00,0xC0,0x00,0x00,0xC0,0x00,0x18,0xC0,0x00,0x38,0xFF,0x3F,0x70,
+      |  ^~~~~~~~
+USER/Module/Board_Expansion_Device/lcdfont.h(491): warning: illegal character encoding in string literal [-Winvalid-source-encoding]
+  491 | "<BE><E0>",0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0xF8,0xF3,0x3F,0xF8,0xF3,0x3F,0x18,
+      |  ^~~~~~~~
+USER/Module/Board_Expansion_Device/lcdfont.h(510): warning: illegal character encoding in string literal [-Winvalid-source-encoding]
+  510 | "<D6><D0>",0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x80,0x00,0x00,0x00,0x80,0x01,0x00,
+      |  ^~~~~~~~
+19 warnings generated.
+compiling board_expansion_lcd.c...
+linking...
+Program Size: Code=9356 RO-data=416 RW-data=28 ZI-data=4540  
+FromELF: creating hex file...
+".\Objects\empty_LP_MSPM0G3507_nortos_keil.axf" - 0 Error(s), 39 Warning(s).
+Build Time Elapsed:  00:00:05

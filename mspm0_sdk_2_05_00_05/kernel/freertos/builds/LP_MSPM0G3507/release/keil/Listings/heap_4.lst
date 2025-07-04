@@ -1,0 +1,2678 @@
+	.text
+	.syntax unified
+	.eabi_attribute	67, "2.09"	@ Tag_conformance
+	.cpu	cortex-m0plus
+	.eabi_attribute	6, 12	@ Tag_CPU_arch
+	.eabi_attribute	7, 77	@ Tag_CPU_arch_profile
+	.eabi_attribute	8, 0	@ Tag_ARM_ISA_use
+	.eabi_attribute	9, 1	@ Tag_THUMB_ISA_use
+	.eabi_attribute	34, 0	@ Tag_CPU_unaligned_access
+	.eabi_attribute	17, 1	@ Tag_ABI_PCS_GOT_use
+	.eabi_attribute	20, 2	@ Tag_ABI_FP_denormal
+	.eabi_attribute	21, 0	@ Tag_ABI_FP_exceptions
+	.eabi_attribute	23, 1	@ Tag_ABI_FP_number_model
+	.eabi_attribute	24, 1	@ Tag_ABI_align_needed
+	.eabi_attribute	25, 1	@ Tag_ABI_align_preserved
+	.eabi_attribute	38, 1	@ Tag_ABI_FP_16bit_format
+	.eabi_attribute	18, 2	@ Tag_ABI_PCS_wchar_t
+	.eabi_attribute	26, 1	@ Tag_ABI_enum_size
+	.eabi_attribute	14, 0	@ Tag_ABI_PCS_R9_use
+	.file	"heap_4.c"
+	.file	1 "I:\\Keil5\\keil5_mdk\\ARM\\ARMCLANG\\Bin\\..\\include" "stdlib.h"
+	.file	2 "D:\\TI_M0G3507\\mspm0_sdk_2_05_00_05\\kernel\\freertos\\builds\\LP_MSPM0G3507\\release\\keil" "../../../../../../kernel/freertos/Source/portable/MemMang/heap_4.c"
+	.file	3 "I:\\Keil5\\keil5_mdk\\ARM\\ARMCLANG\\Bin\\..\\include" "stdint.h"
+	.file	4 "D:\\TI_M0G3507\\mspm0_sdk_2_05_00_05\\kernel\\freertos\\builds\\LP_MSPM0G3507\\release\\keil" "../../../../../../kernel/freertos/Source/portable/GCC/ARM_CM0\\portmacro.h"
+	.section	.text.pvPortMalloc,"ax",%progbits
+	.hidden	pvPortMalloc                    @ -- Begin function pvPortMalloc
+	.globl	pvPortMalloc
+	.p2align	2
+	.type	pvPortMalloc,%function
+	.code	16                              @ @pvPortMalloc
+	.thumb_func
+pvPortMalloc:
+.Lfunc_begin0:
+	.loc	2 116 0                         @ ../../../../../../kernel/freertos/Source/portable/MemMang/heap_4.c:116:0
+	.fnstart
+	.cfi_sections .debug_frame
+	.cfi_startproc
+@ %bb.0:
+	@DEBUG_VALUE: pvPortMalloc:xWantedSize <- $r0
+	.save	{r4, r5, r6, r7, lr}
+	push	{r4, r5, r6, r7, lr}
+	.cfi_def_cfa_offset 20
+	.cfi_offset lr, -4
+	.cfi_offset r7, -8
+	.cfi_offset r6, -12
+	.cfi_offset r5, -16
+	.cfi_offset r4, -20
+	.pad	#12
+	sub	sp, #12
+	.cfi_def_cfa_offset 32
+	mov	r5, r0
+.Ltmp0:
+	@DEBUG_VALUE: pvPortMalloc:pvReturn <- 0
+	@DEBUG_VALUE: pvPortMalloc:xWantedSize <- $r5
+	.loc	2 120 5 prologue_end            @ ../../../../../../kernel/freertos/Source/portable/MemMang/heap_4.c:120:5
+	bl	vTaskSuspendAll
+.Ltmp1:
+	.loc	2 0 5 is_stmt 0                 @ ../../../../../../kernel/freertos/Source/portable/MemMang/heap_4.c:0:5
+	movs	r2, #1
+	lsls	r0, r2, #31
+.Ltmp2:
+	.loc	2 124 13 is_stmt 1              @ ../../../../../../kernel/freertos/Source/portable/MemMang/heap_4.c:124:13
+	ldr	r1, __arm_cp.0_0
+	ldr	r3, [r1]
+.Ltmp3:
+	.loc	2 124 13 is_stmt 0              @ ../../../../../../kernel/freertos/Source/portable/MemMang/heap_4.c:124:13
+	cmp	r3, #0
+	beq	.LBB0_3
+.Ltmp4:
+@ %bb.1:
+	@DEBUG_VALUE: pvPortMalloc:xWantedSize <- $r5
+	@DEBUG_VALUE: pvPortMalloc:pvReturn <- 0
+	.loc	2 137 29 is_stmt 1              @ ../../../../../../kernel/freertos/Source/portable/MemMang/heap_4.c:137:29
+	ldr	r2, __arm_cp.0_1
+	ldrb	r3, [r2]
+	cmp	r3, #0
+	mov	r2, r0
+	bne	.LBB0_6
+.Ltmp5:
+@ %bb.2:
+	@DEBUG_VALUE: pvPortMalloc:xWantedSize <- $r5
+	@DEBUG_VALUE: pvPortMalloc:pvReturn <- 0
+	.loc	2 0 29 is_stmt 0                @ ../../../../../../kernel/freertos/Source/portable/MemMang/heap_4.c:0:29
+	mov	r2, r3
+	b	.LBB0_6
+.Ltmp6:
+.LBB0_3:
+	@DEBUG_VALUE: pvPortMalloc:xWantedSize <- $r5
+	@DEBUG_VALUE: pvPortMalloc:pvReturn <- 0
+	movs	r3, #7
+	mvns	r4, r3
+.Ltmp7:
+	@DEBUG_VALUE: prvHeapInit:xTotalHeapSize <- 3072
+	.loc	2 352 21 is_stmt 1              @ ../../../../../../kernel/freertos/Source/portable/MemMang/heap_4.c:352:21
+	ldr	r6, __arm_cp.0_2
+.Ltmp8:
+	@DEBUG_VALUE: prvHeapInit:uxAddress <- $r6
+	.loc	2 352 9 is_stmt 0               @ ../../../../../../kernel/freertos/Source/portable/MemMang/heap_4.c:352:9
+	lsls	r3, r6, #29
+	mov	r3, r6
+	beq	.LBB0_5
+.Ltmp9:
+@ %bb.4:
+	@DEBUG_VALUE: prvHeapInit:uxAddress <- $r6
+	@DEBUG_VALUE: prvHeapInit:xTotalHeapSize <- 3072
+	@DEBUG_VALUE: pvPortMalloc:xWantedSize <- $r5
+	@DEBUG_VALUE: pvPortMalloc:pvReturn <- 0
+	.loc	2 0 9                           @ ../../../../../../kernel/freertos/Source/portable/MemMang/heap_4.c:0:9
+	adds	r3, r6, #7
+	ands	r3, r4
+.Ltmp10:
+.LBB0_5:
+	@DEBUG_VALUE: prvHeapInit:uxAddress <- $r6
+	@DEBUG_VALUE: prvHeapInit:xTotalHeapSize <- 3072
+	@DEBUG_VALUE: pvPortMalloc:xWantedSize <- $r5
+	@DEBUG_VALUE: pvPortMalloc:pvReturn <- 0
+	@DEBUG_VALUE: prvHeapInit:xTotalHeapSize <- undef
+	@DEBUG_VALUE: prvHeapInit:uxAddress <- $r3
+	@DEBUG_VALUE: prvHeapInit:pucAlignedHeap <- $r3
+	@DEBUG_VALUE: prvHeapInit:pxFirstFreeBlock <- $r3
+	.loc	2 363 28 is_stmt 1              @ ../../../../../../kernel/freertos/Source/portable/MemMang/heap_4.c:363:28
+	ldr	r7, __arm_cp.0_3
+	movs	r1, #3
+	lsls	r1, r1, #10
+	.loc	2 370 15                        @ ../../../../../../kernel/freertos/Source/portable/MemMang/heap_4.c:370:15
+	adds	r1, r6, r1
+.Ltmp11:
+	@DEBUG_VALUE: prvHeapInit:uxAddress <- [DW_OP_constu 8, DW_OP_minus, DW_OP_stack_value] $r1
+	ands	r1, r4
+.Ltmp12:
+	subs	r1, #8
+.Ltmp13:
+	@DEBUG_VALUE: prvHeapInit:uxAddress <- $r1
+	.loc	2 0 15 is_stmt 0                @ ../../../../../../kernel/freertos/Source/portable/MemMang/heap_4.c:0:15
+	ldr	r6, __arm_cp.0_0
+	.loc	2 371 11 is_stmt 1              @ ../../../../../../kernel/freertos/Source/portable/MemMang/heap_4.c:371:11
+	str	r1, [r6]
+	movs	r4, #0
+	.loc	2 363 28                        @ ../../../../../../kernel/freertos/Source/portable/MemMang/heap_4.c:363:28
+	stm	r7!, {r3, r4}
+	.loc	2 373 28                        @ ../../../../../../kernel/freertos/Source/portable/MemMang/heap_4.c:373:28
+	str	r4, [r1]
+	.loc	2 372 23                        @ ../../../../../../kernel/freertos/Source/portable/MemMang/heap_4.c:372:23
+	str	r4, [r1, #4]
+	.loc	2 379 41                        @ ../../../../../../kernel/freertos/Source/portable/MemMang/heap_4.c:379:41
+	ldr	r4, [r6]
+	.loc	2 378 46                        @ ../../../../../../kernel/freertos/Source/portable/MemMang/heap_4.c:378:46
+	subs	r1, r1, r3
+.Ltmp14:
+	.loc	2 379 39                        @ ../../../../../../kernel/freertos/Source/portable/MemMang/heap_4.c:379:39
+	str	r4, [r3]
+	.loc	2 378 34                        @ ../../../../../../kernel/freertos/Source/portable/MemMang/heap_4.c:378:34
+	str	r1, [r3, #4]
+	.loc	2 382 36                        @ ../../../../../../kernel/freertos/Source/portable/MemMang/heap_4.c:382:36
+	ldr	r3, __arm_cp.0_4
+.Ltmp15:
+	str	r1, [r3]
+	.loc	2 383 25                        @ ../../../../../../kernel/freertos/Source/portable/MemMang/heap_4.c:383:25
+	ldr	r3, __arm_cp.0_5
+	str	r1, [r3]
+	.loc	2 386 24                        @ ../../../../../../kernel/freertos/Source/portable/MemMang/heap_4.c:386:24
+	ldr	r1, __arm_cp.0_1
+	strb	r2, [r1]
+	mov	r2, r0
+.Ltmp16:
+.LBB0_6:
+	@DEBUG_VALUE: pvPortMalloc:xWantedSize <- $r5
+	@DEBUG_VALUE: pvPortMalloc:pvReturn <- 0
+	.loc	2 0 24 is_stmt 0                @ ../../../../../../kernel/freertos/Source/portable/MemMang/heap_4.c:0:24
+	movs	r1, #9
+	mvns	r1, r1
+	.loc	2 137 13 is_stmt 1              @ ../../../../../../kernel/freertos/Source/portable/MemMang/heap_4.c:137:13
+	subs	r3, r5, #1
+	movs	r4, #0
+	cmp	r3, r1
+	bhi	.LBB0_37
+.Ltmp17:
+@ %bb.7:
+	@DEBUG_VALUE: pvPortMalloc:xWantedSize <- $r5
+	@DEBUG_VALUE: pvPortMalloc:pvReturn <- 0
+	.loc	2 137 0 is_stmt 0               @ ../../../../../../kernel/freertos/Source/portable/MemMang/heap_4.c:137:0
+	ands	r2, r5
+	.loc	2 137 13                        @ ../../../../../../kernel/freertos/Source/portable/MemMang/heap_4.c:137:13
+	bne	.LBB0_37
+.Ltmp18:
+@ %bb.8:
+	@DEBUG_VALUE: pvPortMalloc:xWantedSize <- $r5
+	@DEBUG_VALUE: pvPortMalloc:pvReturn <- 0
+	.loc	2 0 13                          @ ../../../../../../kernel/freertos/Source/portable/MemMang/heap_4.c:0:13
+	movs	r1, #7
+.Ltmp19:
+	@DEBUG_VALUE: pvPortMalloc:xWantedSize <- [DW_OP_plus_uconst 8, DW_OP_stack_value] $r5
+	.loc	2 147 21 is_stmt 1              @ ../../../../../../kernel/freertos/Source/portable/MemMang/heap_4.c:147:21
+	mov	r2, r5
+	bics	r2, r1
+	adds	r2, #16
+.Ltmp20:
+	.loc	2 142 33                        @ ../../../../../../kernel/freertos/Source/portable/MemMang/heap_4.c:142:33
+	mov	r6, r5
+	adds	r6, #8
+	movs	r4, #0
+.Ltmp21:
+	.loc	2 147 21                        @ ../../../../../../kernel/freertos/Source/portable/MemMang/heap_4.c:147:21
+	cmp	r2, r6
+	bhi	.LBB0_10
+.Ltmp22:
+@ %bb.9:
+	@DEBUG_VALUE: pvPortMalloc:xWantedSize <- [DW_OP_plus_uconst 8, DW_OP_stack_value] $r5
+	@DEBUG_VALUE: pvPortMalloc:pvReturn <- 0
+	.loc	2 0 21 is_stmt 0                @ ../../../../../../kernel/freertos/Source/portable/MemMang/heap_4.c:0:21
+	mov	r2, r4
+.Ltmp23:
+.LBB0_10:
+	@DEBUG_VALUE: pvPortMalloc:xWantedSize <- [DW_OP_plus_uconst 8, DW_OP_stack_value] $r5
+	@DEBUG_VALUE: pvPortMalloc:pvReturn <- 0
+	.loc	2 147 21                        @ ../../../../../../kernel/freertos/Source/portable/MemMang/heap_4.c:147:21
+	lsls	r1, r5, #29
+	beq	.LBB0_12
+.Ltmp24:
+@ %bb.11:
+	@DEBUG_VALUE: pvPortMalloc:xWantedSize <- [DW_OP_plus_uconst 8, DW_OP_stack_value] $r5
+	@DEBUG_VALUE: pvPortMalloc:pvReturn <- 0
+	.loc	2 0 21                          @ ../../../../../../kernel/freertos/Source/portable/MemMang/heap_4.c:0:21
+	mov	r6, r2
+.Ltmp25:
+.LBB0_12:
+	@DEBUG_VALUE: pvPortMalloc:xWantedSize <- [DW_OP_plus_uconst 8, DW_OP_stack_value] $r5
+	@DEBUG_VALUE: pvPortMalloc:pvReturn <- 0
+	@DEBUG_VALUE: pvPortMalloc:xWantedSize <- $r6
+	.loc	2 171 37 is_stmt 1              @ ../../../../../../kernel/freertos/Source/portable/MemMang/heap_4.c:171:37
+	subs	r1, r6, #1
+	ldr	r2, __arm_cp.0_5
+	ldr	r2, [r2]
+	cmp	r1, r2
+	bhs	.LBB0_37
+.Ltmp26:
+@ %bb.13:
+	@DEBUG_VALUE: pvPortMalloc:xWantedSize <- $r6
+	@DEBUG_VALUE: pvPortMalloc:pvReturn <- 0
+	.loc	2 176 34                        @ ../../../../../../kernel/freertos/Source/portable/MemMang/heap_4.c:176:34
+	ldr	r5, __arm_cp.0_3
+.Ltmp27:
+	@DEBUG_VALUE: pvPortMalloc:pxPreviousBlock <- $r5
+	ldr	r3, [r5]
+.Ltmp28:
+	@DEBUG_VALUE: pvPortMalloc:pxBlock <- $r3
+	.loc	2 178 35                        @ ../../../../../../kernel/freertos/Source/portable/MemMang/heap_4.c:178:35
+	ldr	r7, [r3, #4]
+	.loc	2 178 62 is_stmt 0              @ ../../../../../../kernel/freertos/Source/portable/MemMang/heap_4.c:178:62
+	cmp	r7, r6
+	bhs	.LBB0_16
+.Ltmp29:
+.LBB0_14:                               @ =>This Inner Loop Header: Depth=1
+	@DEBUG_VALUE: pvPortMalloc:pxBlock <- $r3
+	@DEBUG_VALUE: pvPortMalloc:pxPreviousBlock <- $r5
+	@DEBUG_VALUE: pvPortMalloc:xWantedSize <- $r6
+	@DEBUG_VALUE: pvPortMalloc:pvReturn <- 0
+	@DEBUG_VALUE: pvPortMalloc:pxBlock <- $r3
+	.loc	2 178 76                        @ ../../../../../../kernel/freertos/Source/portable/MemMang/heap_4.c:178:76
+	ldr	r2, [r3]
+	@DEBUG_VALUE: pvPortMalloc:pxPreviousBlock <- $r5
+	.loc	2 178 17                        @ ../../../../../../kernel/freertos/Source/portable/MemMang/heap_4.c:178:17
+	cmp	r2, #0
+	beq	.LBB0_16
+.Ltmp30:
+@ %bb.15:                               @   in Loop: Header=BB0_14 Depth=1
+	@DEBUG_VALUE: pvPortMalloc:pxBlock <- $r3
+	@DEBUG_VALUE: pvPortMalloc:pxPreviousBlock <- $r5
+	@DEBUG_VALUE: pvPortMalloc:xWantedSize <- $r6
+	@DEBUG_VALUE: pvPortMalloc:pvReturn <- 0
+	.loc	2 0 17                          @ ../../../../../../kernel/freertos/Source/portable/MemMang/heap_4.c:0:17
+	mov	r5, r3
+.Ltmp31:
+	@DEBUG_VALUE: pvPortMalloc:pxBlock <- $r5
+	mov	r3, r2
+.Ltmp32:
+	@DEBUG_VALUE: pvPortMalloc:pxBlock <- $r3
+	@DEBUG_VALUE: pvPortMalloc:pxPreviousBlock <- $r5
+	.loc	2 178 35                        @ ../../../../../../kernel/freertos/Source/portable/MemMang/heap_4.c:178:35
+	ldr	r7, [r2, #4]
+	.loc	2 178 62                        @ ../../../../../../kernel/freertos/Source/portable/MemMang/heap_4.c:178:62
+	cmp	r7, r6
+	blo	.LBB0_14
+.Ltmp33:
+.LBB0_16:
+	@DEBUG_VALUE: pvPortMalloc:pxBlock <- $r3
+	@DEBUG_VALUE: pvPortMalloc:pxPreviousBlock <- $r5
+	@DEBUG_VALUE: pvPortMalloc:xWantedSize <- $r6
+	@DEBUG_VALUE: pvPortMalloc:pvReturn <- 0
+	.loc	2 186 32 is_stmt 1              @ ../../../../../../kernel/freertos/Source/portable/MemMang/heap_4.c:186:32
+	ldr	r1, __arm_cp.0_0
+	ldr	r1, [r1]
+.Ltmp34:
+	.loc	2 186 21 is_stmt 0              @ ../../../../../../kernel/freertos/Source/portable/MemMang/heap_4.c:186:21
+	cmp	r3, r1
+	beq	.LBB0_37
+.Ltmp35:
+@ %bb.17:
+	@DEBUG_VALUE: pvPortMalloc:pxBlock <- $r3
+	@DEBUG_VALUE: pvPortMalloc:pxPreviousBlock <- $r5
+	@DEBUG_VALUE: pvPortMalloc:xWantedSize <- $r6
+	@DEBUG_VALUE: pvPortMalloc:pvReturn <- 0
+	.loc	2 190 78 is_stmt 1              @ ../../../../../../kernel/freertos/Source/portable/MemMang/heap_4.c:190:78
+	ldr	r4, [r5]
+	.loc	2 194 65                        @ ../../../../../../kernel/freertos/Source/portable/MemMang/heap_4.c:194:65
+	ldr	r1, [r3]
+	.loc	2 194 54 is_stmt 0              @ ../../../../../../kernel/freertos/Source/portable/MemMang/heap_4.c:194:54
+	str	r1, [r5]
+.Ltmp36:
+	.loc	2 198 47 is_stmt 1              @ ../../../../../../kernel/freertos/Source/portable/MemMang/heap_4.c:198:47
+	subs	r2, r7, r6
+.Ltmp37:
+	@DEBUG_VALUE: pvPortMalloc:pvReturn <- undef
+	.loc	2 198 25 is_stmt 0              @ ../../../../../../kernel/freertos/Source/portable/MemMang/heap_4.c:198:25
+	cmp	r2, #17
+	blo	.LBB0_32
+.Ltmp38:
+@ %bb.18:
+	@DEBUG_VALUE: pvPortMalloc:pxBlock <- $r3
+	@DEBUG_VALUE: pvPortMalloc:pxPreviousBlock <- $r5
+	@DEBUG_VALUE: pvPortMalloc:xWantedSize <- $r6
+	.loc	2 204 81 is_stmt 1              @ ../../../../../../kernel/freertos/Source/portable/MemMang/heap_4.c:204:81
+	adds	r5, r3, r6
+.Ltmp39:
+	@DEBUG_VALUE: pvPortMalloc:pxNewBlockLink <- $r5
+	.loc	2 205 25                        @ ../../../../../../kernel/freertos/Source/portable/MemMang/heap_4.c:205:25
+	lsls	r1, r5, #29
+	beq	.LBB0_21
+.Ltmp40:
+@ %bb.19:
+	@DEBUG_VALUE: pvPortMalloc:pxNewBlockLink <- $r5
+	@DEBUG_VALUE: pvPortMalloc:pxBlock <- $r3
+	@DEBUG_VALUE: pvPortMalloc:xWantedSize <- $r6
+	.loc	2 205 25 is_stmt 0              @ ../../../../../../kernel/freertos/Source/portable/MemMang/heap_4.c:205:25
+	@APP
+	cpsid i
+	@NO_APP
+.Ltmp41:
+.LBB0_20:                               @ =>This Inner Loop Header: Depth=1
+	@DEBUG_VALUE: pvPortMalloc:pxNewBlockLink <- $r5
+	@DEBUG_VALUE: pvPortMalloc:pxBlock <- $r3
+	@DEBUG_VALUE: pvPortMalloc:xWantedSize <- $r6
+	.loc	2 205 25                        @ ../../../../../../kernel/freertos/Source/portable/MemMang/heap_4.c:205:25
+	b	.LBB0_20
+.Ltmp42:
+.LBB0_21:
+	@DEBUG_VALUE: pvPortMalloc:pxNewBlockLink <- $r5
+	@DEBUG_VALUE: pvPortMalloc:pxBlock <- $r3
+	@DEBUG_VALUE: pvPortMalloc:xWantedSize <- $r6
+	.loc	2 209 52 is_stmt 1              @ ../../../../../../kernel/freertos/Source/portable/MemMang/heap_4.c:209:52
+	str	r2, [r5, #4]
+	.loc	2 210 45                        @ ../../../../../../kernel/freertos/Source/portable/MemMang/heap_4.c:210:45
+	str	r6, [r3, #4]
+	ldr	r6, __arm_cp.0_3
+.Ltmp43:
+	@DEBUG_VALUE: prvInsertBlockIntoFreeList:pxBlockToInsert <- $r5
+	@DEBUG_VALUE: prvInsertBlockIntoFreeList:pxIterator <- $r6
+.LBB0_22:                               @ =>This Inner Loop Header: Depth=1
+	@DEBUG_VALUE: prvInsertBlockIntoFreeList:pxBlockToInsert <- $r5
+	@DEBUG_VALUE: pvPortMalloc:pxNewBlockLink <- $r5
+	@DEBUG_VALUE: pvPortMalloc:pxBlock <- $r3
+	@DEBUG_VALUE: prvInsertBlockIntoFreeList:pxIterator <- $r6
+	.loc	2 397 44                        @ ../../../../../../kernel/freertos/Source/portable/MemMang/heap_4.c:397:44
+	ldr	r2, [r6]
+.Ltmp44:
+	.loc	2 397 5 is_stmt 0               @ ../../../../../../kernel/freertos/Source/portable/MemMang/heap_4.c:397:5
+	cmp	r2, r5
+	bhs	.LBB0_24
+.Ltmp45:
+@ %bb.23:                               @   in Loop: Header=BB0_22 Depth=1
+	@DEBUG_VALUE: prvInsertBlockIntoFreeList:pxIterator <- $r6
+	@DEBUG_VALUE: prvInsertBlockIntoFreeList:pxBlockToInsert <- $r5
+	@DEBUG_VALUE: pvPortMalloc:pxNewBlockLink <- $r5
+	@DEBUG_VALUE: pvPortMalloc:pxBlock <- $r3
+	@DEBUG_VALUE: prvInsertBlockIntoFreeList:pxIterator <- $r2
+	.loc	2 397 44                        @ ../../../../../../kernel/freertos/Source/portable/MemMang/heap_4.c:397:44
+	ldr	r6, [r2]
+.Ltmp46:
+	.loc	2 397 5                         @ ../../../../../../kernel/freertos/Source/portable/MemMang/heap_4.c:397:5
+	cmp	r6, r5
+	mov	r7, r2
+.Ltmp47:
+	@DEBUG_VALUE: prvInsertBlockIntoFreeList:pxIterator <- $r7
+	@DEBUG_VALUE: prvInsertBlockIntoFreeList:pxIterator <- $r7
+	blo	.LBB0_22
+	b	.LBB0_25
+.Ltmp48:
+.LBB0_24:
+	@DEBUG_VALUE: prvInsertBlockIntoFreeList:pxIterator <- $r6
+	@DEBUG_VALUE: prvInsertBlockIntoFreeList:pxBlockToInsert <- $r5
+	@DEBUG_VALUE: pvPortMalloc:pxNewBlockLink <- $r5
+	@DEBUG_VALUE: pvPortMalloc:pxBlock <- $r3
+	.loc	2 0 5                           @ ../../../../../../kernel/freertos/Source/portable/MemMang/heap_4.c:0:5
+	mov	r7, r6
+.Ltmp49:
+	@DEBUG_VALUE: prvInsertBlockIntoFreeList:pxIterator <- $r7
+	mov	r6, r2
+.Ltmp50:
+.LBB0_25:
+	@DEBUG_VALUE: prvInsertBlockIntoFreeList:pxIterator <- $r7
+	@DEBUG_VALUE: prvInsertBlockIntoFreeList:pxBlockToInsert <- $r5
+	@DEBUG_VALUE: pvPortMalloc:pxNewBlockLink <- $r5
+	@DEBUG_VALUE: pvPortMalloc:pxBlock <- $r3
+	@DEBUG_VALUE: prvInsertBlockIntoFreeList:puc <- $r7
+	.loc	2 406 29 is_stmt 1              @ ../../../../../../kernel/freertos/Source/portable/MemMang/heap_4.c:406:29
+	ldr	r1, [r7, #4]
+	str	r1, [sp, #4]                    @ 4-byte Spill
+	.loc	2 406 15 is_stmt 0              @ ../../../../../../kernel/freertos/Source/portable/MemMang/heap_4.c:406:15
+	adds	r2, r7, r1
+.Ltmp51:
+	.loc	2 0 0                           @ ../../../../../../kernel/freertos/Source/portable/MemMang/heap_4.c:0:0
+	str	r2, [sp, #8]                    @ 4-byte Spill
+	ldr	r2, [r5, #4]
+	.loc	2 406 9                         @ ../../../../../../kernel/freertos/Source/portable/MemMang/heap_4.c:406:9
+	ldr	r1, [sp, #8]                    @ 4-byte Reload
+	cmp	r1, r5
+	beq	.LBB0_27
+.Ltmp52:
+@ %bb.26:
+	@DEBUG_VALUE: prvInsertBlockIntoFreeList:puc <- $r7
+	@DEBUG_VALUE: prvInsertBlockIntoFreeList:pxIterator <- $r7
+	@DEBUG_VALUE: prvInsertBlockIntoFreeList:pxBlockToInsert <- $r5
+	@DEBUG_VALUE: pvPortMalloc:pxNewBlockLink <- $r5
+	@DEBUG_VALUE: pvPortMalloc:pxBlock <- $r3
+	.loc	2 0 9                           @ ../../../../../../kernel/freertos/Source/portable/MemMang/heap_4.c:0:9
+	str	r2, [sp, #8]                    @ 4-byte Spill
+	b	.LBB0_28
+.Ltmp53:
+.LBB0_27:
+	@DEBUG_VALUE: prvInsertBlockIntoFreeList:puc <- $r7
+	@DEBUG_VALUE: prvInsertBlockIntoFreeList:pxIterator <- $r7
+	@DEBUG_VALUE: prvInsertBlockIntoFreeList:pxBlockToInsert <- $r5
+	@DEBUG_VALUE: pvPortMalloc:pxNewBlockLink <- $r5
+	@DEBUG_VALUE: pvPortMalloc:pxBlock <- $r3
+	.loc	2 408 32 is_stmt 1              @ ../../../../../../kernel/freertos/Source/portable/MemMang/heap_4.c:408:32
+	ldr	r1, [sp, #4]                    @ 4-byte Reload
+	adds	r2, r2, r1
+	str	r2, [sp, #8]                    @ 4-byte Spill
+	str	r2, [r7, #4]
+.Ltmp54:
+	@DEBUG_VALUE: prvInsertBlockIntoFreeList:pxBlockToInsert <- $r7
+	.loc	2 0 32 is_stmt 0                @ ../../../../../../kernel/freertos/Source/portable/MemMang/heap_4.c:0:32
+	mov	r5, r7
+.Ltmp55:
+.LBB0_28:
+	@DEBUG_VALUE: prvInsertBlockIntoFreeList:puc <- $r7
+	@DEBUG_VALUE: prvInsertBlockIntoFreeList:pxIterator <- $r7
+	@DEBUG_VALUE: pvPortMalloc:pxBlock <- $r3
+	@DEBUG_VALUE: prvInsertBlockIntoFreeList:pxBlockToInsert <- $r5
+	@DEBUG_VALUE: prvInsertBlockIntoFreeList:puc <- $r5
+	ldr	r1, __arm_cp.0_0
+	ldr	r1, [r1]
+	subs	r1, r6, r1
+	rsbs	r2, r1, #0
+	adcs	r2, r1
+	str	r2, [sp, #4]                    @ 4-byte Spill
+.Ltmp56:
+	.loc	2 420 15 is_stmt 1              @ ../../../../../../kernel/freertos/Source/portable/MemMang/heap_4.c:420:15
+	ldr	r1, [sp, #8]                    @ 4-byte Reload
+	adds	r1, r5, r1
+	.loc	2 420 47 is_stmt 0              @ ../../../../../../kernel/freertos/Source/portable/MemMang/heap_4.c:420:47
+	subs	r1, r1, r6
+	subs	r2, r1, #1
+	sbcs	r1, r2
+.Ltmp57:
+	.loc	2 420 9                         @ ../../../../../../kernel/freertos/Source/portable/MemMang/heap_4.c:420:9
+	ldr	r2, [sp, #4]                    @ 4-byte Reload
+	orrs	r1, r2
+	bne	.LBB0_30
+.Ltmp58:
+@ %bb.29:
+	@DEBUG_VALUE: prvInsertBlockIntoFreeList:puc <- $r5
+	@DEBUG_VALUE: prvInsertBlockIntoFreeList:pxIterator <- $r7
+	@DEBUG_VALUE: prvInsertBlockIntoFreeList:pxBlockToInsert <- $r5
+	@DEBUG_VALUE: pvPortMalloc:pxBlock <- $r3
+	.loc	2 425 73 is_stmt 1              @ ../../../../../../kernel/freertos/Source/portable/MemMang/heap_4.c:425:73
+	ldr	r1, [r6, #4]
+	.loc	2 425 41 is_stmt 0              @ ../../../../../../kernel/freertos/Source/portable/MemMang/heap_4.c:425:41
+	ldr	r2, [sp, #8]                    @ 4-byte Reload
+	adds	r1, r1, r2
+	str	r1, [r5, #4]
+	.loc	2 426 77 is_stmt 1              @ ../../../../../../kernel/freertos/Source/portable/MemMang/heap_4.c:426:77
+	ldr	r6, [r6]
+.Ltmp59:
+.LBB0_30:
+	@DEBUG_VALUE: prvInsertBlockIntoFreeList:puc <- $r5
+	@DEBUG_VALUE: prvInsertBlockIntoFreeList:pxIterator <- $r7
+	@DEBUG_VALUE: prvInsertBlockIntoFreeList:pxBlockToInsert <- $r5
+	@DEBUG_VALUE: pvPortMalloc:pxBlock <- $r3
+	.loc	2 0 0 is_stmt 0                 @ ../../../../../../kernel/freertos/Source/portable/MemMang/heap_4.c:0:0
+	str	r6, [r5]
+.Ltmp60:
+	.loc	2 442 9 is_stmt 1               @ ../../../../../../kernel/freertos/Source/portable/MemMang/heap_4.c:442:9
+	cmp	r7, r5
+	beq	.LBB0_32
+.Ltmp61:
+@ %bb.31:
+	@DEBUG_VALUE: prvInsertBlockIntoFreeList:puc <- $r5
+	@DEBUG_VALUE: prvInsertBlockIntoFreeList:pxIterator <- $r7
+	@DEBUG_VALUE: prvInsertBlockIntoFreeList:pxBlockToInsert <- $r5
+	@DEBUG_VALUE: pvPortMalloc:pxBlock <- $r3
+	.loc	2 444 37                        @ ../../../../../../kernel/freertos/Source/portable/MemMang/heap_4.c:444:37
+	str	r5, [r7]
+.Ltmp62:
+.LBB0_32:
+	@DEBUG_VALUE: pvPortMalloc:pxBlock <- $r3
+	@DEBUG_VALUE: pvPortMalloc:pvReturn <- undef
+	.loc	2 220 53                        @ ../../../../../../kernel/freertos/Source/portable/MemMang/heap_4.c:220:53
+	ldr	r1, [r3, #4]
+	ldr	r5, __arm_cp.0_5
+	.loc	2 220 41 is_stmt 0              @ ../../../../../../kernel/freertos/Source/portable/MemMang/heap_4.c:220:41
+	ldr	r2, [r5]
+	subs	r2, r2, r1
+	str	r2, [r5]
+.Ltmp63:
+	.loc	2 222 47 is_stmt 1              @ ../../../../../../kernel/freertos/Source/portable/MemMang/heap_4.c:222:47
+	ldr	r5, __arm_cp.0_4
+	ldr	r6, [r5]
+.Ltmp64:
+	.loc	2 222 25 is_stmt 0              @ ../../../../../../kernel/freertos/Source/portable/MemMang/heap_4.c:222:25
+	cmp	r2, r6
+	bhs	.LBB0_34
+.Ltmp65:
+@ %bb.33:
+	@DEBUG_VALUE: pvPortMalloc:pxBlock <- $r3
+	.loc	2 224 56 is_stmt 1              @ ../../../../../../kernel/freertos/Source/portable/MemMang/heap_4.c:224:56
+	str	r2, [r5]
+.Ltmp66:
+.LBB0_34:
+	@DEBUG_VALUE: pvPortMalloc:pxBlock <- $r3
+	@DEBUG_VALUE: pvPortMalloc:pvReturn <- undef
+	.loc	2 233 44                        @ ../../../../../../kernel/freertos/Source/portable/MemMang/heap_4.c:233:44
+	ldr	r2, __arm_cp.0_1
+	ldrb	r2, [r2]
+	movs	r5, #0
+	.loc	2 234 46                        @ ../../../../../../kernel/freertos/Source/portable/MemMang/heap_4.c:234:46
+	str	r5, [r3]
+	.loc	2 235 51                        @ ../../../../../../kernel/freertos/Source/portable/MemMang/heap_4.c:235:51
+	ldr	r5, __arm_cp.0_6
+	ldr	r6, [r5]
+	adds	r6, r6, #1
+	str	r6, [r5]
+	.loc	2 233 44                        @ ../../../../../../kernel/freertos/Source/portable/MemMang/heap_4.c:233:44
+	cmp	r2, #0
+	bne	.LBB0_36
+.Ltmp67:
+@ %bb.35:
+	@DEBUG_VALUE: pvPortMalloc:pxBlock <- $r3
+	.loc	2 0 44 is_stmt 0                @ ../../../../../../kernel/freertos/Source/portable/MemMang/heap_4.c:0:44
+	mov	r0, r2
+.Ltmp68:
+.LBB0_36:
+	@DEBUG_VALUE: pvPortMalloc:pxBlock <- $r3
+	adds	r4, #8
+.Ltmp69:
+	@DEBUG_VALUE: pvPortMalloc:pvReturn <- $r4
+	.loc	2 233 41                        @ ../../../../../../kernel/freertos/Source/portable/MemMang/heap_4.c:233:41
+	orrs	r1, r0
+	str	r1, [r3, #4]
+.Ltmp70:
+.LBB0_37:
+	@DEBUG_VALUE: pvPortMalloc:pvReturn <- $r4
+	.loc	2 254 14 is_stmt 1              @ ../../../../../../kernel/freertos/Source/portable/MemMang/heap_4.c:254:14
+	bl	xTaskResumeAll
+.Ltmp71:
+	.loc	2 270 5                         @ ../../../../../../kernel/freertos/Source/portable/MemMang/heap_4.c:270:5
+	lsls	r0, r4, #29
+	beq	.LBB0_40
+.Ltmp72:
+@ %bb.38:
+	@DEBUG_VALUE: pvPortMalloc:pvReturn <- $r4
+	.loc	2 270 5 is_stmt 0               @ ../../../../../../kernel/freertos/Source/portable/MemMang/heap_4.c:270:5
+	@APP
+	cpsid i
+	@NO_APP
+.Ltmp73:
+.LBB0_39:                               @ =>This Inner Loop Header: Depth=1
+	@DEBUG_VALUE: pvPortMalloc:pvReturn <- $r4
+	.loc	2 270 5                         @ ../../../../../../kernel/freertos/Source/portable/MemMang/heap_4.c:270:5
+	b	.LBB0_39
+.Ltmp74:
+.LBB0_40:
+	@DEBUG_VALUE: pvPortMalloc:pvReturn <- $r4
+	.loc	2 271 5 is_stmt 1               @ ../../../../../../kernel/freertos/Source/portable/MemMang/heap_4.c:271:5
+	mov	r0, r4
+	.loc	2 271 5 epilogue_begin is_stmt 0 @ ../../../../../../kernel/freertos/Source/portable/MemMang/heap_4.c:271:5
+	add	sp, #12
+	pop	{r4, r5, r6, r7, pc}
+.Ltmp75:
+	.p2align	2
+@ %bb.41:
+	.loc	2 0 5                           @ ../../../../../../kernel/freertos/Source/portable/MemMang/heap_4.c:0:5
+__arm_cp.0_0:
+	.long	pxEnd
+.Lcpi_end0:
+	.size	__arm_cp.0_0, .Lcpi_end0-__arm_cp.0_0
+__arm_cp.0_1:
+	.long	xBlockAllocatedBit
+.Lcpi_end1:
+	.size	__arm_cp.0_1, .Lcpi_end1-__arm_cp.0_1
+__arm_cp.0_2:
+	.long	ucHeap
+.Lcpi_end2:
+	.size	__arm_cp.0_2, .Lcpi_end2-__arm_cp.0_2
+__arm_cp.0_3:
+	.long	xStart
+.Lcpi_end3:
+	.size	__arm_cp.0_3, .Lcpi_end3-__arm_cp.0_3
+__arm_cp.0_4:
+	.long	xMinimumEverFreeBytesRemaining
+.Lcpi_end4:
+	.size	__arm_cp.0_4, .Lcpi_end4-__arm_cp.0_4
+__arm_cp.0_5:
+	.long	xFreeBytesRemaining
+.Lcpi_end5:
+	.size	__arm_cp.0_5, .Lcpi_end5-__arm_cp.0_5
+__arm_cp.0_6:
+	.long	xNumberOfSuccessfulAllocations
+.Lcpi_end6:
+	.size	__arm_cp.0_6, .Lcpi_end6-__arm_cp.0_6
+.Lfunc_end0:
+	.size	pvPortMalloc, .Lfunc_end0-pvPortMalloc
+	.cfi_endproc
+	.cantunwind
+	.fnend
+                                        @ -- End function
+	.section	.text.vPortFree,"ax",%progbits
+	.hidden	vPortFree                       @ -- Begin function vPortFree
+	.globl	vPortFree
+	.p2align	2
+	.type	vPortFree,%function
+	.code	16                              @ @vPortFree
+	.thumb_func
+vPortFree:
+.Lfunc_begin1:
+	.loc	2 276 0 is_stmt 1               @ ../../../../../../kernel/freertos/Source/portable/MemMang/heap_4.c:276:0
+	.fnstart
+	.cfi_startproc
+@ %bb.0:
+	@DEBUG_VALUE: vPortFree:pv <- $r0
+	@DEBUG_VALUE: vPortFree:pv <- $r0
+	.save	{r4, r5, r7, lr}
+	push	{r4, r5, r7, lr}
+	.cfi_def_cfa_offset 16
+	.cfi_offset lr, -4
+	.cfi_offset r7, -8
+	.cfi_offset r5, -12
+	.cfi_offset r4, -16
+.Ltmp76:
+	@DEBUG_VALUE: vPortFree:puc <- $r0
+	@DEBUG_VALUE: vPortFree:puc <- $r0
+	.loc	2 280 9 prologue_end            @ ../../../../../../kernel/freertos/Source/portable/MemMang/heap_4.c:280:9
+	cmp	r0, #0
+	beq	.LBB1_19
+.Ltmp77:
+@ %bb.1:
+	@DEBUG_VALUE: vPortFree:puc <- $r0
+	@DEBUG_VALUE: vPortFree:pv <- $r0
+	.loc	2 0 9 is_stmt 0                 @ ../../../../../../kernel/freertos/Source/portable/MemMang/heap_4.c:0:9
+	mov	r4, r0
+.Ltmp78:
+	@DEBUG_VALUE: vPortFree:pv <- $r4
+	@DEBUG_VALUE: vPortFree:puc <- $r4
+	.loc	2 290 9 is_stmt 1               @ ../../../../../../kernel/freertos/Source/portable/MemMang/heap_4.c:290:9
+	ldr	r0, __arm_cp.1_0
+	ldrb	r0, [r0]
+	subs	r1, r0, #1
+	sbcs	r0, r1
+	lsls	r0, r0, #31
+.Ltmp79:
+	@DEBUG_VALUE: vPortFree:pxLink <- undef
+	@DEBUG_VALUE: vPortFree:puc <- undef
+	subs	r5, r4, #4
+	ldr	r1, [r5]
+.Ltmp80:
+	.loc	2 290 9 is_stmt 0               @ ../../../../../../kernel/freertos/Source/portable/MemMang/heap_4.c:290:9
+	tst	r0, r1
+	beq	.LBB1_5
+.Ltmp81:
+@ %bb.2:
+	@DEBUG_VALUE: vPortFree:pv <- $r4
+	.loc	2 0 0                           @ ../../../../../../kernel/freertos/Source/portable/MemMang/heap_4.c:0:0
+	subs	r4, #8
+.Ltmp82:
+	@DEBUG_VALUE: vPortFree:pv <- [DW_OP_LLVM_entry_value 1] $r0
+	@DEBUG_VALUE: vPortFree:pxLink <- $r4
+	@DEBUG_VALUE: vPortFree:puc <- $r4
+	.loc	2 291 9 is_stmt 1               @ ../../../../../../kernel/freertos/Source/portable/MemMang/heap_4.c:291:9
+	ldr	r2, [r4]
+.Ltmp83:
+	.loc	2 291 9 is_stmt 0               @ ../../../../../../kernel/freertos/Source/portable/MemMang/heap_4.c:291:9
+	cmp	r2, #0
+	beq	.LBB1_7
+.Ltmp84:
+@ %bb.3:
+	@DEBUG_VALUE: vPortFree:pxLink <- $r4
+	@DEBUG_VALUE: vPortFree:pv <- [DW_OP_LLVM_entry_value 1] $r0
+	@DEBUG_VALUE: vPortFree:puc <- $r4
+	.loc	2 291 9                         @ ../../../../../../kernel/freertos/Source/portable/MemMang/heap_4.c:291:9
+	@APP
+	cpsid i
+	@NO_APP
+.Ltmp85:
+.LBB1_4:                                @ =>This Inner Loop Header: Depth=1
+	@DEBUG_VALUE: vPortFree:pxLink <- $r4
+	@DEBUG_VALUE: vPortFree:pv <- [DW_OP_LLVM_entry_value 1] $r0
+	@DEBUG_VALUE: vPortFree:puc <- $r4
+	.loc	2 291 9                         @ ../../../../../../kernel/freertos/Source/portable/MemMang/heap_4.c:291:9
+	b	.LBB1_4
+.Ltmp86:
+.LBB1_5:
+	@DEBUG_VALUE: vPortFree:pv <- $r4
+	.loc	2 290 9 is_stmt 1               @ ../../../../../../kernel/freertos/Source/portable/MemMang/heap_4.c:290:9
+	@APP
+	cpsid i
+	@NO_APP
+.Ltmp87:
+.LBB1_6:                                @ =>This Inner Loop Header: Depth=1
+	@DEBUG_VALUE: vPortFree:pv <- $r4
+	.loc	2 290 9 is_stmt 0               @ ../../../../../../kernel/freertos/Source/portable/MemMang/heap_4.c:290:9
+	b	.LBB1_6
+.Ltmp88:
+.LBB1_7:
+	@DEBUG_VALUE: vPortFree:pxLink <- $r4
+	@DEBUG_VALUE: vPortFree:pv <- [DW_OP_LLVM_entry_value 1] $r0
+	@DEBUG_VALUE: vPortFree:puc <- $r4
+	.loc	2 299 36 is_stmt 1              @ ../../../../../../kernel/freertos/Source/portable/MemMang/heap_4.c:299:36
+	bics	r1, r0
+	str	r1, [r5]
+	.loc	2 301 17                        @ ../../../../../../kernel/freertos/Source/portable/MemMang/heap_4.c:301:17
+	bl	vTaskSuspendAll
+.Ltmp89:
+	.loc	2 304 52                        @ ../../../../../../kernel/freertos/Source/portable/MemMang/heap_4.c:304:52
+	ldr	r1, [r5]
+	.loc	2 304 41 is_stmt 0              @ ../../../../../../kernel/freertos/Source/portable/MemMang/heap_4.c:304:41
+	ldr	r0, __arm_cp.1_1
+	ldr	r2, [r0]
+	adds	r2, r2, r1
+	str	r2, [r0]
+	ldr	r0, __arm_cp.1_2
+	@DEBUG_VALUE: prvInsertBlockIntoFreeList:pxBlockToInsert <- $r4
+	@DEBUG_VALUE: prvInsertBlockIntoFreeList:pxIterator <- $r0
+.Ltmp90:
+.LBB1_8:                                @ =>This Inner Loop Header: Depth=1
+	@DEBUG_VALUE: prvInsertBlockIntoFreeList:pxBlockToInsert <- $r4
+	@DEBUG_VALUE: vPortFree:pxLink <- $r4
+	@DEBUG_VALUE: vPortFree:pv <- [DW_OP_LLVM_entry_value 1] $r0
+	@DEBUG_VALUE: vPortFree:puc <- $r4
+	@DEBUG_VALUE: prvInsertBlockIntoFreeList:pxIterator <- $r0
+	.loc	2 397 44 is_stmt 1              @ ../../../../../../kernel/freertos/Source/portable/MemMang/heap_4.c:397:44
+	ldr	r3, [r0]
+.Ltmp91:
+	.loc	2 397 5 is_stmt 0               @ ../../../../../../kernel/freertos/Source/portable/MemMang/heap_4.c:397:5
+	cmp	r3, r4
+	bhs	.LBB1_10
+.Ltmp92:
+@ %bb.9:                                @   in Loop: Header=BB1_8 Depth=1
+	@DEBUG_VALUE: prvInsertBlockIntoFreeList:pxIterator <- $r0
+	@DEBUG_VALUE: prvInsertBlockIntoFreeList:pxBlockToInsert <- $r4
+	@DEBUG_VALUE: vPortFree:pxLink <- $r4
+	@DEBUG_VALUE: vPortFree:pv <- [DW_OP_LLVM_entry_value 1] $r0
+	@DEBUG_VALUE: vPortFree:puc <- $r4
+	@DEBUG_VALUE: prvInsertBlockIntoFreeList:pxIterator <- $r3
+	.loc	2 397 44                        @ ../../../../../../kernel/freertos/Source/portable/MemMang/heap_4.c:397:44
+	ldr	r0, [r3]
+.Ltmp93:
+	.loc	2 397 5                         @ ../../../../../../kernel/freertos/Source/portable/MemMang/heap_4.c:397:5
+	cmp	r0, r4
+	mov	r2, r3
+.Ltmp94:
+	@DEBUG_VALUE: prvInsertBlockIntoFreeList:pxIterator <- $r2
+	blo	.LBB1_8
+	b	.LBB1_11
+.Ltmp95:
+.LBB1_10:
+	@DEBUG_VALUE: prvInsertBlockIntoFreeList:pxIterator <- $r0
+	@DEBUG_VALUE: prvInsertBlockIntoFreeList:pxBlockToInsert <- $r4
+	@DEBUG_VALUE: vPortFree:pxLink <- $r4
+	@DEBUG_VALUE: vPortFree:pv <- [DW_OP_LLVM_entry_value 1] $r0
+	@DEBUG_VALUE: vPortFree:puc <- $r4
+	.loc	2 0 5                           @ ../../../../../../kernel/freertos/Source/portable/MemMang/heap_4.c:0:5
+	mov	r2, r0
+	mov	r0, r3
+.Ltmp96:
+.LBB1_11:
+	@DEBUG_VALUE: prvInsertBlockIntoFreeList:pxBlockToInsert <- $r4
+	@DEBUG_VALUE: vPortFree:pxLink <- $r4
+	@DEBUG_VALUE: vPortFree:pv <- [DW_OP_LLVM_entry_value 1] $r0
+	@DEBUG_VALUE: vPortFree:puc <- $r4
+	@DEBUG_VALUE: prvInsertBlockIntoFreeList:puc <- $r2
+	.loc	2 406 29 is_stmt 1              @ ../../../../../../kernel/freertos/Source/portable/MemMang/heap_4.c:406:29
+	ldr	r3, [r2, #4]
+	.loc	2 406 15 is_stmt 0              @ ../../../../../../kernel/freertos/Source/portable/MemMang/heap_4.c:406:15
+	adds	r5, r2, r3
+.Ltmp97:
+	.loc	2 406 9                         @ ../../../../../../kernel/freertos/Source/portable/MemMang/heap_4.c:406:9
+	cmp	r5, r4
+	bne	.LBB1_13
+.Ltmp98:
+@ %bb.12:
+	@DEBUG_VALUE: prvInsertBlockIntoFreeList:puc <- $r2
+	@DEBUG_VALUE: prvInsertBlockIntoFreeList:pxBlockToInsert <- $r4
+	@DEBUG_VALUE: vPortFree:pxLink <- $r4
+	@DEBUG_VALUE: vPortFree:pv <- [DW_OP_LLVM_entry_value 1] $r0
+	@DEBUG_VALUE: vPortFree:puc <- $r4
+	.loc	2 408 32 is_stmt 1              @ ../../../../../../kernel/freertos/Source/portable/MemMang/heap_4.c:408:32
+	adds	r1, r1, r3
+	str	r1, [r2, #4]
+.Ltmp99:
+	@DEBUG_VALUE: prvInsertBlockIntoFreeList:pxBlockToInsert <- $r2
+	.loc	2 0 32 is_stmt 0                @ ../../../../../../kernel/freertos/Source/portable/MemMang/heap_4.c:0:32
+	mov	r4, r2
+.Ltmp100:
+.LBB1_13:
+	@DEBUG_VALUE: prvInsertBlockIntoFreeList:puc <- $r2
+	@DEBUG_VALUE: vPortFree:pv <- [DW_OP_LLVM_entry_value 1] $r0
+	@DEBUG_VALUE: prvInsertBlockIntoFreeList:pxBlockToInsert <- $r4
+	@DEBUG_VALUE: prvInsertBlockIntoFreeList:puc <- $r4
+	.loc	2 420 15 is_stmt 1              @ ../../../../../../kernel/freertos/Source/portable/MemMang/heap_4.c:420:15
+	adds	r3, r4, r1
+.Ltmp101:
+	.loc	2 420 9 is_stmt 0               @ ../../../../../../kernel/freertos/Source/portable/MemMang/heap_4.c:420:9
+	cmp	r3, r0
+	bne	.LBB1_16
+.Ltmp102:
+@ %bb.14:
+	@DEBUG_VALUE: prvInsertBlockIntoFreeList:puc <- $r4
+	@DEBUG_VALUE: prvInsertBlockIntoFreeList:pxBlockToInsert <- $r4
+	@DEBUG_VALUE: vPortFree:pv <- [DW_OP_LLVM_entry_value 1] $r0
+	.loc	2 0 9                           @ ../../../../../../kernel/freertos/Source/portable/MemMang/heap_4.c:0:9
+	ldr	r3, __arm_cp.1_3
+	ldr	r3, [r3]
+	.loc	2 420 9                         @ ../../../../../../kernel/freertos/Source/portable/MemMang/heap_4.c:420:9
+	cmp	r0, r3
+	beq	.LBB1_16
+.Ltmp103:
+@ %bb.15:
+	@DEBUG_VALUE: prvInsertBlockIntoFreeList:puc <- $r4
+	@DEBUG_VALUE: prvInsertBlockIntoFreeList:pxBlockToInsert <- $r4
+	@DEBUG_VALUE: vPortFree:pv <- [DW_OP_LLVM_entry_value 1] $r0
+	.loc	2 425 73 is_stmt 1              @ ../../../../../../kernel/freertos/Source/portable/MemMang/heap_4.c:425:73
+	ldr	r3, [r0, #4]
+	.loc	2 425 41 is_stmt 0              @ ../../../../../../kernel/freertos/Source/portable/MemMang/heap_4.c:425:41
+	adds	r1, r3, r1
+	str	r1, [r4, #4]
+	.loc	2 426 77 is_stmt 1              @ ../../../../../../kernel/freertos/Source/portable/MemMang/heap_4.c:426:77
+	ldr	r0, [r0]
+.Ltmp104:
+.LBB1_16:
+	@DEBUG_VALUE: prvInsertBlockIntoFreeList:puc <- $r4
+	@DEBUG_VALUE: prvInsertBlockIntoFreeList:pxBlockToInsert <- $r4
+	@DEBUG_VALUE: vPortFree:pv <- [DW_OP_LLVM_entry_value 1] $r0
+	.loc	2 0 0 is_stmt 0                 @ ../../../../../../kernel/freertos/Source/portable/MemMang/heap_4.c:0:0
+	str	r0, [r4]
+.Ltmp105:
+	.loc	2 442 9 is_stmt 1               @ ../../../../../../kernel/freertos/Source/portable/MemMang/heap_4.c:442:9
+	cmp	r2, r4
+	beq	.LBB1_18
+.Ltmp106:
+@ %bb.17:
+	@DEBUG_VALUE: prvInsertBlockIntoFreeList:puc <- $r4
+	@DEBUG_VALUE: prvInsertBlockIntoFreeList:pxBlockToInsert <- $r4
+	@DEBUG_VALUE: vPortFree:pv <- [DW_OP_LLVM_entry_value 1] $r0
+	.loc	2 444 37                        @ ../../../../../../kernel/freertos/Source/portable/MemMang/heap_4.c:444:37
+	str	r4, [r2]
+.Ltmp107:
+.LBB1_18:
+	@DEBUG_VALUE: vPortFree:pv <- [DW_OP_LLVM_entry_value 1] $r0
+	.loc	2 307 45                        @ ../../../../../../kernel/freertos/Source/portable/MemMang/heap_4.c:307:45
+	ldr	r0, __arm_cp.1_4
+	ldr	r1, [r0]
+	adds	r1, r1, #1
+	str	r1, [r0]
+.Ltmp108:
+	.loc	2 309 26                        @ ../../../../../../kernel/freertos/Source/portable/MemMang/heap_4.c:309:26
+	bl	xTaskResumeAll
+.Ltmp109:
+.LBB1_19:
+	.loc	2 321 1 epilogue_begin          @ ../../../../../../kernel/freertos/Source/portable/MemMang/heap_4.c:321:1
+	pop	{r4, r5, r7, pc}
+.Ltmp110:
+	.p2align	2
+@ %bb.20:
+	.loc	2 0 1 is_stmt 0                 @ ../../../../../../kernel/freertos/Source/portable/MemMang/heap_4.c:0:1
+__arm_cp.1_0:
+	.long	xBlockAllocatedBit
+.Lcpi_end7:
+	.size	__arm_cp.1_0, .Lcpi_end7-__arm_cp.1_0
+__arm_cp.1_1:
+	.long	xFreeBytesRemaining
+.Lcpi_end8:
+	.size	__arm_cp.1_1, .Lcpi_end8-__arm_cp.1_1
+__arm_cp.1_2:
+	.long	xStart
+.Lcpi_end9:
+	.size	__arm_cp.1_2, .Lcpi_end9-__arm_cp.1_2
+__arm_cp.1_3:
+	.long	pxEnd
+.Lcpi_end10:
+	.size	__arm_cp.1_3, .Lcpi_end10-__arm_cp.1_3
+__arm_cp.1_4:
+	.long	xNumberOfSuccessfulFrees
+.Lcpi_end11:
+	.size	__arm_cp.1_4, .Lcpi_end11-__arm_cp.1_4
+.Lfunc_end1:
+	.size	vPortFree, .Lfunc_end1-vPortFree
+	.cfi_endproc
+	.cantunwind
+	.fnend
+                                        @ -- End function
+	.section	.text.xPortGetFreeHeapSize,"ax",%progbits
+	.hidden	xPortGetFreeHeapSize            @ -- Begin function xPortGetFreeHeapSize
+	.globl	xPortGetFreeHeapSize
+	.p2align	2
+	.type	xPortGetFreeHeapSize,%function
+	.code	16                              @ @xPortGetFreeHeapSize
+	.thumb_func
+xPortGetFreeHeapSize:
+.Lfunc_begin2:
+	.fnstart
+	.cfi_startproc
+@ %bb.0:
+	.loc	2 326 12 prologue_end is_stmt 1 @ ../../../../../../kernel/freertos/Source/portable/MemMang/heap_4.c:326:12
+	ldr	r0, __arm_cp.2_0
+	ldr	r0, [r0]
+	.loc	2 326 5 is_stmt 0               @ ../../../../../../kernel/freertos/Source/portable/MemMang/heap_4.c:326:5
+	bx	lr
+.Ltmp111:
+	.p2align	2
+@ %bb.1:
+	.loc	2 0 5                           @ ../../../../../../kernel/freertos/Source/portable/MemMang/heap_4.c:0:5
+__arm_cp.2_0:
+	.long	xFreeBytesRemaining
+.Lcpi_end12:
+	.size	__arm_cp.2_0, .Lcpi_end12-__arm_cp.2_0
+.Lfunc_end2:
+	.size	xPortGetFreeHeapSize, .Lfunc_end2-xPortGetFreeHeapSize
+	.cfi_endproc
+	.cantunwind
+	.fnend
+                                        @ -- End function
+	.section	.text.xPortGetMinimumEverFreeHeapSize,"ax",%progbits
+	.hidden	xPortGetMinimumEverFreeHeapSize @ -- Begin function xPortGetMinimumEverFreeHeapSize
+	.globl	xPortGetMinimumEverFreeHeapSize
+	.p2align	2
+	.type	xPortGetMinimumEverFreeHeapSize,%function
+	.code	16                              @ @xPortGetMinimumEverFreeHeapSize
+	.thumb_func
+xPortGetMinimumEverFreeHeapSize:
+.Lfunc_begin3:
+	.fnstart
+	.cfi_startproc
+@ %bb.0:
+	.loc	2 332 12 prologue_end is_stmt 1 @ ../../../../../../kernel/freertos/Source/portable/MemMang/heap_4.c:332:12
+	ldr	r0, __arm_cp.3_0
+	ldr	r0, [r0]
+	.loc	2 332 5 is_stmt 0               @ ../../../../../../kernel/freertos/Source/portable/MemMang/heap_4.c:332:5
+	bx	lr
+.Ltmp112:
+	.p2align	2
+@ %bb.1:
+	.loc	2 0 5                           @ ../../../../../../kernel/freertos/Source/portable/MemMang/heap_4.c:0:5
+__arm_cp.3_0:
+	.long	xMinimumEverFreeBytesRemaining
+.Lcpi_end13:
+	.size	__arm_cp.3_0, .Lcpi_end13-__arm_cp.3_0
+.Lfunc_end3:
+	.size	xPortGetMinimumEverFreeHeapSize, .Lfunc_end3-xPortGetMinimumEverFreeHeapSize
+	.cfi_endproc
+	.cantunwind
+	.fnend
+                                        @ -- End function
+	.section	.text.vPortInitialiseBlocks,"ax",%progbits
+	.hidden	vPortInitialiseBlocks           @ -- Begin function vPortInitialiseBlocks
+	.globl	vPortInitialiseBlocks
+	.p2align	1
+	.type	vPortInitialiseBlocks,%function
+	.code	16                              @ @vPortInitialiseBlocks
+	.thumb_func
+vPortInitialiseBlocks:
+.Lfunc_begin4:
+	.fnstart
+	.cfi_startproc
+@ %bb.0:
+	.loc	2 339 1 prologue_end is_stmt 1  @ ../../../../../../kernel/freertos/Source/portable/MemMang/heap_4.c:339:1
+	bx	lr
+.Ltmp113:
+.Lfunc_end4:
+	.size	vPortInitialiseBlocks, .Lfunc_end4-vPortInitialiseBlocks
+	.cfi_endproc
+	.cantunwind
+	.fnend
+                                        @ -- End function
+	.section	.text.vPortGetHeapStats,"ax",%progbits
+	.hidden	vPortGetHeapStats               @ -- Begin function vPortGetHeapStats
+	.globl	vPortGetHeapStats
+	.p2align	2
+	.type	vPortGetHeapStats,%function
+	.code	16                              @ @vPortGetHeapStats
+	.thumb_func
+vPortGetHeapStats:
+.Lfunc_begin5:
+	.loc	2 454 0                         @ ../../../../../../kernel/freertos/Source/portable/MemMang/heap_4.c:454:0
+	.fnstart
+	.cfi_startproc
+@ %bb.0:
+	@DEBUG_VALUE: vPortGetHeapStats:pxHeapStats <- $r0
+	.save	{r4, r5, r6, r7, lr}
+	push	{r4, r5, r6, r7, lr}
+	.cfi_def_cfa_offset 20
+	.cfi_offset lr, -4
+	.cfi_offset r7, -8
+	.cfi_offset r6, -12
+	.cfi_offset r5, -16
+	.cfi_offset r4, -20
+	.pad	#4
+	sub	sp, #4
+	.cfi_def_cfa_offset 24
+	mov	r4, r0
+.Ltmp114:
+	@DEBUG_VALUE: vPortGetHeapStats:xMinSize <- -1
+	@DEBUG_VALUE: vPortGetHeapStats:xMaxSize <- 0
+	@DEBUG_VALUE: vPortGetHeapStats:xBlocks <- 0
+	@DEBUG_VALUE: vPortGetHeapStats:pxHeapStats <- $r4
+	.loc	2 458 5 prologue_end            @ ../../../../../../kernel/freertos/Source/portable/MemMang/heap_4.c:458:5
+	bl	vTaskSuspendAll
+.Ltmp115:
+	.loc	2 0 5 is_stmt 0                 @ ../../../../../../kernel/freertos/Source/portable/MemMang/heap_4.c:0:5
+	movs	r5, #0
+	mvns	r2, r5
+.Ltmp116:
+	.loc	2 460 26 is_stmt 1              @ ../../../../../../kernel/freertos/Source/portable/MemMang/heap_4.c:460:26
+	ldr	r0, __arm_cp.5_0
+	ldr	r0, [r0]
+.Ltmp117:
+	@DEBUG_VALUE: vPortGetHeapStats:pxBlock <- $r0
+	.loc	2 464 13                        @ ../../../../../../kernel/freertos/Source/portable/MemMang/heap_4.c:464:13
+	cmp	r0, #0
+	beq	.LBB5_7
+.Ltmp118:
+@ %bb.1:
+	@DEBUG_VALUE: vPortGetHeapStats:pxBlock <- $r0
+	@DEBUG_VALUE: vPortGetHeapStats:pxHeapStats <- $r4
+	@DEBUG_VALUE: vPortGetHeapStats:xBlocks <- 0
+	@DEBUG_VALUE: vPortGetHeapStats:xMaxSize <- 0
+	@DEBUG_VALUE: vPortGetHeapStats:xMinSize <- -1
+	.loc	2 0 13 is_stmt 0                @ ../../../../../../kernel/freertos/Source/portable/MemMang/heap_4.c:0:13
+	ldr	r1, __arm_cp.5_1
+	ldr	r1, [r1]
+	movs	r5, #0
+	mov	r3, r5
+	b	.LBB5_3
+.Ltmp119:
+.LBB5_2:                                @   in Loop: Header=BB5_3 Depth=1
+	@DEBUG_VALUE: vPortGetHeapStats:xMinSize <- $r7
+	@DEBUG_VALUE: vPortGetHeapStats:xBlocks <- $r5
+	@DEBUG_VALUE: vPortGetHeapStats:pxBlock <- $r0
+	@DEBUG_VALUE: vPortGetHeapStats:pxHeapStats <- $r4
+	@DEBUG_VALUE: vPortGetHeapStats:xMaxSize <- $r6
+	.loc	2 484 36 is_stmt 1              @ ../../../../../../kernel/freertos/Source/portable/MemMang/heap_4.c:484:36
+	ldr	r0, [r0]
+.Ltmp120:
+	@DEBUG_VALUE: vPortGetHeapStats:pxBlock <- $r0
+	.loc	2 470 24                        @ ../../../../../../kernel/freertos/Source/portable/MemMang/heap_4.c:470:24
+	adds	r5, r5, #1
+.Ltmp121:
+	@DEBUG_VALUE: vPortGetHeapStats:xBlocks <- $r5
+	.loc	2 485 13                        @ ../../../../../../kernel/freertos/Source/portable/MemMang/heap_4.c:485:13
+	cmp	r0, r1
+	mov	r3, r6
+	mov	r2, r7
+	beq	.LBB5_8
+.Ltmp122:
+.LBB5_3:                                @ =>This Inner Loop Header: Depth=1
+	@DEBUG_VALUE: vPortGetHeapStats:pxBlock <- $r0
+	@DEBUG_VALUE: vPortGetHeapStats:pxHeapStats <- $r4
+	@DEBUG_VALUE: vPortGetHeapStats:xBlocks <- $r5
+	@DEBUG_VALUE: vPortGetHeapStats:xMaxSize <- $r3
+	@DEBUG_VALUE: vPortGetHeapStats:xMinSize <- $r2
+	@DEBUG_VALUE: vPortGetHeapStats:pxBlock <- $r0
+	.loc	2 472 30                        @ ../../../../../../kernel/freertos/Source/portable/MemMang/heap_4.c:472:30
+	ldr	r6, [r0, #4]
+.Ltmp123:
+	.loc	2 477 21                        @ ../../../../../../kernel/freertos/Source/portable/MemMang/heap_4.c:477:21
+	cmp	r6, r2
+	mov	r7, r6
+	blo	.LBB5_5
+.Ltmp124:
+@ %bb.4:                                @   in Loop: Header=BB5_3 Depth=1
+	@DEBUG_VALUE: vPortGetHeapStats:xMinSize <- $r2
+	@DEBUG_VALUE: vPortGetHeapStats:xMaxSize <- $r3
+	@DEBUG_VALUE: vPortGetHeapStats:xBlocks <- $r5
+	@DEBUG_VALUE: vPortGetHeapStats:pxBlock <- $r0
+	@DEBUG_VALUE: vPortGetHeapStats:pxHeapStats <- $r4
+	.loc	2 0 21 is_stmt 0                @ ../../../../../../kernel/freertos/Source/portable/MemMang/heap_4.c:0:21
+	mov	r7, r2
+.Ltmp125:
+	@DEBUG_VALUE: vPortGetHeapStats:xMinSize <- $r7
+.LBB5_5:                                @   in Loop: Header=BB5_3 Depth=1
+	@DEBUG_VALUE: vPortGetHeapStats:xMaxSize <- $r3
+	@DEBUG_VALUE: vPortGetHeapStats:xBlocks <- $r5
+	@DEBUG_VALUE: vPortGetHeapStats:pxBlock <- $r0
+	@DEBUG_VALUE: vPortGetHeapStats:pxHeapStats <- $r4
+	@DEBUG_VALUE: vPortGetHeapStats:xMinSize <- $r7
+	.loc	2 472 21 is_stmt 1              @ ../../../../../../kernel/freertos/Source/portable/MemMang/heap_4.c:472:21
+	cmp	r6, r3
+	bhi	.LBB5_2
+.Ltmp126:
+@ %bb.6:                                @   in Loop: Header=BB5_3 Depth=1
+	@DEBUG_VALUE: vPortGetHeapStats:xMinSize <- $r7
+	@DEBUG_VALUE: vPortGetHeapStats:xMaxSize <- $r3
+	@DEBUG_VALUE: vPortGetHeapStats:xBlocks <- $r5
+	@DEBUG_VALUE: vPortGetHeapStats:pxBlock <- $r0
+	@DEBUG_VALUE: vPortGetHeapStats:pxHeapStats <- $r4
+	.loc	2 0 21 is_stmt 0                @ ../../../../../../kernel/freertos/Source/portable/MemMang/heap_4.c:0:21
+	mov	r6, r3
+.Ltmp127:
+	@DEBUG_VALUE: vPortGetHeapStats:xMaxSize <- $r6
+	b	.LBB5_2
+.Ltmp128:
+.LBB5_7:
+	@DEBUG_VALUE: vPortGetHeapStats:pxBlock <- $r0
+	@DEBUG_VALUE: vPortGetHeapStats:pxHeapStats <- $r4
+	@DEBUG_VALUE: vPortGetHeapStats:xBlocks <- 0
+	@DEBUG_VALUE: vPortGetHeapStats:xMaxSize <- 0
+	@DEBUG_VALUE: vPortGetHeapStats:xMinSize <- -1
+	mov	r6, r5
+	mov	r7, r2
+.Ltmp129:
+.LBB5_8:
+	@DEBUG_VALUE: vPortGetHeapStats:pxBlock <- $r0
+	@DEBUG_VALUE: vPortGetHeapStats:pxHeapStats <- $r4
+	@DEBUG_VALUE: vPortGetHeapStats:xBlocks <- $r5
+	@DEBUG_VALUE: vPortGetHeapStats:xMaxSize <- $r6
+	@DEBUG_VALUE: vPortGetHeapStats:xMinSize <- $r7
+	.loc	2 488 14 is_stmt 1              @ ../../../../../../kernel/freertos/Source/portable/MemMang/heap_4.c:488:14
+	bl	xTaskResumeAll
+.Ltmp130:
+	.loc	2 490 49                        @ ../../../../../../kernel/freertos/Source/portable/MemMang/heap_4.c:490:49
+	str	r6, [r4, #4]
+	.loc	2 491 50                        @ ../../../../../../kernel/freertos/Source/portable/MemMang/heap_4.c:491:50
+	str	r7, [r4, #8]
+	.loc	2 492 38                        @ ../../../../../../kernel/freertos/Source/portable/MemMang/heap_4.c:492:38
+	str	r5, [r4, #12]
+	.loc	2 494 5                         @ ../../../../../../kernel/freertos/Source/portable/MemMang/heap_4.c:494:5
+	bl	vPortEnterCritical
+.Ltmp131:
+	.loc	2 496 51                        @ ../../../../../../kernel/freertos/Source/portable/MemMang/heap_4.c:496:51
+	ldr	r0, __arm_cp.5_2
+	ldr	r0, [r0]
+	.loc	2 496 49 is_stmt 0              @ ../../../../../../kernel/freertos/Source/portable/MemMang/heap_4.c:496:49
+	str	r0, [r4]
+	.loc	2 497 55 is_stmt 1              @ ../../../../../../kernel/freertos/Source/portable/MemMang/heap_4.c:497:55
+	ldr	r0, __arm_cp.5_3
+	ldr	r0, [r0]
+	.loc	2 498 49                        @ ../../../../../../kernel/freertos/Source/portable/MemMang/heap_4.c:498:49
+	ldr	r1, __arm_cp.5_4
+	ldr	r1, [r1]
+	.loc	2 499 55                        @ ../../../../../../kernel/freertos/Source/portable/MemMang/heap_4.c:499:55
+	ldr	r2, __arm_cp.5_5
+	ldr	r2, [r2]
+	.loc	2 499 53 is_stmt 0              @ ../../../../../../kernel/freertos/Source/portable/MemMang/heap_4.c:499:53
+	str	r2, [r4, #16]
+	.loc	2 497 53 is_stmt 1              @ ../../../../../../kernel/freertos/Source/portable/MemMang/heap_4.c:497:53
+	str	r0, [r4, #20]
+	.loc	2 498 47                        @ ../../../../../../kernel/freertos/Source/portable/MemMang/heap_4.c:498:47
+	str	r1, [r4, #24]
+.Ltmp132:
+	.loc	2 501 5                         @ ../../../../../../kernel/freertos/Source/portable/MemMang/heap_4.c:501:5
+	bl	vPortExitCritical
+.Ltmp133:
+	.loc	2 502 1 epilogue_begin          @ ../../../../../../kernel/freertos/Source/portable/MemMang/heap_4.c:502:1
+	add	sp, #4
+	pop	{r4, r5, r6, r7, pc}
+.Ltmp134:
+	.p2align	2
+@ %bb.9:
+	.loc	2 0 1 is_stmt 0                 @ ../../../../../../kernel/freertos/Source/portable/MemMang/heap_4.c:0:1
+__arm_cp.5_0:
+	.long	xStart
+.Lcpi_end14:
+	.size	__arm_cp.5_0, .Lcpi_end14-__arm_cp.5_0
+__arm_cp.5_1:
+	.long	pxEnd
+.Lcpi_end15:
+	.size	__arm_cp.5_1, .Lcpi_end15-__arm_cp.5_1
+__arm_cp.5_2:
+	.long	xFreeBytesRemaining
+.Lcpi_end16:
+	.size	__arm_cp.5_2, .Lcpi_end16-__arm_cp.5_2
+__arm_cp.5_3:
+	.long	xNumberOfSuccessfulAllocations
+.Lcpi_end17:
+	.size	__arm_cp.5_3, .Lcpi_end17-__arm_cp.5_3
+__arm_cp.5_4:
+	.long	xNumberOfSuccessfulFrees
+.Lcpi_end18:
+	.size	__arm_cp.5_4, .Lcpi_end18-__arm_cp.5_4
+__arm_cp.5_5:
+	.long	xMinimumEverFreeBytesRemaining
+.Lcpi_end19:
+	.size	__arm_cp.5_5, .Lcpi_end19-__arm_cp.5_5
+.Lfunc_end5:
+	.size	vPortGetHeapStats, .Lfunc_end5-vPortGetHeapStats
+	.cfi_endproc
+	.cantunwind
+	.fnend
+                                        @ -- End function
+	.type	pxEnd,%object                   @ @pxEnd
+	.section	.bss.pxEnd,"aw",%nobits
+	.p2align	2, 0x0
+pxEnd:
+	.long	0
+	.size	pxEnd, 4
+
+	.type	xBlockAllocatedBit,%object      @ @xBlockAllocatedBit
+	.section	.bss.xBlockAllocatedBit,"aw",%nobits
+	.p2align	2, 0x0
+xBlockAllocatedBit:
+	.byte	0                               @ 0x0
+	.size	xBlockAllocatedBit, 1
+
+	.type	xFreeBytesRemaining,%object     @ @xFreeBytesRemaining
+	.section	.bss.xFreeBytesRemaining,"aw",%nobits
+	.p2align	2, 0x0
+xFreeBytesRemaining:
+	.long	0                               @ 0x0
+	.size	xFreeBytesRemaining, 4
+
+	.type	xStart,%object                  @ @xStart
+	.section	.bss.xStart,"aw",%nobits
+	.p2align	2, 0x0
+xStart:
+	.zero	8
+	.size	xStart, 8
+
+	.type	xMinimumEverFreeBytesRemaining,%object @ @xMinimumEverFreeBytesRemaining
+	.section	.bss.xMinimumEverFreeBytesRemaining,"aw",%nobits
+	.p2align	2, 0x0
+xMinimumEverFreeBytesRemaining:
+	.long	0                               @ 0x0
+	.size	xMinimumEverFreeBytesRemaining, 4
+
+	.type	xNumberOfSuccessfulAllocations,%object @ @xNumberOfSuccessfulAllocations
+	.section	.bss.xNumberOfSuccessfulAllocations,"aw",%nobits
+	.p2align	2, 0x0
+xNumberOfSuccessfulAllocations:
+	.long	0                               @ 0x0
+	.size	xNumberOfSuccessfulAllocations, 4
+
+	.type	xNumberOfSuccessfulFrees,%object @ @xNumberOfSuccessfulFrees
+	.section	.bss.xNumberOfSuccessfulFrees,"aw",%nobits
+	.p2align	2, 0x0
+xNumberOfSuccessfulFrees:
+	.long	0                               @ 0x0
+	.size	xNumberOfSuccessfulFrees, 4
+
+	.type	ucHeap,%object                  @ @ucHeap
+	.section	.bss.ucHeap,"aw",%nobits
+ucHeap:
+	.zero	3072
+	.size	ucHeap, 3072
+
+	.file	5 "D:\\TI_M0G3507\\mspm0_sdk_2_05_00_05\\kernel\\freertos\\builds\\LP_MSPM0G3507\\release\\keil" "../../../../../../kernel/freertos/Source/include/portable.h"
+	.section	.debug_loc,"",%progbits
+.Ldebug_loc0:
+	.long	-1
+	.long	.Lfunc_begin0                   @   base address
+	.long	.Lfunc_begin0-.Lfunc_begin0
+	.long	.Ltmp0-.Lfunc_begin0
+	.short	1                               @ Loc expr size
+	.byte	80                              @ DW_OP_reg0
+	.long	.Ltmp0-.Lfunc_begin0
+	.long	.Ltmp19-.Lfunc_begin0
+	.short	1                               @ Loc expr size
+	.byte	85                              @ DW_OP_reg5
+	.long	.Ltmp19-.Lfunc_begin0
+	.long	.Ltmp25-.Lfunc_begin0
+	.short	3                               @ Loc expr size
+	.byte	117                             @ DW_OP_breg5
+	.byte	8                               @ 8
+	.byte	159                             @ DW_OP_stack_value
+	.long	.Ltmp25-.Lfunc_begin0
+	.long	.Ltmp43-.Lfunc_begin0
+	.short	1                               @ Loc expr size
+	.byte	86                              @ DW_OP_reg6
+	.long	0
+	.long	0
+.Ldebug_loc1:
+	.long	-1
+	.long	.Lfunc_begin0                   @   base address
+	.long	.Ltmp0-.Lfunc_begin0
+	.long	.Ltmp37-.Lfunc_begin0
+	.short	2                               @ Loc expr size
+	.byte	48                              @ DW_OP_lit0
+	.byte	159                             @ DW_OP_stack_value
+	.long	.Ltmp69-.Lfunc_begin0
+	.long	.Ltmp75-.Lfunc_begin0
+	.short	1                               @ Loc expr size
+	.byte	84                              @ DW_OP_reg4
+	.long	0
+	.long	0
+.Ldebug_loc2:
+	.long	-1
+	.long	.Lfunc_begin0                   @   base address
+	.long	.Ltmp7-.Lfunc_begin0
+	.long	.Ltmp10-.Lfunc_begin0
+	.short	4                               @ Loc expr size
+	.byte	16                              @ DW_OP_constu
+	.byte	128                             @ 3072
+	.byte	24                              @ 
+	.byte	159                             @ DW_OP_stack_value
+	.long	0
+	.long	0
+.Ldebug_loc3:
+	.long	-1
+	.long	.Lfunc_begin0                   @   base address
+	.long	.Ltmp8-.Lfunc_begin0
+	.long	.Ltmp10-.Lfunc_begin0
+	.short	1                               @ Loc expr size
+	.byte	86                              @ DW_OP_reg6
+	.long	.Ltmp10-.Lfunc_begin0
+	.long	.Ltmp11-.Lfunc_begin0
+	.short	1                               @ Loc expr size
+	.byte	83                              @ DW_OP_reg3
+	.long	.Ltmp11-.Lfunc_begin0
+	.long	.Ltmp12-.Lfunc_begin0
+	.short	3                               @ Loc expr size
+	.byte	113                             @ DW_OP_breg1
+	.byte	120                             @ -8
+	.byte	159                             @ DW_OP_stack_value
+	.long	.Ltmp13-.Lfunc_begin0
+	.long	.Ltmp14-.Lfunc_begin0
+	.short	1                               @ Loc expr size
+	.byte	81                              @ DW_OP_reg1
+	.long	0
+	.long	0
+.Ldebug_loc4:
+	.long	-1
+	.long	.Lfunc_begin0                   @   base address
+	.long	.Ltmp10-.Lfunc_begin0
+	.long	.Ltmp15-.Lfunc_begin0
+	.short	1                               @ Loc expr size
+	.byte	83                              @ DW_OP_reg3
+	.long	0
+	.long	0
+.Ldebug_loc5:
+	.long	-1
+	.long	.Lfunc_begin0                   @   base address
+	.long	.Ltmp10-.Lfunc_begin0
+	.long	.Ltmp15-.Lfunc_begin0
+	.short	1                               @ Loc expr size
+	.byte	83                              @ DW_OP_reg3
+	.long	0
+	.long	0
+.Ldebug_loc6:
+	.long	-1
+	.long	.Lfunc_begin0                   @   base address
+	.long	.Ltmp27-.Lfunc_begin0
+	.long	.Ltmp31-.Lfunc_begin0
+	.short	1                               @ Loc expr size
+	.byte	85                              @ DW_OP_reg5
+	.long	.Ltmp32-.Lfunc_begin0
+	.long	.Ltmp39-.Lfunc_begin0
+	.short	1                               @ Loc expr size
+	.byte	85                              @ DW_OP_reg5
+	.long	0
+	.long	0
+.Ldebug_loc7:
+	.long	-1
+	.long	.Lfunc_begin0                   @   base address
+	.long	.Ltmp28-.Lfunc_begin0
+	.long	.Ltmp31-.Lfunc_begin0
+	.short	1                               @ Loc expr size
+	.byte	83                              @ DW_OP_reg3
+	.long	.Ltmp31-.Lfunc_begin0
+	.long	.Ltmp32-.Lfunc_begin0
+	.short	1                               @ Loc expr size
+	.byte	85                              @ DW_OP_reg5
+	.long	.Ltmp32-.Lfunc_begin0
+	.long	.Ltmp70-.Lfunc_begin0
+	.short	1                               @ Loc expr size
+	.byte	83                              @ DW_OP_reg3
+	.long	0
+	.long	0
+.Ldebug_loc8:
+	.long	-1
+	.long	.Lfunc_begin0                   @   base address
+	.long	.Ltmp39-.Lfunc_begin0
+	.long	.Ltmp55-.Lfunc_begin0
+	.short	1                               @ Loc expr size
+	.byte	85                              @ DW_OP_reg5
+	.long	0
+	.long	0
+.Ldebug_loc9:
+	.long	-1
+	.long	.Lfunc_begin0                   @   base address
+	.long	.Ltmp43-.Lfunc_begin0
+	.long	.Ltmp54-.Lfunc_begin0
+	.short	1                               @ Loc expr size
+	.byte	85                              @ DW_OP_reg5
+	.long	.Ltmp54-.Lfunc_begin0
+	.long	.Ltmp55-.Lfunc_begin0
+	.short	1                               @ Loc expr size
+	.byte	87                              @ DW_OP_reg7
+	.long	.Ltmp55-.Lfunc_begin0
+	.long	.Ltmp62-.Lfunc_begin0
+	.short	1                               @ Loc expr size
+	.byte	85                              @ DW_OP_reg5
+	.long	0
+	.long	0
+.Ldebug_loc10:
+	.long	-1
+	.long	.Lfunc_begin0                   @   base address
+	.long	.Ltmp43-.Lfunc_begin0
+	.long	.Ltmp45-.Lfunc_begin0
+	.short	1                               @ Loc expr size
+	.byte	86                              @ DW_OP_reg6
+	.long	.Ltmp45-.Lfunc_begin0
+	.long	.Ltmp47-.Lfunc_begin0
+	.short	1                               @ Loc expr size
+	.byte	82                              @ DW_OP_reg2
+	.long	.Ltmp47-.Lfunc_begin0
+	.long	.Ltmp48-.Lfunc_begin0
+	.short	1                               @ Loc expr size
+	.byte	87                              @ DW_OP_reg7
+	.long	.Ltmp48-.Lfunc_begin0
+	.long	.Ltmp49-.Lfunc_begin0
+	.short	1                               @ Loc expr size
+	.byte	86                              @ DW_OP_reg6
+	.long	.Ltmp49-.Lfunc_begin0
+	.long	.Ltmp62-.Lfunc_begin0
+	.short	1                               @ Loc expr size
+	.byte	87                              @ DW_OP_reg7
+	.long	0
+	.long	0
+.Ldebug_loc11:
+	.long	-1
+	.long	.Lfunc_begin0                   @   base address
+	.long	.Ltmp50-.Lfunc_begin0
+	.long	.Ltmp55-.Lfunc_begin0
+	.short	1                               @ Loc expr size
+	.byte	87                              @ DW_OP_reg7
+	.long	.Ltmp55-.Lfunc_begin0
+	.long	.Ltmp62-.Lfunc_begin0
+	.short	1                               @ Loc expr size
+	.byte	85                              @ DW_OP_reg5
+	.long	0
+	.long	0
+.Ldebug_loc12:
+	.long	-1
+	.long	.Lfunc_begin1                   @   base address
+	.long	.Lfunc_begin1-.Lfunc_begin1
+	.long	.Ltmp78-.Lfunc_begin1
+	.short	1                               @ Loc expr size
+	.byte	80                              @ DW_OP_reg0
+	.long	.Ltmp78-.Lfunc_begin1
+	.long	.Ltmp82-.Lfunc_begin1
+	.short	1                               @ Loc expr size
+	.byte	84                              @ DW_OP_reg4
+	.long	.Ltmp82-.Lfunc_begin1
+	.long	.Ltmp86-.Lfunc_begin1
+	.short	4                               @ Loc expr size
+	.byte	243                             @ DW_OP_GNU_entry_value
+	.byte	1                               @ 1
+	.byte	80                              @ DW_OP_reg0
+	.byte	159                             @ DW_OP_stack_value
+	.long	.Ltmp86-.Lfunc_begin1
+	.long	.Ltmp88-.Lfunc_begin1
+	.short	1                               @ Loc expr size
+	.byte	84                              @ DW_OP_reg4
+	.long	.Ltmp88-.Lfunc_begin1
+	.long	.Ltmp109-.Lfunc_begin1
+	.short	4                               @ Loc expr size
+	.byte	243                             @ DW_OP_GNU_entry_value
+	.byte	1                               @ 1
+	.byte	80                              @ DW_OP_reg0
+	.byte	159                             @ DW_OP_stack_value
+	.long	0
+	.long	0
+.Ldebug_loc13:
+	.long	-1
+	.long	.Lfunc_begin1                   @   base address
+	.long	.Ltmp76-.Lfunc_begin1
+	.long	.Ltmp78-.Lfunc_begin1
+	.short	1                               @ Loc expr size
+	.byte	80                              @ DW_OP_reg0
+	.long	.Ltmp78-.Lfunc_begin1
+	.long	.Ltmp79-.Lfunc_begin1
+	.short	1                               @ Loc expr size
+	.byte	84                              @ DW_OP_reg4
+	.long	.Ltmp82-.Lfunc_begin1
+	.long	.Ltmp86-.Lfunc_begin1
+	.short	1                               @ Loc expr size
+	.byte	84                              @ DW_OP_reg4
+	.long	.Ltmp88-.Lfunc_begin1
+	.long	.Ltmp100-.Lfunc_begin1
+	.short	1                               @ Loc expr size
+	.byte	84                              @ DW_OP_reg4
+	.long	0
+	.long	0
+.Ldebug_loc14:
+	.long	-1
+	.long	.Lfunc_begin1                   @   base address
+	.long	.Ltmp82-.Lfunc_begin1
+	.long	.Ltmp86-.Lfunc_begin1
+	.short	1                               @ Loc expr size
+	.byte	84                              @ DW_OP_reg4
+	.long	.Ltmp88-.Lfunc_begin1
+	.long	.Ltmp100-.Lfunc_begin1
+	.short	1                               @ Loc expr size
+	.byte	84                              @ DW_OP_reg4
+	.long	0
+	.long	0
+.Ldebug_loc15:
+	.long	-1
+	.long	.Lfunc_begin1                   @   base address
+	.long	.Ltmp90-.Lfunc_begin1
+	.long	.Ltmp99-.Lfunc_begin1
+	.short	1                               @ Loc expr size
+	.byte	84                              @ DW_OP_reg4
+	.long	.Ltmp99-.Lfunc_begin1
+	.long	.Ltmp100-.Lfunc_begin1
+	.short	1                               @ Loc expr size
+	.byte	82                              @ DW_OP_reg2
+	.long	.Ltmp100-.Lfunc_begin1
+	.long	.Ltmp107-.Lfunc_begin1
+	.short	1                               @ Loc expr size
+	.byte	84                              @ DW_OP_reg4
+	.long	0
+	.long	0
+.Ldebug_loc16:
+	.long	-1
+	.long	.Lfunc_begin1                   @   base address
+	.long	.Ltmp90-.Lfunc_begin1
+	.long	.Ltmp92-.Lfunc_begin1
+	.short	1                               @ Loc expr size
+	.byte	80                              @ DW_OP_reg0
+	.long	.Ltmp92-.Lfunc_begin1
+	.long	.Ltmp94-.Lfunc_begin1
+	.short	1                               @ Loc expr size
+	.byte	83                              @ DW_OP_reg3
+	.long	.Ltmp94-.Lfunc_begin1
+	.long	.Ltmp95-.Lfunc_begin1
+	.short	1                               @ Loc expr size
+	.byte	82                              @ DW_OP_reg2
+	.long	.Ltmp95-.Lfunc_begin1
+	.long	.Ltmp96-.Lfunc_begin1
+	.short	1                               @ Loc expr size
+	.byte	80                              @ DW_OP_reg0
+	.long	0
+	.long	0
+.Ldebug_loc17:
+	.long	-1
+	.long	.Lfunc_begin1                   @   base address
+	.long	.Ltmp96-.Lfunc_begin1
+	.long	.Ltmp100-.Lfunc_begin1
+	.short	1                               @ Loc expr size
+	.byte	82                              @ DW_OP_reg2
+	.long	.Ltmp100-.Lfunc_begin1
+	.long	.Ltmp107-.Lfunc_begin1
+	.short	1                               @ Loc expr size
+	.byte	84                              @ DW_OP_reg4
+	.long	0
+	.long	0
+.Ldebug_loc18:
+	.long	-1
+	.long	.Lfunc_begin5                   @   base address
+	.long	.Lfunc_begin5-.Lfunc_begin5
+	.long	.Ltmp114-.Lfunc_begin5
+	.short	1                               @ Loc expr size
+	.byte	80                              @ DW_OP_reg0
+	.long	.Ltmp114-.Lfunc_begin5
+	.long	.Ltmp134-.Lfunc_begin5
+	.short	1                               @ Loc expr size
+	.byte	84                              @ DW_OP_reg4
+	.long	0
+	.long	0
+.Ldebug_loc19:
+	.long	-1
+	.long	.Lfunc_begin5                   @   base address
+	.long	.Ltmp114-.Lfunc_begin5
+	.long	.Ltmp119-.Lfunc_begin5
+	.short	3                               @ Loc expr size
+	.byte	48                              @ DW_OP_lit0
+	.byte	32                              @ DW_OP_not
+	.byte	159                             @ DW_OP_stack_value
+	.long	.Ltmp119-.Lfunc_begin5
+	.long	.Ltmp122-.Lfunc_begin5
+	.short	1                               @ Loc expr size
+	.byte	87                              @ DW_OP_reg7
+	.long	.Ltmp122-.Lfunc_begin5
+	.long	.Ltmp125-.Lfunc_begin5
+	.short	1                               @ Loc expr size
+	.byte	82                              @ DW_OP_reg2
+	.long	.Ltmp125-.Lfunc_begin5
+	.long	.Ltmp128-.Lfunc_begin5
+	.short	1                               @ Loc expr size
+	.byte	87                              @ DW_OP_reg7
+	.long	.Ltmp128-.Lfunc_begin5
+	.long	.Ltmp129-.Lfunc_begin5
+	.short	3                               @ Loc expr size
+	.byte	48                              @ DW_OP_lit0
+	.byte	32                              @ DW_OP_not
+	.byte	159                             @ DW_OP_stack_value
+	.long	.Ltmp129-.Lfunc_begin5
+	.long	.Ltmp134-.Lfunc_begin5
+	.short	1                               @ Loc expr size
+	.byte	87                              @ DW_OP_reg7
+	.long	0
+	.long	0
+.Ldebug_loc20:
+	.long	-1
+	.long	.Lfunc_begin5                   @   base address
+	.long	.Ltmp114-.Lfunc_begin5
+	.long	.Ltmp119-.Lfunc_begin5
+	.short	2                               @ Loc expr size
+	.byte	48                              @ DW_OP_lit0
+	.byte	159                             @ DW_OP_stack_value
+	.long	.Ltmp119-.Lfunc_begin5
+	.long	.Ltmp122-.Lfunc_begin5
+	.short	1                               @ Loc expr size
+	.byte	86                              @ DW_OP_reg6
+	.long	.Ltmp122-.Lfunc_begin5
+	.long	.Ltmp127-.Lfunc_begin5
+	.short	1                               @ Loc expr size
+	.byte	83                              @ DW_OP_reg3
+	.long	.Ltmp127-.Lfunc_begin5
+	.long	.Ltmp128-.Lfunc_begin5
+	.short	1                               @ Loc expr size
+	.byte	86                              @ DW_OP_reg6
+	.long	.Ltmp128-.Lfunc_begin5
+	.long	.Ltmp129-.Lfunc_begin5
+	.short	2                               @ Loc expr size
+	.byte	48                              @ DW_OP_lit0
+	.byte	159                             @ DW_OP_stack_value
+	.long	.Ltmp129-.Lfunc_begin5
+	.long	.Ltmp134-.Lfunc_begin5
+	.short	1                               @ Loc expr size
+	.byte	86                              @ DW_OP_reg6
+	.long	0
+	.long	0
+.Ldebug_loc21:
+	.long	-1
+	.long	.Lfunc_begin5                   @   base address
+	.long	.Ltmp114-.Lfunc_begin5
+	.long	.Ltmp119-.Lfunc_begin5
+	.short	2                               @ Loc expr size
+	.byte	48                              @ DW_OP_lit0
+	.byte	159                             @ DW_OP_stack_value
+	.long	.Ltmp119-.Lfunc_begin5
+	.long	.Ltmp128-.Lfunc_begin5
+	.short	1                               @ Loc expr size
+	.byte	85                              @ DW_OP_reg5
+	.long	.Ltmp128-.Lfunc_begin5
+	.long	.Ltmp129-.Lfunc_begin5
+	.short	2                               @ Loc expr size
+	.byte	48                              @ DW_OP_lit0
+	.byte	159                             @ DW_OP_stack_value
+	.long	.Ltmp129-.Lfunc_begin5
+	.long	.Ltmp134-.Lfunc_begin5
+	.short	1                               @ Loc expr size
+	.byte	85                              @ DW_OP_reg5
+	.long	0
+	.long	0
+.Ldebug_loc22:
+	.long	-1
+	.long	.Lfunc_begin5                   @   base address
+	.long	.Ltmp117-.Lfunc_begin5
+	.long	.Ltmp130-.Lfunc_begin5
+	.short	1                               @ Loc expr size
+	.byte	80                              @ DW_OP_reg0
+	.long	0
+	.long	0
+	.section	.debug_abbrev,"",%progbits
+	.byte	1                               @ Abbreviation Code
+	.byte	17                              @ DW_TAG_compile_unit
+	.byte	1                               @ DW_CHILDREN_yes
+	.byte	37                              @ DW_AT_producer
+	.byte	14                              @ DW_FORM_strp
+	.byte	19                              @ DW_AT_language
+	.byte	5                               @ DW_FORM_data2
+	.byte	3                               @ DW_AT_name
+	.byte	14                              @ DW_FORM_strp
+	.byte	16                              @ DW_AT_stmt_list
+	.byte	23                              @ DW_FORM_sec_offset
+	.byte	27                              @ DW_AT_comp_dir
+	.byte	14                              @ DW_FORM_strp
+	.byte	17                              @ DW_AT_low_pc
+	.byte	1                               @ DW_FORM_addr
+	.byte	85                              @ DW_AT_ranges
+	.byte	23                              @ DW_FORM_sec_offset
+	.byte	0                               @ EOM(1)
+	.byte	0                               @ EOM(2)
+	.byte	2                               @ Abbreviation Code
+	.byte	52                              @ DW_TAG_variable
+	.byte	0                               @ DW_CHILDREN_no
+	.byte	3                               @ DW_AT_name
+	.byte	14                              @ DW_FORM_strp
+	.byte	73                              @ DW_AT_type
+	.byte	19                              @ DW_FORM_ref4
+	.byte	58                              @ DW_AT_decl_file
+	.byte	11                              @ DW_FORM_data1
+	.byte	59                              @ DW_AT_decl_line
+	.byte	11                              @ DW_FORM_data1
+	.byte	28                              @ DW_AT_const_value
+	.byte	15                              @ DW_FORM_udata
+	.byte	0                               @ EOM(1)
+	.byte	0                               @ EOM(2)
+	.byte	3                               @ Abbreviation Code
+	.byte	38                              @ DW_TAG_const_type
+	.byte	0                               @ DW_CHILDREN_no
+	.byte	73                              @ DW_AT_type
+	.byte	19                              @ DW_FORM_ref4
+	.byte	0                               @ EOM(1)
+	.byte	0                               @ EOM(2)
+	.byte	4                               @ Abbreviation Code
+	.byte	22                              @ DW_TAG_typedef
+	.byte	0                               @ DW_CHILDREN_no
+	.byte	73                              @ DW_AT_type
+	.byte	19                              @ DW_FORM_ref4
+	.byte	3                               @ DW_AT_name
+	.byte	14                              @ DW_FORM_strp
+	.byte	58                              @ DW_AT_decl_file
+	.byte	11                              @ DW_FORM_data1
+	.byte	59                              @ DW_AT_decl_line
+	.byte	11                              @ DW_FORM_data1
+	.byte	0                               @ EOM(1)
+	.byte	0                               @ EOM(2)
+	.byte	5                               @ Abbreviation Code
+	.byte	36                              @ DW_TAG_base_type
+	.byte	0                               @ DW_CHILDREN_no
+	.byte	3                               @ DW_AT_name
+	.byte	14                              @ DW_FORM_strp
+	.byte	62                              @ DW_AT_encoding
+	.byte	11                              @ DW_FORM_data1
+	.byte	11                              @ DW_AT_byte_size
+	.byte	11                              @ DW_FORM_data1
+	.byte	0                               @ EOM(1)
+	.byte	0                               @ EOM(2)
+	.byte	6                               @ Abbreviation Code
+	.byte	52                              @ DW_TAG_variable
+	.byte	0                               @ DW_CHILDREN_no
+	.byte	3                               @ DW_AT_name
+	.byte	14                              @ DW_FORM_strp
+	.byte	73                              @ DW_AT_type
+	.byte	19                              @ DW_FORM_ref4
+	.byte	58                              @ DW_AT_decl_file
+	.byte	11                              @ DW_FORM_data1
+	.byte	59                              @ DW_AT_decl_line
+	.byte	11                              @ DW_FORM_data1
+	.byte	2                               @ DW_AT_location
+	.byte	24                              @ DW_FORM_exprloc
+	.byte	0                               @ EOM(1)
+	.byte	0                               @ EOM(2)
+	.byte	7                               @ Abbreviation Code
+	.byte	19                              @ DW_TAG_structure_type
+	.byte	1                               @ DW_CHILDREN_yes
+	.byte	3                               @ DW_AT_name
+	.byte	14                              @ DW_FORM_strp
+	.byte	11                              @ DW_AT_byte_size
+	.byte	11                              @ DW_FORM_data1
+	.byte	58                              @ DW_AT_decl_file
+	.byte	11                              @ DW_FORM_data1
+	.byte	59                              @ DW_AT_decl_line
+	.byte	11                              @ DW_FORM_data1
+	.byte	0                               @ EOM(1)
+	.byte	0                               @ EOM(2)
+	.byte	8                               @ Abbreviation Code
+	.byte	13                              @ DW_TAG_member
+	.byte	0                               @ DW_CHILDREN_no
+	.byte	3                               @ DW_AT_name
+	.byte	14                              @ DW_FORM_strp
+	.byte	73                              @ DW_AT_type
+	.byte	19                              @ DW_FORM_ref4
+	.byte	58                              @ DW_AT_decl_file
+	.byte	11                              @ DW_FORM_data1
+	.byte	59                              @ DW_AT_decl_line
+	.byte	11                              @ DW_FORM_data1
+	.byte	56                              @ DW_AT_data_member_location
+	.byte	11                              @ DW_FORM_data1
+	.byte	0                               @ EOM(1)
+	.byte	0                               @ EOM(2)
+	.byte	9                               @ Abbreviation Code
+	.byte	15                              @ DW_TAG_pointer_type
+	.byte	0                               @ DW_CHILDREN_no
+	.byte	73                              @ DW_AT_type
+	.byte	19                              @ DW_FORM_ref4
+	.byte	0                               @ EOM(1)
+	.byte	0                               @ EOM(2)
+	.byte	10                              @ Abbreviation Code
+	.byte	1                               @ DW_TAG_array_type
+	.byte	1                               @ DW_CHILDREN_yes
+	.byte	73                              @ DW_AT_type
+	.byte	19                              @ DW_FORM_ref4
+	.byte	0                               @ EOM(1)
+	.byte	0                               @ EOM(2)
+	.byte	11                              @ Abbreviation Code
+	.byte	33                              @ DW_TAG_subrange_type
+	.byte	0                               @ DW_CHILDREN_no
+	.byte	73                              @ DW_AT_type
+	.byte	19                              @ DW_FORM_ref4
+	.byte	55                              @ DW_AT_count
+	.byte	5                               @ DW_FORM_data2
+	.byte	0                               @ EOM(1)
+	.byte	0                               @ EOM(2)
+	.byte	12                              @ Abbreviation Code
+	.byte	36                              @ DW_TAG_base_type
+	.byte	0                               @ DW_CHILDREN_no
+	.byte	3                               @ DW_AT_name
+	.byte	14                              @ DW_FORM_strp
+	.byte	11                              @ DW_AT_byte_size
+	.byte	11                              @ DW_FORM_data1
+	.byte	62                              @ DW_AT_encoding
+	.byte	11                              @ DW_FORM_data1
+	.byte	0                               @ EOM(1)
+	.byte	0                               @ EOM(2)
+	.byte	13                              @ Abbreviation Code
+	.byte	15                              @ DW_TAG_pointer_type
+	.byte	0                               @ DW_CHILDREN_no
+	.byte	0                               @ EOM(1)
+	.byte	0                               @ EOM(2)
+	.byte	14                              @ Abbreviation Code
+	.byte	46                              @ DW_TAG_subprogram
+	.byte	1                               @ DW_CHILDREN_yes
+	.byte	3                               @ DW_AT_name
+	.byte	14                              @ DW_FORM_strp
+	.byte	58                              @ DW_AT_decl_file
+	.byte	11                              @ DW_FORM_data1
+	.byte	59                              @ DW_AT_decl_line
+	.byte	5                               @ DW_FORM_data2
+	.byte	39                              @ DW_AT_prototyped
+	.byte	25                              @ DW_FORM_flag_present
+	.byte	32                              @ DW_AT_inline
+	.byte	11                              @ DW_FORM_data1
+	.byte	0                               @ EOM(1)
+	.byte	0                               @ EOM(2)
+	.byte	15                              @ Abbreviation Code
+	.byte	52                              @ DW_TAG_variable
+	.byte	0                               @ DW_CHILDREN_no
+	.byte	3                               @ DW_AT_name
+	.byte	14                              @ DW_FORM_strp
+	.byte	58                              @ DW_AT_decl_file
+	.byte	11                              @ DW_FORM_data1
+	.byte	59                              @ DW_AT_decl_line
+	.byte	5                               @ DW_FORM_data2
+	.byte	73                              @ DW_AT_type
+	.byte	19                              @ DW_FORM_ref4
+	.byte	0                               @ EOM(1)
+	.byte	0                               @ EOM(2)
+	.byte	16                              @ Abbreviation Code
+	.byte	5                               @ DW_TAG_formal_parameter
+	.byte	0                               @ DW_CHILDREN_no
+	.byte	3                               @ DW_AT_name
+	.byte	14                              @ DW_FORM_strp
+	.byte	58                              @ DW_AT_decl_file
+	.byte	11                              @ DW_FORM_data1
+	.byte	59                              @ DW_AT_decl_line
+	.byte	5                               @ DW_FORM_data2
+	.byte	73                              @ DW_AT_type
+	.byte	19                              @ DW_FORM_ref4
+	.byte	0                               @ EOM(1)
+	.byte	0                               @ EOM(2)
+	.byte	17                              @ Abbreviation Code
+	.byte	46                              @ DW_TAG_subprogram
+	.byte	1                               @ DW_CHILDREN_yes
+	.byte	17                              @ DW_AT_low_pc
+	.byte	1                               @ DW_FORM_addr
+	.byte	18                              @ DW_AT_high_pc
+	.byte	6                               @ DW_FORM_data4
+	.byte	64                              @ DW_AT_frame_base
+	.byte	24                              @ DW_FORM_exprloc
+	.ascii	"\227B"                         @ DW_AT_GNU_all_call_sites
+	.byte	25                              @ DW_FORM_flag_present
+	.byte	3                               @ DW_AT_name
+	.byte	14                              @ DW_FORM_strp
+	.byte	58                              @ DW_AT_decl_file
+	.byte	11                              @ DW_FORM_data1
+	.byte	59                              @ DW_AT_decl_line
+	.byte	11                              @ DW_FORM_data1
+	.byte	39                              @ DW_AT_prototyped
+	.byte	25                              @ DW_FORM_flag_present
+	.byte	73                              @ DW_AT_type
+	.byte	19                              @ DW_FORM_ref4
+	.byte	63                              @ DW_AT_external
+	.byte	25                              @ DW_FORM_flag_present
+	.byte	0                               @ EOM(1)
+	.byte	0                               @ EOM(2)
+	.byte	18                              @ Abbreviation Code
+	.byte	5                               @ DW_TAG_formal_parameter
+	.byte	0                               @ DW_CHILDREN_no
+	.byte	2                               @ DW_AT_location
+	.byte	23                              @ DW_FORM_sec_offset
+	.byte	3                               @ DW_AT_name
+	.byte	14                              @ DW_FORM_strp
+	.byte	58                              @ DW_AT_decl_file
+	.byte	11                              @ DW_FORM_data1
+	.byte	59                              @ DW_AT_decl_line
+	.byte	11                              @ DW_FORM_data1
+	.byte	73                              @ DW_AT_type
+	.byte	19                              @ DW_FORM_ref4
+	.byte	0                               @ EOM(1)
+	.byte	0                               @ EOM(2)
+	.byte	19                              @ Abbreviation Code
+	.byte	52                              @ DW_TAG_variable
+	.byte	0                               @ DW_CHILDREN_no
+	.byte	2                               @ DW_AT_location
+	.byte	23                              @ DW_FORM_sec_offset
+	.byte	3                               @ DW_AT_name
+	.byte	14                              @ DW_FORM_strp
+	.byte	58                              @ DW_AT_decl_file
+	.byte	11                              @ DW_FORM_data1
+	.byte	59                              @ DW_AT_decl_line
+	.byte	11                              @ DW_FORM_data1
+	.byte	73                              @ DW_AT_type
+	.byte	19                              @ DW_FORM_ref4
+	.byte	0                               @ EOM(1)
+	.byte	0                               @ EOM(2)
+	.byte	20                              @ Abbreviation Code
+	.byte	29                              @ DW_TAG_inlined_subroutine
+	.byte	1                               @ DW_CHILDREN_yes
+	.byte	49                              @ DW_AT_abstract_origin
+	.byte	19                              @ DW_FORM_ref4
+	.byte	17                              @ DW_AT_low_pc
+	.byte	1                               @ DW_FORM_addr
+	.byte	18                              @ DW_AT_high_pc
+	.byte	6                               @ DW_FORM_data4
+	.byte	88                              @ DW_AT_call_file
+	.byte	11                              @ DW_FORM_data1
+	.byte	89                              @ DW_AT_call_line
+	.byte	11                              @ DW_FORM_data1
+	.byte	87                              @ DW_AT_call_column
+	.byte	11                              @ DW_FORM_data1
+	.byte	0                               @ EOM(1)
+	.byte	0                               @ EOM(2)
+	.byte	21                              @ Abbreviation Code
+	.byte	52                              @ DW_TAG_variable
+	.byte	0                               @ DW_CHILDREN_no
+	.byte	2                               @ DW_AT_location
+	.byte	23                              @ DW_FORM_sec_offset
+	.byte	49                              @ DW_AT_abstract_origin
+	.byte	19                              @ DW_FORM_ref4
+	.byte	0                               @ EOM(1)
+	.byte	0                               @ EOM(2)
+	.byte	22                              @ Abbreviation Code
+	.byte	5                               @ DW_TAG_formal_parameter
+	.byte	0                               @ DW_CHILDREN_no
+	.byte	2                               @ DW_AT_location
+	.byte	23                              @ DW_FORM_sec_offset
+	.byte	49                              @ DW_AT_abstract_origin
+	.byte	19                              @ DW_FORM_ref4
+	.byte	0                               @ EOM(1)
+	.byte	0                               @ EOM(2)
+	.byte	23                              @ Abbreviation Code
+	.byte	46                              @ DW_TAG_subprogram
+	.byte	1                               @ DW_CHILDREN_yes
+	.byte	17                              @ DW_AT_low_pc
+	.byte	1                               @ DW_FORM_addr
+	.byte	18                              @ DW_AT_high_pc
+	.byte	6                               @ DW_FORM_data4
+	.byte	64                              @ DW_AT_frame_base
+	.byte	24                              @ DW_FORM_exprloc
+	.ascii	"\227B"                         @ DW_AT_GNU_all_call_sites
+	.byte	25                              @ DW_FORM_flag_present
+	.byte	3                               @ DW_AT_name
+	.byte	14                              @ DW_FORM_strp
+	.byte	58                              @ DW_AT_decl_file
+	.byte	11                              @ DW_FORM_data1
+	.byte	59                              @ DW_AT_decl_line
+	.byte	5                               @ DW_FORM_data2
+	.byte	39                              @ DW_AT_prototyped
+	.byte	25                              @ DW_FORM_flag_present
+	.byte	63                              @ DW_AT_external
+	.byte	25                              @ DW_FORM_flag_present
+	.byte	0                               @ EOM(1)
+	.byte	0                               @ EOM(2)
+	.byte	24                              @ Abbreviation Code
+	.byte	5                               @ DW_TAG_formal_parameter
+	.byte	0                               @ DW_CHILDREN_no
+	.byte	2                               @ DW_AT_location
+	.byte	23                              @ DW_FORM_sec_offset
+	.byte	3                               @ DW_AT_name
+	.byte	14                              @ DW_FORM_strp
+	.byte	58                              @ DW_AT_decl_file
+	.byte	11                              @ DW_FORM_data1
+	.byte	59                              @ DW_AT_decl_line
+	.byte	5                               @ DW_FORM_data2
+	.byte	73                              @ DW_AT_type
+	.byte	19                              @ DW_FORM_ref4
+	.byte	0                               @ EOM(1)
+	.byte	0                               @ EOM(2)
+	.byte	25                              @ Abbreviation Code
+	.byte	52                              @ DW_TAG_variable
+	.byte	0                               @ DW_CHILDREN_no
+	.byte	2                               @ DW_AT_location
+	.byte	23                              @ DW_FORM_sec_offset
+	.byte	3                               @ DW_AT_name
+	.byte	14                              @ DW_FORM_strp
+	.byte	58                              @ DW_AT_decl_file
+	.byte	11                              @ DW_FORM_data1
+	.byte	59                              @ DW_AT_decl_line
+	.byte	5                               @ DW_FORM_data2
+	.byte	73                              @ DW_AT_type
+	.byte	19                              @ DW_FORM_ref4
+	.byte	0                               @ EOM(1)
+	.byte	0                               @ EOM(2)
+	.byte	26                              @ Abbreviation Code
+	.byte	29                              @ DW_TAG_inlined_subroutine
+	.byte	1                               @ DW_CHILDREN_yes
+	.byte	49                              @ DW_AT_abstract_origin
+	.byte	19                              @ DW_FORM_ref4
+	.byte	17                              @ DW_AT_low_pc
+	.byte	1                               @ DW_FORM_addr
+	.byte	18                              @ DW_AT_high_pc
+	.byte	6                               @ DW_FORM_data4
+	.byte	88                              @ DW_AT_call_file
+	.byte	11                              @ DW_FORM_data1
+	.byte	89                              @ DW_AT_call_line
+	.byte	5                               @ DW_FORM_data2
+	.byte	87                              @ DW_AT_call_column
+	.byte	11                              @ DW_FORM_data1
+	.byte	0                               @ EOM(1)
+	.byte	0                               @ EOM(2)
+	.byte	27                              @ Abbreviation Code
+	.byte	46                              @ DW_TAG_subprogram
+	.byte	0                               @ DW_CHILDREN_no
+	.byte	17                              @ DW_AT_low_pc
+	.byte	1                               @ DW_FORM_addr
+	.byte	18                              @ DW_AT_high_pc
+	.byte	6                               @ DW_FORM_data4
+	.byte	64                              @ DW_AT_frame_base
+	.byte	24                              @ DW_FORM_exprloc
+	.ascii	"\227B"                         @ DW_AT_GNU_all_call_sites
+	.byte	25                              @ DW_FORM_flag_present
+	.byte	3                               @ DW_AT_name
+	.byte	14                              @ DW_FORM_strp
+	.byte	58                              @ DW_AT_decl_file
+	.byte	11                              @ DW_FORM_data1
+	.byte	59                              @ DW_AT_decl_line
+	.byte	5                               @ DW_FORM_data2
+	.byte	39                              @ DW_AT_prototyped
+	.byte	25                              @ DW_FORM_flag_present
+	.byte	73                              @ DW_AT_type
+	.byte	19                              @ DW_FORM_ref4
+	.byte	63                              @ DW_AT_external
+	.byte	25                              @ DW_FORM_flag_present
+	.byte	0                               @ EOM(1)
+	.byte	0                               @ EOM(2)
+	.byte	28                              @ Abbreviation Code
+	.byte	46                              @ DW_TAG_subprogram
+	.byte	0                               @ DW_CHILDREN_no
+	.byte	17                              @ DW_AT_low_pc
+	.byte	1                               @ DW_FORM_addr
+	.byte	18                              @ DW_AT_high_pc
+	.byte	6                               @ DW_FORM_data4
+	.byte	64                              @ DW_AT_frame_base
+	.byte	24                              @ DW_FORM_exprloc
+	.ascii	"\227B"                         @ DW_AT_GNU_all_call_sites
+	.byte	25                              @ DW_FORM_flag_present
+	.byte	3                               @ DW_AT_name
+	.byte	14                              @ DW_FORM_strp
+	.byte	58                              @ DW_AT_decl_file
+	.byte	11                              @ DW_FORM_data1
+	.byte	59                              @ DW_AT_decl_line
+	.byte	5                               @ DW_FORM_data2
+	.byte	39                              @ DW_AT_prototyped
+	.byte	25                              @ DW_FORM_flag_present
+	.byte	63                              @ DW_AT_external
+	.byte	25                              @ DW_FORM_flag_present
+	.byte	0                               @ EOM(1)
+	.byte	0                               @ EOM(2)
+	.byte	0                               @ EOM(3)
+	.section	.debug_info,"",%progbits
+.Lcu_begin0:
+	.long	.Ldebug_info_end0-.Ldebug_info_start0 @ Length of Unit
+.Ldebug_info_start0:
+	.short	4                               @ DWARF version number
+	.long	.debug_abbrev                   @ Offset Into Abbrev. Section
+	.byte	4                               @ Address Size (in bytes)
+	.byte	1                               @ Abbrev [1] 0xb:0x3f3 DW_TAG_compile_unit
+	.long	.Linfo_string0                  @ DW_AT_producer
+	.short	12                              @ DW_AT_language
+	.long	.Linfo_string1                  @ DW_AT_name
+	.long	.Lline_table_start0             @ DW_AT_stmt_list
+	.long	.Linfo_string2                  @ DW_AT_comp_dir
+	.long	0                               @ DW_AT_low_pc
+	.long	.Ldebug_ranges0                 @ DW_AT_ranges
+	.byte	2                               @ Abbrev [2] 0x26:0xc DW_TAG_variable
+	.long	.Linfo_string3                  @ DW_AT_name
+	.long	50                              @ DW_AT_type
+	.byte	2                               @ DW_AT_decl_file
+	.byte	95                              @ DW_AT_decl_line
+	.byte	8                               @ DW_AT_const_value
+	.byte	3                               @ Abbrev [3] 0x32:0x5 DW_TAG_const_type
+	.long	55                              @ DW_AT_type
+	.byte	4                               @ Abbrev [4] 0x37:0xb DW_TAG_typedef
+	.long	66                              @ DW_AT_type
+	.long	.Linfo_string5                  @ DW_AT_name
+	.byte	1                               @ DW_AT_decl_file
+	.byte	71                              @ DW_AT_decl_line
+	.byte	5                               @ Abbrev [5] 0x42:0x7 DW_TAG_base_type
+	.long	.Linfo_string4                  @ DW_AT_name
+	.byte	7                               @ DW_AT_encoding
+	.byte	4                               @ DW_AT_byte_size
+	.byte	6                               @ Abbrev [6] 0x49:0x11 DW_TAG_variable
+	.long	.Linfo_string6                  @ DW_AT_name
+	.long	90                              @ DW_AT_type
+	.byte	2                               @ DW_AT_decl_file
+	.byte	98                              @ DW_AT_decl_line
+	.byte	5                               @ DW_AT_location
+	.byte	3
+	.long	xStart
+	.byte	4                               @ Abbrev [4] 0x5a:0xb DW_TAG_typedef
+	.long	101                             @ DW_AT_type
+	.long	.Linfo_string10                 @ DW_AT_name
+	.byte	2                               @ DW_AT_decl_file
+	.byte	73                              @ DW_AT_decl_line
+	.byte	7                               @ Abbrev [7] 0x65:0x21 DW_TAG_structure_type
+	.long	.Linfo_string9                  @ DW_AT_name
+	.byte	8                               @ DW_AT_byte_size
+	.byte	2                               @ DW_AT_decl_file
+	.byte	69                              @ DW_AT_decl_line
+	.byte	8                               @ Abbrev [8] 0x6d:0xc DW_TAG_member
+	.long	.Linfo_string7                  @ DW_AT_name
+	.long	134                             @ DW_AT_type
+	.byte	2                               @ DW_AT_decl_file
+	.byte	71                              @ DW_AT_decl_line
+	.byte	0                               @ DW_AT_data_member_location
+	.byte	8                               @ Abbrev [8] 0x79:0xc DW_TAG_member
+	.long	.Linfo_string8                  @ DW_AT_name
+	.long	55                              @ DW_AT_type
+	.byte	2                               @ DW_AT_decl_file
+	.byte	72                              @ DW_AT_decl_line
+	.byte	4                               @ DW_AT_data_member_location
+	.byte	0                               @ End Of Children Mark
+	.byte	9                               @ Abbrev [9] 0x86:0x5 DW_TAG_pointer_type
+	.long	101                             @ DW_AT_type
+	.byte	6                               @ Abbrev [6] 0x8b:0x11 DW_TAG_variable
+	.long	.Linfo_string11                 @ DW_AT_name
+	.long	156                             @ DW_AT_type
+	.byte	2                               @ DW_AT_decl_file
+	.byte	98                              @ DW_AT_decl_line
+	.byte	5                               @ DW_AT_location
+	.byte	3
+	.long	pxEnd
+	.byte	9                               @ Abbrev [9] 0x9c:0x5 DW_TAG_pointer_type
+	.long	90                              @ DW_AT_type
+	.byte	6                               @ Abbrev [6] 0xa1:0x1d DW_TAG_variable
+	.long	.Linfo_string12                 @ DW_AT_name
+	.long	55                              @ DW_AT_type
+	.byte	2                               @ DW_AT_decl_file
+	.byte	111                             @ DW_AT_decl_line
+	.byte	17                              @ DW_AT_location
+	.byte	3
+	.long	xBlockAllocatedBit
+	.byte	148
+	.byte	1
+	.byte	16
+	.ascii	"\200\200\200\200\b"
+	.byte	30
+	.byte	48
+	.byte	34
+	.byte	159
+	.byte	6                               @ Abbrev [6] 0xbe:0x11 DW_TAG_variable
+	.long	.Linfo_string13                 @ DW_AT_name
+	.long	55                              @ DW_AT_type
+	.byte	2                               @ DW_AT_decl_file
+	.byte	102                             @ DW_AT_decl_line
+	.byte	5                               @ DW_AT_location
+	.byte	3
+	.long	xFreeBytesRemaining
+	.byte	6                               @ Abbrev [6] 0xcf:0x11 DW_TAG_variable
+	.long	.Linfo_string14                 @ DW_AT_name
+	.long	55                              @ DW_AT_type
+	.byte	2                               @ DW_AT_decl_file
+	.byte	103                             @ DW_AT_decl_line
+	.byte	5                               @ DW_AT_location
+	.byte	3
+	.long	xMinimumEverFreeBytesRemaining
+	.byte	6                               @ Abbrev [6] 0xe0:0x11 DW_TAG_variable
+	.long	.Linfo_string15                 @ DW_AT_name
+	.long	55                              @ DW_AT_type
+	.byte	2                               @ DW_AT_decl_file
+	.byte	104                             @ DW_AT_decl_line
+	.byte	5                               @ DW_AT_location
+	.byte	3
+	.long	xNumberOfSuccessfulAllocations
+	.byte	6                               @ Abbrev [6] 0xf1:0x11 DW_TAG_variable
+	.long	.Linfo_string16                 @ DW_AT_name
+	.long	55                              @ DW_AT_type
+	.byte	2                               @ DW_AT_decl_file
+	.byte	105                             @ DW_AT_decl_line
+	.byte	5                               @ DW_AT_location
+	.byte	3
+	.long	xNumberOfSuccessfulFrees
+	.byte	6                               @ Abbrev [6] 0x102:0x11 DW_TAG_variable
+	.long	.Linfo_string17                 @ DW_AT_name
+	.long	275                             @ DW_AT_type
+	.byte	2                               @ DW_AT_decl_file
+	.byte	64                              @ DW_AT_decl_line
+	.byte	5                               @ DW_AT_location
+	.byte	3
+	.long	ucHeap
+	.byte	10                              @ Abbrev [10] 0x113:0xd DW_TAG_array_type
+	.long	288                             @ DW_AT_type
+	.byte	11                              @ Abbrev [11] 0x118:0x7 DW_TAG_subrange_type
+	.long	306                             @ DW_AT_type
+	.short	3072                            @ DW_AT_count
+	.byte	0                               @ End Of Children Mark
+	.byte	4                               @ Abbrev [4] 0x120:0xb DW_TAG_typedef
+	.long	299                             @ DW_AT_type
+	.long	.Linfo_string19                 @ DW_AT_name
+	.byte	3                               @ DW_AT_decl_file
+	.byte	62                              @ DW_AT_decl_line
+	.byte	5                               @ Abbrev [5] 0x12b:0x7 DW_TAG_base_type
+	.long	.Linfo_string18                 @ DW_AT_name
+	.byte	8                               @ DW_AT_encoding
+	.byte	1                               @ DW_AT_byte_size
+	.byte	12                              @ Abbrev [12] 0x132:0x7 DW_TAG_base_type
+	.long	.Linfo_string20                 @ DW_AT_name
+	.byte	8                               @ DW_AT_byte_size
+	.byte	7                               @ DW_AT_encoding
+	.byte	13                              @ Abbrev [13] 0x139:0x1 DW_TAG_pointer_type
+	.byte	9                               @ Abbrev [9] 0x13a:0x5 DW_TAG_pointer_type
+	.long	288                             @ DW_AT_type
+	.byte	4                               @ Abbrev [4] 0x13f:0xb DW_TAG_typedef
+	.long	330                             @ DW_AT_type
+	.long	.Linfo_string22                 @ DW_AT_name
+	.byte	4                               @ DW_AT_decl_file
+	.byte	63                              @ DW_AT_decl_line
+	.byte	4                               @ Abbrev [4] 0x14a:0xb DW_TAG_typedef
+	.long	66                              @ DW_AT_type
+	.long	.Linfo_string21                 @ DW_AT_name
+	.byte	3                               @ DW_AT_decl_file
+	.byte	64                              @ DW_AT_decl_line
+	.byte	14                              @ Abbrev [14] 0x155:0x3a DW_TAG_subprogram
+	.long	.Linfo_string23                 @ DW_AT_name
+	.byte	2                               @ DW_AT_decl_file
+	.short	342                             @ DW_AT_decl_line
+                                        @ DW_AT_prototyped
+	.byte	1                               @ DW_AT_inline
+	.byte	15                              @ Abbrev [15] 0x15e:0xc DW_TAG_variable
+	.long	.Linfo_string24                 @ DW_AT_name
+	.byte	2                               @ DW_AT_decl_file
+	.short	347                             @ DW_AT_decl_line
+	.long	55                              @ DW_AT_type
+	.byte	15                              @ Abbrev [15] 0x16a:0xc DW_TAG_variable
+	.long	.Linfo_string25                 @ DW_AT_name
+	.byte	2                               @ DW_AT_decl_file
+	.short	346                             @ DW_AT_decl_line
+	.long	55                              @ DW_AT_type
+	.byte	15                              @ Abbrev [15] 0x176:0xc DW_TAG_variable
+	.long	.Linfo_string26                 @ DW_AT_name
+	.byte	2                               @ DW_AT_decl_file
+	.short	345                             @ DW_AT_decl_line
+	.long	314                             @ DW_AT_type
+	.byte	15                              @ Abbrev [15] 0x182:0xc DW_TAG_variable
+	.long	.Linfo_string27                 @ DW_AT_name
+	.byte	2                               @ DW_AT_decl_file
+	.short	344                             @ DW_AT_decl_line
+	.long	156                             @ DW_AT_type
+	.byte	0                               @ End Of Children Mark
+	.byte	14                              @ Abbrev [14] 0x18f:0x2e DW_TAG_subprogram
+	.long	.Linfo_string28                 @ DW_AT_name
+	.byte	2                               @ DW_AT_decl_file
+	.short	390                             @ DW_AT_decl_line
+                                        @ DW_AT_prototyped
+	.byte	1                               @ DW_AT_inline
+	.byte	16                              @ Abbrev [16] 0x198:0xc DW_TAG_formal_parameter
+	.long	.Linfo_string29                 @ DW_AT_name
+	.byte	2                               @ DW_AT_decl_file
+	.short	390                             @ DW_AT_decl_line
+	.long	156                             @ DW_AT_type
+	.byte	15                              @ Abbrev [15] 0x1a4:0xc DW_TAG_variable
+	.long	.Linfo_string30                 @ DW_AT_name
+	.byte	2                               @ DW_AT_decl_file
+	.short	392                             @ DW_AT_decl_line
+	.long	156                             @ DW_AT_type
+	.byte	15                              @ Abbrev [15] 0x1b0:0xc DW_TAG_variable
+	.long	.Linfo_string31                 @ DW_AT_name
+	.byte	2                               @ DW_AT_decl_file
+	.short	393                             @ DW_AT_decl_line
+	.long	314                             @ DW_AT_type
+	.byte	0                               @ End Of Children Mark
+	.byte	17                              @ Abbrev [17] 0x1bd:0xc2 DW_TAG_subprogram
+	.long	.Lfunc_begin0                   @ DW_AT_low_pc
+	.long	.Lfunc_end0-.Lfunc_begin0       @ DW_AT_high_pc
+	.byte	1                               @ DW_AT_frame_base
+	.byte	93
+                                        @ DW_AT_GNU_all_call_sites
+	.long	.Linfo_string32                 @ DW_AT_name
+	.byte	2                               @ DW_AT_decl_file
+	.byte	115                             @ DW_AT_decl_line
+                                        @ DW_AT_prototyped
+	.long	313                             @ DW_AT_type
+                                        @ DW_AT_external
+	.byte	18                              @ Abbrev [18] 0x1d2:0xf DW_TAG_formal_parameter
+	.long	.Ldebug_loc0                    @ DW_AT_location
+	.long	.Linfo_string38                 @ DW_AT_name
+	.byte	2                               @ DW_AT_decl_file
+	.byte	115                             @ DW_AT_decl_line
+	.long	55                              @ DW_AT_type
+	.byte	19                              @ Abbrev [19] 0x1e1:0xf DW_TAG_variable
+	.long	.Ldebug_loc1                    @ DW_AT_location
+	.long	.Linfo_string39                 @ DW_AT_name
+	.byte	2                               @ DW_AT_decl_file
+	.byte	118                             @ DW_AT_decl_line
+	.long	313                             @ DW_AT_type
+	.byte	19                              @ Abbrev [19] 0x1f0:0xf DW_TAG_variable
+	.long	.Ldebug_loc6                    @ DW_AT_location
+	.long	.Linfo_string40                 @ DW_AT_name
+	.byte	2                               @ DW_AT_decl_file
+	.byte	117                             @ DW_AT_decl_line
+	.long	156                             @ DW_AT_type
+	.byte	19                              @ Abbrev [19] 0x1ff:0xf DW_TAG_variable
+	.long	.Ldebug_loc7                    @ DW_AT_location
+	.long	.Linfo_string41                 @ DW_AT_name
+	.byte	2                               @ DW_AT_decl_file
+	.byte	117                             @ DW_AT_decl_line
+	.long	156                             @ DW_AT_type
+	.byte	19                              @ Abbrev [19] 0x20e:0xf DW_TAG_variable
+	.long	.Ldebug_loc8                    @ DW_AT_location
+	.long	.Linfo_string42                 @ DW_AT_name
+	.byte	2                               @ DW_AT_decl_file
+	.byte	117                             @ DW_AT_decl_line
+	.long	156                             @ DW_AT_type
+	.byte	20                              @ Abbrev [20] 0x21d:0x35 DW_TAG_inlined_subroutine
+	.long	341                             @ DW_AT_abstract_origin
+	.long	.Ltmp7                          @ DW_AT_low_pc
+	.long	.Ltmp16-.Ltmp7                  @ DW_AT_high_pc
+	.byte	2                               @ DW_AT_call_file
+	.byte	126                             @ DW_AT_call_line
+	.byte	13                              @ DW_AT_call_column
+	.byte	21                              @ Abbrev [21] 0x22d:0x9 DW_TAG_variable
+	.long	.Ldebug_loc2                    @ DW_AT_location
+	.long	350                             @ DW_AT_abstract_origin
+	.byte	21                              @ Abbrev [21] 0x236:0x9 DW_TAG_variable
+	.long	.Ldebug_loc3                    @ DW_AT_location
+	.long	362                             @ DW_AT_abstract_origin
+	.byte	21                              @ Abbrev [21] 0x23f:0x9 DW_TAG_variable
+	.long	.Ldebug_loc4                    @ DW_AT_location
+	.long	374                             @ DW_AT_abstract_origin
+	.byte	21                              @ Abbrev [21] 0x248:0x9 DW_TAG_variable
+	.long	.Ldebug_loc5                    @ DW_AT_location
+	.long	386                             @ DW_AT_abstract_origin
+	.byte	0                               @ End Of Children Mark
+	.byte	20                              @ Abbrev [20] 0x252:0x2c DW_TAG_inlined_subroutine
+	.long	399                             @ DW_AT_abstract_origin
+	.long	.Ltmp43                         @ DW_AT_low_pc
+	.long	.Ltmp62-.Ltmp43                 @ DW_AT_high_pc
+	.byte	2                               @ DW_AT_call_file
+	.byte	213                             @ DW_AT_call_line
+	.byte	25                              @ DW_AT_call_column
+	.byte	22                              @ Abbrev [22] 0x262:0x9 DW_TAG_formal_parameter
+	.long	.Ldebug_loc9                    @ DW_AT_location
+	.long	408                             @ DW_AT_abstract_origin
+	.byte	21                              @ Abbrev [21] 0x26b:0x9 DW_TAG_variable
+	.long	.Ldebug_loc10                   @ DW_AT_location
+	.long	420                             @ DW_AT_abstract_origin
+	.byte	21                              @ Abbrev [21] 0x274:0x9 DW_TAG_variable
+	.long	.Ldebug_loc11                   @ DW_AT_location
+	.long	432                             @ DW_AT_abstract_origin
+	.byte	0                               @ End Of Children Mark
+	.byte	0                               @ End Of Children Mark
+	.byte	23                              @ Abbrev [23] 0x27f:0x70 DW_TAG_subprogram
+	.long	.Lfunc_begin1                   @ DW_AT_low_pc
+	.long	.Lfunc_end1-.Lfunc_begin1       @ DW_AT_high_pc
+	.byte	1                               @ DW_AT_frame_base
+	.byte	93
+                                        @ DW_AT_GNU_all_call_sites
+	.long	.Linfo_string33                 @ DW_AT_name
+	.byte	2                               @ DW_AT_decl_file
+	.short	275                             @ DW_AT_decl_line
+                                        @ DW_AT_prototyped
+                                        @ DW_AT_external
+	.byte	24                              @ Abbrev [24] 0x291:0x10 DW_TAG_formal_parameter
+	.long	.Ldebug_loc12                   @ DW_AT_location
+	.long	.Linfo_string43                 @ DW_AT_name
+	.byte	2                               @ DW_AT_decl_file
+	.short	275                             @ DW_AT_decl_line
+	.long	313                             @ DW_AT_type
+	.byte	25                              @ Abbrev [25] 0x2a1:0x10 DW_TAG_variable
+	.long	.Ldebug_loc13                   @ DW_AT_location
+	.long	.Linfo_string31                 @ DW_AT_name
+	.byte	2                               @ DW_AT_decl_file
+	.short	277                             @ DW_AT_decl_line
+	.long	314                             @ DW_AT_type
+	.byte	25                              @ Abbrev [25] 0x2b1:0x10 DW_TAG_variable
+	.long	.Ldebug_loc14                   @ DW_AT_location
+	.long	.Linfo_string44                 @ DW_AT_name
+	.byte	2                               @ DW_AT_decl_file
+	.short	278                             @ DW_AT_decl_line
+	.long	156                             @ DW_AT_type
+	.byte	26                              @ Abbrev [26] 0x2c1:0x2d DW_TAG_inlined_subroutine
+	.long	399                             @ DW_AT_abstract_origin
+	.long	.Ltmp90                         @ DW_AT_low_pc
+	.long	.Ltmp107-.Ltmp90                @ DW_AT_high_pc
+	.byte	2                               @ DW_AT_call_file
+	.short	306                             @ DW_AT_call_line
+	.byte	21                              @ DW_AT_call_column
+	.byte	22                              @ Abbrev [22] 0x2d2:0x9 DW_TAG_formal_parameter
+	.long	.Ldebug_loc15                   @ DW_AT_location
+	.long	408                             @ DW_AT_abstract_origin
+	.byte	21                              @ Abbrev [21] 0x2db:0x9 DW_TAG_variable
+	.long	.Ldebug_loc16                   @ DW_AT_location
+	.long	420                             @ DW_AT_abstract_origin
+	.byte	21                              @ Abbrev [21] 0x2e4:0x9 DW_TAG_variable
+	.long	.Ldebug_loc17                   @ DW_AT_location
+	.long	432                             @ DW_AT_abstract_origin
+	.byte	0                               @ End Of Children Mark
+	.byte	0                               @ End Of Children Mark
+	.byte	27                              @ Abbrev [27] 0x2ef:0x16 DW_TAG_subprogram
+	.long	.Lfunc_begin2                   @ DW_AT_low_pc
+	.long	.Lfunc_end2-.Lfunc_begin2       @ DW_AT_high_pc
+	.byte	1                               @ DW_AT_frame_base
+	.byte	93
+                                        @ DW_AT_GNU_all_call_sites
+	.long	.Linfo_string34                 @ DW_AT_name
+	.byte	2                               @ DW_AT_decl_file
+	.short	324                             @ DW_AT_decl_line
+                                        @ DW_AT_prototyped
+	.long	55                              @ DW_AT_type
+                                        @ DW_AT_external
+	.byte	27                              @ Abbrev [27] 0x305:0x16 DW_TAG_subprogram
+	.long	.Lfunc_begin3                   @ DW_AT_low_pc
+	.long	.Lfunc_end3-.Lfunc_begin3       @ DW_AT_high_pc
+	.byte	1                               @ DW_AT_frame_base
+	.byte	93
+                                        @ DW_AT_GNU_all_call_sites
+	.long	.Linfo_string35                 @ DW_AT_name
+	.byte	2                               @ DW_AT_decl_file
+	.short	330                             @ DW_AT_decl_line
+                                        @ DW_AT_prototyped
+	.long	55                              @ DW_AT_type
+                                        @ DW_AT_external
+	.byte	28                              @ Abbrev [28] 0x31b:0x12 DW_TAG_subprogram
+	.long	.Lfunc_begin4                   @ DW_AT_low_pc
+	.long	.Lfunc_end4-.Lfunc_begin4       @ DW_AT_high_pc
+	.byte	1                               @ DW_AT_frame_base
+	.byte	93
+                                        @ DW_AT_GNU_all_call_sites
+	.long	.Linfo_string36                 @ DW_AT_name
+	.byte	2                               @ DW_AT_decl_file
+	.short	336                             @ DW_AT_decl_line
+                                        @ DW_AT_prototyped
+                                        @ DW_AT_external
+	.byte	23                              @ Abbrev [23] 0x32d:0x63 DW_TAG_subprogram
+	.long	.Lfunc_begin5                   @ DW_AT_low_pc
+	.long	.Lfunc_end5-.Lfunc_begin5       @ DW_AT_high_pc
+	.byte	1                               @ DW_AT_frame_base
+	.byte	93
+                                        @ DW_AT_GNU_all_call_sites
+	.long	.Linfo_string37                 @ DW_AT_name
+	.byte	2                               @ DW_AT_decl_file
+	.short	453                             @ DW_AT_decl_line
+                                        @ DW_AT_prototyped
+                                        @ DW_AT_external
+	.byte	24                              @ Abbrev [24] 0x33f:0x10 DW_TAG_formal_parameter
+	.long	.Ldebug_loc18                   @ DW_AT_location
+	.long	.Linfo_string45                 @ DW_AT_name
+	.byte	2                               @ DW_AT_decl_file
+	.short	453                             @ DW_AT_decl_line
+	.long	912                             @ DW_AT_type
+	.byte	25                              @ Abbrev [25] 0x34f:0x10 DW_TAG_variable
+	.long	.Ldebug_loc19                   @ DW_AT_location
+	.long	.Linfo_string52                 @ DW_AT_name
+	.byte	2                               @ DW_AT_decl_file
+	.short	456                             @ DW_AT_decl_line
+	.long	55                              @ DW_AT_type
+	.byte	25                              @ Abbrev [25] 0x35f:0x10 DW_TAG_variable
+	.long	.Ldebug_loc20                   @ DW_AT_location
+	.long	.Linfo_string53                 @ DW_AT_name
+	.byte	2                               @ DW_AT_decl_file
+	.short	456                             @ DW_AT_decl_line
+	.long	55                              @ DW_AT_type
+	.byte	25                              @ Abbrev [25] 0x36f:0x10 DW_TAG_variable
+	.long	.Ldebug_loc21                   @ DW_AT_location
+	.long	.Linfo_string54                 @ DW_AT_name
+	.byte	2                               @ DW_AT_decl_file
+	.short	456                             @ DW_AT_decl_line
+	.long	55                              @ DW_AT_type
+	.byte	25                              @ Abbrev [25] 0x37f:0x10 DW_TAG_variable
+	.long	.Ldebug_loc22                   @ DW_AT_location
+	.long	.Linfo_string41                 @ DW_AT_name
+	.byte	2                               @ DW_AT_decl_file
+	.short	455                             @ DW_AT_decl_line
+	.long	156                             @ DW_AT_type
+	.byte	0                               @ End Of Children Mark
+	.byte	9                               @ Abbrev [9] 0x390:0x5 DW_TAG_pointer_type
+	.long	917                             @ DW_AT_type
+	.byte	4                               @ Abbrev [4] 0x395:0xb DW_TAG_typedef
+	.long	928                             @ DW_AT_type
+	.long	.Linfo_string51                 @ DW_AT_name
+	.byte	5                               @ DW_AT_decl_file
+	.byte	152                             @ DW_AT_decl_line
+	.byte	7                               @ Abbrev [7] 0x3a0:0x5d DW_TAG_structure_type
+	.long	.Linfo_string50                 @ DW_AT_name
+	.byte	28                              @ DW_AT_byte_size
+	.byte	5                               @ DW_AT_decl_file
+	.byte	143                             @ DW_AT_decl_line
+	.byte	8                               @ Abbrev [8] 0x3a8:0xc DW_TAG_member
+	.long	.Linfo_string46                 @ DW_AT_name
+	.long	55                              @ DW_AT_type
+	.byte	5                               @ DW_AT_decl_file
+	.byte	145                             @ DW_AT_decl_line
+	.byte	0                               @ DW_AT_data_member_location
+	.byte	8                               @ Abbrev [8] 0x3b4:0xc DW_TAG_member
+	.long	.Linfo_string47                 @ DW_AT_name
+	.long	55                              @ DW_AT_type
+	.byte	5                               @ DW_AT_decl_file
+	.byte	146                             @ DW_AT_decl_line
+	.byte	4                               @ DW_AT_data_member_location
+	.byte	8                               @ Abbrev [8] 0x3c0:0xc DW_TAG_member
+	.long	.Linfo_string48                 @ DW_AT_name
+	.long	55                              @ DW_AT_type
+	.byte	5                               @ DW_AT_decl_file
+	.byte	147                             @ DW_AT_decl_line
+	.byte	8                               @ DW_AT_data_member_location
+	.byte	8                               @ Abbrev [8] 0x3cc:0xc DW_TAG_member
+	.long	.Linfo_string49                 @ DW_AT_name
+	.long	55                              @ DW_AT_type
+	.byte	5                               @ DW_AT_decl_file
+	.byte	148                             @ DW_AT_decl_line
+	.byte	12                              @ DW_AT_data_member_location
+	.byte	8                               @ Abbrev [8] 0x3d8:0xc DW_TAG_member
+	.long	.Linfo_string14                 @ DW_AT_name
+	.long	55                              @ DW_AT_type
+	.byte	5                               @ DW_AT_decl_file
+	.byte	149                             @ DW_AT_decl_line
+	.byte	16                              @ DW_AT_data_member_location
+	.byte	8                               @ Abbrev [8] 0x3e4:0xc DW_TAG_member
+	.long	.Linfo_string15                 @ DW_AT_name
+	.long	55                              @ DW_AT_type
+	.byte	5                               @ DW_AT_decl_file
+	.byte	150                             @ DW_AT_decl_line
+	.byte	20                              @ DW_AT_data_member_location
+	.byte	8                               @ Abbrev [8] 0x3f0:0xc DW_TAG_member
+	.long	.Linfo_string16                 @ DW_AT_name
+	.long	55                              @ DW_AT_type
+	.byte	5                               @ DW_AT_decl_file
+	.byte	151                             @ DW_AT_decl_line
+	.byte	24                              @ DW_AT_data_member_location
+	.byte	0                               @ End Of Children Mark
+	.byte	0                               @ End Of Children Mark
+.Ldebug_info_end0:
+	.section	.debug_ranges,"",%progbits
+.Ldebug_ranges0:
+	.long	.Lfunc_begin0
+	.long	.Lfunc_end0
+	.long	.Lfunc_begin1
+	.long	.Lfunc_end1
+	.long	.Lfunc_begin2
+	.long	.Lfunc_end2
+	.long	.Lfunc_begin3
+	.long	.Lfunc_end3
+	.long	.Lfunc_begin4
+	.long	.Lfunc_end4
+	.long	.Lfunc_begin5
+	.long	.Lfunc_end5
+	.long	0
+	.long	0
+	.section	.debug_str,"MS",%progbits,1
+.Linfo_string0:
+	.asciz	"Component: Arm Compiler for Embedded 6.21 Tool: armclang [5ec1fd00]" @ string offset=0
+.Linfo_string1:
+	.asciz	"../../../../../../kernel/freertos/Source/portable/MemMang\\heap_4.c" @ string offset=68
+.Linfo_string2:
+	.asciz	"D:\\TI_M0G3507\\mspm0_sdk_2_05_00_05\\kernel\\freertos\\builds\\LP_MSPM0G3507\\release\\keil" @ string offset=135
+.Linfo_string3:
+	.asciz	"xHeapStructSize"               @ string offset=220
+.Linfo_string4:
+	.asciz	"unsigned int"                  @ string offset=236
+.Linfo_string5:
+	.asciz	"size_t"                        @ string offset=249
+.Linfo_string6:
+	.asciz	"xStart"                        @ string offset=256
+.Linfo_string7:
+	.asciz	"pxNextFreeBlock"               @ string offset=263
+.Linfo_string8:
+	.asciz	"xBlockSize"                    @ string offset=279
+.Linfo_string9:
+	.asciz	"A_BLOCK_LINK"                  @ string offset=290
+.Linfo_string10:
+	.asciz	"BlockLink_t"                   @ string offset=303
+.Linfo_string11:
+	.asciz	"pxEnd"                         @ string offset=315
+.Linfo_string12:
+	.asciz	"xBlockAllocatedBit"            @ string offset=321
+.Linfo_string13:
+	.asciz	"xFreeBytesRemaining"           @ string offset=340
+.Linfo_string14:
+	.asciz	"xMinimumEverFreeBytesRemaining" @ string offset=360
+.Linfo_string15:
+	.asciz	"xNumberOfSuccessfulAllocations" @ string offset=391
+.Linfo_string16:
+	.asciz	"xNumberOfSuccessfulFrees"      @ string offset=422
+.Linfo_string17:
+	.asciz	"ucHeap"                        @ string offset=447
+.Linfo_string18:
+	.asciz	"unsigned char"                 @ string offset=454
+.Linfo_string19:
+	.asciz	"uint8_t"                       @ string offset=468
+.Linfo_string20:
+	.asciz	"__ARRAY_SIZE_TYPE__"           @ string offset=476
+.Linfo_string21:
+	.asciz	"uint32_t"                      @ string offset=496
+.Linfo_string22:
+	.asciz	"TickType_t"                    @ string offset=505
+.Linfo_string23:
+	.asciz	"prvHeapInit"                   @ string offset=516
+.Linfo_string24:
+	.asciz	"xTotalHeapSize"                @ string offset=528
+.Linfo_string25:
+	.asciz	"uxAddress"                     @ string offset=543
+.Linfo_string26:
+	.asciz	"pucAlignedHeap"                @ string offset=553
+.Linfo_string27:
+	.asciz	"pxFirstFreeBlock"              @ string offset=568
+.Linfo_string28:
+	.asciz	"prvInsertBlockIntoFreeList"    @ string offset=585
+.Linfo_string29:
+	.asciz	"pxBlockToInsert"               @ string offset=612
+.Linfo_string30:
+	.asciz	"pxIterator"                    @ string offset=628
+.Linfo_string31:
+	.asciz	"puc"                           @ string offset=639
+.Linfo_string32:
+	.asciz	"pvPortMalloc"                  @ string offset=643
+.Linfo_string33:
+	.asciz	"vPortFree"                     @ string offset=656
+.Linfo_string34:
+	.asciz	"xPortGetFreeHeapSize"          @ string offset=666
+.Linfo_string35:
+	.asciz	"xPortGetMinimumEverFreeHeapSize" @ string offset=687
+.Linfo_string36:
+	.asciz	"vPortInitialiseBlocks"         @ string offset=719
+.Linfo_string37:
+	.asciz	"vPortGetHeapStats"             @ string offset=741
+.Linfo_string38:
+	.asciz	"xWantedSize"                   @ string offset=759
+.Linfo_string39:
+	.asciz	"pvReturn"                      @ string offset=771
+.Linfo_string40:
+	.asciz	"pxPreviousBlock"               @ string offset=780
+.Linfo_string41:
+	.asciz	"pxBlock"                       @ string offset=796
+.Linfo_string42:
+	.asciz	"pxNewBlockLink"                @ string offset=804
+.Linfo_string43:
+	.asciz	"pv"                            @ string offset=819
+.Linfo_string44:
+	.asciz	"pxLink"                        @ string offset=822
+.Linfo_string45:
+	.asciz	"pxHeapStats"                   @ string offset=829
+.Linfo_string46:
+	.asciz	"xAvailableHeapSpaceInBytes"    @ string offset=841
+.Linfo_string47:
+	.asciz	"xSizeOfLargestFreeBlockInBytes" @ string offset=868
+.Linfo_string48:
+	.asciz	"xSizeOfSmallestFreeBlockInBytes" @ string offset=899
+.Linfo_string49:
+	.asciz	"xNumberOfFreeBlocks"           @ string offset=931
+.Linfo_string50:
+	.asciz	"xHeapStats"                    @ string offset=951
+.Linfo_string51:
+	.asciz	"HeapStats_t"                   @ string offset=962
+.Linfo_string52:
+	.asciz	"xMinSize"                      @ string offset=974
+.Linfo_string53:
+	.asciz	"xMaxSize"                      @ string offset=983
+.Linfo_string54:
+	.asciz	"xBlocks"                       @ string offset=992
+	.ident	"Component: Arm Compiler for Embedded 6.21 Tool: armclang [5ec1fd00]"
+	.section	".note.GNU-stack","",%progbits
+	.eabi_attribute	30, 1	@ Tag_ABI_optimization_goals
+	.ARM_attribute	16, 1	@ Tag_AV_eba
+	.section	.debug_line,"",%progbits
+.Lline_table_start0:

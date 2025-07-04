@@ -1,0 +1,2372 @@
+	.text
+	.syntax unified
+	.eabi_attribute	67, "2.09"	@ Tag_conformance
+	.cpu	cortex-m0plus
+	.eabi_attribute	6, 12	@ Tag_CPU_arch
+	.eabi_attribute	7, 77	@ Tag_CPU_arch_profile
+	.eabi_attribute	8, 0	@ Tag_ARM_ISA_use
+	.eabi_attribute	9, 1	@ Tag_THUMB_ISA_use
+	.eabi_attribute	34, 0	@ Tag_CPU_unaligned_access
+	.eabi_attribute	17, 1	@ Tag_ABI_PCS_GOT_use
+	.eabi_attribute	20, 2	@ Tag_ABI_FP_denormal
+	.eabi_attribute	21, 0	@ Tag_ABI_FP_exceptions
+	.eabi_attribute	23, 1	@ Tag_ABI_FP_number_model
+	.eabi_attribute	24, 1	@ Tag_ABI_align_needed
+	.eabi_attribute	25, 1	@ Tag_ABI_align_preserved
+	.eabi_attribute	38, 1	@ Tag_ABI_FP_16bit_format
+	.eabi_attribute	18, 2	@ Tag_ABI_PCS_wchar_t
+	.eabi_attribute	26, 1	@ Tag_ABI_enum_size
+	.eabi_attribute	14, 0	@ Tag_ABI_PCS_R9_use
+	.file	"port.c"
+	.file	1 "D:\\TI_M0G3507\\mspm0_sdk_2_05_00_05\\kernel\\freertos\\builds\\LP_MSPM0G3507\\release\\keil" "../../../../../../kernel/freertos/Source/portable/GCC/ARM_CM0\\portmacro.h"
+	.file	2 "D:\\TI_M0G3507\\mspm0_sdk_2_05_00_05\\kernel\\freertos\\builds\\LP_MSPM0G3507\\release\\keil" "../../../../../../kernel/freertos/Source/portable/GCC/ARM_CM0/port.c"
+	.file	3 "I:\\Keil5\\keil5_mdk\\ARM\\ARMCLANG\\Bin\\..\\include" "stdint.h"
+	.file	4 "D:\\TI_M0G3507\\mspm0_sdk_2_05_00_05\\kernel\\freertos\\builds\\LP_MSPM0G3507\\release\\keil" "../../../../../../kernel/freertos/Source/include\\task.h"
+	.section	.text.pxPortInitialiseStack,"ax",%progbits
+	.hidden	pxPortInitialiseStack           @ -- Begin function pxPortInitialiseStack
+	.globl	pxPortInitialiseStack
+	.p2align	2
+	.type	pxPortInitialiseStack,%function
+	.code	16                              @ @pxPortInitialiseStack
+	.thumb_func
+pxPortInitialiseStack:
+.Lfunc_begin0:
+	.fnstart
+	.cfi_sections .debug_frame
+	.cfi_startproc
+@ %bb.0:
+	@DEBUG_VALUE: pxPortInitialiseStack:pxTopOfStack <- $r0
+	@DEBUG_VALUE: pxPortInitialiseStack:pxCode <- $r1
+	@DEBUG_VALUE: pxPortInitialiseStack:pvParameters <- $r2
+	.loc	2 140 17 prologue_end           @ ../../../../../../kernel/freertos/Source/portable/GCC/ARM_CM0/port.c:140:17
+	mov	r3, r0
+	subs	r3, #8
+.Ltmp0:
+	@DEBUG_VALUE: pxPortInitialiseStack:pxTopOfStack <- $r3
+	.loc	2 141 19                        @ ../../../../../../kernel/freertos/Source/portable/GCC/ARM_CM0/port.c:141:19
+	str	r1, [r3]
+	.loc	2 138 17                        @ ../../../../../../kernel/freertos/Source/portable/GCC/ARM_CM0/port.c:138:17
+	subs	r1, r0, #4
+.Ltmp1:
+	@DEBUG_VALUE: pxPortInitialiseStack:pxCode <- [DW_OP_LLVM_entry_value 1] $r1
+	@DEBUG_VALUE: pxPortInitialiseStack:pxTopOfStack <- $r1
+	.loc	2 0 17 is_stmt 0                @ ../../../../../../kernel/freertos/Source/portable/GCC/ARM_CM0/port.c:0:17
+	movs	r3, #1
+	lsls	r3, r3, #24
+	.loc	2 139 19 is_stmt 1              @ ../../../../../../kernel/freertos/Source/portable/GCC/ARM_CM0/port.c:139:19
+	str	r3, [r1]
+	.loc	2 142 17                        @ ../../../../../../kernel/freertos/Source/portable/GCC/ARM_CM0/port.c:142:17
+	mov	r1, r0
+.Ltmp2:
+	subs	r1, #12
+.Ltmp3:
+	@DEBUG_VALUE: pxPortInitialiseStack:pxTopOfStack <- $r1
+	.loc	2 143 19                        @ ../../../../../../kernel/freertos/Source/portable/GCC/ARM_CM0/port.c:143:19
+	ldr	r3, __arm_cp.0_0
+	str	r3, [r1]
+	.loc	2 144 18                        @ ../../../../../../kernel/freertos/Source/portable/GCC/ARM_CM0/port.c:144:18
+	mov	r1, r0
+.Ltmp4:
+	subs	r1, #32
+.Ltmp5:
+	@DEBUG_VALUE: pxPortInitialiseStack:pxTopOfStack <- $r1
+	.loc	2 145 19                        @ ../../../../../../kernel/freertos/Source/portable/GCC/ARM_CM0/port.c:145:19
+	str	r2, [r1]
+	.loc	2 146 18                        @ ../../../../../../kernel/freertos/Source/portable/GCC/ARM_CM0/port.c:146:18
+	subs	r0, #64
+.Ltmp6:
+	@DEBUG_VALUE: pxPortInitialiseStack:pxTopOfStack <- $r0
+	.loc	2 148 5                         @ ../../../../../../kernel/freertos/Source/portable/GCC/ARM_CM0/port.c:148:5
+	bx	lr
+.Ltmp7:
+	.p2align	2
+@ %bb.1:
+	.loc	2 0 5 is_stmt 0                 @ ../../../../../../kernel/freertos/Source/portable/GCC/ARM_CM0/port.c:0:5
+__arm_cp.0_0:
+	.long	prvTaskExitError
+.Lcpi_end0:
+	.size	__arm_cp.0_0, .Lcpi_end0-__arm_cp.0_0
+.Lfunc_end0:
+	.size	pxPortInitialiseStack, .Lfunc_end0-pxPortInitialiseStack
+	.cfi_endproc
+	.cantunwind
+	.fnend
+                                        @ -- End function
+	.section	.text.prvTaskExitError,"ax",%progbits
+	.p2align	2                               @ -- Begin function prvTaskExitError
+	.type	prvTaskExitError,%function
+	.code	16                              @ @prvTaskExitError
+	.thumb_func
+prvTaskExitError:
+.Lfunc_begin1:
+	.loc	2 153 0 is_stmt 1               @ ../../../../../../kernel/freertos/Source/portable/GCC/ARM_CM0/port.c:153:0
+	.fnstart
+	.cfi_startproc
+@ %bb.0:
+	.pad	#4
+	sub	sp, #4
+	.cfi_def_cfa_offset 4
+	movs	r0, #0
+.Ltmp8:
+	.loc	2 154 23 prologue_end           @ ../../../../../../kernel/freertos/Source/portable/GCC/ARM_CM0/port.c:154:23
+	str	r0, [sp]
+.Ltmp9:
+	.loc	2 162 5                         @ ../../../../../../kernel/freertos/Source/portable/GCC/ARM_CM0/port.c:162:5
+	ldr	r0, __arm_cp.1_0
+	ldr	r0, [r0]
+.Ltmp10:
+	.loc	2 0 0 is_stmt 0                 @ ../../../../../../kernel/freertos/Source/portable/GCC/ARM_CM0/port.c:0:0
+	@APP
+	cpsid i
+	@NO_APP
+	.loc	2 162 5                         @ ../../../../../../kernel/freertos/Source/portable/GCC/ARM_CM0/port.c:162:5
+	adds	r0, r0, #1
+	beq	.LBB1_5
+.LBB1_1:                                @ =>This Inner Loop Header: Depth=1
+.Ltmp11:
+	.loc	2 162 5                         @ ../../../../../../kernel/freertos/Source/portable/GCC/ARM_CM0/port.c:162:5
+	b	.LBB1_1
+.Ltmp12:
+.LBB1_2:                                @   in Loop: Header=BB1_5 Depth=1
+	.loc	2 165 12 is_stmt 1              @ ../../../../../../kernel/freertos/Source/portable/GCC/ARM_CM0/port.c:165:12
+	ldr	r0, [sp]
+	.loc	2 165 5 is_stmt 0               @ ../../../../../../kernel/freertos/Source/portable/GCC/ARM_CM0/port.c:165:5
+	cmp	r0, #0
+	bne	.LBB1_6
+@ %bb.3:                                @   in Loop: Header=BB1_5 Depth=1
+	.loc	2 165 12                        @ ../../../../../../kernel/freertos/Source/portable/GCC/ARM_CM0/port.c:165:12
+	ldr	r0, [sp]
+	.loc	2 165 5                         @ ../../../../../../kernel/freertos/Source/portable/GCC/ARM_CM0/port.c:165:5
+	cmp	r0, #0
+	bne	.LBB1_6
+@ %bb.4:                                @   in Loop: Header=BB1_5 Depth=1
+	.loc	2 165 12                        @ ../../../../../../kernel/freertos/Source/portable/GCC/ARM_CM0/port.c:165:12
+	ldr	r0, [sp]
+	.loc	2 165 5                         @ ../../../../../../kernel/freertos/Source/portable/GCC/ARM_CM0/port.c:165:5
+	cmp	r0, #0
+	bne	.LBB1_6
+.LBB1_5:                                @ =>This Inner Loop Header: Depth=1
+	.loc	2 165 12                        @ ../../../../../../kernel/freertos/Source/portable/GCC/ARM_CM0/port.c:165:12
+	ldr	r0, [sp]
+	.loc	2 165 5                         @ ../../../../../../kernel/freertos/Source/portable/GCC/ARM_CM0/port.c:165:5
+	cmp	r0, #0
+	beq	.LBB1_2
+.LBB1_6:
+	.loc	2 175 1 epilogue_begin is_stmt 1 @ ../../../../../../kernel/freertos/Source/portable/GCC/ARM_CM0/port.c:175:1
+	add	sp, #4
+	bx	lr
+.Ltmp13:
+	.p2align	2
+@ %bb.7:
+	.loc	2 0 1 is_stmt 0                 @ ../../../../../../kernel/freertos/Source/portable/GCC/ARM_CM0/port.c:0:1
+__arm_cp.1_0:
+	.long	uxCriticalNesting
+.Lcpi_end1:
+	.size	__arm_cp.1_0, .Lcpi_end1-__arm_cp.1_0
+.Lfunc_end1:
+	.size	prvTaskExitError, .Lfunc_end1-prvTaskExitError
+	.cfi_endproc
+	.cantunwind
+	.fnend
+                                        @ -- End function
+	.section	.text.SVC_Handler,"ax",%progbits
+	.hidden	SVC_Handler                     @ -- Begin function SVC_Handler
+	.globl	SVC_Handler
+	.p2align	1
+	.type	SVC_Handler,%function
+	.code	16                              @ @SVC_Handler
+	.thumb_func
+SVC_Handler:
+.Lfunc_begin2:
+	.fnstart
+	.cfi_startproc
+@ %bb.0:
+	.loc	2 182 1 prologue_end is_stmt 1  @ ../../../../../../kernel/freertos/Source/portable/GCC/ARM_CM0/port.c:182:1
+	bx	lr
+.Ltmp14:
+.Lfunc_end2:
+	.size	SVC_Handler, .Lfunc_end2-SVC_Handler
+	.cfi_endproc
+	.cantunwind
+	.fnend
+                                        @ -- End function
+	.section	.text.xPortStartScheduler,"ax",%progbits
+	.hidden	xPortStartScheduler             @ -- Begin function xPortStartScheduler
+	.globl	xPortStartScheduler
+	.p2align	2
+	.type	xPortStartScheduler,%function
+	.code	16                              @ @xPortStartScheduler
+	.thumb_func
+xPortStartScheduler:
+.Lfunc_begin3:
+	.loc	2 217 0                         @ ../../../../../../kernel/freertos/Source/portable/GCC/ARM_CM0/port.c:217:0
+	.fnstart
+	.cfi_startproc
+@ %bb.0:
+	.save	{r4, r5, r7, lr}
+	push	{r4, r5, r7, lr}
+	.cfi_def_cfa_offset 16
+	.cfi_offset lr, -4
+	.cfi_offset r7, -8
+	.cfi_offset r5, -12
+	.cfi_offset r4, -16
+	.pad	#8
+	sub	sp, #8
+	.cfi_def_cfa_offset 24
+	movs	r0, #255
+	lsls	r1, r0, #16
+	ldr	r2, __arm_cp.3_0
+.Ltmp15:
+	.loc	2 219 24 prologue_end           @ ../../../../../../kernel/freertos/Source/portable/GCC/ARM_CM0/port.c:219:24
+	ldr	r3, [r2]
+	orrs	r3, r1
+	str	r3, [r2]
+	lsls	r0, r0, #24
+	.loc	2 220 24                        @ ../../../../../../kernel/freertos/Source/portable/GCC/ARM_CM0/port.c:220:24
+	ldr	r1, [r2]
+	orrs	r1, r0
+	str	r1, [r2]
+	.loc	2 224 5                         @ ../../../../../../kernel/freertos/Source/portable/GCC/ARM_CM0/port.c:224:5
+	bl	vPortSetupTimerInterrupt
+.Ltmp16:
+	.loc	2 227 23                        @ ../../../../../../kernel/freertos/Source/portable/GCC/ARM_CM0/port.c:227:23
+	ldr	r4, __arm_cp.3_1
+	movs	r5, #0
+	str	r5, [r4]
+	.loc	2 230 5                         @ ../../../../../../kernel/freertos/Source/portable/GCC/ARM_CM0/port.c:230:5
+	bl	vPortStartFirstTask
+.Ltmp17:
+	.loc	2 238 5                         @ ../../../../../../kernel/freertos/Source/portable/GCC/ARM_CM0/port.c:238:5
+	bl	vTaskSwitchContext
+.Ltmp18:
+	@DEBUG_VALUE: prvTaskExitError:ulDummy <- [DW_OP_plus_uconst 4, DW_OP_deref] $sp
+	.loc	2 154 23                        @ ../../../../../../kernel/freertos/Source/portable/GCC/ARM_CM0/port.c:154:23
+	str	r5, [sp, #4]
+.Ltmp19:
+	.loc	2 162 5                         @ ../../../../../../kernel/freertos/Source/portable/GCC/ARM_CM0/port.c:162:5
+	ldr	r0, [r4]
+.Ltmp20:
+	.loc	2 0 0 is_stmt 0                 @ ../../../../../../kernel/freertos/Source/portable/GCC/ARM_CM0/port.c:0:0
+	@APP
+	cpsid i
+	@NO_APP
+	.loc	2 162 5                         @ ../../../../../../kernel/freertos/Source/portable/GCC/ARM_CM0/port.c:162:5
+	adds	r0, r0, #1
+	beq	.LBB3_5
+.Ltmp21:
+.LBB3_1:                                @ =>This Inner Loop Header: Depth=1
+	@DEBUG_VALUE: prvTaskExitError:ulDummy <- [DW_OP_plus_uconst 4, DW_OP_deref] $sp
+	.loc	2 162 5                         @ ../../../../../../kernel/freertos/Source/portable/GCC/ARM_CM0/port.c:162:5
+	b	.LBB3_1
+.Ltmp22:
+.LBB3_2:                                @   in Loop: Header=BB3_5 Depth=1
+	@DEBUG_VALUE: prvTaskExitError:ulDummy <- [DW_OP_plus_uconst 4, DW_OP_deref] $sp
+	.loc	2 165 12 is_stmt 1              @ ../../../../../../kernel/freertos/Source/portable/GCC/ARM_CM0/port.c:165:12
+	ldr	r0, [sp, #4]
+	.loc	2 165 5 is_stmt 0               @ ../../../../../../kernel/freertos/Source/portable/GCC/ARM_CM0/port.c:165:5
+	cmp	r0, #0
+	bne	.LBB3_6
+.Ltmp23:
+@ %bb.3:                                @   in Loop: Header=BB3_5 Depth=1
+	@DEBUG_VALUE: prvTaskExitError:ulDummy <- [DW_OP_plus_uconst 4, DW_OP_deref] $sp
+	.loc	2 165 12                        @ ../../../../../../kernel/freertos/Source/portable/GCC/ARM_CM0/port.c:165:12
+	ldr	r0, [sp, #4]
+	.loc	2 165 5                         @ ../../../../../../kernel/freertos/Source/portable/GCC/ARM_CM0/port.c:165:5
+	cmp	r0, #0
+	bne	.LBB3_6
+.Ltmp24:
+@ %bb.4:                                @   in Loop: Header=BB3_5 Depth=1
+	@DEBUG_VALUE: prvTaskExitError:ulDummy <- [DW_OP_plus_uconst 4, DW_OP_deref] $sp
+	.loc	2 165 12                        @ ../../../../../../kernel/freertos/Source/portable/GCC/ARM_CM0/port.c:165:12
+	ldr	r0, [sp, #4]
+	.loc	2 165 5                         @ ../../../../../../kernel/freertos/Source/portable/GCC/ARM_CM0/port.c:165:5
+	cmp	r0, #0
+	bne	.LBB3_6
+.Ltmp25:
+.LBB3_5:                                @ =>This Inner Loop Header: Depth=1
+	@DEBUG_VALUE: prvTaskExitError:ulDummy <- [DW_OP_plus_uconst 4, DW_OP_deref] $sp
+	.loc	2 165 12                        @ ../../../../../../kernel/freertos/Source/portable/GCC/ARM_CM0/port.c:165:12
+	ldr	r0, [sp, #4]
+	.loc	2 165 5                         @ ../../../../../../kernel/freertos/Source/portable/GCC/ARM_CM0/port.c:165:5
+	cmp	r0, #0
+	beq	.LBB3_2
+.Ltmp26:
+.LBB3_6:
+	.loc	2 0 5                           @ ../../../../../../kernel/freertos/Source/portable/GCC/ARM_CM0/port.c:0:5
+	movs	r0, #0
+	.loc	2 242 5 epilogue_begin is_stmt 1 @ ../../../../../../kernel/freertos/Source/portable/GCC/ARM_CM0/port.c:242:5
+	add	sp, #8
+	pop	{r4, r5, r7, pc}
+.Ltmp27:
+	.p2align	2
+@ %bb.7:
+	.loc	2 0 5 is_stmt 0                 @ ../../../../../../kernel/freertos/Source/portable/GCC/ARM_CM0/port.c:0:5
+__arm_cp.3_0:
+	.long	3758157088                      @ 0xe000ed20
+.Lcpi_end2:
+	.size	__arm_cp.3_0, .Lcpi_end2-__arm_cp.3_0
+__arm_cp.3_1:
+	.long	uxCriticalNesting
+.Lcpi_end3:
+	.size	__arm_cp.3_1, .Lcpi_end3-__arm_cp.3_1
+.Lfunc_end3:
+	.size	xPortStartScheduler, .Lfunc_end3-xPortStartScheduler
+	.cfi_endproc
+	.cantunwind
+	.fnend
+                                        @ -- End function
+	.section	.text.vPortSetupTimerInterrupt,"ax",%progbits
+	.hidden	vPortSetupTimerInterrupt        @ -- Begin function vPortSetupTimerInterrupt
+	.weak	vPortSetupTimerInterrupt
+	.p2align	2
+	.type	vPortSetupTimerInterrupt,%function
+	.code	16                              @ @vPortSetupTimerInterrupt
+	.thumb_func
+vPortSetupTimerInterrupt:
+.Lfunc_begin4:
+	.fnstart
+	.cfi_startproc
+@ %bb.0:
+	.loc	2 384 45 prologue_end is_stmt 1 @ ../../../../../../kernel/freertos/Source/portable/GCC/ARM_CM0/port.c:384:45
+	ldr	r0, __arm_cp.4_0
+	movs	r1, #1
+	strb	r1, [r0]
+	.loc	2 383 37                        @ ../../../../../../kernel/freertos/Source/portable/GCC/ARM_CM0/port.c:383:37
+	ldr	r0, __arm_cp.4_1
+	strb	r1, [r0]
+	.loc	2 385 40                        @ ../../../../../../kernel/freertos/Source/portable/GCC/ARM_CM0/port.c:385:40
+	ldr	r0, __arm_cp.4_2
+	strb	r1, [r0]
+	ldr	r0, __arm_cp.4_3
+	movs	r1, #0
+.Ltmp28:
+	.loc	2 390 31                        @ ../../../../../../kernel/freertos/Source/portable/GCC/ARM_CM0/port.c:390:31
+	str	r1, [r0]
+	.loc	2 391 40                        @ ../../../../../../kernel/freertos/Source/portable/GCC/ARM_CM0/port.c:391:40
+	str	r1, [r0, #8]
+	ldr	r1, __arm_cp.4_4
+	.loc	2 394 31                        @ ../../../../../../kernel/freertos/Source/portable/GCC/ARM_CM0/port.c:394:31
+	str	r1, [r0, #4]
+	movs	r1, #7
+	.loc	2 395 31                        @ ../../../../../../kernel/freertos/Source/portable/GCC/ARM_CM0/port.c:395:31
+	str	r1, [r0]
+	.loc	2 396 1                         @ ../../../../../../kernel/freertos/Source/portable/GCC/ARM_CM0/port.c:396:1
+	bx	lr
+.Ltmp29:
+	.p2align	2
+@ %bb.1:
+	.loc	2 0 1 is_stmt 0                 @ ../../../../../../kernel/freertos/Source/portable/GCC/ARM_CM0/port.c:0:1
+__arm_cp.4_0:
+	.long	xMaximumPossibleSuppressedTicks
+.Lcpi_end4:
+	.size	__arm_cp.4_0, .Lcpi_end4-__arm_cp.4_0
+__arm_cp.4_1:
+	.long	ulTimerCountsForOneTick
+.Lcpi_end5:
+	.size	__arm_cp.4_1, .Lcpi_end5-__arm_cp.4_1
+__arm_cp.4_2:
+	.long	ulStoppedTimerCompensation
+.Lcpi_end6:
+	.size	__arm_cp.4_2, .Lcpi_end6-__arm_cp.4_2
+__arm_cp.4_3:
+	.long	3758153744                      @ 0xe000e010
+.Lcpi_end7:
+	.size	__arm_cp.4_3, .Lcpi_end7-__arm_cp.4_3
+__arm_cp.4_4:
+	.long	31999                           @ 0x7cff
+.Lcpi_end8:
+	.size	__arm_cp.4_4, .Lcpi_end8-__arm_cp.4_4
+.Lfunc_end4:
+	.size	vPortSetupTimerInterrupt, .Lfunc_end4-vPortSetupTimerInterrupt
+	.cfi_endproc
+	.cantunwind
+	.fnend
+                                        @ -- End function
+	.section	.text.vPortStartFirstTask,"ax",%progbits
+	.p2align	1                               @ -- Begin function vPortStartFirstTask
+	.type	vPortStartFirstTask,%function
+	.code	16                              @ @vPortStartFirstTask
+	.thumb_func
+vPortStartFirstTask:
+.Lfunc_begin5:
+	.fnstart
+	.cfi_startproc
+@ %bb.0:
+	.loc	2 190 5 prologue_end is_stmt 1  @ ../../../../../../kernel/freertos/Source/portable/GCC/ARM_CM0/port.c:190:5
+	@APP
+	ldr	r2, pxCurrentTCBConst2
+	ldr	r3, [r2]
+	ldr	r0, [r3]
+	adds	r0, #32
+	msr	psp, r0
+	movs	r0, #2
+	msr	control, r0
+	isb	sy
+	pop	{r0, r1, r2, r3, r4, r5}
+	mov	lr, r5
+	pop	{r3}
+	pop	{r2}
+	cpsie i
+	bx	r3
+
+	.p2align	4
+pxCurrentTCBConst2:
+	.long	pxCurrentTCB
+	@NO_APP
+.Ltmp30:
+.Lfunc_end5:
+	.size	vPortStartFirstTask, .Lfunc_end5-vPortStartFirstTask
+	.cfi_endproc
+	.cantunwind
+	.fnend
+                                        @ -- End function
+	.section	.text.vPortEndScheduler,"ax",%progbits
+	.hidden	vPortEndScheduler               @ -- Begin function vPortEndScheduler
+	.globl	vPortEndScheduler
+	.p2align	2
+	.type	vPortEndScheduler,%function
+	.code	16                              @ @vPortEndScheduler
+	.thumb_func
+vPortEndScheduler:
+.Lfunc_begin6:
+	.loc	2 247 0                         @ ../../../../../../kernel/freertos/Source/portable/GCC/ARM_CM0/port.c:247:0
+	.fnstart
+	.cfi_startproc
+@ %bb.0:
+	movs	r0, #125
+	lsls	r0, r0, #3
+.Ltmp31:
+	.loc	2 250 5 prologue_end            @ ../../../../../../kernel/freertos/Source/portable/GCC/ARM_CM0/port.c:250:5
+	ldr	r1, __arm_cp.6_0
+	ldr	r1, [r1]
+.Ltmp32:
+	.loc	2 250 5 is_stmt 0               @ ../../../../../../kernel/freertos/Source/portable/GCC/ARM_CM0/port.c:250:5
+	cmp	r1, r0
+	bne	.LBB6_2
+@ %bb.1:
+	.loc	2 251 1 is_stmt 1               @ ../../../../../../kernel/freertos/Source/portable/GCC/ARM_CM0/port.c:251:1
+	bx	lr
+.LBB6_2:
+.Ltmp33:
+	.loc	2 250 5                         @ ../../../../../../kernel/freertos/Source/portable/GCC/ARM_CM0/port.c:250:5
+	@APP
+	cpsid i
+	@NO_APP
+.LBB6_3:                                @ =>This Inner Loop Header: Depth=1
+.Ltmp34:
+	.loc	2 250 5 is_stmt 0               @ ../../../../../../kernel/freertos/Source/portable/GCC/ARM_CM0/port.c:250:5
+	b	.LBB6_3
+.Ltmp35:
+	.p2align	2
+@ %bb.4:
+	.loc	2 0 5                           @ ../../../../../../kernel/freertos/Source/portable/GCC/ARM_CM0/port.c:0:5
+__arm_cp.6_0:
+	.long	uxCriticalNesting
+.Lcpi_end9:
+	.size	__arm_cp.6_0, .Lcpi_end9-__arm_cp.6_0
+.Lfunc_end6:
+	.size	vPortEndScheduler, .Lfunc_end6-vPortEndScheduler
+	.cfi_endproc
+	.cantunwind
+	.fnend
+                                        @ -- End function
+	.section	.text.vPortYield,"ax",%progbits
+	.hidden	vPortYield                      @ -- Begin function vPortYield
+	.globl	vPortYield
+	.p2align	2
+	.type	vPortYield,%function
+	.code	16                              @ @vPortYield
+	.thumb_func
+vPortYield:
+.Lfunc_begin7:
+	.loc	2 255 0 is_stmt 1               @ ../../../../../../kernel/freertos/Source/portable/GCC/ARM_CM0/port.c:255:0
+	.fnstart
+	.cfi_startproc
+@ %bb.0:
+	movs	r0, #1
+	lsls	r0, r0, #28
+	ldr	r1, __arm_cp.7_0
+.Ltmp36:
+	.loc	2 257 27 prologue_end           @ ../../../../../../kernel/freertos/Source/portable/GCC/ARM_CM0/port.c:257:27
+	str	r0, [r1]
+	.loc	2 261 5                         @ ../../../../../../kernel/freertos/Source/portable/GCC/ARM_CM0/port.c:261:5
+	@APP
+	dsb	sy
+	@NO_APP
+	.loc	2 262 5                         @ ../../../../../../kernel/freertos/Source/portable/GCC/ARM_CM0/port.c:262:5
+	@APP
+	isb	sy
+	@NO_APP
+	.loc	2 263 1                         @ ../../../../../../kernel/freertos/Source/portable/GCC/ARM_CM0/port.c:263:1
+	bx	lr
+.Ltmp37:
+	.p2align	2
+@ %bb.1:
+	.loc	2 0 1 is_stmt 0                 @ ../../../../../../kernel/freertos/Source/portable/GCC/ARM_CM0/port.c:0:1
+__arm_cp.7_0:
+	.long	3758157060                      @ 0xe000ed04
+.Lcpi_end10:
+	.size	__arm_cp.7_0, .Lcpi_end10-__arm_cp.7_0
+.Lfunc_end7:
+	.size	vPortYield, .Lfunc_end7-vPortYield
+	.cfi_endproc
+	.cantunwind
+	.fnend
+                                        @ -- End function
+	.section	.text.vPortEnterCritical,"ax",%progbits
+	.hidden	vPortEnterCritical              @ -- Begin function vPortEnterCritical
+	.globl	vPortEnterCritical
+	.p2align	2
+	.type	vPortEnterCritical,%function
+	.code	16                              @ @vPortEnterCritical
+	.thumb_func
+vPortEnterCritical:
+.Lfunc_begin8:
+	.fnstart
+	.cfi_startproc
+@ %bb.0:
+	.loc	2 268 5 prologue_end is_stmt 1  @ ../../../../../../kernel/freertos/Source/portable/GCC/ARM_CM0/port.c:268:5
+	@APP
+	cpsid i
+	@NO_APP
+	.loc	2 269 22                        @ ../../../../../../kernel/freertos/Source/portable/GCC/ARM_CM0/port.c:269:22
+	ldr	r0, __arm_cp.8_0
+	ldr	r1, [r0]
+	adds	r1, r1, #1
+	str	r1, [r0]
+	.loc	2 270 5                         @ ../../../../../../kernel/freertos/Source/portable/GCC/ARM_CM0/port.c:270:5
+	@APP
+	dsb	sy
+	@NO_APP
+	.loc	2 271 5                         @ ../../../../../../kernel/freertos/Source/portable/GCC/ARM_CM0/port.c:271:5
+	@APP
+	isb	sy
+	@NO_APP
+	.loc	2 272 1                         @ ../../../../../../kernel/freertos/Source/portable/GCC/ARM_CM0/port.c:272:1
+	bx	lr
+.Ltmp38:
+	.p2align	2
+@ %bb.1:
+	.loc	2 0 1 is_stmt 0                 @ ../../../../../../kernel/freertos/Source/portable/GCC/ARM_CM0/port.c:0:1
+__arm_cp.8_0:
+	.long	uxCriticalNesting
+.Lcpi_end11:
+	.size	__arm_cp.8_0, .Lcpi_end11-__arm_cp.8_0
+.Lfunc_end8:
+	.size	vPortEnterCritical, .Lfunc_end8-vPortEnterCritical
+	.cfi_endproc
+	.cantunwind
+	.fnend
+                                        @ -- End function
+	.section	.text.vPortExitCritical,"ax",%progbits
+	.hidden	vPortExitCritical               @ -- Begin function vPortExitCritical
+	.globl	vPortExitCritical
+	.p2align	2
+	.type	vPortExitCritical,%function
+	.code	16                              @ @vPortExitCritical
+	.thumb_func
+vPortExitCritical:
+.Lfunc_begin9:
+	.fnstart
+	.cfi_startproc
+@ %bb.0:
+	.loc	2 277 5 prologue_end is_stmt 1  @ ../../../../../../kernel/freertos/Source/portable/GCC/ARM_CM0/port.c:277:5
+	ldr	r0, __arm_cp.9_0
+	ldr	r1, [r0]
+.Ltmp39:
+	.loc	2 277 5 is_stmt 0               @ ../../../../../../kernel/freertos/Source/portable/GCC/ARM_CM0/port.c:277:5
+	cmp	r1, #0
+	beq	.LBB9_3
+@ %bb.1:
+	.loc	2 278 22 is_stmt 1              @ ../../../../../../kernel/freertos/Source/portable/GCC/ARM_CM0/port.c:278:22
+	subs	r1, r1, #1
+	str	r1, [r0]
+	.loc	2 280 9                         @ ../../../../../../kernel/freertos/Source/portable/GCC/ARM_CM0/port.c:280:9
+	beq	.LBB9_5
+@ %bb.2:
+	.loc	2 284 1                         @ ../../../../../../kernel/freertos/Source/portable/GCC/ARM_CM0/port.c:284:1
+	bx	lr
+.LBB9_3:
+.Ltmp40:
+	.loc	2 277 5                         @ ../../../../../../kernel/freertos/Source/portable/GCC/ARM_CM0/port.c:277:5
+	@APP
+	cpsid i
+	@NO_APP
+.LBB9_4:                                @ =>This Inner Loop Header: Depth=1
+.Ltmp41:
+	.loc	2 277 5 is_stmt 0               @ ../../../../../../kernel/freertos/Source/portable/GCC/ARM_CM0/port.c:277:5
+	b	.LBB9_4
+.Ltmp42:
+.LBB9_5:
+	.loc	2 282 9 is_stmt 1               @ ../../../../../../kernel/freertos/Source/portable/GCC/ARM_CM0/port.c:282:9
+	@APP
+	cpsie i
+	@NO_APP
+.Ltmp43:
+	.loc	2 284 1                         @ ../../../../../../kernel/freertos/Source/portable/GCC/ARM_CM0/port.c:284:1
+	bx	lr
+.Ltmp44:
+	.p2align	2
+@ %bb.6:
+	.loc	2 0 1 is_stmt 0                 @ ../../../../../../kernel/freertos/Source/portable/GCC/ARM_CM0/port.c:0:1
+__arm_cp.9_0:
+	.long	uxCriticalNesting
+.Lcpi_end12:
+	.size	__arm_cp.9_0, .Lcpi_end12-__arm_cp.9_0
+.Lfunc_end9:
+	.size	vPortExitCritical, .Lfunc_end9-vPortExitCritical
+	.cfi_endproc
+	.cantunwind
+	.fnend
+                                        @ -- End function
+	.section	.text.ulSetInterruptMaskFromISR,"ax",%progbits
+	.hidden	ulSetInterruptMaskFromISR       @ -- Begin function ulSetInterruptMaskFromISR
+	.globl	ulSetInterruptMaskFromISR
+	.p2align	1
+	.type	ulSetInterruptMaskFromISR,%function
+	.code	16                              @ @ulSetInterruptMaskFromISR
+	.thumb_func
+ulSetInterruptMaskFromISR:
+.Lfunc_begin10:
+	.fnstart
+	.cfi_startproc
+@ %bb.0:
+	.loc	2 289 5 prologue_end is_stmt 1  @ ../../../../../../kernel/freertos/Source/portable/GCC/ARM_CM0/port.c:289:5
+	@APP
+	mrs	r0, primask
+	cpsid i
+	bx	lr
+	@NO_APP
+.Ltmp45:
+.Lfunc_end10:
+	.size	ulSetInterruptMaskFromISR, .Lfunc_end10-ulSetInterruptMaskFromISR
+	.cfi_endproc
+	.cantunwind
+	.fnend
+                                        @ -- End function
+	.section	.text.vClearInterruptMaskFromISR,"ax",%progbits
+	.hidden	vClearInterruptMaskFromISR      @ -- Begin function vClearInterruptMaskFromISR
+	.globl	vClearInterruptMaskFromISR
+	.p2align	1
+	.type	vClearInterruptMaskFromISR,%function
+	.code	16                              @ @vClearInterruptMaskFromISR
+	.thumb_func
+vClearInterruptMaskFromISR:
+.Lfunc_begin11:
+	.fnstart
+	.cfi_startproc
+@ %bb.0:
+	.loc	2 300 5 prologue_end            @ ../../../../../../kernel/freertos/Source/portable/GCC/ARM_CM0/port.c:300:5
+	@APP
+	msr	primask, r0
+	bx	lr
+	@NO_APP
+.Ltmp46:
+.Lfunc_end11:
+	.size	vClearInterruptMaskFromISR, .Lfunc_end11-vClearInterruptMaskFromISR
+	.cfi_endproc
+	.cantunwind
+	.fnend
+                                        @ -- End function
+	.section	.text.PendSV_Handler,"ax",%progbits
+	.hidden	PendSV_Handler                  @ -- Begin function PendSV_Handler
+	.globl	PendSV_Handler
+	.p2align	1
+	.type	PendSV_Handler,%function
+	.code	16                              @ @PendSV_Handler
+	.thumb_func
+PendSV_Handler:
+.Lfunc_begin12:
+	.fnstart
+	.cfi_startproc
+@ %bb.0:
+	.loc	2 312 5 prologue_end            @ ../../../../../../kernel/freertos/Source/portable/GCC/ARM_CM0/port.c:312:5
+	@APP
+	mrs	r0, psp
+
+	ldr	r3, pxCurrentTCBConst
+	ldr	r2, [r3]
+
+	subs	r0, #32
+	str	r0, [r2]
+	stm	r0!, {r4, r5, r6, r7}
+	mov	r4, r8
+	mov	r5, r9
+	mov	r6, r10
+	mov	r7, r11
+	stm	r0!, {r4, r5, r6, r7}
+
+	push	{r3, lr}
+	cpsid i
+	bl	vTaskSwitchContext
+	cpsie i
+	pop	{r2, r3}
+
+	ldr	r1, [r2]
+	ldr	r0, [r1]
+	adds	r0, #16
+	ldm	r0!, {r4, r5, r6, r7}
+	mov	r8, r4
+	mov	r9, r5
+	mov	r10, r6
+	mov	r11, r7
+
+	msr	psp, r0
+
+	subs	r0, #32
+	ldm	r0!, {r4, r5, r6, r7}
+
+	bx	r3
+
+	.p2align	4
+pxCurrentTCBConst:
+	.long	pxCurrentTCB
+	@NO_APP
+.Ltmp47:
+.Lfunc_end12:
+	.size	PendSV_Handler, .Lfunc_end12-PendSV_Handler
+	.cfi_endproc
+	.cantunwind
+	.fnend
+                                        @ -- End function
+	.section	.text.SysTick_Handler,"ax",%progbits
+	.hidden	SysTick_Handler                 @ -- Begin function SysTick_Handler
+	.globl	SysTick_Handler
+	.p2align	2
+	.type	SysTick_Handler,%function
+	.code	16                              @ @SysTick_Handler
+	.thumb_func
+SysTick_Handler:
+.Lfunc_begin13:
+	.loc	2 358 0                         @ ../../../../../../kernel/freertos/Source/portable/GCC/ARM_CM0/port.c:358:0
+	.fnstart
+	.cfi_startproc
+@ %bb.0:
+	.save	{r4, lr}
+	push	{r4, lr}
+	.cfi_def_cfa_offset 8
+	.cfi_offset lr, -4
+	.cfi_offset r4, -8
+.Ltmp48:
+	.loc	2 361 22 prologue_end           @ ../../../../../../kernel/freertos/Source/portable/GCC/ARM_CM0/port.c:361:22
+	bl	ulSetInterruptMaskFromISR
+.Ltmp49:
+	mov	r4, r0
+.Ltmp50:
+	@DEBUG_VALUE: SysTick_Handler:ulPreviousMask <- $r4
+	.loc	2 364 13                        @ ../../../../../../kernel/freertos/Source/portable/GCC/ARM_CM0/port.c:364:13
+	bl	xTaskIncrementTick
+.Ltmp51:
+	.loc	2 364 13 is_stmt 0              @ ../../../../../../kernel/freertos/Source/portable/GCC/ARM_CM0/port.c:364:13
+	cmp	r0, #0
+	beq	.LBB13_2
+.Ltmp52:
+@ %bb.1:
+	@DEBUG_VALUE: SysTick_Handler:ulPreviousMask <- $r4
+	.loc	2 0 13                          @ ../../../../../../kernel/freertos/Source/portable/GCC/ARM_CM0/port.c:0:13
+	movs	r0, #1
+	lsls	r0, r0, #28
+	ldr	r1, __arm_cp.13_0
+.Ltmp53:
+	.loc	2 367 35 is_stmt 1              @ ../../../../../../kernel/freertos/Source/portable/GCC/ARM_CM0/port.c:367:35
+	str	r0, [r1]
+.Ltmp54:
+.LBB13_2:
+	@DEBUG_VALUE: SysTick_Handler:ulPreviousMask <- $r4
+	.loc	2 370 5                         @ ../../../../../../kernel/freertos/Source/portable/GCC/ARM_CM0/port.c:370:5
+	mov	r0, r4
+	bl	vClearInterruptMaskFromISR
+.Ltmp55:
+	.loc	2 371 1 epilogue_begin          @ ../../../../../../kernel/freertos/Source/portable/GCC/ARM_CM0/port.c:371:1
+	pop	{r4, pc}
+.Ltmp56:
+	.p2align	2
+@ %bb.3:
+	.loc	2 0 1 is_stmt 0                 @ ../../../../../../kernel/freertos/Source/portable/GCC/ARM_CM0/port.c:0:1
+__arm_cp.13_0:
+	.long	3758157060                      @ 0xe000ed04
+.Lcpi_end13:
+	.size	__arm_cp.13_0, .Lcpi_end13-__arm_cp.13_0
+.Lfunc_end13:
+	.size	SysTick_Handler, .Lfunc_end13-SysTick_Handler
+	.cfi_endproc
+	.cantunwind
+	.fnend
+                                        @ -- End function
+	.section	.text.vPortSuppressTicksAndSleep,"ax",%progbits
+	.hidden	vPortSuppressTicksAndSleep      @ -- Begin function vPortSuppressTicksAndSleep
+	.weak	vPortSuppressTicksAndSleep
+	.p2align	2
+	.type	vPortSuppressTicksAndSleep,%function
+	.code	16                              @ @vPortSuppressTicksAndSleep
+	.thumb_func
+vPortSuppressTicksAndSleep:
+.Lfunc_begin14:
+	.loc	2 402 0 is_stmt 1               @ ../../../../../../kernel/freertos/Source/portable/GCC/ARM_CM0/port.c:402:0
+	.fnstart
+	.cfi_startproc
+@ %bb.0:
+	@DEBUG_VALUE: vPortSuppressTicksAndSleep:xExpectedIdleTime <- $r0
+	.save	{r4, r5, r6, r7, lr}
+	push	{r4, r5, r6, r7, lr}
+	.cfi_def_cfa_offset 20
+	.cfi_offset lr, -4
+	.cfi_offset r7, -8
+	.cfi_offset r6, -12
+	.cfi_offset r5, -16
+	.cfi_offset r4, -20
+	.pad	#20
+	sub	sp, #20
+	.cfi_def_cfa_offset 40
+.Ltmp57:
+	.loc	2 407 33 prologue_end           @ ../../../../../../kernel/freertos/Source/portable/GCC/ARM_CM0/port.c:407:33
+	ldr	r1, __arm_cp.14_0
+	ldrb	r6, [r1]
+	ldr	r7, __arm_cp.14_1
+.Ltmp58:
+	.loc	2 416 35                        @ ../../../../../../kernel/freertos/Source/portable/GCC/ARM_CM0/port.c:416:35
+	ldr	r1, [r7]
+	movs	r2, #1
+	str	r2, [sp, #16]                   @ 4-byte Spill
+	bics	r1, r2
+	str	r1, [r7]
+	.loc	2 421 25                        @ ../../../../../../kernel/freertos/Source/portable/GCC/ARM_CM0/port.c:421:25
+	ldr	r1, [r7, #8]
+	movs	r2, #125
+	lsls	r4, r2, #8
+	.loc	2 421 64 is_stmt 0              @ ../../../../../../kernel/freertos/Source/portable/GCC/ARM_CM0/port.c:421:64
+	ldr	r2, __arm_cp.14_2
+	ldrb	r3, [r2]
+	cmp	r3, #0
+	mov	r2, r4
+	beq	.LBB14_13
+.Ltmp59:
+@ %bb.1:
+	@DEBUG_VALUE: vPortSuppressTicksAndSleep:xExpectedIdleTime <- $r0
+	.loc	2 407 33 is_stmt 1              @ ../../../../../../kernel/freertos/Source/portable/GCC/ARM_CM0/port.c:407:33
+	cmp	r6, #0
+	bne	.LBB14_14
+.Ltmp60:
+.LBB14_2:
+	@DEBUG_VALUE: vPortSuppressTicksAndSleep:xExpectedIdleTime <- $r0
+	.loc	2 407 13 is_stmt 0              @ ../../../../../../kernel/freertos/Source/portable/GCC/ARM_CM0/port.c:407:13
+	cmp	r6, r0
+	blo	.LBB14_4
+.Ltmp61:
+.LBB14_3:
+	@DEBUG_VALUE: vPortSuppressTicksAndSleep:xExpectedIdleTime <- $r0
+	.loc	2 0 13                          @ ../../../../../../kernel/freertos/Source/portable/GCC/ARM_CM0/port.c:0:13
+	mov	r6, r0
+.Ltmp62:
+	@DEBUG_VALUE: vPortSuppressTicksAndSleep:xExpectedIdleTime <- $r6
+.LBB14_4:
+	@DEBUG_VALUE: vPortSuppressTicksAndSleep:xExpectedIdleTime <- $r6
+	.loc	2 421 110 is_stmt 1             @ ../../../../../../kernel/freertos/Source/portable/GCC/ARM_CM0/port.c:421:110
+	subs	r0, r6, #1
+	str	r0, [sp, #4]                    @ 4-byte Spill
+	.loc	2 421 88 is_stmt 0              @ ../../../../../../kernel/freertos/Source/portable/GCC/ARM_CM0/port.c:421:88
+	muls	r2, r0, r2
+	.loc	2 421 60                        @ ../../../../../../kernel/freertos/Source/portable/GCC/ARM_CM0/port.c:421:60
+	adds	r0, r2, r1
+.Ltmp63:
+	@DEBUG_VALUE: vPortSuppressTicksAndSleep:ulReloadValue <- $r0
+	.loc	2 423 29 is_stmt 1              @ ../../../../../../kernel/freertos/Source/portable/GCC/ARM_CM0/port.c:423:29
+	ldr	r1, __arm_cp.14_3
+	ldrb	r1, [r1]
+	cmp	r1, #0
+	str	r4, [sp, #12]                   @ 4-byte Spill
+	beq	.LBB14_6
+.Ltmp64:
+@ %bb.5:
+	@DEBUG_VALUE: vPortSuppressTicksAndSleep:ulReloadValue <- $r0
+	@DEBUG_VALUE: vPortSuppressTicksAndSleep:xExpectedIdleTime <- $r6
+	.loc	2 0 29 is_stmt 0                @ ../../../../../../kernel/freertos/Source/portable/GCC/ARM_CM0/port.c:0:29
+	movs	r1, #45
+.Ltmp65:
+.LBB14_6:
+	@DEBUG_VALUE: vPortSuppressTicksAndSleep:ulReloadValue <- $r0
+	@DEBUG_VALUE: vPortSuppressTicksAndSleep:xExpectedIdleTime <- $r6
+	.loc	2 423 13                        @ ../../../../../../kernel/freertos/Source/portable/GCC/ARM_CM0/port.c:423:13
+	subs	r5, r0, r1
+	bhi	.LBB14_8
+.Ltmp66:
+@ %bb.7:
+	@DEBUG_VALUE: vPortSuppressTicksAndSleep:ulReloadValue <- $r0
+	@DEBUG_VALUE: vPortSuppressTicksAndSleep:xExpectedIdleTime <- $r6
+	.loc	2 0 13                          @ ../../../../../../kernel/freertos/Source/portable/GCC/ARM_CM0/port.c:0:13
+	mov	r5, r0
+.Ltmp67:
+	@DEBUG_VALUE: vPortSuppressTicksAndSleep:ulReloadValue <- $r5
+.LBB14_8:
+	@DEBUG_VALUE: vPortSuppressTicksAndSleep:xExpectedIdleTime <- $r6
+	@DEBUG_VALUE: vPortSuppressTicksAndSleep:ulReloadValue <- $r5
+	.loc	2 430 9 is_stmt 1               @ ../../../../../../kernel/freertos/Source/portable/GCC/ARM_CM0/port.c:430:9
+	@APP
+	cpsid i
+	@NO_APP
+	.loc	2 431 9                         @ ../../../../../../kernel/freertos/Source/portable/GCC/ARM_CM0/port.c:431:9
+	@APP
+	dsb	sy
+	@NO_APP
+	.loc	2 432 9                         @ ../../../../../../kernel/freertos/Source/portable/GCC/ARM_CM0/port.c:432:9
+	@APP
+	isb	sy
+	@NO_APP
+	movs	r4, #0
+	mvns	r0, r4
+.Ltmp68:
+	.loc	2 436 13                        @ ../../../../../../kernel/freertos/Source/portable/GCC/ARM_CM0/port.c:436:13
+	str	r0, [sp, #8]                    @ 4-byte Spill
+	bl	eTaskConfirmSleepModeStatus
+.Ltmp69:
+	.loc	2 436 13 is_stmt 0              @ ../../../../../../kernel/freertos/Source/portable/GCC/ARM_CM0/port.c:436:13
+	cmp	r0, #0
+	beq	.LBB14_15
+.Ltmp70:
+@ %bb.9:
+	@DEBUG_VALUE: vPortSuppressTicksAndSleep:ulReloadValue <- $r5
+	@DEBUG_VALUE: vPortSuppressTicksAndSleep:xExpectedIdleTime <- $r6
+	.loc	2 456 39 is_stmt 1              @ ../../../../../../kernel/freertos/Source/portable/GCC/ARM_CM0/port.c:456:39
+	str	r5, [r7, #4]
+	.loc	2 460 48                        @ ../../../../../../kernel/freertos/Source/portable/GCC/ARM_CM0/port.c:460:48
+	str	r4, [r7, #8]
+	.loc	2 463 39                        @ ../../../../../../kernel/freertos/Source/portable/GCC/ARM_CM0/port.c:463:39
+	ldr	r0, [r7]
+	ldr	r1, [sp, #16]                   @ 4-byte Reload
+	orrs	r0, r1
+	str	r0, [r7]
+.Ltmp71:
+	@DEBUG_VALUE: vPortSuppressTicksAndSleep:xModifiableIdleTime <- $r6
+	.loc	2 473 17                        @ ../../../../../../kernel/freertos/Source/portable/GCC/ARM_CM0/port.c:473:17
+	cmp	r6, #0
+	beq	.LBB14_11
+.Ltmp72:
+@ %bb.10:
+	@DEBUG_VALUE: vPortSuppressTicksAndSleep:xModifiableIdleTime <- $r6
+	@DEBUG_VALUE: vPortSuppressTicksAndSleep:ulReloadValue <- $r5
+	@DEBUG_VALUE: vPortSuppressTicksAndSleep:xExpectedIdleTime <- $r6
+	.loc	2 475 17                        @ ../../../../../../kernel/freertos/Source/portable/GCC/ARM_CM0/port.c:475:17
+	@APP
+	dsb	sy
+	@NO_APP
+	.loc	2 476 17                        @ ../../../../../../kernel/freertos/Source/portable/GCC/ARM_CM0/port.c:476:17
+	@APP
+	wfi
+	@NO_APP
+	.loc	2 477 17                        @ ../../../../../../kernel/freertos/Source/portable/GCC/ARM_CM0/port.c:477:17
+	@APP
+	isb	sy
+	@NO_APP
+.Ltmp73:
+.LBB14_11:
+	@DEBUG_VALUE: vPortSuppressTicksAndSleep:xModifiableIdleTime <- $r6
+	@DEBUG_VALUE: vPortSuppressTicksAndSleep:ulReloadValue <- $r5
+	@DEBUG_VALUE: vPortSuppressTicksAndSleep:xExpectedIdleTime <- $r6
+	.loc	2 485 13                        @ ../../../../../../kernel/freertos/Source/portable/GCC/ARM_CM0/port.c:485:13
+	@APP
+	cpsie i
+	@NO_APP
+	.loc	2 486 13                        @ ../../../../../../kernel/freertos/Source/portable/GCC/ARM_CM0/port.c:486:13
+	@APP
+	dsb	sy
+	@NO_APP
+	.loc	2 487 13                        @ ../../../../../../kernel/freertos/Source/portable/GCC/ARM_CM0/port.c:487:13
+	@APP
+	isb	sy
+	@NO_APP
+	.loc	2 493 13                        @ ../../../../../../kernel/freertos/Source/portable/GCC/ARM_CM0/port.c:493:13
+	@APP
+	cpsid i
+	@NO_APP
+	.loc	2 494 13                        @ ../../../../../../kernel/freertos/Source/portable/GCC/ARM_CM0/port.c:494:13
+	@APP
+	dsb	sy
+	@NO_APP
+	.loc	2 495 13                        @ ../../../../../../kernel/freertos/Source/portable/GCC/ARM_CM0/port.c:495:13
+	@APP
+	isb	sy
+	@NO_APP
+	movs	r0, #6
+	.loc	2 504 39                        @ ../../../../../../kernel/freertos/Source/portable/GCC/ARM_CM0/port.c:504:39
+	str	r0, [r7]
+.Ltmp74:
+	.loc	2 511 19                        @ ../../../../../../kernel/freertos/Source/portable/GCC/ARM_CM0/port.c:511:19
+	ldr	r0, [r7]
+.Ltmp75:
+	.loc	2 511 17 is_stmt 0              @ ../../../../../../kernel/freertos/Source/portable/GCC/ARM_CM0/port.c:511:17
+	lsls	r0, r0, #15
+	bmi	.LBB14_17
+.Ltmp76:
+@ %bb.12:
+	@DEBUG_VALUE: vPortSuppressTicksAndSleep:xModifiableIdleTime <- $r6
+	@DEBUG_VALUE: vPortSuppressTicksAndSleep:ulReloadValue <- $r5
+	@DEBUG_VALUE: vPortSuppressTicksAndSleep:xExpectedIdleTime <- $r6
+	.loc	2 0 17                          @ ../../../../../../kernel/freertos/Source/portable/GCC/ARM_CM0/port.c:0:17
+	ldr	r5, [sp, #12]                   @ 4-byte Reload
+.Ltmp77:
+	.loc	2 542 68 is_stmt 1              @ ../../../../../../kernel/freertos/Source/portable/GCC/ARM_CM0/port.c:542:68
+	muls	r6, r5, r6
+.Ltmp78:
+	.loc	2 542 98 is_stmt 0              @ ../../../../../../kernel/freertos/Source/portable/GCC/ARM_CM0/port.c:542:98
+	ldr	r0, [r7, #8]
+	.loc	2 542 96                        @ ../../../../../../kernel/freertos/Source/portable/GCC/ARM_CM0/port.c:542:96
+	subs	r6, r6, r0
+.Ltmp79:
+	@DEBUG_VALUE: vPortSuppressTicksAndSleep:ulCompletedSysTickDecrements <- $r6
+	.loc	2 546 70 is_stmt 1              @ ../../../../../../kernel/freertos/Source/portable/GCC/ARM_CM0/port.c:546:70
+	mov	r0, r6
+	mov	r1, r5
+	bl	__aeabi_uidiv
+.Ltmp80:
+	@DEBUG_VALUE: vPortSuppressTicksAndSleep:ulCompleteTickPeriods <- $r0
+	.loc	2 550 79                        @ ../../../../../../kernel/freertos/Source/portable/GCC/ARM_CM0/port.c:550:79
+	mov	r1, r5
+	muls	r1, r0, r1
+	.loc	2 550 107 is_stmt 0             @ ../../../../../../kernel/freertos/Source/portable/GCC/ARM_CM0/port.c:550:107
+	subs	r1, r1, r6
+	adds	r1, r1, r5
+	b	.LBB14_31
+.Ltmp81:
+.LBB14_13:
+	@DEBUG_VALUE: vPortSuppressTicksAndSleep:xExpectedIdleTime <- $r0
+	.loc	2 0 107                         @ ../../../../../../kernel/freertos/Source/portable/GCC/ARM_CM0/port.c:0:107
+	mov	r2, r3
+.Ltmp82:
+	.loc	2 407 33 is_stmt 1              @ ../../../../../../kernel/freertos/Source/portable/GCC/ARM_CM0/port.c:407:33
+	cmp	r6, #0
+	beq	.LBB14_2
+.Ltmp83:
+.LBB14_14:
+	@DEBUG_VALUE: vPortSuppressTicksAndSleep:xExpectedIdleTime <- $r0
+	.loc	2 0 33 is_stmt 0                @ ../../../../../../kernel/freertos/Source/portable/GCC/ARM_CM0/port.c:0:33
+	movs	r3, #131
+	lsls	r6, r3, #2
+	.loc	2 407 13                        @ ../../../../../../kernel/freertos/Source/portable/GCC/ARM_CM0/port.c:407:13
+	cmp	r6, r0
+	bhs	.LBB14_3
+	b	.LBB14_4
+.Ltmp84:
+.LBB14_15:
+	@DEBUG_VALUE: vPortSuppressTicksAndSleep:ulReloadValue <- $r5
+	@DEBUG_VALUE: vPortSuppressTicksAndSleep:xExpectedIdleTime <- $r6
+	.loc	2 440 41 is_stmt 1              @ ../../../../../../kernel/freertos/Source/portable/GCC/ARM_CM0/port.c:440:41
+	ldr	r0, [r7, #8]
+	.loc	2 440 39 is_stmt 0              @ ../../../../../../kernel/freertos/Source/portable/GCC/ARM_CM0/port.c:440:39
+	str	r0, [r7, #4]
+	.loc	2 443 39 is_stmt 1              @ ../../../../../../kernel/freertos/Source/portable/GCC/ARM_CM0/port.c:443:39
+	ldr	r0, [r7]
+	ldr	r1, [sp, #16]                   @ 4-byte Reload
+	orrs	r0, r1
+	str	r0, [r7]
+	.loc	2 447 41                        @ ../../../../../../kernel/freertos/Source/portable/GCC/ARM_CM0/port.c:447:41
+	ldr	r0, __arm_cp.14_2
+	ldrb	r0, [r0]
+	.loc	2 447 65 is_stmt 0              @ ../../../../../../kernel/freertos/Source/portable/GCC/ARM_CM0/port.c:447:65
+	cmp	r0, #0
+	bne	.LBB14_19
+.Ltmp85:
+@ %bb.16:
+	@DEBUG_VALUE: vPortSuppressTicksAndSleep:ulReloadValue <- $r5
+	@DEBUG_VALUE: vPortSuppressTicksAndSleep:xExpectedIdleTime <- $r6
+	.loc	2 0 65                          @ ../../../../../../kernel/freertos/Source/portable/GCC/ARM_CM0/port.c:0:65
+	ldr	r0, [sp, #8]                    @ 4-byte Reload
+	b	.LBB14_20
+.Ltmp86:
+.LBB14_17:
+	@DEBUG_VALUE: vPortSuppressTicksAndSleep:xModifiableIdleTime <- $r6
+	@DEBUG_VALUE: vPortSuppressTicksAndSleep:ulReloadValue <- $r5
+	@DEBUG_VALUE: vPortSuppressTicksAndSleep:xExpectedIdleTime <- $r6
+	.loc	2 519 43 is_stmt 1              @ ../../../../../../kernel/freertos/Source/portable/GCC/ARM_CM0/port.c:519:43
+	ldr	r0, __arm_cp.14_2
+	ldrb	r0, [r0]
+	.loc	2 519 67 is_stmt 0              @ ../../../../../../kernel/freertos/Source/portable/GCC/ARM_CM0/port.c:519:67
+	cmp	r0, #0
+	bne	.LBB14_21
+.Ltmp87:
+@ %bb.18:
+	@DEBUG_VALUE: vPortSuppressTicksAndSleep:xModifiableIdleTime <- $r6
+	@DEBUG_VALUE: vPortSuppressTicksAndSleep:ulReloadValue <- $r5
+	@DEBUG_VALUE: vPortSuppressTicksAndSleep:xExpectedIdleTime <- $r6
+	.loc	2 0 67                          @ ../../../../../../kernel/freertos/Source/portable/GCC/ARM_CM0/port.c:0:67
+	ldr	r1, [sp, #8]                    @ 4-byte Reload
+	ldr	r6, [sp, #12]                   @ 4-byte Reload
+.Ltmp88:
+	b	.LBB14_22
+.Ltmp89:
+.LBB14_19:
+	@DEBUG_VALUE: vPortSuppressTicksAndSleep:ulReloadValue <- $r5
+	@DEBUG_VALUE: vPortSuppressTicksAndSleep:xExpectedIdleTime <- $r6
+	ldr	r0, [sp, #12]                   @ 4-byte Reload
+	subs	r0, r0, #1
+.Ltmp90:
+.LBB14_20:
+	@DEBUG_VALUE: vPortSuppressTicksAndSleep:ulReloadValue <- $r5
+	@DEBUG_VALUE: vPortSuppressTicksAndSleep:xExpectedIdleTime <- $r6
+	.loc	2 447 39 is_stmt 1              @ ../../../../../../kernel/freertos/Source/portable/GCC/ARM_CM0/port.c:447:39
+	str	r0, [r7, #4]
+	.loc	2 451 13                        @ ../../../../../../kernel/freertos/Source/portable/GCC/ARM_CM0/port.c:451:13
+	@APP
+	cpsie i
+	@NO_APP
+.Ltmp91:
+	.loc	2 564 5 epilogue_begin          @ ../../../../../../kernel/freertos/Source/portable/GCC/ARM_CM0/port.c:564:5
+	add	sp, #20
+	pop	{r4, r5, r6, r7, pc}
+.Ltmp92:
+.LBB14_21:
+	@DEBUG_VALUE: vPortSuppressTicksAndSleep:xModifiableIdleTime <- $r6
+	@DEBUG_VALUE: vPortSuppressTicksAndSleep:ulReloadValue <- $r5
+	@DEBUG_VALUE: vPortSuppressTicksAndSleep:xExpectedIdleTime <- $r6
+	.loc	2 0 5 is_stmt 0                 @ ../../../../../../kernel/freertos/Source/portable/GCC/ARM_CM0/port.c:0:5
+	ldr	r6, [sp, #12]                   @ 4-byte Reload
+.Ltmp93:
+	subs	r1, r6, #1
+.Ltmp94:
+.LBB14_22:
+	@DEBUG_VALUE: vPortSuppressTicksAndSleep:ulReloadValue <- $r5
+	.loc	2 519 95 is_stmt 1              @ ../../../../../../kernel/freertos/Source/portable/GCC/ARM_CM0/port.c:519:95
+	ldr	r2, [r7, #8]
+	.loc	2 519 93 is_stmt 0              @ ../../../../../../kernel/freertos/Source/portable/GCC/ARM_CM0/port.c:519:93
+	subs	r2, r2, r5
+	.loc	2 519 75                        @ ../../../../../../kernel/freertos/Source/portable/GCC/ARM_CM0/port.c:519:75
+	adds	r2, r2, r1
+.Ltmp95:
+	@DEBUG_VALUE: ulCalculatedLoadValue <- $r2
+	.loc	2 0 75                          @ ../../../../../../kernel/freertos/Source/portable/GCC/ARM_CM0/port.c:0:75
+	cmp	r0, #0
+	mov	r3, r6
+	mov	r5, r6
+.Ltmp96:
+	bne	.LBB14_24
+.Ltmp97:
+@ %bb.23:
+	@DEBUG_VALUE: ulCalculatedLoadValue <- $r2
+	mov	r3, r0
+.Ltmp98:
+.LBB14_24:
+	@DEBUG_VALUE: ulCalculatedLoadValue <- $r2
+	.loc	2 524 76 is_stmt 1              @ ../../../../../../kernel/freertos/Source/portable/GCC/ARM_CM0/port.c:524:76
+	cmp	r2, r3
+	mov	r0, r1
+	bhi	.LBB14_26
+.Ltmp99:
+@ %bb.25:
+	@DEBUG_VALUE: ulCalculatedLoadValue <- $r2
+	.loc	2 0 76 is_stmt 0                @ ../../../../../../kernel/freertos/Source/portable/GCC/ARM_CM0/port.c:0:76
+	mov	r0, r2
+.Ltmp100:
+.LBB14_26:
+	@DEBUG_VALUE: ulCalculatedLoadValue <- $r2
+	.loc	2 524 76                        @ ../../../../../../kernel/freertos/Source/portable/GCC/ARM_CM0/port.c:524:76
+	cmp	r2, #45
+	blo	.LBB14_28
+.Ltmp101:
+@ %bb.27:
+	@DEBUG_VALUE: ulCalculatedLoadValue <- $r2
+	.loc	2 0 76                          @ ../../../../../../kernel/freertos/Source/portable/GCC/ARM_CM0/port.c:0:76
+	mov	r1, r0
+.Ltmp102:
+.LBB14_28:
+	@DEBUG_VALUE: ulCalculatedLoadValue <- $r2
+	.loc	2 524 47                        @ ../../../../../../kernel/freertos/Source/portable/GCC/ARM_CM0/port.c:524:47
+	ldr	r2, __arm_cp.14_3
+.Ltmp103:
+	ldrb	r2, [r2]
+	.loc	2 524 76                        @ ../../../../../../kernel/freertos/Source/portable/GCC/ARM_CM0/port.c:524:76
+	cmp	r2, #0
+	bne	.LBB14_30
+.Ltmp104:
+@ %bb.29:
+	.loc	2 0 76                          @ ../../../../../../kernel/freertos/Source/portable/GCC/ARM_CM0/port.c:0:76
+	mov	r1, r0
+.LBB14_30:
+	@DEBUG_VALUE: ulCalculatedLoadValue <- $r1
+.Ltmp105:
+	@DEBUG_VALUE: vPortSuppressTicksAndSleep:ulCompleteTickPeriods <- [DW_OP_plus_uconst 4] [$sp+0]
+	ldr	r0, [sp, #4]                    @ 4-byte Reload
+.Ltmp106:
+	@DEBUG_VALUE: vPortSuppressTicksAndSleep:ulCompleteTickPeriods <- $r0
+.LBB14_31:
+	@DEBUG_VALUE: vPortSuppressTicksAndSleep:ulCompleteTickPeriods <- $r0
+	str	r1, [r7, #4]
+.Ltmp107:
+	@DEBUG_VALUE: vPortSuppressTicksAndSleep:ulCompleteTickPeriods <- $r0
+	.loc	2 556 48 is_stmt 1              @ ../../../../../../kernel/freertos/Source/portable/GCC/ARM_CM0/port.c:556:48
+	str	r4, [r7, #8]
+	.loc	2 557 39                        @ ../../../../../../kernel/freertos/Source/portable/GCC/ARM_CM0/port.c:557:39
+	ldr	r2, [r7]
+	ldr	r1, [sp, #16]                   @ 4-byte Reload
+	orrs	r2, r1
+	str	r2, [r7]
+	.loc	2 558 13                        @ ../../../../../../kernel/freertos/Source/portable/GCC/ARM_CM0/port.c:558:13
+	bl	vTaskStepTick
+.Ltmp108:
+	.loc	2 559 41                        @ ../../../../../../kernel/freertos/Source/portable/GCC/ARM_CM0/port.c:559:41
+	ldr	r0, __arm_cp.14_2
+	ldrb	r0, [r0]
+	.loc	2 559 65 is_stmt 0              @ ../../../../../../kernel/freertos/Source/portable/GCC/ARM_CM0/port.c:559:65
+	cmp	r0, #0
+	bne	.LBB14_33
+@ %bb.32:
+	.loc	2 0 65                          @ ../../../../../../kernel/freertos/Source/portable/GCC/ARM_CM0/port.c:0:65
+	ldr	r0, [sp, #8]                    @ 4-byte Reload
+	b	.LBB14_34
+.LBB14_33:
+	subs	r0, r5, #1
+.LBB14_34:
+	.loc	2 559 39                        @ ../../../../../../kernel/freertos/Source/portable/GCC/ARM_CM0/port.c:559:39
+	str	r0, [r7, #4]
+	.loc	2 562 13 is_stmt 1              @ ../../../../../../kernel/freertos/Source/portable/GCC/ARM_CM0/port.c:562:13
+	@APP
+	cpsie i
+	@NO_APP
+.Ltmp109:
+	.loc	2 564 5 epilogue_begin          @ ../../../../../../kernel/freertos/Source/portable/GCC/ARM_CM0/port.c:564:5
+	add	sp, #20
+	pop	{r4, r5, r6, r7, pc}
+.Ltmp110:
+	.p2align	2
+@ %bb.35:
+	.loc	2 0 5 is_stmt 0                 @ ../../../../../../kernel/freertos/Source/portable/GCC/ARM_CM0/port.c:0:5
+__arm_cp.14_0:
+	.long	xMaximumPossibleSuppressedTicks
+.Lcpi_end14:
+	.size	__arm_cp.14_0, .Lcpi_end14-__arm_cp.14_0
+__arm_cp.14_1:
+	.long	3758153744                      @ 0xe000e010
+.Lcpi_end15:
+	.size	__arm_cp.14_1, .Lcpi_end15-__arm_cp.14_1
+__arm_cp.14_2:
+	.long	ulTimerCountsForOneTick
+.Lcpi_end16:
+	.size	__arm_cp.14_2, .Lcpi_end16-__arm_cp.14_2
+__arm_cp.14_3:
+	.long	ulStoppedTimerCompensation
+.Lcpi_end17:
+	.size	__arm_cp.14_3, .Lcpi_end17-__arm_cp.14_3
+.Lfunc_end14:
+	.size	vPortSuppressTicksAndSleep, .Lfunc_end14-vPortSuppressTicksAndSleep
+	.cfi_endproc
+	.cantunwind
+	.fnend
+                                        @ -- End function
+	.type	uxCriticalNesting,%object       @ @uxCriticalNesting
+	.section	.data.uxCriticalNesting,"aw",%progbits
+	.p2align	2, 0x0
+uxCriticalNesting:
+	.long	2863311530                      @ 0xaaaaaaaa
+	.size	uxCriticalNesting, 4
+
+	.type	ulTimerCountsForOneTick,%object @ @ulTimerCountsForOneTick
+	.section	.bss.ulTimerCountsForOneTick,"aw",%nobits
+	.p2align	2, 0x0
+ulTimerCountsForOneTick:
+	.byte	0                               @ 0x0
+	.size	ulTimerCountsForOneTick, 1
+
+	.type	xMaximumPossibleSuppressedTicks,%object @ @xMaximumPossibleSuppressedTicks
+	.section	.bss.xMaximumPossibleSuppressedTicks,"aw",%nobits
+	.p2align	2, 0x0
+xMaximumPossibleSuppressedTicks:
+	.byte	0                               @ 0x0
+	.size	xMaximumPossibleSuppressedTicks, 1
+
+	.type	ulStoppedTimerCompensation,%object @ @ulStoppedTimerCompensation
+	.section	.bss.ulStoppedTimerCompensation,"aw",%nobits
+	.p2align	2, 0x0
+ulStoppedTimerCompensation:
+	.byte	0                               @ 0x0
+	.size	ulStoppedTimerCompensation, 1
+
+	.file	5 "D:\\TI_M0G3507\\mspm0_sdk_2_05_00_05\\kernel\\freertos\\builds\\LP_MSPM0G3507\\release\\keil" "../../../../../../kernel/freertos/Source/include/projdefs.h"
+	.section	.debug_loc,"",%progbits
+.Ldebug_loc0:
+	.long	-1
+	.long	.Lfunc_begin0                   @   base address
+	.long	.Lfunc_begin0-.Lfunc_begin0
+	.long	.Ltmp0-.Lfunc_begin0
+	.short	1                               @ Loc expr size
+	.byte	80                              @ DW_OP_reg0
+	.long	.Ltmp0-.Lfunc_begin0
+	.long	.Ltmp1-.Lfunc_begin0
+	.short	1                               @ Loc expr size
+	.byte	83                              @ DW_OP_reg3
+	.long	.Ltmp1-.Lfunc_begin0
+	.long	.Ltmp2-.Lfunc_begin0
+	.short	1                               @ Loc expr size
+	.byte	81                              @ DW_OP_reg1
+	.long	.Ltmp3-.Lfunc_begin0
+	.long	.Ltmp4-.Lfunc_begin0
+	.short	1                               @ Loc expr size
+	.byte	81                              @ DW_OP_reg1
+	.long	.Ltmp5-.Lfunc_begin0
+	.long	.Ltmp6-.Lfunc_begin0
+	.short	1                               @ Loc expr size
+	.byte	81                              @ DW_OP_reg1
+	.long	.Ltmp6-.Lfunc_begin0
+	.long	.Ltmp7-.Lfunc_begin0
+	.short	1                               @ Loc expr size
+	.byte	80                              @ DW_OP_reg0
+	.long	0
+	.long	0
+.Ldebug_loc1:
+	.long	-1
+	.long	.Lfunc_begin0                   @   base address
+	.long	.Lfunc_begin0-.Lfunc_begin0
+	.long	.Ltmp1-.Lfunc_begin0
+	.short	1                               @ Loc expr size
+	.byte	81                              @ DW_OP_reg1
+	.long	.Ltmp1-.Lfunc_begin0
+	.long	.Ltmp7-.Lfunc_begin0
+	.short	4                               @ Loc expr size
+	.byte	243                             @ DW_OP_GNU_entry_value
+	.byte	1                               @ 1
+	.byte	81                              @ DW_OP_reg1
+	.byte	159                             @ DW_OP_stack_value
+	.long	0
+	.long	0
+.Ldebug_loc2:
+	.long	-1
+	.long	.Lfunc_begin13                  @   base address
+	.long	.Ltmp50-.Lfunc_begin13
+	.long	.Ltmp56-.Lfunc_begin13
+	.short	1                               @ Loc expr size
+	.byte	84                              @ DW_OP_reg4
+	.long	0
+	.long	0
+.Ldebug_loc3:
+	.long	-1
+	.long	.Lfunc_begin14                  @   base address
+	.long	.Lfunc_begin14-.Lfunc_begin14
+	.long	.Ltmp62-.Lfunc_begin14
+	.short	1                               @ Loc expr size
+	.byte	80                              @ DW_OP_reg0
+	.long	.Ltmp62-.Lfunc_begin14
+	.long	.Ltmp78-.Lfunc_begin14
+	.short	1                               @ Loc expr size
+	.byte	86                              @ DW_OP_reg6
+	.long	.Ltmp81-.Lfunc_begin14
+	.long	.Ltmp84-.Lfunc_begin14
+	.short	1                               @ Loc expr size
+	.byte	80                              @ DW_OP_reg0
+	.long	.Ltmp84-.Lfunc_begin14
+	.long	.Ltmp88-.Lfunc_begin14
+	.short	1                               @ Loc expr size
+	.byte	86                              @ DW_OP_reg6
+	.long	.Ltmp89-.Lfunc_begin14
+	.long	.Ltmp93-.Lfunc_begin14
+	.short	1                               @ Loc expr size
+	.byte	86                              @ DW_OP_reg6
+	.long	0
+	.long	0
+.Ldebug_loc4:
+	.long	-1
+	.long	.Lfunc_begin14                  @   base address
+	.long	.Ltmp63-.Lfunc_begin14
+	.long	.Ltmp67-.Lfunc_begin14
+	.short	1                               @ Loc expr size
+	.byte	80                              @ DW_OP_reg0
+	.long	.Ltmp67-.Lfunc_begin14
+	.long	.Ltmp77-.Lfunc_begin14
+	.short	1                               @ Loc expr size
+	.byte	85                              @ DW_OP_reg5
+	.long	.Ltmp84-.Lfunc_begin14
+	.long	.Ltmp96-.Lfunc_begin14
+	.short	1                               @ Loc expr size
+	.byte	85                              @ DW_OP_reg5
+	.long	0
+	.long	0
+.Ldebug_loc5:
+	.long	-1
+	.long	.Lfunc_begin14                  @   base address
+	.long	.Ltmp71-.Lfunc_begin14
+	.long	.Ltmp78-.Lfunc_begin14
+	.short	1                               @ Loc expr size
+	.byte	86                              @ DW_OP_reg6
+	.long	.Ltmp86-.Lfunc_begin14
+	.long	.Ltmp88-.Lfunc_begin14
+	.short	1                               @ Loc expr size
+	.byte	86                              @ DW_OP_reg6
+	.long	.Ltmp92-.Lfunc_begin14
+	.long	.Ltmp93-.Lfunc_begin14
+	.short	1                               @ Loc expr size
+	.byte	86                              @ DW_OP_reg6
+	.long	0
+	.long	0
+.Ldebug_loc6:
+	.long	-1
+	.long	.Lfunc_begin14                  @   base address
+	.long	.Ltmp79-.Lfunc_begin14
+	.long	.Ltmp81-.Lfunc_begin14
+	.short	1                               @ Loc expr size
+	.byte	86                              @ DW_OP_reg6
+	.long	0
+	.long	0
+.Ldebug_loc7:
+	.long	-1
+	.long	.Lfunc_begin14                  @   base address
+	.long	.Ltmp80-.Lfunc_begin14
+	.long	.Ltmp81-.Lfunc_begin14
+	.short	1                               @ Loc expr size
+	.byte	80                              @ DW_OP_reg0
+	.long	.Ltmp105-.Lfunc_begin14
+	.long	.Ltmp106-.Lfunc_begin14
+	.short	2                               @ Loc expr size
+	.byte	125                             @ DW_OP_breg13
+	.byte	4                               @ 4
+	.long	.Ltmp106-.Lfunc_begin14
+	.long	.Ltmp108-.Lfunc_begin14
+	.short	1                               @ Loc expr size
+	.byte	80                              @ DW_OP_reg0
+	.long	0
+	.long	0
+.Ldebug_loc8:
+	.long	-1
+	.long	.Lfunc_begin14                  @   base address
+	.long	.Ltmp95-.Lfunc_begin14
+	.long	.Ltmp103-.Lfunc_begin14
+	.short	1                               @ Loc expr size
+	.byte	82                              @ DW_OP_reg2
+	.long	0
+	.long	0
+	.section	.debug_abbrev,"",%progbits
+	.byte	1                               @ Abbreviation Code
+	.byte	17                              @ DW_TAG_compile_unit
+	.byte	1                               @ DW_CHILDREN_yes
+	.byte	37                              @ DW_AT_producer
+	.byte	14                              @ DW_FORM_strp
+	.byte	19                              @ DW_AT_language
+	.byte	5                               @ DW_FORM_data2
+	.byte	3                               @ DW_AT_name
+	.byte	14                              @ DW_FORM_strp
+	.byte	16                              @ DW_AT_stmt_list
+	.byte	23                              @ DW_FORM_sec_offset
+	.byte	27                              @ DW_AT_comp_dir
+	.byte	14                              @ DW_FORM_strp
+	.byte	17                              @ DW_AT_low_pc
+	.byte	1                               @ DW_FORM_addr
+	.byte	85                              @ DW_AT_ranges
+	.byte	23                              @ DW_FORM_sec_offset
+	.byte	0                               @ EOM(1)
+	.byte	0                               @ EOM(2)
+	.byte	2                               @ Abbreviation Code
+	.byte	52                              @ DW_TAG_variable
+	.byte	0                               @ DW_CHILDREN_no
+	.byte	3                               @ DW_AT_name
+	.byte	14                              @ DW_FORM_strp
+	.byte	73                              @ DW_AT_type
+	.byte	19                              @ DW_FORM_ref4
+	.byte	58                              @ DW_AT_decl_file
+	.byte	11                              @ DW_FORM_data1
+	.byte	59                              @ DW_AT_decl_line
+	.byte	11                              @ DW_FORM_data1
+	.byte	2                               @ DW_AT_location
+	.byte	24                              @ DW_FORM_exprloc
+	.byte	0                               @ EOM(1)
+	.byte	0                               @ EOM(2)
+	.byte	3                               @ Abbreviation Code
+	.byte	22                              @ DW_TAG_typedef
+	.byte	0                               @ DW_CHILDREN_no
+	.byte	73                              @ DW_AT_type
+	.byte	19                              @ DW_FORM_ref4
+	.byte	3                               @ DW_AT_name
+	.byte	14                              @ DW_FORM_strp
+	.byte	58                              @ DW_AT_decl_file
+	.byte	11                              @ DW_FORM_data1
+	.byte	59                              @ DW_AT_decl_line
+	.byte	11                              @ DW_FORM_data1
+	.byte	0                               @ EOM(1)
+	.byte	0                               @ EOM(2)
+	.byte	4                               @ Abbreviation Code
+	.byte	36                              @ DW_TAG_base_type
+	.byte	0                               @ DW_CHILDREN_no
+	.byte	3                               @ DW_AT_name
+	.byte	14                              @ DW_FORM_strp
+	.byte	62                              @ DW_AT_encoding
+	.byte	11                              @ DW_FORM_data1
+	.byte	11                              @ DW_AT_byte_size
+	.byte	11                              @ DW_FORM_data1
+	.byte	0                               @ EOM(1)
+	.byte	0                               @ EOM(2)
+	.byte	5                               @ Abbreviation Code
+	.byte	4                               @ DW_TAG_enumeration_type
+	.byte	1                               @ DW_CHILDREN_yes
+	.byte	73                              @ DW_AT_type
+	.byte	19                              @ DW_FORM_ref4
+	.byte	11                              @ DW_AT_byte_size
+	.byte	11                              @ DW_FORM_data1
+	.byte	58                              @ DW_AT_decl_file
+	.byte	11                              @ DW_FORM_data1
+	.byte	59                              @ DW_AT_decl_line
+	.byte	11                              @ DW_FORM_data1
+	.byte	0                               @ EOM(1)
+	.byte	0                               @ EOM(2)
+	.byte	6                               @ Abbreviation Code
+	.byte	40                              @ DW_TAG_enumerator
+	.byte	0                               @ DW_CHILDREN_no
+	.byte	3                               @ DW_AT_name
+	.byte	14                              @ DW_FORM_strp
+	.byte	28                              @ DW_AT_const_value
+	.byte	15                              @ DW_FORM_udata
+	.byte	0                               @ EOM(1)
+	.byte	0                               @ EOM(2)
+	.byte	7                               @ Abbreviation Code
+	.byte	15                              @ DW_TAG_pointer_type
+	.byte	0                               @ DW_CHILDREN_no
+	.byte	73                              @ DW_AT_type
+	.byte	19                              @ DW_FORM_ref4
+	.byte	0                               @ EOM(1)
+	.byte	0                               @ EOM(2)
+	.byte	8                               @ Abbreviation Code
+	.byte	53                              @ DW_TAG_volatile_type
+	.byte	0                               @ DW_CHILDREN_no
+	.byte	73                              @ DW_AT_type
+	.byte	19                              @ DW_FORM_ref4
+	.byte	0                               @ EOM(1)
+	.byte	0                               @ EOM(2)
+	.byte	9                               @ Abbreviation Code
+	.byte	46                              @ DW_TAG_subprogram
+	.byte	1                               @ DW_CHILDREN_yes
+	.byte	17                              @ DW_AT_low_pc
+	.byte	1                               @ DW_FORM_addr
+	.byte	18                              @ DW_AT_high_pc
+	.byte	6                               @ DW_FORM_data4
+	.byte	64                              @ DW_AT_frame_base
+	.byte	24                              @ DW_FORM_exprloc
+	.ascii	"\227B"                         @ DW_AT_GNU_all_call_sites
+	.byte	25                              @ DW_FORM_flag_present
+	.byte	3                               @ DW_AT_name
+	.byte	14                              @ DW_FORM_strp
+	.byte	58                              @ DW_AT_decl_file
+	.byte	11                              @ DW_FORM_data1
+	.byte	59                              @ DW_AT_decl_line
+	.byte	11                              @ DW_FORM_data1
+	.byte	39                              @ DW_AT_prototyped
+	.byte	25                              @ DW_FORM_flag_present
+	.byte	73                              @ DW_AT_type
+	.byte	19                              @ DW_FORM_ref4
+	.byte	63                              @ DW_AT_external
+	.byte	25                              @ DW_FORM_flag_present
+	.byte	0                               @ EOM(1)
+	.byte	0                               @ EOM(2)
+	.byte	10                              @ Abbreviation Code
+	.byte	5                               @ DW_TAG_formal_parameter
+	.byte	0                               @ DW_CHILDREN_no
+	.byte	2                               @ DW_AT_location
+	.byte	23                              @ DW_FORM_sec_offset
+	.byte	3                               @ DW_AT_name
+	.byte	14                              @ DW_FORM_strp
+	.byte	58                              @ DW_AT_decl_file
+	.byte	11                              @ DW_FORM_data1
+	.byte	59                              @ DW_AT_decl_line
+	.byte	11                              @ DW_FORM_data1
+	.byte	73                              @ DW_AT_type
+	.byte	19                              @ DW_FORM_ref4
+	.byte	0                               @ EOM(1)
+	.byte	0                               @ EOM(2)
+	.byte	11                              @ Abbreviation Code
+	.byte	5                               @ DW_TAG_formal_parameter
+	.byte	0                               @ DW_CHILDREN_no
+	.byte	2                               @ DW_AT_location
+	.byte	24                              @ DW_FORM_exprloc
+	.byte	3                               @ DW_AT_name
+	.byte	14                              @ DW_FORM_strp
+	.byte	58                              @ DW_AT_decl_file
+	.byte	11                              @ DW_FORM_data1
+	.byte	59                              @ DW_AT_decl_line
+	.byte	11                              @ DW_FORM_data1
+	.byte	73                              @ DW_AT_type
+	.byte	19                              @ DW_FORM_ref4
+	.byte	0                               @ EOM(1)
+	.byte	0                               @ EOM(2)
+	.byte	12                              @ Abbreviation Code
+	.byte	46                              @ DW_TAG_subprogram
+	.byte	1                               @ DW_CHILDREN_yes
+	.byte	17                              @ DW_AT_low_pc
+	.byte	1                               @ DW_FORM_addr
+	.byte	18                              @ DW_AT_high_pc
+	.byte	6                               @ DW_FORM_data4
+	.byte	64                              @ DW_AT_frame_base
+	.byte	24                              @ DW_FORM_exprloc
+	.ascii	"\227B"                         @ DW_AT_GNU_all_call_sites
+	.byte	25                              @ DW_FORM_flag_present
+	.byte	49                              @ DW_AT_abstract_origin
+	.byte	19                              @ DW_FORM_ref4
+	.byte	0                               @ EOM(1)
+	.byte	0                               @ EOM(2)
+	.byte	13                              @ Abbreviation Code
+	.byte	52                              @ DW_TAG_variable
+	.byte	0                               @ DW_CHILDREN_no
+	.byte	2                               @ DW_AT_location
+	.byte	24                              @ DW_FORM_exprloc
+	.byte	49                              @ DW_AT_abstract_origin
+	.byte	19                              @ DW_FORM_ref4
+	.byte	0                               @ EOM(1)
+	.byte	0                               @ EOM(2)
+	.byte	14                              @ Abbreviation Code
+	.byte	46                              @ DW_TAG_subprogram
+	.byte	0                               @ DW_CHILDREN_no
+	.byte	17                              @ DW_AT_low_pc
+	.byte	1                               @ DW_FORM_addr
+	.byte	18                              @ DW_AT_high_pc
+	.byte	6                               @ DW_FORM_data4
+	.byte	64                              @ DW_AT_frame_base
+	.byte	24                              @ DW_FORM_exprloc
+	.ascii	"\227B"                         @ DW_AT_GNU_all_call_sites
+	.byte	25                              @ DW_FORM_flag_present
+	.byte	3                               @ DW_AT_name
+	.byte	14                              @ DW_FORM_strp
+	.byte	58                              @ DW_AT_decl_file
+	.byte	11                              @ DW_FORM_data1
+	.byte	59                              @ DW_AT_decl_line
+	.byte	11                              @ DW_FORM_data1
+	.byte	39                              @ DW_AT_prototyped
+	.byte	25                              @ DW_FORM_flag_present
+	.byte	63                              @ DW_AT_external
+	.byte	25                              @ DW_FORM_flag_present
+	.byte	0                               @ EOM(1)
+	.byte	0                               @ EOM(2)
+	.byte	15                              @ Abbreviation Code
+	.byte	46                              @ DW_TAG_subprogram
+	.byte	1                               @ DW_CHILDREN_yes
+	.byte	3                               @ DW_AT_name
+	.byte	14                              @ DW_FORM_strp
+	.byte	58                              @ DW_AT_decl_file
+	.byte	11                              @ DW_FORM_data1
+	.byte	59                              @ DW_AT_decl_line
+	.byte	11                              @ DW_FORM_data1
+	.byte	39                              @ DW_AT_prototyped
+	.byte	25                              @ DW_FORM_flag_present
+	.byte	32                              @ DW_AT_inline
+	.byte	11                              @ DW_FORM_data1
+	.byte	0                               @ EOM(1)
+	.byte	0                               @ EOM(2)
+	.byte	16                              @ Abbreviation Code
+	.byte	52                              @ DW_TAG_variable
+	.byte	0                               @ DW_CHILDREN_no
+	.byte	3                               @ DW_AT_name
+	.byte	14                              @ DW_FORM_strp
+	.byte	58                              @ DW_AT_decl_file
+	.byte	11                              @ DW_FORM_data1
+	.byte	59                              @ DW_AT_decl_line
+	.byte	11                              @ DW_FORM_data1
+	.byte	73                              @ DW_AT_type
+	.byte	19                              @ DW_FORM_ref4
+	.byte	0                               @ EOM(1)
+	.byte	0                               @ EOM(2)
+	.byte	17                              @ Abbreviation Code
+	.byte	29                              @ DW_TAG_inlined_subroutine
+	.byte	1                               @ DW_CHILDREN_yes
+	.byte	49                              @ DW_AT_abstract_origin
+	.byte	19                              @ DW_FORM_ref4
+	.byte	17                              @ DW_AT_low_pc
+	.byte	1                               @ DW_FORM_addr
+	.byte	18                              @ DW_AT_high_pc
+	.byte	6                               @ DW_FORM_data4
+	.byte	88                              @ DW_AT_call_file
+	.byte	11                              @ DW_FORM_data1
+	.byte	89                              @ DW_AT_call_line
+	.byte	11                              @ DW_FORM_data1
+	.byte	87                              @ DW_AT_call_column
+	.byte	11                              @ DW_FORM_data1
+	.byte	0                               @ EOM(1)
+	.byte	0                               @ EOM(2)
+	.byte	18                              @ Abbreviation Code
+	.byte	46                              @ DW_TAG_subprogram
+	.byte	0                               @ DW_CHILDREN_no
+	.byte	17                              @ DW_AT_low_pc
+	.byte	1                               @ DW_FORM_addr
+	.byte	18                              @ DW_AT_high_pc
+	.byte	6                               @ DW_FORM_data4
+	.byte	64                              @ DW_AT_frame_base
+	.byte	24                              @ DW_FORM_exprloc
+	.ascii	"\227B"                         @ DW_AT_GNU_all_call_sites
+	.byte	25                              @ DW_FORM_flag_present
+	.byte	3                               @ DW_AT_name
+	.byte	14                              @ DW_FORM_strp
+	.byte	58                              @ DW_AT_decl_file
+	.byte	11                              @ DW_FORM_data1
+	.byte	59                              @ DW_AT_decl_line
+	.byte	5                               @ DW_FORM_data2
+	.byte	39                              @ DW_AT_prototyped
+	.byte	25                              @ DW_FORM_flag_present
+	.byte	63                              @ DW_AT_external
+	.byte	25                              @ DW_FORM_flag_present
+	.byte	0                               @ EOM(1)
+	.byte	0                               @ EOM(2)
+	.byte	19                              @ Abbreviation Code
+	.byte	46                              @ DW_TAG_subprogram
+	.byte	0                               @ DW_CHILDREN_no
+	.byte	17                              @ DW_AT_low_pc
+	.byte	1                               @ DW_FORM_addr
+	.byte	18                              @ DW_AT_high_pc
+	.byte	6                               @ DW_FORM_data4
+	.byte	64                              @ DW_AT_frame_base
+	.byte	24                              @ DW_FORM_exprloc
+	.ascii	"\227B"                         @ DW_AT_GNU_all_call_sites
+	.byte	25                              @ DW_FORM_flag_present
+	.byte	3                               @ DW_AT_name
+	.byte	14                              @ DW_FORM_strp
+	.byte	58                              @ DW_AT_decl_file
+	.byte	11                              @ DW_FORM_data1
+	.byte	59                              @ DW_AT_decl_line
+	.byte	11                              @ DW_FORM_data1
+	.byte	39                              @ DW_AT_prototyped
+	.byte	25                              @ DW_FORM_flag_present
+	.byte	0                               @ EOM(1)
+	.byte	0                               @ EOM(2)
+	.byte	20                              @ Abbreviation Code
+	.byte	46                              @ DW_TAG_subprogram
+	.byte	0                               @ DW_CHILDREN_no
+	.byte	17                              @ DW_AT_low_pc
+	.byte	1                               @ DW_FORM_addr
+	.byte	18                              @ DW_AT_high_pc
+	.byte	6                               @ DW_FORM_data4
+	.byte	64                              @ DW_AT_frame_base
+	.byte	24                              @ DW_FORM_exprloc
+	.ascii	"\227B"                         @ DW_AT_GNU_all_call_sites
+	.byte	25                              @ DW_FORM_flag_present
+	.byte	3                               @ DW_AT_name
+	.byte	14                              @ DW_FORM_strp
+	.byte	58                              @ DW_AT_decl_file
+	.byte	11                              @ DW_FORM_data1
+	.byte	59                              @ DW_AT_decl_line
+	.byte	5                               @ DW_FORM_data2
+	.byte	39                              @ DW_AT_prototyped
+	.byte	25                              @ DW_FORM_flag_present
+	.byte	73                              @ DW_AT_type
+	.byte	19                              @ DW_FORM_ref4
+	.byte	63                              @ DW_AT_external
+	.byte	25                              @ DW_FORM_flag_present
+	.byte	0                               @ EOM(1)
+	.byte	0                               @ EOM(2)
+	.byte	21                              @ Abbreviation Code
+	.byte	46                              @ DW_TAG_subprogram
+	.byte	1                               @ DW_CHILDREN_yes
+	.byte	17                              @ DW_AT_low_pc
+	.byte	1                               @ DW_FORM_addr
+	.byte	18                              @ DW_AT_high_pc
+	.byte	6                               @ DW_FORM_data4
+	.byte	64                              @ DW_AT_frame_base
+	.byte	24                              @ DW_FORM_exprloc
+	.ascii	"\227B"                         @ DW_AT_GNU_all_call_sites
+	.byte	25                              @ DW_FORM_flag_present
+	.byte	3                               @ DW_AT_name
+	.byte	14                              @ DW_FORM_strp
+	.byte	58                              @ DW_AT_decl_file
+	.byte	11                              @ DW_FORM_data1
+	.byte	59                              @ DW_AT_decl_line
+	.byte	5                               @ DW_FORM_data2
+	.byte	39                              @ DW_AT_prototyped
+	.byte	25                              @ DW_FORM_flag_present
+	.byte	63                              @ DW_AT_external
+	.byte	25                              @ DW_FORM_flag_present
+	.byte	0                               @ EOM(1)
+	.byte	0                               @ EOM(2)
+	.byte	22                              @ Abbreviation Code
+	.byte	52                              @ DW_TAG_variable
+	.byte	0                               @ DW_CHILDREN_no
+	.byte	2                               @ DW_AT_location
+	.byte	23                              @ DW_FORM_sec_offset
+	.byte	3                               @ DW_AT_name
+	.byte	14                              @ DW_FORM_strp
+	.byte	58                              @ DW_AT_decl_file
+	.byte	11                              @ DW_FORM_data1
+	.byte	59                              @ DW_AT_decl_line
+	.byte	5                               @ DW_FORM_data2
+	.byte	73                              @ DW_AT_type
+	.byte	19                              @ DW_FORM_ref4
+	.byte	0                               @ EOM(1)
+	.byte	0                               @ EOM(2)
+	.byte	23                              @ Abbreviation Code
+	.byte	5                               @ DW_TAG_formal_parameter
+	.byte	0                               @ DW_CHILDREN_no
+	.byte	2                               @ DW_AT_location
+	.byte	23                              @ DW_FORM_sec_offset
+	.byte	3                               @ DW_AT_name
+	.byte	14                              @ DW_FORM_strp
+	.byte	58                              @ DW_AT_decl_file
+	.byte	11                              @ DW_FORM_data1
+	.byte	59                              @ DW_AT_decl_line
+	.byte	5                               @ DW_FORM_data2
+	.byte	73                              @ DW_AT_type
+	.byte	19                              @ DW_FORM_ref4
+	.byte	0                               @ EOM(1)
+	.byte	0                               @ EOM(2)
+	.byte	24                              @ Abbreviation Code
+	.byte	11                              @ DW_TAG_lexical_block
+	.byte	1                               @ DW_CHILDREN_yes
+	.byte	85                              @ DW_AT_ranges
+	.byte	23                              @ DW_FORM_sec_offset
+	.byte	0                               @ EOM(1)
+	.byte	0                               @ EOM(2)
+	.byte	25                              @ Abbreviation Code
+	.byte	21                              @ DW_TAG_subroutine_type
+	.byte	1                               @ DW_CHILDREN_yes
+	.byte	39                              @ DW_AT_prototyped
+	.byte	25                              @ DW_FORM_flag_present
+	.byte	0                               @ EOM(1)
+	.byte	0                               @ EOM(2)
+	.byte	26                              @ Abbreviation Code
+	.byte	5                               @ DW_TAG_formal_parameter
+	.byte	0                               @ DW_CHILDREN_no
+	.byte	73                              @ DW_AT_type
+	.byte	19                              @ DW_FORM_ref4
+	.byte	0                               @ EOM(1)
+	.byte	0                               @ EOM(2)
+	.byte	27                              @ Abbreviation Code
+	.byte	15                              @ DW_TAG_pointer_type
+	.byte	0                               @ DW_CHILDREN_no
+	.byte	0                               @ EOM(1)
+	.byte	0                               @ EOM(2)
+	.byte	0                               @ EOM(3)
+	.section	.debug_info,"",%progbits
+.Lcu_begin0:
+	.long	.Ldebug_info_end0-.Ldebug_info_start0 @ Length of Unit
+.Ldebug_info_start0:
+	.short	4                               @ DWARF version number
+	.long	.debug_abbrev                   @ Offset Into Abbrev. Section
+	.byte	4                               @ Address Size (in bytes)
+	.byte	1                               @ Abbrev [1] 0xb:0x2fc DW_TAG_compile_unit
+	.long	.Linfo_string0                  @ DW_AT_producer
+	.short	12                              @ DW_AT_language
+	.long	.Linfo_string1                  @ DW_AT_name
+	.long	.Lline_table_start0             @ DW_AT_stmt_list
+	.long	.Linfo_string2                  @ DW_AT_comp_dir
+	.long	0                               @ DW_AT_low_pc
+	.long	.Ldebug_ranges1                 @ DW_AT_ranges
+	.byte	2                               @ Abbrev [2] 0x26:0x11 DW_TAG_variable
+	.long	.Linfo_string3                  @ DW_AT_name
+	.long	55                              @ DW_AT_type
+	.byte	2                               @ DW_AT_decl_file
+	.byte	100                             @ DW_AT_decl_line
+	.byte	5                               @ DW_AT_location
+	.byte	3
+	.long	uxCriticalNesting
+	.byte	3                               @ Abbrev [3] 0x37:0xb DW_TAG_typedef
+	.long	66                              @ DW_AT_type
+	.long	.Linfo_string5                  @ DW_AT_name
+	.byte	1                               @ DW_AT_decl_file
+	.byte	57                              @ DW_AT_decl_line
+	.byte	4                               @ Abbrev [4] 0x42:0x7 DW_TAG_base_type
+	.long	.Linfo_string4                  @ DW_AT_name
+	.byte	7                               @ DW_AT_encoding
+	.byte	4                               @ DW_AT_byte_size
+	.byte	2                               @ Abbrev [2] 0x49:0x1b DW_TAG_variable
+	.long	.Linfo_string6                  @ DW_AT_name
+	.long	100                             @ DW_AT_type
+	.byte	2                               @ DW_AT_decl_file
+	.byte	108                             @ DW_AT_decl_line
+	.byte	15                              @ DW_AT_location
+	.byte	3
+	.long	ulTimerCountsForOneTick
+	.byte	148
+	.byte	1
+	.byte	16
+	.ascii	"\200\372\001"
+	.byte	30
+	.byte	48
+	.byte	34
+	.byte	159
+	.byte	3                               @ Abbrev [3] 0x64:0xb DW_TAG_typedef
+	.long	111                             @ DW_AT_type
+	.long	.Linfo_string8                  @ DW_AT_name
+	.byte	3                               @ DW_AT_decl_file
+	.byte	64                              @ DW_AT_decl_line
+	.byte	4                               @ Abbrev [4] 0x6f:0x7 DW_TAG_base_type
+	.long	.Linfo_string7                  @ DW_AT_name
+	.byte	7                               @ DW_AT_encoding
+	.byte	4                               @ DW_AT_byte_size
+	.byte	2                               @ Abbrev [2] 0x76:0x1a DW_TAG_variable
+	.long	.Linfo_string9                  @ DW_AT_name
+	.long	100                             @ DW_AT_type
+	.byte	2                               @ DW_AT_decl_file
+	.byte	116                             @ DW_AT_decl_line
+	.byte	14                              @ DW_AT_location
+	.byte	3
+	.long	xMaximumPossibleSuppressedTicks
+	.byte	148
+	.byte	1
+	.byte	16
+	.ascii	"\214\004"
+	.byte	30
+	.byte	48
+	.byte	34
+	.byte	159
+	.byte	2                               @ Abbrev [2] 0x90:0x19 DW_TAG_variable
+	.long	.Linfo_string10                 @ DW_AT_name
+	.long	100                             @ DW_AT_type
+	.byte	2                               @ DW_AT_decl_file
+	.byte	124                             @ DW_AT_decl_line
+	.byte	13                              @ DW_AT_location
+	.byte	3
+	.long	ulStoppedTimerCompensation
+	.byte	148
+	.byte	1
+	.byte	16
+	.byte	45
+	.byte	30
+	.byte	48
+	.byte	34
+	.byte	159
+	.byte	5                               @ Abbrev [5] 0xa9:0x1b DW_TAG_enumeration_type
+	.long	196                             @ DW_AT_type
+	.byte	1                               @ DW_AT_byte_size
+	.byte	4                               @ DW_AT_decl_file
+	.byte	159                             @ DW_AT_decl_line
+	.byte	6                               @ Abbrev [6] 0xb1:0x6 DW_TAG_enumerator
+	.long	.Linfo_string12                 @ DW_AT_name
+	.byte	0                               @ DW_AT_const_value
+	.byte	6                               @ Abbrev [6] 0xb7:0x6 DW_TAG_enumerator
+	.long	.Linfo_string13                 @ DW_AT_name
+	.byte	1                               @ DW_AT_const_value
+	.byte	6                               @ Abbrev [6] 0xbd:0x6 DW_TAG_enumerator
+	.long	.Linfo_string14                 @ DW_AT_name
+	.byte	2                               @ DW_AT_const_value
+	.byte	0                               @ End Of Children Mark
+	.byte	4                               @ Abbrev [4] 0xc4:0x7 DW_TAG_base_type
+	.long	.Linfo_string11                 @ DW_AT_name
+	.byte	8                               @ DW_AT_encoding
+	.byte	1                               @ DW_AT_byte_size
+	.byte	3                               @ Abbrev [3] 0xcb:0xb DW_TAG_typedef
+	.long	100                             @ DW_AT_type
+	.long	.Linfo_string15                 @ DW_AT_name
+	.byte	1                               @ DW_AT_decl_file
+	.byte	55                              @ DW_AT_decl_line
+	.byte	7                               @ Abbrev [7] 0xd6:0x5 DW_TAG_pointer_type
+	.long	219                             @ DW_AT_type
+	.byte	8                               @ Abbrev [8] 0xdb:0x5 DW_TAG_volatile_type
+	.long	100                             @ DW_AT_type
+	.byte	3                               @ Abbrev [3] 0xe0:0xb DW_TAG_typedef
+	.long	235                             @ DW_AT_type
+	.long	.Linfo_string17                 @ DW_AT_name
+	.byte	1                               @ DW_AT_decl_file
+	.byte	56                              @ DW_AT_decl_line
+	.byte	4                               @ Abbrev [4] 0xeb:0x7 DW_TAG_base_type
+	.long	.Linfo_string16                 @ DW_AT_name
+	.byte	5                               @ DW_AT_encoding
+	.byte	4                               @ DW_AT_byte_size
+	.byte	3                               @ Abbrev [3] 0xf2:0xb DW_TAG_typedef
+	.long	100                             @ DW_AT_type
+	.long	.Linfo_string18                 @ DW_AT_name
+	.byte	1                               @ DW_AT_decl_file
+	.byte	63                              @ DW_AT_decl_line
+	.byte	9                               @ Abbrev [9] 0xfd:0x41 DW_TAG_subprogram
+	.long	.Lfunc_begin0                   @ DW_AT_low_pc
+	.long	.Lfunc_end0-.Lfunc_begin0       @ DW_AT_high_pc
+	.byte	1                               @ DW_AT_frame_base
+	.byte	93
+                                        @ DW_AT_GNU_all_call_sites
+	.long	.Linfo_string21                 @ DW_AT_name
+	.byte	2                               @ DW_AT_decl_file
+	.byte	132                             @ DW_AT_decl_line
+                                        @ DW_AT_prototyped
+	.long	745                             @ DW_AT_type
+                                        @ DW_AT_external
+	.byte	10                              @ Abbrev [10] 0x112:0xf DW_TAG_formal_parameter
+	.long	.Ldebug_loc0                    @ DW_AT_location
+	.long	.Linfo_string35                 @ DW_AT_name
+	.byte	2                               @ DW_AT_decl_file
+	.byte	132                             @ DW_AT_decl_line
+	.long	745                             @ DW_AT_type
+	.byte	10                              @ Abbrev [10] 0x121:0xf DW_TAG_formal_parameter
+	.long	.Ldebug_loc1                    @ DW_AT_location
+	.long	.Linfo_string36                 @ DW_AT_name
+	.byte	2                               @ DW_AT_decl_file
+	.byte	133                             @ DW_AT_decl_line
+	.long	750                             @ DW_AT_type
+	.byte	11                              @ Abbrev [11] 0x130:0xd DW_TAG_formal_parameter
+	.byte	1                               @ DW_AT_location
+	.byte	82
+	.long	.Linfo_string38                 @ DW_AT_name
+	.byte	2                               @ DW_AT_decl_file
+	.byte	134                             @ DW_AT_decl_line
+	.long	773                             @ DW_AT_type
+	.byte	0                               @ End Of Children Mark
+	.byte	12                              @ Abbrev [12] 0x13e:0x18 DW_TAG_subprogram
+	.long	.Lfunc_begin1                   @ DW_AT_low_pc
+	.long	.Lfunc_end1-.Lfunc_begin1       @ DW_AT_high_pc
+	.byte	1                               @ DW_AT_frame_base
+	.byte	93
+                                        @ DW_AT_GNU_all_call_sites
+	.long	359                             @ DW_AT_abstract_origin
+	.byte	13                              @ Abbrev [13] 0x14d:0x8 DW_TAG_variable
+	.byte	2                               @ DW_AT_location
+	.byte	145
+	.byte	0
+	.long	367                             @ DW_AT_abstract_origin
+	.byte	0                               @ End Of Children Mark
+	.byte	14                              @ Abbrev [14] 0x156:0x11 DW_TAG_subprogram
+	.long	.Lfunc_begin2                   @ DW_AT_low_pc
+	.long	.Lfunc_end2-.Lfunc_begin2       @ DW_AT_high_pc
+	.byte	1                               @ DW_AT_frame_base
+	.byte	93
+                                        @ DW_AT_GNU_all_call_sites
+	.long	.Linfo_string22                 @ DW_AT_name
+	.byte	2                               @ DW_AT_decl_file
+	.byte	178                             @ DW_AT_decl_line
+                                        @ DW_AT_prototyped
+                                        @ DW_AT_external
+	.byte	15                              @ Abbrev [15] 0x167:0x14 DW_TAG_subprogram
+	.long	.Linfo_string19                 @ DW_AT_name
+	.byte	2                               @ DW_AT_decl_file
+	.byte	152                             @ DW_AT_decl_line
+                                        @ DW_AT_prototyped
+	.byte	1                               @ DW_AT_inline
+	.byte	16                              @ Abbrev [16] 0x16f:0xb DW_TAG_variable
+	.long	.Linfo_string20                 @ DW_AT_name
+	.byte	2                               @ DW_AT_decl_file
+	.byte	154                             @ DW_AT_decl_line
+	.long	219                             @ DW_AT_type
+	.byte	0                               @ End Of Children Mark
+	.byte	9                               @ Abbrev [9] 0x17b:0x2f DW_TAG_subprogram
+	.long	.Lfunc_begin3                   @ DW_AT_low_pc
+	.long	.Lfunc_end3-.Lfunc_begin3       @ DW_AT_high_pc
+	.byte	1                               @ DW_AT_frame_base
+	.byte	93
+                                        @ DW_AT_GNU_all_call_sites
+	.long	.Linfo_string23                 @ DW_AT_name
+	.byte	2                               @ DW_AT_decl_file
+	.byte	216                             @ DW_AT_decl_line
+                                        @ DW_AT_prototyped
+	.long	224                             @ DW_AT_type
+                                        @ DW_AT_external
+	.byte	17                              @ Abbrev [17] 0x190:0x19 DW_TAG_inlined_subroutine
+	.long	359                             @ DW_AT_abstract_origin
+	.long	.Ltmp18                         @ DW_AT_low_pc
+	.long	.Ltmp26-.Ltmp18                 @ DW_AT_high_pc
+	.byte	2                               @ DW_AT_call_file
+	.byte	239                             @ DW_AT_call_line
+	.byte	5                               @ DW_AT_call_column
+	.byte	13                              @ Abbrev [13] 0x1a0:0x8 DW_TAG_variable
+	.byte	2                               @ DW_AT_location
+	.byte	145
+	.byte	4
+	.long	367                             @ DW_AT_abstract_origin
+	.byte	0                               @ End Of Children Mark
+	.byte	0                               @ End Of Children Mark
+	.byte	18                              @ Abbrev [18] 0x1aa:0x12 DW_TAG_subprogram
+	.long	.Lfunc_begin4                   @ DW_AT_low_pc
+	.long	.Lfunc_end4-.Lfunc_begin4       @ DW_AT_high_pc
+	.byte	1                               @ DW_AT_frame_base
+	.byte	93
+                                        @ DW_AT_GNU_all_call_sites
+	.long	.Linfo_string24                 @ DW_AT_name
+	.byte	2                               @ DW_AT_decl_file
+	.short	378                             @ DW_AT_decl_line
+                                        @ DW_AT_prototyped
+                                        @ DW_AT_external
+	.byte	19                              @ Abbrev [19] 0x1bc:0x11 DW_TAG_subprogram
+	.long	.Lfunc_begin5                   @ DW_AT_low_pc
+	.long	.Lfunc_end5-.Lfunc_begin5       @ DW_AT_high_pc
+	.byte	1                               @ DW_AT_frame_base
+	.byte	93
+                                        @ DW_AT_GNU_all_call_sites
+	.long	.Linfo_string25                 @ DW_AT_name
+	.byte	2                               @ DW_AT_decl_file
+	.byte	185                             @ DW_AT_decl_line
+                                        @ DW_AT_prototyped
+	.byte	14                              @ Abbrev [14] 0x1cd:0x11 DW_TAG_subprogram
+	.long	.Lfunc_begin6                   @ DW_AT_low_pc
+	.long	.Lfunc_end6-.Lfunc_begin6       @ DW_AT_high_pc
+	.byte	1                               @ DW_AT_frame_base
+	.byte	93
+                                        @ DW_AT_GNU_all_call_sites
+	.long	.Linfo_string26                 @ DW_AT_name
+	.byte	2                               @ DW_AT_decl_file
+	.byte	246                             @ DW_AT_decl_line
+                                        @ DW_AT_prototyped
+                                        @ DW_AT_external
+	.byte	14                              @ Abbrev [14] 0x1de:0x11 DW_TAG_subprogram
+	.long	.Lfunc_begin7                   @ DW_AT_low_pc
+	.long	.Lfunc_end7-.Lfunc_begin7       @ DW_AT_high_pc
+	.byte	1                               @ DW_AT_frame_base
+	.byte	93
+                                        @ DW_AT_GNU_all_call_sites
+	.long	.Linfo_string27                 @ DW_AT_name
+	.byte	2                               @ DW_AT_decl_file
+	.byte	254                             @ DW_AT_decl_line
+                                        @ DW_AT_prototyped
+                                        @ DW_AT_external
+	.byte	18                              @ Abbrev [18] 0x1ef:0x12 DW_TAG_subprogram
+	.long	.Lfunc_begin8                   @ DW_AT_low_pc
+	.long	.Lfunc_end8-.Lfunc_begin8       @ DW_AT_high_pc
+	.byte	1                               @ DW_AT_frame_base
+	.byte	93
+                                        @ DW_AT_GNU_all_call_sites
+	.long	.Linfo_string28                 @ DW_AT_name
+	.byte	2                               @ DW_AT_decl_file
+	.short	266                             @ DW_AT_decl_line
+                                        @ DW_AT_prototyped
+                                        @ DW_AT_external
+	.byte	18                              @ Abbrev [18] 0x201:0x12 DW_TAG_subprogram
+	.long	.Lfunc_begin9                   @ DW_AT_low_pc
+	.long	.Lfunc_end9-.Lfunc_begin9       @ DW_AT_high_pc
+	.byte	1                               @ DW_AT_frame_base
+	.byte	93
+                                        @ DW_AT_GNU_all_call_sites
+	.long	.Linfo_string29                 @ DW_AT_name
+	.byte	2                               @ DW_AT_decl_file
+	.short	275                             @ DW_AT_decl_line
+                                        @ DW_AT_prototyped
+                                        @ DW_AT_external
+	.byte	20                              @ Abbrev [20] 0x213:0x16 DW_TAG_subprogram
+	.long	.Lfunc_begin10                  @ DW_AT_low_pc
+	.long	.Lfunc_end10-.Lfunc_begin10     @ DW_AT_high_pc
+	.byte	1                               @ DW_AT_frame_base
+	.byte	93
+                                        @ DW_AT_GNU_all_call_sites
+	.long	.Linfo_string30                 @ DW_AT_name
+	.byte	2                               @ DW_AT_decl_file
+	.short	287                             @ DW_AT_decl_line
+                                        @ DW_AT_prototyped
+	.long	100                             @ DW_AT_type
+                                        @ DW_AT_external
+	.byte	18                              @ Abbrev [18] 0x229:0x12 DW_TAG_subprogram
+	.long	.Lfunc_begin11                  @ DW_AT_low_pc
+	.long	.Lfunc_end11-.Lfunc_begin11     @ DW_AT_high_pc
+	.byte	1                               @ DW_AT_frame_base
+	.byte	93
+                                        @ DW_AT_GNU_all_call_sites
+	.long	.Linfo_string31                 @ DW_AT_name
+	.byte	2                               @ DW_AT_decl_file
+	.short	298                             @ DW_AT_decl_line
+                                        @ DW_AT_prototyped
+                                        @ DW_AT_external
+	.byte	18                              @ Abbrev [18] 0x23b:0x12 DW_TAG_subprogram
+	.long	.Lfunc_begin12                  @ DW_AT_low_pc
+	.long	.Lfunc_end12-.Lfunc_begin12     @ DW_AT_high_pc
+	.byte	1                               @ DW_AT_frame_base
+	.byte	93
+                                        @ DW_AT_GNU_all_call_sites
+	.long	.Linfo_string32                 @ DW_AT_name
+	.byte	2                               @ DW_AT_decl_file
+	.short	308                             @ DW_AT_decl_line
+                                        @ DW_AT_prototyped
+                                        @ DW_AT_external
+	.byte	21                              @ Abbrev [21] 0x24d:0x23 DW_TAG_subprogram
+	.long	.Lfunc_begin13                  @ DW_AT_low_pc
+	.long	.Lfunc_end13-.Lfunc_begin13     @ DW_AT_high_pc
+	.byte	1                               @ DW_AT_frame_base
+	.byte	93
+                                        @ DW_AT_GNU_all_call_sites
+	.long	.Linfo_string33                 @ DW_AT_name
+	.byte	2                               @ DW_AT_decl_file
+	.short	357                             @ DW_AT_decl_line
+                                        @ DW_AT_prototyped
+                                        @ DW_AT_external
+	.byte	22                              @ Abbrev [22] 0x25f:0x10 DW_TAG_variable
+	.long	.Ldebug_loc2                    @ DW_AT_location
+	.long	.Linfo_string39                 @ DW_AT_name
+	.byte	2                               @ DW_AT_decl_file
+	.short	359                             @ DW_AT_decl_line
+	.long	100                             @ DW_AT_type
+	.byte	0                               @ End Of Children Mark
+	.byte	21                              @ Abbrev [21] 0x270:0x79 DW_TAG_subprogram
+	.long	.Lfunc_begin14                  @ DW_AT_low_pc
+	.long	.Lfunc_end14-.Lfunc_begin14     @ DW_AT_high_pc
+	.byte	1                               @ DW_AT_frame_base
+	.byte	93
+                                        @ DW_AT_GNU_all_call_sites
+	.long	.Linfo_string34                 @ DW_AT_name
+	.byte	2                               @ DW_AT_decl_file
+	.short	401                             @ DW_AT_decl_line
+                                        @ DW_AT_prototyped
+                                        @ DW_AT_external
+	.byte	23                              @ Abbrev [23] 0x282:0x10 DW_TAG_formal_parameter
+	.long	.Ldebug_loc3                    @ DW_AT_location
+	.long	.Linfo_string40                 @ DW_AT_name
+	.byte	2                               @ DW_AT_decl_file
+	.short	401                             @ DW_AT_decl_line
+	.long	242                             @ DW_AT_type
+	.byte	22                              @ Abbrev [22] 0x292:0x10 DW_TAG_variable
+	.long	.Ldebug_loc4                    @ DW_AT_location
+	.long	.Linfo_string41                 @ DW_AT_name
+	.byte	2                               @ DW_AT_decl_file
+	.short	403                             @ DW_AT_decl_line
+	.long	100                             @ DW_AT_type
+	.byte	22                              @ Abbrev [22] 0x2a2:0x10 DW_TAG_variable
+	.long	.Ldebug_loc5                    @ DW_AT_location
+	.long	.Linfo_string42                 @ DW_AT_name
+	.byte	2                               @ DW_AT_decl_file
+	.short	404                             @ DW_AT_decl_line
+	.long	242                             @ DW_AT_type
+	.byte	22                              @ Abbrev [22] 0x2b2:0x10 DW_TAG_variable
+	.long	.Ldebug_loc6                    @ DW_AT_location
+	.long	.Linfo_string43                 @ DW_AT_name
+	.byte	2                               @ DW_AT_decl_file
+	.short	403                             @ DW_AT_decl_line
+	.long	100                             @ DW_AT_type
+	.byte	22                              @ Abbrev [22] 0x2c2:0x10 DW_TAG_variable
+	.long	.Ldebug_loc7                    @ DW_AT_location
+	.long	.Linfo_string44                 @ DW_AT_name
+	.byte	2                               @ DW_AT_decl_file
+	.short	403                             @ DW_AT_decl_line
+	.long	100                             @ DW_AT_type
+	.byte	24                              @ Abbrev [24] 0x2d2:0x16 DW_TAG_lexical_block
+	.long	.Ldebug_ranges0                 @ DW_AT_ranges
+	.byte	22                              @ Abbrev [22] 0x2d7:0x10 DW_TAG_variable
+	.long	.Ldebug_loc8                    @ DW_AT_location
+	.long	.Linfo_string45                 @ DW_AT_name
+	.byte	2                               @ DW_AT_decl_file
+	.short	513                             @ DW_AT_decl_line
+	.long	100                             @ DW_AT_type
+	.byte	0                               @ End Of Children Mark
+	.byte	0                               @ End Of Children Mark
+	.byte	7                               @ Abbrev [7] 0x2e9:0x5 DW_TAG_pointer_type
+	.long	203                             @ DW_AT_type
+	.byte	3                               @ Abbrev [3] 0x2ee:0xb DW_TAG_typedef
+	.long	761                             @ DW_AT_type
+	.long	.Linfo_string37                 @ DW_AT_name
+	.byte	5                               @ DW_AT_decl_file
+	.byte	34                              @ DW_AT_decl_line
+	.byte	7                               @ Abbrev [7] 0x2f9:0x5 DW_TAG_pointer_type
+	.long	766                             @ DW_AT_type
+	.byte	25                              @ Abbrev [25] 0x2fe:0x7 DW_TAG_subroutine_type
+                                        @ DW_AT_prototyped
+	.byte	26                              @ Abbrev [26] 0x2ff:0x5 DW_TAG_formal_parameter
+	.long	773                             @ DW_AT_type
+	.byte	0                               @ End Of Children Mark
+	.byte	27                              @ Abbrev [27] 0x305:0x1 DW_TAG_pointer_type
+	.byte	0                               @ End Of Children Mark
+.Ldebug_info_end0:
+	.section	.debug_ranges,"",%progbits
+.Ldebug_ranges0:
+	.long	.Ltmp86
+	.long	.Ltmp87
+	.long	.Ltmp94
+	.long	.Ltmp104
+	.long	0
+	.long	0
+.Ldebug_ranges1:
+	.long	.Lfunc_begin0
+	.long	.Lfunc_end0
+	.long	.Lfunc_begin1
+	.long	.Lfunc_end1
+	.long	.Lfunc_begin2
+	.long	.Lfunc_end2
+	.long	.Lfunc_begin3
+	.long	.Lfunc_end3
+	.long	.Lfunc_begin4
+	.long	.Lfunc_end4
+	.long	.Lfunc_begin5
+	.long	.Lfunc_end5
+	.long	.Lfunc_begin6
+	.long	.Lfunc_end6
+	.long	.Lfunc_begin7
+	.long	.Lfunc_end7
+	.long	.Lfunc_begin8
+	.long	.Lfunc_end8
+	.long	.Lfunc_begin9
+	.long	.Lfunc_end9
+	.long	.Lfunc_begin10
+	.long	.Lfunc_end10
+	.long	.Lfunc_begin11
+	.long	.Lfunc_end11
+	.long	.Lfunc_begin12
+	.long	.Lfunc_end12
+	.long	.Lfunc_begin13
+	.long	.Lfunc_end13
+	.long	.Lfunc_begin14
+	.long	.Lfunc_end14
+	.long	0
+	.long	0
+	.section	.debug_str,"MS",%progbits,1
+.Linfo_string0:
+	.asciz	"Component: Arm Compiler for Embedded 6.21 Tool: armclang [5ec1fd00]" @ string offset=0
+.Linfo_string1:
+	.asciz	"../../../../../../kernel/freertos/Source/portable/GCC/ARM_CM0\\port.c" @ string offset=68
+.Linfo_string2:
+	.asciz	"D:\\TI_M0G3507\\mspm0_sdk_2_05_00_05\\kernel\\freertos\\builds\\LP_MSPM0G3507\\release\\keil" @ string offset=137
+.Linfo_string3:
+	.asciz	"uxCriticalNesting"             @ string offset=222
+.Linfo_string4:
+	.asciz	"unsigned long"                 @ string offset=240
+.Linfo_string5:
+	.asciz	"UBaseType_t"                   @ string offset=254
+.Linfo_string6:
+	.asciz	"ulTimerCountsForOneTick"       @ string offset=266
+.Linfo_string7:
+	.asciz	"unsigned int"                  @ string offset=290
+.Linfo_string8:
+	.asciz	"uint32_t"                      @ string offset=303
+.Linfo_string9:
+	.asciz	"xMaximumPossibleSuppressedTicks" @ string offset=312
+.Linfo_string10:
+	.asciz	"ulStoppedTimerCompensation"    @ string offset=344
+.Linfo_string11:
+	.asciz	"unsigned char"                 @ string offset=371
+.Linfo_string12:
+	.asciz	"eAbortSleep"                   @ string offset=385
+.Linfo_string13:
+	.asciz	"eStandardSleep"                @ string offset=397
+.Linfo_string14:
+	.asciz	"eNoTasksWaitingTimeout"        @ string offset=412
+.Linfo_string15:
+	.asciz	"StackType_t"                   @ string offset=435
+.Linfo_string16:
+	.asciz	"long"                          @ string offset=447
+.Linfo_string17:
+	.asciz	"BaseType_t"                    @ string offset=452
+.Linfo_string18:
+	.asciz	"TickType_t"                    @ string offset=463
+.Linfo_string19:
+	.asciz	"prvTaskExitError"              @ string offset=474
+.Linfo_string20:
+	.asciz	"ulDummy"                       @ string offset=491
+.Linfo_string21:
+	.asciz	"pxPortInitialiseStack"         @ string offset=499
+.Linfo_string22:
+	.asciz	"SVC_Handler"                   @ string offset=521
+.Linfo_string23:
+	.asciz	"xPortStartScheduler"           @ string offset=533
+.Linfo_string24:
+	.asciz	"vPortSetupTimerInterrupt"      @ string offset=553
+.Linfo_string25:
+	.asciz	"vPortStartFirstTask"           @ string offset=578
+.Linfo_string26:
+	.asciz	"vPortEndScheduler"             @ string offset=598
+.Linfo_string27:
+	.asciz	"vPortYield"                    @ string offset=616
+.Linfo_string28:
+	.asciz	"vPortEnterCritical"            @ string offset=627
+.Linfo_string29:
+	.asciz	"vPortExitCritical"             @ string offset=646
+.Linfo_string30:
+	.asciz	"ulSetInterruptMaskFromISR"     @ string offset=664
+.Linfo_string31:
+	.asciz	"vClearInterruptMaskFromISR"    @ string offset=690
+.Linfo_string32:
+	.asciz	"PendSV_Handler"                @ string offset=717
+.Linfo_string33:
+	.asciz	"SysTick_Handler"               @ string offset=732
+.Linfo_string34:
+	.asciz	"vPortSuppressTicksAndSleep"    @ string offset=748
+.Linfo_string35:
+	.asciz	"pxTopOfStack"                  @ string offset=775
+.Linfo_string36:
+	.asciz	"pxCode"                        @ string offset=788
+.Linfo_string37:
+	.asciz	"TaskFunction_t"                @ string offset=795
+.Linfo_string38:
+	.asciz	"pvParameters"                  @ string offset=810
+.Linfo_string39:
+	.asciz	"ulPreviousMask"                @ string offset=823
+.Linfo_string40:
+	.asciz	"xExpectedIdleTime"             @ string offset=838
+.Linfo_string41:
+	.asciz	"ulReloadValue"                 @ string offset=856
+.Linfo_string42:
+	.asciz	"xModifiableIdleTime"           @ string offset=870
+.Linfo_string43:
+	.asciz	"ulCompletedSysTickDecrements"  @ string offset=890
+.Linfo_string44:
+	.asciz	"ulCompleteTickPeriods"         @ string offset=919
+.Linfo_string45:
+	.asciz	"ulCalculatedLoadValue"         @ string offset=941
+	.ident	"Component: Arm Compiler for Embedded 6.21 Tool: armclang [5ec1fd00]"
+	.section	".note.GNU-stack","",%progbits
+	.eabi_attribute	30, 1	@ Tag_ABI_optimization_goals
+	.ARM_attribute	16, 1	@ Tag_AV_eba
+	.section	.debug_line,"",%progbits
+.Lline_table_start0:

@@ -1,0 +1,20 @@
+--create .\Objects\freertos_builds_LP_MSPM0G3507_release_keil.lib
+.\objects\croutine.o
+.\objects\event_groups.o
+.\objects\list.o
+.\objects\queue.o
+.\objects\stream_buffer.o
+.\objects\tasks.o
+.\objects\timers.o
+.\objects\heap_4.o
+.\objects\port.o
+.\objects\apphooks_freertos.o
+.\objects\clockp_freertos.o
+.\objects\debugp_freertos.o
+.\objects\mutexp_freertos.o
+.\objects\semaphorep_freertos.o
+.\objects\systemp_freertos.o
+.\objects\staticallocs_freertos.o
+.\objects\taskp_freertos.o
+.\objects\hwipmspm0_freertos.o
+.\objects\startup_mspm0g350x_uvision.o

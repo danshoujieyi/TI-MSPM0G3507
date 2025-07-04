@@ -1,0 +1,8 @@
+--cpu Cortex-M0+
+".\objects\gpio_toggle_output.o"
+".\objects\startup_mspm0g350x_uvision.o"
+".\objects\ti_msp_dl_config.o"
+--library_type=microlib --strict --scatter "./mspm0g3507.sct"
+../../../../../../source/ti/driverlib/lib/keil/m0p/mspm0g1x0x_g3x0x/driverlib.a --summary_stderr --info summarysizes --map --load_addr_map_info --xref --callgraph --symbols
+--info sizes --info totals --info unused --info veneers
+--list ".\gpio_toggle_output_LP_MSPM0G3507_nortos_keil.map" -o .\Objects\gpio_toggle_output_LP_MSPM0G3507_nortos_keil.axf

@@ -1,0 +1,606 @@
+[
+  {
+    "name": "DriverLib",
+    "mainCategories": [
+      [
+        "Documents"
+      ],
+      [
+        "Examples",
+        "Development Tools"
+      ],
+      [
+        "Examples",
+        "Devices"
+      ]
+    ],
+    "subCategories": [],
+    "devtools": ["$(MSPM0_all_devtools)"],
+    "devices": ["$(MSPM0_all_devices)"],
+    "resourceType": "categoryInfo",
+    "resourceClass": ["document"],
+    "description": "The Texas Instruments MSPM0 Driver Library (DriverLib) is a set of fully functional APIs used to configure, control, and manipulate the hardware peripherals of the MSPM0 platform. The DriverLib layer consists of comprehensive low-level drivers providing support for all device features with the highest optimization for performance and low memory footprint."
+  },
+  {
+    "name": "TI Drivers",
+    "mainCategories": [
+      [
+        "Documents"
+      ],
+      [
+        "Development Tools"
+      ]
+    ],
+    "subCategories": [],
+    "devtools": ["$(MSPM0_all_devtools)"],
+    "devices": ["$(MSPM0_all_devices)"],
+    "resourceType": "categoryInfo",
+    "resourceClass": ["document"],
+    "description": "TI-Drivers is a collective of peripheral drivers that acts as a HAL (Hardware Abstraction Layer). The drivers are centered around a portable application programming interface (API) which enables seamless migration across the MSPM0 and Connectivity family devices portfolio. Unless specifically stated otherwise, TI-Drivers are designed to be thread-safe and work seamlessly inside of a real time operating system (RTOS) application. The drivers support FreeRTOS with examples provided for each variant. <br><br> Features: <ul><li>Portable APIs</li> <li>Native support for FreeRTOS and NoRTOS</li> <li>Thread safe APIs</li> <li>Example usage</li></ul>"
+  },
+  {
+    "name": "Middleware",
+    "mainCategories": [
+      [
+        "Documents"
+      ],
+      [
+        "Development Tools"
+      ]
+    ],
+    "subCategories": [],
+    "devices": ["$(MSPM0_all_devices)"],
+    "devtools": ["$(MSPM0_all_devtools)"],
+    "resourceType": "categoryInfo",
+    "resourceClass": ["document"],
+    "description": "A wide variety of Middleware is included with libraries and protocol stacks for different applications and sectors, including automotive, appliances, building and factory automation, etc. Middleware is developed using the driver layers to provide a consistent and compatible experience. For a list of supported middleware, see the MSPM0 SDK Document Overview."
+  },
+  {
+    "name": "Middleware 中间件",
+    "mainCategories": [
+      [
+        "Documents"
+      ],
+      [
+        "Development Tools"
+      ]
+    ],
+    "subCategories": [],
+    "devices": ["$(MSPM0_all_devices)"],
+    "devtools": ["$(MSPM0_all_devtools)"],
+    "resourceType": "categoryInfo",
+    "resourceClass": ["document"],
+    "description": "A wide variety of Middleware is included with libraries and protocol stacks for different applications and sectors, including automotive, appliances, building and factory automation, etc. Middleware is developed using the driver layers to provide a consistent and compatible experience."
+  },
+  {
+    "name": "Tools",
+    "mainCategories": [
+      [
+        "Documents"
+      ],
+      [
+        "Examples",
+        "Development Tools"
+      ]
+    ],
+    "subCategories": [],
+    "devices": ["$(MSPM0_all_devices)"],
+    "devtools": ["$(MSPM0_all_devtools)"],
+    "resourceType": "categoryInfo",
+    "resourceClass": ["document"],
+    "description": "The MSPM0 SDK supports a variety of hardware and software tools from Texas Instruments and from 3rd parties. For a list of supported tools, see the MSPM0 SDK Tools Overview."
+  },
+  {
+    "name": "工具",
+    "mainCategories": [
+      [
+        "Documents"
+      ],
+      [
+        "Examples",
+        "Development Tools"
+      ]
+    ],
+    "subCategories": [],
+    "devices": ["$(MSPM0_all_devices)"],
+    "devtools": ["$(MSPM0_all_devtools)"],
+    "resourceType": "categoryInfo",
+    "resourceClass": ["document"],
+    "description": "The MSPM0 SDK supports a variety of hardware and software tools from Texas Instruments and from 3rd parties. For a list of supported tools, see the MSPM0 SDK Tools Overview."
+  },
+  {
+    "name": "Quick Start Guides",
+    "mainCategories": [
+      [
+        "Documents"
+      ],
+      [
+        "Examples",
+        "Development Tools"
+      ]
+    ],
+    "subCategories": [],
+    "devices": ["$(MSPM0_all_devices)"],
+    "devtools": ["$(MSPM0_all_devtools)"],
+    "resourceType": "categoryInfo",
+    "resourceClass": ["document"],
+    "description": "The MSPM0 SDK provides step-by-step instructions to get started quickly using MSPM0 with Code Composer Studio, IAR, and Keil."
+  },
+  {
+    "name": "快速上手指南",
+    "mainCategories": [
+      [
+        "Documents"
+      ],
+      [
+        "Examples",
+        "Development Tools"
+      ]
+    ],
+    "subCategories": [],
+    "devices": ["$(MSPM0_all_devices)"],
+    "devtools": ["$(MSPM0_all_devtools)"],
+    "resourceType": "categoryInfo",
+    "resourceClass": ["document"],
+    "description": "The MSPM0 SDK provides detailed information on the setup and basic operation of the various supported IDEs, such as Code Composer Studio, IAR, or Keil."
+  },
+  {
+    "name": "IDE Guides",
+    "mainCategories": [
+      [
+        "Documents"
+      ],
+      [
+        "Examples",
+        "Development Tools"
+      ]
+    ],
+    "subCategories": [],
+    "devices": ["$(MSPM0_all_devices)"],
+    "devtools": ["$(MSPM0_all_devtools)"],
+    "resourceType": "categoryInfo",
+    "resourceClass": ["document"],
+    "description": "The MSPM0 SDK provides detailed information on the setup and basic operation of the various supported IDEs, such as Code Composer Studio, IAR, or Keil."
+  },
+  {
+    "name": "GUI Composer Library",
+    "mainCategories": [
+      [
+        "Documents"
+      ],
+      [
+        "Examples",
+        "Development Tools"
+      ]
+    ],
+    "subCategories": ["Middleware"],
+    "devices": ["$(MSPM0_all_devices)"],
+    "devtools": ["$(MSPM0_all_devtools)"],
+    "resourceType": "categoryInfo",
+    "resourceClass": ["document"],
+    "description": "GUI Composer is a browser-based tool for developing PC-side, HTML-based GUIs that can complement your embedded project or application. A wide variety of different web components are provided in the tool that allow you to control and display data sent from the target device. The MSPM0 SDK includes a library and various examples showing the implementation of supported protocols to allow for rapid development of GUI front-ends for IoT devices and LaunchPads."
+  },
+  {
+    "name": "GUI Composer 库",
+    "mainCategories": [
+      [
+        "Documents"
+      ],
+      [
+        "Examples",
+        "Development Tools"
+      ]
+    ],
+    "subCategories": ["Middleware"],
+    "devices": ["$(MSPM0_all_devices)"],
+    "devtools": ["$(MSPM0_all_devtools)"],
+    "resourceType": "categoryInfo",
+    "resourceClass": ["document"],
+    "description": "GUI Composer is a browser-based tool for developing PC-side, HTML-based GUIs that can complement your embedded project or application. A wide variety of different web components are provided in the tool that allow you to control and display data sent from the target device. The MSPM0 SDK includes a library and various examples showing the implementation of supported protocols to allow for rapid development of GUI front-ends for IoT devices and LaunchPads."
+  },
+  {
+    "name": "IQMath",
+    "mainCategories": [
+      [
+        "Documents"
+      ],
+      [
+        "Examples",
+        "Development Tools"
+      ]
+    ],
+    "subCategories": ["Middleware"],
+    "devices": ["$(MSPM0_all_devices)"],
+    "devtools": ["$(MSPM0_all_devtools)"],
+    "resourceType": "categoryInfo",
+    "resourceClass": ["document"],
+    "description": "The Texas Instruments® MSP IQmath Library is a collection of highly optimized and high-precision mathematical functions for C programmers to seamlessly port a floating-point algorithm into fixed-point code on MSPM0 devices. The MSPM0 SDK includes IQmath support using simple C Runtime System (RTS) functions, and leveraging the MATHACL hardware accelerator.<br>The MSPM0 SDK IQmath Guide provides instructions about how to use the library as well as a complete API guide with detailed information about the IQmath routines.<br>The documentation also includes benchmarks comparing IQmath performance across MSPM0 devices."
+  },
+  {
+    "name": "LIN",
+    "mainCategories": [
+      [
+        "Documents"
+      ],
+      [
+        "Examples",
+        "Development Tools"
+      ]
+    ],
+    "subCategories": ["Middleware"],
+    "devices": ["$(MSPM0_all_devices)"],
+    "devtools": ["$(MSPM0_all_devtools)"],
+    "resourceType": "categoryInfo",
+    "resourceClass": ["document"],
+    "description": "The Local Interconnect Network (LIN) is a multipoint, low-cost, easily-implemented communication bus commonly used in automobiles. The MSPM0 SDK includes easy-to-use examples for Commander and Responder."
+  },
+  {
+    "name": "SENT",
+    "mainCategories": [
+      [
+        "Documents"
+      ],
+      [
+        "Examples",
+        "Development Tools"
+      ]
+    ],
+    "subCategories": ["Middleware"],
+    "devices": ["$(MSPM0L11xx_L13xx_devices)"],
+    "devtools": ["$(MSPM0L11xx_L13xx_devtools)"],
+    "resourceType": "categoryInfo",
+    "resourceClass": ["document"],
+    "description": "The Single Edge Nibble Transmission (SENT) is a unidirectional communication standard used in automotive networks. The MSPM0 SDK includes an easy-to-use example for transmitting a SENT frame."
+  },
+  {
+    "name": "EEPROM",
+    "mainCategories": [
+      [
+        "Documents"
+      ],
+      [
+        "Examples",
+        "Development Tools"
+      ]
+    ],
+    "subCategories": ["Middleware"],
+    "devices": ["$(MSPM0_all_devices)"],
+    "devtools": ["$(MSPM0_all_devtools)"],
+    "resourceType": "categoryInfo",
+    "resourceClass": ["document"],
+    "description": "MSPM0 supports EEPROM emulation through its internal Flash. Compared to using an external serial EEPROM, EEPROM emulation using the internal Flash saves pin usage and cost. The MSPM0 SDK supports two solutions for EEPROM Emulation: Type A solution, and Type B solution."
+  },
+  {
+    "name": "Diagnostic",
+    "mainCategories": [
+      [
+        "Documents"
+      ]
+    ],
+    "subCategories": ["Middleware"],
+    "devices": ["$(MSPM0L11xx_L13xx_devices)"],
+    "devtools": ["$(MSPM0L11xx_L13xx_devtools)"],
+    "resourceType": "categoryInfo",
+    "resourceClass": ["document"],
+    "description": "The MSPM0 Diagnostic Library is a collection of functional safety software to assist customers meet their diagnostic requirements for up to IEC60730 Class-B applications."
+  },
+  {
+    "name": "Diagnostic",
+    "mainCategories": [
+      [
+        "Documents"
+      ]
+    ],
+    "subCategories": ["Middleware"],
+    "devices": ["$(MSPM0L11xx_L13xx_devices)"],
+    "devtools": ["$(MSPM0L11xx_L13xx_devtools)"],
+    "resourceType": "categoryInfo",
+    "resourceClass": ["document"],
+    "description": "The MSPM0 Diagnostic Library is a collection of functional safety software to assist customers meet their diagnostic requirements for up to IEC60730 Class-B applications."
+  },
+  {
+    "name": "Motor Control",
+    "mainCategories": [
+      [
+        "Documents"
+      ],
+      [
+        "Examples",
+        "Development Tools"
+      ]
+    ],
+    "subCategories": ["Middleware"],
+    "devices": ["$(MSPM0L11xx_L13xx_devices)"],
+    "devtools": ["$(MSPM0L11xx_L13xx_devtools)"],
+    "resourceType": "categoryInfo",
+    "resourceClass": ["document"],
+    "description": "The MSPM0 SDK Motor Control Libraries are built to allow users to quickly evaluate different MSPM0 family of devices as well as TI's motor drivers. Once evaluation is completed, customers can utilize these simple to understand modules and APIs to rapidly speed up development of their motor control applications. Currently, the SDK includes the Brushed Motor Control Library and Stepper Motor Control Library."
+  },
+  {
+    "name": "电机控制",
+    "mainCategories": [
+      [
+        "Documents"
+      ],
+      [
+        "Examples",
+        "Development Tools"
+      ]
+    ],
+    "subCategories": ["Middleware"],
+    "devices": ["$(MSPM0L11xx_L13xx_devices)"],
+    "devtools": ["$(MSPM0L11xx_L13xx_devtools)"],
+    "resourceType": "categoryInfo",
+    "resourceClass": ["document"],
+    "description": "The MSPM0 SDK Motor Control Libraries are built to allow users to quickly evaluate different MSPM0 family of devices as well as TI's motor drivers. Once evaluation is completed, customers can utilize these simple to understand modules and APIs to rapidly speed up development of their motor control applications. Currently, the SDK includes the Brushed Motor Control Library and Stepper Motor Control Library."
+  },
+  {
+    "name": "SMBus",
+    "mainCategories": [
+      [
+        "Documents"
+      ],
+      [
+        "Examples",
+        "Development Tools"
+      ]
+    ],
+    "subCategories": ["Middleware"],
+    "devices": ["$(MSPM0_all_devices)"],
+    "devtools": ["$(MSPM0_all_devtools)"],
+    "resourceType": "categoryInfo",
+    "resourceClass": ["document"],
+    "description": "The MSPM0 SMBus Library provides a simple way to start development of SMBus applications using MSPM0 devices. This library was developed in compliance with the SMBus 3.2 specification. The SDK includes examples that demonstrate communication between a SMBus Controller and SMBus Target using all of the supported SMBus protocols."
+  },
+  {
+    "name": "PMBus",
+    "mainCategories": [
+      [
+        "Documents"
+      ],
+      [
+        "Examples",
+        "Development Tools"
+      ]
+    ],
+    "subCategories": ["Middleware"],
+    "devices": ["$(MSPM0_all_devices)"],
+    "devtools": ["$(MSPM0_all_devtools)"],
+    "resourceType": "categoryInfo",
+    "resourceClass": ["document"],
+    "description": "The MSPM0 PMBus Library is based on the MSPM0 SMBus library. The MSPM0 PMBus library provides a set of APIs to communicate over PMBus as a controller or a target."
+  },
+  {
+    "name": "Secure Booting",
+    "mainCategories": [
+      [
+        "Documents"
+      ],
+      [
+        "Examples",
+        "Development Tools"
+      ]
+    ],
+    "subCategories": ["Middleware"],
+    "devices": ["$(MSPM0_all_devices)"],
+    "devtools": ["$(MSPM0_all_devtools)"],
+    "resourceType": "categoryInfo",
+    "resourceClass": ["document"],
+    "description": "The MSPM0 SDK includes two solutions for secure booting: the Boot Image Manager (BIM) and Customer Secure Code (CSC). BIM implements firmware validation and authentication in devices with one stage of flash memory but a more limited set of security options. CSC utilizes more advanced security features and multiple banks for image validation, authentication and firmware updates."
+  },
+  {
+    "name": "DALI",
+    "mainCategories": [
+      [
+        "Documents"
+      ],
+      [
+        "Examples",
+        "Development Tools"
+      ]
+    ],
+    "subCategories": ["Middleware"],
+    "devices": ["$(MSPM0_all_devices)"],
+    "devtools": ["$(MSPM0_all_devtools)"],
+    "resourceType": "categoryInfo",
+    "resourceClass": ["document"],
+    "description": "DALI (Digitally Addressable Lighting Interface) is a serial protocol for digital lighting control that allows for simple and efficient communication between various lighting application gear and controllers. The MSPM0 SDK provides an easy way to start development of DALI applications using the MSPM0’s Universal Asynchronous Receiver Transmitter (UART) module."
+  },
+  {
+    "name": "Examples",
+    "mainCategories": [
+      []
+    ],
+    "subCategories": [],
+    "resourceType": "categoryInfo",
+    "resourceClass": ["example"],
+    "resourceSubClass": ["example.general"],
+    "description": "The MSPM0 SDK includes an extensive list of code examples at all levels which can be used not only to demonstrate and test device functionality, but to provide a reference and starting point to accelerate application development. Code examples include corresponding files for supported IDEs and compilers. To learn more about the examples offered, consult the MSPM0 SDK Example Guide."
+  },
+  {
+    "name": "Documents",
+    "mainCategories": [
+      []
+    ],
+    "subCategories": [],
+    "devices": ["$(MSPM0_all_devices)"],
+    "devtools": ["$(MSPM0_all_devtools)"],
+    "resourceType": "categoryInfo",
+    "resourceClass": ["document"],
+    "description": "The MSPM0 SDK includes comprehensive documentation for all the supported software libraries and tools, including quick start guides and user's guides. To get started, visit the MSPM0 SDK Document Overview."
+  },
+  {
+    "name": "Documents - Chinese",
+    "mainCategories": [
+      []
+    ],
+    "subCategories": [],
+    "devices": ["$(MSPM0_all_devices)"],
+    "devtools": ["$(MSPM0_all_devtools)"],
+    "resourceType": "categoryInfo",
+    "resourceClass": ["document"],
+    "description": "The MSPM0 SDK includes comprehensive documentation for all the supported software libraries and tools, including quick start guides and user's guides. To get started, visit the MSPM0 SDK Document Overview."
+  },
+  {
+    "name": "Third Party",
+    "mainCategories": [
+      [
+        "Documents"
+      ],
+      [
+        "Examples",
+        "Development Tools"
+      ]
+    ],
+    "subCategories": ["Middleware"],
+    "devices": ["$(MSPM0_all_devices)"],
+    "devtools": ["$(MSPM0_all_devtools)"],
+    "resourceType": "categoryInfo",
+    "resourceClass": ["document"],
+    "description": ""
+  },
+  {
+    "name": "Third Party 第三方",
+    "mainCategories": [
+      [
+        "Documents"
+      ],
+      [
+        "Examples",
+        "Development Tools"
+      ]
+    ],
+    "subCategories": ["Middleware"],
+    "devices": ["$(MSPM0_all_devices)"],
+    "devtools": ["$(MSPM0_all_devtools)"],
+    "resourceType": "categoryInfo",
+    "resourceClass": ["document"],
+    "description": ""
+  },
+  {
+    "name": "CMSIS DSP",
+    "mainCategories": [
+      [
+        "Documents"
+      ],
+      [
+        "Examples",
+        "Development Tools"
+      ]
+    ],
+    "subCategories": ["Middleware"],
+    "devices": ["$(MSPM0_all_devices)"],
+    "devtools": ["$(MSPM0_all_devtools)"],
+    "resourceType": "categoryInfo",
+    "resourceClass": ["document"],
+    "description": ""
+  },
+  {
+    "name": "IO-Link",
+    "mainCategories": [
+      [
+        "Documents"
+      ],
+      [
+        "Examples",
+        "Development Tools"
+      ]
+    ],
+    "subCategories": ["Middleware"],
+    "devices": ["$(MSPM0_all_devices)"],
+    "devtools": ["$(MSPM0_all_devtools)"],
+    "resourceType": "categoryInfo",
+    "resourceClass": ["document"],
+    "description": "IO-Link is the first standardized IO technology worldwide (IEC 61131-9) to communicate with sensors and actuators. IO-Link answers the need of these digital and analog sensors and actuators to exchange process data, diagnosis information, and parameters with a controller (PC or PLC) using a low-cost, digital communication technology. Texas Instruments has partnered with TEConcept to release the IO-Link device implementation for sensors and actuator reference design, providing a low-cost, efficient solution for IO-Link using MSPM0."
+  },
+  {
+    "name": "Zephyr",
+    "mainCategories": [
+      [
+        "Documents"
+      ],
+      [
+        "Examples",
+        "Development Tools"
+      ]
+    ],
+    "subCategories": ["Middleware"],
+    "devices": ["$(MSPM0_all_devices)"],
+    "devtools": ["$(MSPM0_all_devtools)"],
+    "resourceType": "categoryInfo",
+    "resourceClass": ["document"],
+    "description": "Texas Instruments has begun development to support Zephyr as a Real-Time Operating option for MSPM0 devices. Zephyr’s implementation can be found on their Home Page, and this will provide the stable version with MSPM0 going forward."
+  },
+  {
+    "name": "Energy Metrology Library",
+    "mainCategories": [
+      [
+        "Documents"
+      ],
+      [
+        "Examples",
+        "Development Tools"
+      ]
+    ],
+    "subCategories": ["Middleware"],
+    "devices": ["$(MSPM0_all_devices)"],
+    "devtools": ["$(MSPM0_all_devtools)"],
+    "resourceType": "categoryInfo",
+    "resourceClass": ["document"],
+    "description": "The Energy Metrology Library is built to compute voltage, current, power, energy, and other parameters of a 3 phase power system using MSPM0. The library uses high precesion ADCs to capture the voltage and current signals."
+  },
+  {
+    "name": "Energy Metrology 库",
+    "mainCategories": [
+      [
+        "Documents"
+      ],
+      [
+        "Examples",
+        "Development Tools"
+      ]
+    ],
+    "subCategories": ["Middleware"],
+    "devices": ["$(MSPM0_all_devices)"],
+    "devtools": ["$(MSPM0_all_devtools)"],
+    "resourceType": "categoryInfo",
+    "resourceClass": ["document"],
+    "description": "The Energy Metrology Library is built to compute voltage, current, power, energy, and other parameters of a 3 phase power system using MSPM0. The library uses high precesion ADCs to capture the voltage and current signals."
+  },
+  {
+    "name": "Communication Modules",
+    "mainCategories": [
+      [
+        "Documents"
+      ],
+      [
+        "Examples",
+        "Development Tools"
+      ]
+    ],
+    "subCategories": ["Middleware"],
+    "devices": ["$(MSPM0_all_devices)"],
+    "devtools": ["$(MSPM0_all_devtools)"],
+    "resourceType": "categoryInfo",
+    "resourceClass": ["document"],
+    "description": "The MSPM0 Communication Modules provides a simple way for the application developer to integrate serial communication modules to their application."
+  },
+  {
+    "name": "M-PESTI",
+    "mainCategories": [
+      [
+        "Documents"
+      ],
+      [
+        "Examples",
+        "Development Tools"
+      ]
+    ],
+    "subCategories": ["Middleware"],
+    "devices": ["$(MSPM0_all_devices)"],
+    "devtools": ["$(MSPM0_all_devtools)"],
+    "resourceType": "categoryInfo",
+    "resourceClass": ["document"],
+    "description": "Modular Peripheral Sideband Tunneling Interface (M-PESTI) is a generic and extensible 1-wire, bidirectional circuit, and protocol for applications such as cabled high-speed I/O interposers, managed power distribution, cooling subsystems and control panels.<br><br>The MSPM0 SDK provides an easy way to start development of M-PESTI Target applications using the MSPM0's Universal Asynchronous Receiver Transmitter (UART) module and contains the following:<br><br><ul><li>Full source code for M-PESTI Target</li> <li>Graphical configuration of UART (PESTI line) module using SysConfig</li></ul>"
+  }
+]

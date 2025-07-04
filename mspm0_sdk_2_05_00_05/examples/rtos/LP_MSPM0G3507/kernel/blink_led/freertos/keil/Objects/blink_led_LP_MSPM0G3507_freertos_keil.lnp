@@ -1,0 +1,9 @@
+--cpu Cortex-M0+
+".\objects\main.o"
+".\objects\main-blinky.o"
+".\objects\startup_mspm0g350x_uvision.o"
+".\objects\ti_msp_dl_config.o"
+--strict --scatter "./mspm0g3507.sct"
+../../../../../../../source/ti/driverlib/lib/keil/m0p/mspm0g1x0x_g3x0x/driverlib.a ../../../../../../../kernel/freertos/builds/LP_MSPM0G3507/release/keil/Objects/freertos_builds_LP_MSPM0G3507_release_keil.lib --summary_stderr --info summarysizes --map --load_addr_map_info --xref --callgraph --symbols
+--info sizes --info totals --info unused --info veneers
+--list ".\blink_led_LP_MSPM0G3507_freertos_keil.map" -o .\Objects\blink_led_LP_MSPM0G3507_freertos_keil.axf

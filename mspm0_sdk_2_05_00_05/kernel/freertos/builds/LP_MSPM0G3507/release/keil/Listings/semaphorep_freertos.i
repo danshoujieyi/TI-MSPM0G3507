@@ -1,0 +1,1313 @@
+# 1 "../../../../../../kernel/freertos/dpl/SemaphoreP_freertos.c"
+# 1 "<built-in>" 1
+# 1 "<built-in>" 3
+# 376 "<built-in>" 3
+# 1 "<command line>" 1
+# 1 "<built-in>" 2
+# 1 "../../../../../../kernel/freertos/dpl/SemaphoreP_freertos.c" 2
+# 37 "../../../../../../kernel/freertos/dpl/SemaphoreP_freertos.c"
+# 1 "../../../../../../source\\ti/drivers/dpl/SemaphoreP.h" 1
+# 59 "../../../../../../source\\ti/drivers/dpl/SemaphoreP.h"
+# 1 "I:\\Keil5\\keil5_mdk\\ARM\\ARMCLANG\\Bin\\..\\include\\stdint.h" 1 3
+# 56 "I:\\Keil5\\keil5_mdk\\ARM\\ARMCLANG\\Bin\\..\\include\\stdint.h" 3
+typedef signed char int8_t;
+typedef signed short int int16_t;
+typedef signed int int32_t;
+typedef signed long long int int64_t;
+
+
+typedef unsigned char uint8_t;
+typedef unsigned short int uint16_t;
+typedef unsigned int uint32_t;
+typedef unsigned long long int uint64_t;
+
+
+
+
+
+typedef signed char int_least8_t;
+typedef signed short int int_least16_t;
+typedef signed int int_least32_t;
+typedef signed long long int int_least64_t;
+
+
+typedef unsigned char uint_least8_t;
+typedef unsigned short int uint_least16_t;
+typedef unsigned int uint_least32_t;
+typedef unsigned long long int uint_least64_t;
+
+
+
+
+typedef signed int int_fast8_t;
+typedef signed int int_fast16_t;
+typedef signed int int_fast32_t;
+typedef signed long long int int_fast64_t;
+
+
+typedef unsigned int uint_fast8_t;
+typedef unsigned int uint_fast16_t;
+typedef unsigned int uint_fast32_t;
+typedef unsigned long long int uint_fast64_t;
+
+
+
+
+
+
+typedef signed int intptr_t;
+typedef unsigned int uintptr_t;
+
+
+
+typedef signed long long intmax_t;
+typedef unsigned long long uintmax_t;
+# 60 "../../../../../../source\\ti/drivers/dpl/SemaphoreP.h" 2
+# 1 "I:\\Keil5\\keil5_mdk\\ARM\\ARMCLANG\\Bin\\..\\include\\stdbool.h" 1 3
+# 61 "../../../../../../source\\ti/drivers/dpl/SemaphoreP.h" 2
+# 1 "I:\\Keil5\\keil5_mdk\\ARM\\ARMCLANG\\Bin\\..\\include\\stddef.h" 1 3
+# 38 "I:\\Keil5\\keil5_mdk\\ARM\\ARMCLANG\\Bin\\..\\include\\stddef.h" 3
+  typedef signed int ptrdiff_t;
+# 53 "I:\\Keil5\\keil5_mdk\\ARM\\ARMCLANG\\Bin\\..\\include\\stddef.h" 3
+    typedef unsigned int size_t;
+# 71 "I:\\Keil5\\keil5_mdk\\ARM\\ARMCLANG\\Bin\\..\\include\\stddef.h" 3
+      typedef unsigned short wchar_t;
+# 62 "../../../../../../source\\ti/drivers/dpl/SemaphoreP.h" 2
+# 84 "../../../../../../source\\ti/drivers/dpl/SemaphoreP.h"
+typedef union SemaphoreP_Struct {
+    uint32_t dummy;
+    uint8_t data[(80)];
+} SemaphoreP_Struct;
+# 102 "../../../../../../source\\ti/drivers/dpl/SemaphoreP.h"
+typedef enum {
+
+    SemaphoreP_OK = 0,
+
+    SemaphoreP_TIMEOUT = -1
+} SemaphoreP_Status;
+# 116 "../../../../../../source\\ti/drivers/dpl/SemaphoreP.h"
+typedef void *SemaphoreP_Handle;
+
+
+
+
+typedef enum {
+    SemaphoreP_Mode_COUNTING = 0x0,
+    SemaphoreP_Mode_BINARY = 0x1
+} SemaphoreP_Mode;
+# 135 "../../../../../../source\\ti/drivers/dpl/SemaphoreP.h"
+typedef struct {
+    SemaphoreP_Mode mode;
+    void (*callback)(void);
+} SemaphoreP_Params;
+# 155 "../../../../../../source\\ti/drivers/dpl/SemaphoreP.h"
+extern SemaphoreP_Params SemaphoreP_defaultParams;
+
+
+
+
+
+
+extern SemaphoreP_Handle SemaphoreP_construct(
+    SemaphoreP_Struct *handle, unsigned int count, SemaphoreP_Params *params);
+
+extern SemaphoreP_Handle SemaphoreP_constructBinary(
+    SemaphoreP_Struct *handle, unsigned int count);
+
+extern void SemaphoreP_destruct(SemaphoreP_Struct *semP);
+# 182 "../../../../../../source\\ti/drivers/dpl/SemaphoreP.h"
+extern SemaphoreP_Handle SemaphoreP_create(
+    unsigned int count, SemaphoreP_Params *params);
+# 196 "../../../../../../source\\ti/drivers/dpl/SemaphoreP.h"
+extern SemaphoreP_Handle SemaphoreP_createBinary(unsigned int count);
+# 209 "../../../../../../source\\ti/drivers/dpl/SemaphoreP.h"
+extern SemaphoreP_Handle SemaphoreP_createBinaryCallback(
+    unsigned int count, void (*callback)(void));
+
+
+
+
+
+
+extern void SemaphoreP_delete(SemaphoreP_Handle handle);
+# 228 "../../../../../../source\\ti/drivers/dpl/SemaphoreP.h"
+extern void SemaphoreP_Params_init(SemaphoreP_Params *params);
+# 246 "../../../../../../source\\ti/drivers/dpl/SemaphoreP.h"
+extern SemaphoreP_Status SemaphoreP_pend(
+    SemaphoreP_Handle handle, uint32_t timeout);
+# 263 "../../../../../../source\\ti/drivers/dpl/SemaphoreP.h"
+extern SemaphoreP_Status SemaphoreP_pendNoTimeout(SemaphoreP_Handle handle);
+
+
+
+
+
+
+extern void SemaphoreP_post(SemaphoreP_Handle handle);
+# 38 "../../../../../../kernel/freertos/dpl/SemaphoreP_freertos.c" 2
+# 1 "../../../../../../source\\ti/drivers/dpl/ClockP.h" 1
+# 82 "../../../../../../source\\ti/drivers/dpl/ClockP.h"
+typedef union ClockP_Struct {
+    uint32_t dummy;
+    uint8_t data[(68)];
+} ClockP_Struct;
+
+
+
+
+typedef struct {
+    uint32_t hi;
+    uint32_t lo;
+} ClockP_FreqHz;
+
+
+
+
+typedef enum {
+    ClockP_OK = 0,
+    ClockP_FAILURE = -1
+} ClockP_Status;
+# 110 "../../../../../../source\\ti/drivers/dpl/ClockP.h"
+typedef void *ClockP_Handle;
+
+
+
+
+
+
+typedef void (*ClockP_Fxn)(uintptr_t arg);
+# 137 "../../../../../../source\\ti/drivers/dpl/ClockP.h"
+typedef struct {
+    _Bool startFlag;
+    uint32_t period;
+    uintptr_t arg;
+} ClockP_Params;
+# 157 "../../../../../../source\\ti/drivers/dpl/ClockP.h"
+extern ClockP_Handle ClockP_construct(ClockP_Struct *clockP,
+                                      ClockP_Fxn clockFxn,
+                                      uint32_t timeout,
+                                      ClockP_Params *params);
+# 170 "../../../../../../source\\ti/drivers/dpl/ClockP.h"
+extern void ClockP_destruct(ClockP_Struct *clockP);
+# 184 "../../../../../../source\\ti/drivers/dpl/ClockP.h"
+extern ClockP_Handle ClockP_create(ClockP_Fxn clockFxn,
+                                   uint32_t timeout,
+                                   ClockP_Params *params);
+
+
+
+
+
+
+extern void ClockP_delete(ClockP_Handle handle);
+
+
+
+
+
+
+extern void ClockP_getCpuFreq(ClockP_FreqHz *freq);
+
+
+
+
+
+
+extern uint32_t ClockP_getSystemTickPeriod(void);
+# 217 "../../../../../../source\\ti/drivers/dpl/ClockP.h"
+extern uint32_t ClockP_getSystemTicks(void);
+# 230 "../../../../../../source\\ti/drivers/dpl/ClockP.h"
+extern uint32_t ClockP_getTicksUntilInterrupt(void);
+# 241 "../../../../../../source\\ti/drivers/dpl/ClockP.h"
+extern uint32_t ClockP_getTimeout(ClockP_Handle handle);
+# 251 "../../../../../../source\\ti/drivers/dpl/ClockP.h"
+extern _Bool ClockP_isActive(ClockP_Handle handle);
+# 263 "../../../../../../source\\ti/drivers/dpl/ClockP.h"
+extern void ClockP_Params_init(ClockP_Params *params);
+# 272 "../../../../../../source\\ti/drivers/dpl/ClockP.h"
+extern void ClockP_setTimeout(ClockP_Handle handle, uint32_t timeout);
+# 281 "../../../../../../source\\ti/drivers/dpl/ClockP.h"
+extern void ClockP_setPeriod(ClockP_Handle handle, uint32_t period);
+# 310 "../../../../../../source\\ti/drivers/dpl/ClockP.h"
+extern void ClockP_start(ClockP_Handle handle);
+# 319 "../../../../../../source\\ti/drivers/dpl/ClockP.h"
+extern void ClockP_stop(ClockP_Handle handle);
+
+
+
+
+
+
+extern void ClockP_usleep(uint32_t usec);
+
+
+
+
+
+
+extern void ClockP_sleep(uint32_t sec);
+# 39 "../../../../../../kernel/freertos/dpl/SemaphoreP_freertos.c" 2
+# 1 "../../../../../../source\\ti/drivers/dpl/HwiP.h" 1
+# 78 "../../../../../../source\\ti/drivers/dpl/HwiP.h"
+typedef union HwiP_Struct {
+    uint32_t dummy;
+    uint8_t data[(28)];
+} HwiP_Struct;
+
+
+
+
+
+
+typedef void *HwiP_Handle;
+
+
+
+
+typedef enum {
+    HwiP_OK = 0,
+    HwiP_FAILURE = -1
+} HwiP_Status;
+
+
+
+
+typedef void (*HwiP_Fxn)(uintptr_t arg);
+# 115 "../../../../../../source\\ti/drivers/dpl/HwiP.h"
+typedef struct {
+    uintptr_t arg;
+    uint32_t priority;
+    _Bool enableInt;
+} HwiP_Params;
+# 136 "../../../../../../source\\ti/drivers/dpl/HwiP.h"
+extern int HwiP_swiPIntNum;
+# 151 "../../../../../../source\\ti/drivers/dpl/HwiP.h"
+extern HwiP_Handle HwiP_construct(HwiP_Struct *hwiP, int interruptNum,
+                                  HwiP_Fxn hwiFxn, HwiP_Params *params);
+# 162 "../../../../../../source\\ti/drivers/dpl/HwiP.h"
+extern void HwiP_destruct(HwiP_Struct *hwiP);
+
+
+
+
+
+
+extern void HwiP_clearInterrupt(int interruptNum);
+# 184 "../../../../../../source\\ti/drivers/dpl/HwiP.h"
+extern HwiP_Handle HwiP_create(int interruptNum, HwiP_Fxn hwiFxn,
+                               HwiP_Params *params);
+# 194 "../../../../../../source\\ti/drivers/dpl/HwiP.h"
+extern void HwiP_delete(HwiP_Handle handle);
+# 211 "../../../../../../source\\ti/drivers/dpl/HwiP.h"
+extern uintptr_t HwiP_disable(void);
+
+
+
+
+extern void HwiP_enable(void);
+
+
+
+
+
+
+extern void HwiP_disableInterrupt(int interruptNum);
+
+
+
+
+
+
+extern void HwiP_enableInterrupt(int interruptNum);
+# 239 "../../../../../../source\\ti/drivers/dpl/HwiP.h"
+extern _Bool HwiP_inISR(void);
+# 248 "../../../../../../source\\ti/drivers/dpl/HwiP.h"
+extern _Bool HwiP_interruptsEnabled(void);
+# 260 "../../../../../../source\\ti/drivers/dpl/HwiP.h"
+extern void HwiP_Params_init(HwiP_Params *params);
+
+
+
+
+
+
+
+extern void HwiP_plug(int interruptNum, void *fxn);
+
+
+
+
+
+
+extern void HwiP_post(int interruptNum);
+
+
+
+
+
+
+extern void HwiP_restore(uintptr_t key);
+# 291 "../../../../../../source\\ti/drivers/dpl/HwiP.h"
+extern void HwiP_setFunc(HwiP_Handle hwiP, HwiP_Fxn fxn, uintptr_t arg);
+
+
+
+
+
+
+
+extern void HwiP_setPriority(int interruptNum, uint32_t priority);
+# 308 "../../../../../../source\\ti/drivers/dpl/HwiP.h"
+void HwiP_dispatchInterrupt(int interruptNum);
+# 40 "../../../../../../kernel/freertos/dpl/SemaphoreP_freertos.c" 2
+
+# 1 "../../../../../../kernel/freertos/Source/include\\FreeRTOS.h" 1
+# 57 "../../../../../../kernel/freertos/Source/include\\FreeRTOS.h"
+# 1 "..\\FreeRTOSConfig.h" 1
+# 58 "../../../../../../kernel/freertos/Source/include\\FreeRTOS.h" 2
+
+
+# 1 "../../../../../../kernel/freertos/Source/include/projdefs.h" 1
+# 34 "../../../../../../kernel/freertos/Source/include/projdefs.h"
+typedef void (* TaskFunction_t)( void * );
+# 61 "../../../../../../kernel/freertos/Source/include\\FreeRTOS.h" 2
+
+
+# 1 "../../../../../../kernel/freertos/Source/include/portable.h" 1
+# 44 "../../../../../../kernel/freertos/Source/include/portable.h"
+# 1 "../../../../../../kernel/freertos/Source/include/deprecated_definitions.h" 1
+# 45 "../../../../../../kernel/freertos/Source/include/portable.h" 2
+
+
+
+
+
+
+# 1 "../../../../../../kernel/freertos/Source/portable/GCC/ARM_CM0\\portmacro.h" 1
+# 55 "../../../../../../kernel/freertos/Source/portable/GCC/ARM_CM0\\portmacro.h"
+    typedef uint32_t StackType_t;
+    typedef long BaseType_t;
+    typedef unsigned long UBaseType_t;
+
+
+
+
+
+        typedef uint32_t TickType_t;
+# 81 "../../../../../../kernel/freertos/Source/portable/GCC/ARM_CM0\\portmacro.h"
+    extern void vPortYield( void );
+# 91 "../../../../../../kernel/freertos/Source/portable/GCC/ARM_CM0\\portmacro.h"
+    extern void vPortEnterCritical( void );
+    extern void vPortExitCritical( void );
+    extern uint32_t ulSetInterruptMaskFromISR( void ) __attribute__( ( naked ) );
+    extern void vClearInterruptMaskFromISR( uint32_t ulMask ) __attribute__( ( naked ) );
+# 107 "../../../../../../kernel/freertos/Source/portable/GCC/ARM_CM0\\portmacro.h"
+        extern void vPortSuppressTicksAndSleep( TickType_t xExpectedIdleTime );
+# 52 "../../../../../../kernel/freertos/Source/include/portable.h" 2
+# 100 "../../../../../../kernel/freertos/Source/include/portable.h"
+# 1 "../../../../../../kernel/freertos/Source/include/mpu_wrappers.h" 1
+# 101 "../../../../../../kernel/freertos/Source/include/portable.h" 2
+# 128 "../../../../../../kernel/freertos/Source/include/portable.h"
+        StackType_t * pxPortInitialiseStack( StackType_t * pxTopOfStack,
+                                             TaskFunction_t pxCode,
+                                             void * pvParameters ) ;
+
+
+
+
+
+typedef struct HeapRegion
+{
+    uint8_t * pucStartAddress;
+    size_t xSizeInBytes;
+} HeapRegion_t;
+
+
+typedef struct xHeapStats
+{
+    size_t xAvailableHeapSpaceInBytes;
+    size_t xSizeOfLargestFreeBlockInBytes;
+    size_t xSizeOfSmallestFreeBlockInBytes;
+    size_t xNumberOfFreeBlocks;
+    size_t xMinimumEverFreeBytesRemaining;
+    size_t xNumberOfSuccessfulAllocations;
+    size_t xNumberOfSuccessfulFrees;
+} HeapStats_t;
+# 165 "../../../../../../kernel/freertos/Source/include/portable.h"
+void vPortDefineHeapRegions( const HeapRegion_t * const pxHeapRegions ) ;
+
+
+
+
+
+void vPortGetHeapStats( HeapStats_t * pxHeapStats );
+
+
+
+
+void * pvPortMalloc( size_t xSize ) ;
+void vPortFree( void * pv ) ;
+void vPortInitialiseBlocks( void ) ;
+size_t xPortGetFreeHeapSize( void ) ;
+size_t xPortGetMinimumEverFreeHeapSize( void ) ;
+
+
+
+
+
+BaseType_t xPortStartScheduler( void ) ;
+
+
+
+
+
+
+void vPortEndScheduler( void ) ;
+# 64 "../../../../../../kernel/freertos/Source/include\\FreeRTOS.h" 2
+# 1126 "../../../../../../kernel/freertos/Source/include\\FreeRTOS.h"
+struct xSTATIC_LIST_ITEM
+{
+
+
+
+    TickType_t xDummy2;
+    void * pvDummy3[ 4 ];
+
+
+
+};
+typedef struct xSTATIC_LIST_ITEM StaticListItem_t;
+
+
+struct xSTATIC_MINI_LIST_ITEM
+{
+
+
+
+    TickType_t xDummy2;
+    void * pvDummy3[ 2 ];
+};
+typedef struct xSTATIC_MINI_LIST_ITEM StaticMiniListItem_t;
+
+
+typedef struct xSTATIC_LIST
+{
+
+
+
+    UBaseType_t uxDummy2;
+    void * pvDummy3;
+    StaticMiniListItem_t xDummy4;
+
+
+
+} StaticList_t;
+# 1177 "../../../../../../kernel/freertos/Source/include\\FreeRTOS.h"
+typedef struct xSTATIC_TCB
+{
+    void * pxDummy1;
+
+
+
+    StaticListItem_t xDummy3[ 2 ];
+    UBaseType_t uxDummy5;
+    void * pxDummy6;
+    uint8_t ucDummy7[ (12) ];
+
+
+
+
+
+
+
+        UBaseType_t uxDummy10[ 2 ];
+
+
+        UBaseType_t uxDummy12[ 2 ];
+
+
+        void * pxDummy14;
+
+
+        void * pvDummy15[ 2 ];
+# 1212 "../../../../../../kernel/freertos/Source/include\\FreeRTOS.h"
+        uint32_t ulDummy18[ 1 ];
+        uint8_t ucDummy19[ 1 ];
+
+
+        uint8_t uxDummy20;
+# 1225 "../../../../../../kernel/freertos/Source/include\\FreeRTOS.h"
+} StaticTask_t;
+# 1241 "../../../../../../kernel/freertos/Source/include\\FreeRTOS.h"
+typedef struct xSTATIC_QUEUE
+{
+    void * pvDummy1[ 3 ];
+
+    union
+    {
+        void * pvDummy2;
+        UBaseType_t uxDummy2;
+    } u;
+
+    StaticList_t xDummy3[ 2 ];
+    UBaseType_t uxDummy4[ 3 ];
+    uint8_t ucDummy5[ 2 ];
+
+
+        uint8_t ucDummy6;
+
+
+
+
+
+
+
+        UBaseType_t uxDummy8;
+        uint8_t ucDummy9;
+
+} StaticQueue_t;
+typedef StaticQueue_t StaticSemaphore_t;
+# 1284 "../../../../../../kernel/freertos/Source/include\\FreeRTOS.h"
+typedef struct xSTATIC_EVENT_GROUP
+{
+    TickType_t xDummy1;
+    StaticList_t xDummy2;
+
+
+        UBaseType_t uxDummy3;
+
+
+
+        uint8_t ucDummy4;
+
+} StaticEventGroup_t;
+# 1312 "../../../../../../kernel/freertos/Source/include\\FreeRTOS.h"
+typedef struct xSTATIC_TIMER
+{
+    void * pvDummy1;
+    StaticListItem_t xDummy2;
+    TickType_t xDummy3;
+    void * pvDummy5;
+    TaskFunction_t pvDummy6;
+
+        UBaseType_t uxDummy7;
+
+    uint8_t ucDummy8;
+} StaticTimer_t;
+# 1339 "../../../../../../kernel/freertos/Source/include\\FreeRTOS.h"
+typedef struct xSTATIC_STREAM_BUFFER
+{
+    size_t uxDummy1[ 4 ];
+    void * pvDummy2[ 3 ];
+    uint8_t ucDummy3;
+
+        UBaseType_t uxDummy4;
+
+} StaticStreamBuffer_t;
+
+
+typedef StaticStreamBuffer_t StaticMessageBuffer_t;
+# 42 "../../../../../../kernel/freertos/dpl/SemaphoreP_freertos.c" 2
+# 1 "../../../../../../kernel/freertos/Source/include\\semphr.h" 1
+# 34 "../../../../../../kernel/freertos/Source/include\\semphr.h"
+# 1 "../../../../../../kernel/freertos/Source/include/queue.h" 1
+# 41 "../../../../../../kernel/freertos/Source/include/queue.h"
+# 1 "../../../../../../kernel/freertos/Source/include/task.h" 1
+# 35 "../../../../../../kernel/freertos/Source/include/task.h"
+# 1 "../../../../../../kernel/freertos/Source/include/list.h" 1
+# 141 "../../../../../../kernel/freertos/Source/include/list.h"
+struct xLIST;
+struct xLIST_ITEM
+{
+
+                        TickType_t xItemValue;
+    struct xLIST_ITEM * pxNext;
+    struct xLIST_ITEM * pxPrevious;
+    void * pvOwner;
+    struct xLIST * pxContainer;
+
+};
+typedef struct xLIST_ITEM ListItem_t;
+
+struct xMINI_LIST_ITEM
+{
+
+                        TickType_t xItemValue;
+    struct xLIST_ITEM * pxNext;
+    struct xLIST_ITEM * pxPrevious;
+};
+typedef struct xMINI_LIST_ITEM MiniListItem_t;
+
+
+
+
+typedef struct xLIST
+{
+
+    volatile UBaseType_t uxNumberOfItems;
+    ListItem_t * pxIndex;
+    MiniListItem_t xListEnd;
+
+} List_t;
+# 427 "../../../../../../kernel/freertos/Source/include/list.h"
+void vListInitialise( List_t * const pxList ) ;
+# 438 "../../../../../../kernel/freertos/Source/include/list.h"
+void vListInitialiseItem( ListItem_t * const pxItem ) ;
+# 451 "../../../../../../kernel/freertos/Source/include/list.h"
+void vListInsert( List_t * const pxList,
+                  ListItem_t * const pxNewListItem ) ;
+# 473 "../../../../../../kernel/freertos/Source/include/list.h"
+void vListInsertEnd( List_t * const pxList,
+                     ListItem_t * const pxNewListItem ) ;
+# 489 "../../../../../../kernel/freertos/Source/include/list.h"
+UBaseType_t uxListRemove( ListItem_t * const pxItemToRemove ) ;
+# 36 "../../../../../../kernel/freertos/Source/include/task.h" 2
+# 77 "../../../../../../kernel/freertos/Source/include/task.h"
+struct tskTaskControlBlock;
+typedef struct tskTaskControlBlock * TaskHandle_t;
+
+
+
+
+
+typedef BaseType_t (* TaskHookFunction_t)( void * );
+
+
+typedef enum
+{
+    eRunning = 0,
+    eReady,
+    eBlocked,
+    eSuspended,
+    eDeleted,
+    eInvalid
+} eTaskState;
+
+
+typedef enum
+{
+    eNoAction = 0,
+    eSetBits,
+    eIncrement,
+    eSetValueWithOverwrite,
+    eSetValueWithoutOverwrite
+} eNotifyAction;
+
+
+
+
+typedef struct xTIME_OUT
+{
+    BaseType_t xOverflowCount;
+    TickType_t xTimeOnEntering;
+} TimeOut_t;
+
+
+
+
+typedef struct xMEMORY_REGION
+{
+    void * pvBaseAddress;
+    uint32_t ulLengthInBytes;
+    uint32_t ulParameters;
+} MemoryRegion_t;
+
+
+
+
+typedef struct xTASK_PARAMETERS
+{
+    TaskFunction_t pvTaskCode;
+    const char * pcName;
+    uint16_t usStackDepth;
+    void * pvParameters;
+    UBaseType_t uxPriority;
+    StackType_t * puxStackBuffer;
+    MemoryRegion_t xRegions[ 1 ];
+
+
+
+} TaskParameters_t;
+
+
+
+typedef struct xTASK_STATUS
+{
+    TaskHandle_t xHandle;
+    const char * pcTaskName;
+    UBaseType_t xTaskNumber;
+    eTaskState eCurrentState;
+    UBaseType_t uxCurrentPriority;
+    UBaseType_t uxBasePriority;
+    uint32_t ulRunTimeCounter;
+    StackType_t * pxStackBase;
+    uint16_t usStackHighWaterMark;
+} TaskStatus_t;
+
+
+typedef enum
+{
+    eAbortSleep = 0,
+    eStandardSleep,
+    eNoTasksWaitingTimeout
+} eSleepModeStatus;
+# 340 "../../../../../../kernel/freertos/Source/include/task.h"
+    BaseType_t xTaskCreate( TaskFunction_t pxTaskCode,
+                            const char * const pcName,
+                            const uint16_t usStackDepth,
+                            void * const pvParameters,
+                            UBaseType_t uxPriority,
+                            TaskHandle_t * const pxCreatedTask ) ;
+# 457 "../../../../../../kernel/freertos/Source/include/task.h"
+    TaskHandle_t xTaskCreateStatic( TaskFunction_t pxTaskCode,
+                                    const char * const pcName,
+                                    const uint32_t ulStackDepth,
+                                    void * const pvParameters,
+                                    UBaseType_t uxPriority,
+                                    StackType_t * const puxStackBuffer,
+                                    StaticTask_t * const pxTaskBuffer ) ;
+# 681 "../../../../../../kernel/freertos/Source/include/task.h"
+void vTaskAllocateMPURegions( TaskHandle_t xTask,
+                              const MemoryRegion_t * const pxRegions ) ;
+# 725 "../../../../../../kernel/freertos/Source/include/task.h"
+void vTaskDelete( TaskHandle_t xTaskToDelete ) ;
+# 779 "../../../../../../kernel/freertos/Source/include/task.h"
+void vTaskDelay( const TickType_t xTicksToDelay ) ;
+# 846 "../../../../../../kernel/freertos/Source/include/task.h"
+BaseType_t xTaskDelayUntil( TickType_t * const pxPreviousWakeTime,
+                            const TickType_t xTimeIncrement ) ;
+# 889 "../../../../../../kernel/freertos/Source/include/task.h"
+BaseType_t xTaskAbortDelay( TaskHandle_t xTask ) ;
+# 938 "../../../../../../kernel/freertos/Source/include/task.h"
+UBaseType_t uxTaskPriorityGet( const TaskHandle_t xTask ) ;
+# 948 "../../../../../../kernel/freertos/Source/include/task.h"
+UBaseType_t uxTaskPriorityGetFromISR( const TaskHandle_t xTask ) ;
+# 968 "../../../../../../kernel/freertos/Source/include/task.h"
+eTaskState eTaskGetState( TaskHandle_t xTask ) ;
+# 1026 "../../../../../../kernel/freertos/Source/include/task.h"
+void vTaskGetInfo( TaskHandle_t xTask,
+                   TaskStatus_t * pxTaskStatus,
+                   BaseType_t xGetFreeStackSpace,
+                   eTaskState eState ) ;
+# 1073 "../../../../../../kernel/freertos/Source/include/task.h"
+void vTaskPrioritySet( TaskHandle_t xTask,
+                       UBaseType_t uxNewPriority ) ;
+# 1127 "../../../../../../kernel/freertos/Source/include/task.h"
+void vTaskSuspend( TaskHandle_t xTaskToSuspend ) ;
+# 1178 "../../../../../../kernel/freertos/Source/include/task.h"
+void vTaskResume( TaskHandle_t xTaskToResume ) ;
+# 1209 "../../../../../../kernel/freertos/Source/include/task.h"
+BaseType_t xTaskResumeFromISR( TaskHandle_t xTaskToResume ) ;
+# 1244 "../../../../../../kernel/freertos/Source/include/task.h"
+void vTaskStartScheduler( void ) ;
+# 1302 "../../../../../../kernel/freertos/Source/include/task.h"
+void vTaskEndScheduler( void ) ;
+# 1355 "../../../../../../kernel/freertos/Source/include/task.h"
+void vTaskSuspendAll( void ) ;
+# 1411 "../../../../../../kernel/freertos/Source/include/task.h"
+BaseType_t xTaskResumeAll( void ) ;
+# 1426 "../../../../../../kernel/freertos/Source/include/task.h"
+TickType_t xTaskGetTickCount( void ) ;
+# 1442 "../../../../../../kernel/freertos/Source/include/task.h"
+TickType_t xTaskGetTickCountFromISR( void ) ;
+# 1456 "../../../../../../kernel/freertos/Source/include/task.h"
+UBaseType_t uxTaskGetNumberOfTasks( void ) ;
+# 1469 "../../../../../../kernel/freertos/Source/include/task.h"
+char * pcTaskGetName( TaskHandle_t xTaskToQuery ) ;
+# 1485 "../../../../../../kernel/freertos/Source/include/task.h"
+TaskHandle_t xTaskGetHandle( const char * pcNameToQuery ) ;
+# 1512 "../../../../../../kernel/freertos/Source/include/task.h"
+UBaseType_t uxTaskGetStackHighWaterMark( TaskHandle_t xTask ) ;
+# 1539 "../../../../../../kernel/freertos/Source/include/task.h"
+uint16_t uxTaskGetStackHighWaterMark2( TaskHandle_t xTask ) ;
+# 1560 "../../../../../../kernel/freertos/Source/include/task.h"
+        void vTaskSetApplicationTaskTag( TaskHandle_t xTask,
+                                         TaskHookFunction_t pxHookFunction ) ;
+# 1573 "../../../../../../kernel/freertos/Source/include/task.h"
+        TaskHookFunction_t xTaskGetApplicationTaskTag( TaskHandle_t xTask ) ;
+# 1584 "../../../../../../kernel/freertos/Source/include/task.h"
+        TaskHookFunction_t xTaskGetApplicationTaskTagFromISR( TaskHandle_t xTask ) ;
+# 1595 "../../../../../../kernel/freertos/Source/include/task.h"
+    void vTaskSetThreadLocalStoragePointer( TaskHandle_t xTaskToSet,
+                                            BaseType_t xIndex,
+                                            void * pvValue ) ;
+    void * pvTaskGetThreadLocalStoragePointer( TaskHandle_t xTaskToQuery,
+                                               BaseType_t xIndex ) ;
+# 1616 "../../../../../../kernel/freertos/Source/include/task.h"
+     void vApplicationStackOverflowHook( TaskHandle_t xTask,
+                                               char * pcTaskName );
+# 1644 "../../../../../../kernel/freertos/Source/include/task.h"
+    void vApplicationGetIdleTaskMemory( StaticTask_t ** ppxIdleTaskTCBBuffer,
+                                               StackType_t ** ppxIdleTaskStackBuffer,
+                                               uint32_t * pulIdleTaskStackSize );
+# 1662 "../../../../../../kernel/freertos/Source/include/task.h"
+BaseType_t xTaskCallApplicationTaskHook( TaskHandle_t xTask,
+                                         void * pvParameter ) ;
+# 1672 "../../../../../../kernel/freertos/Source/include/task.h"
+TaskHandle_t xTaskGetIdleTaskHandle( void ) ;
+# 1771 "../../../../../../kernel/freertos/Source/include/task.h"
+UBaseType_t uxTaskGetSystemState( TaskStatus_t * const pxTaskStatusArray,
+                                  const UBaseType_t uxArraySize,
+                                  uint32_t * const pulTotalRunTime ) ;
+# 1820 "../../../../../../kernel/freertos/Source/include/task.h"
+void vTaskList( char * pcWriteBuffer ) ;
+# 1874 "../../../../../../kernel/freertos/Source/include/task.h"
+void vTaskGetRunTimeStats( char * pcWriteBuffer ) ;
+# 1904 "../../../../../../kernel/freertos/Source/include/task.h"
+uint32_t ulTaskGetIdleRunTimeCounter( void ) ;
+# 2013 "../../../../../../kernel/freertos/Source/include/task.h"
+BaseType_t xTaskGenericNotify( TaskHandle_t xTaskToNotify,
+                               UBaseType_t uxIndexToNotify,
+                               uint32_t ulValue,
+                               eNotifyAction eAction,
+                               uint32_t * pulPreviousNotificationValue ) ;
+# 2161 "../../../../../../kernel/freertos/Source/include/task.h"
+BaseType_t xTaskGenericNotifyFromISR( TaskHandle_t xTaskToNotify,
+                                      UBaseType_t uxIndexToNotify,
+                                      uint32_t ulValue,
+                                      eNotifyAction eAction,
+                                      uint32_t * pulPreviousNotificationValue,
+                                      BaseType_t * pxHigherPriorityTaskWoken ) ;
+# 2303 "../../../../../../kernel/freertos/Source/include/task.h"
+BaseType_t xTaskGenericNotifyWait( UBaseType_t uxIndexToWaitOn,
+                                   uint32_t ulBitsToClearOnEntry,
+                                   uint32_t ulBitsToClearOnExit,
+                                   uint32_t * pulNotificationValue,
+                                   TickType_t xTicksToWait ) ;
+# 2465 "../../../../../../kernel/freertos/Source/include/task.h"
+void vTaskGenericNotifyGiveFromISR( TaskHandle_t xTaskToNotify,
+                                    UBaseType_t uxIndexToNotify,
+                                    BaseType_t * pxHigherPriorityTaskWoken ) ;
+# 2571 "../../../../../../kernel/freertos/Source/include/task.h"
+uint32_t ulTaskGenericNotifyTake( UBaseType_t uxIndexToWaitOn,
+                                  BaseType_t xClearCountOnExit,
+                                  TickType_t xTicksToWait ) ;
+# 2636 "../../../../../../kernel/freertos/Source/include/task.h"
+BaseType_t xTaskGenericNotifyStateClear( TaskHandle_t xTask,
+                                         UBaseType_t uxIndexToClear ) ;
+# 2701 "../../../../../../kernel/freertos/Source/include/task.h"
+uint32_t ulTaskGenericNotifyValueClear( TaskHandle_t xTask,
+                                        UBaseType_t uxIndexToClear,
+                                        uint32_t ulBitsToClear ) ;
+# 2723 "../../../../../../kernel/freertos/Source/include/task.h"
+void vTaskSetTimeOutState( TimeOut_t * const pxTimeOut ) ;
+# 2808 "../../../../../../kernel/freertos/Source/include/task.h"
+BaseType_t xTaskCheckForTimeOut( TimeOut_t * const pxTimeOut,
+                                 TickType_t * const pxTicksToWait ) ;
+# 2837 "../../../../../../kernel/freertos/Source/include/task.h"
+BaseType_t xTaskCatchUpTicks( TickType_t xTicksToCatchUp ) ;
+# 2859 "../../../../../../kernel/freertos/Source/include/task.h"
+BaseType_t xTaskIncrementTick( void ) ;
+# 2892 "../../../../../../kernel/freertos/Source/include/task.h"
+void vTaskPlaceOnEventList( List_t * const pxEventList,
+                            const TickType_t xTicksToWait ) ;
+void vTaskPlaceOnUnorderedEventList( List_t * pxEventList,
+                                     const TickType_t xItemValue,
+                                     const TickType_t xTicksToWait ) ;
+# 2909 "../../../../../../kernel/freertos/Source/include/task.h"
+void vTaskPlaceOnEventListRestricted( List_t * const pxEventList,
+                                      TickType_t xTicksToWait,
+                                      const BaseType_t xWaitIndefinitely ) ;
+# 2937 "../../../../../../kernel/freertos/Source/include/task.h"
+BaseType_t xTaskRemoveFromEventList( const List_t * const pxEventList ) ;
+void vTaskRemoveFromUnorderedEventList( ListItem_t * pxEventListItem,
+                                        const TickType_t xItemValue ) ;
+# 2949 "../../../../../../kernel/freertos/Source/include/task.h"
+__attribute__( ( used ) ) void vTaskSwitchContext( void ) ;
+
+
+
+
+
+TickType_t uxTaskResetEventItemValue( void ) ;
+
+
+
+
+TaskHandle_t xTaskGetCurrentTaskHandle( void ) ;
+
+
+
+
+
+void vTaskMissedYield( void ) ;
+
+
+
+
+
+BaseType_t xTaskGetSchedulerState( void ) ;
+
+
+
+
+
+BaseType_t xTaskPriorityInherit( TaskHandle_t const pxMutexHolder ) ;
+
+
+
+
+
+BaseType_t xTaskPriorityDisinherit( TaskHandle_t const pxMutexHolder ) ;
+# 2994 "../../../../../../kernel/freertos/Source/include/task.h"
+void vTaskPriorityDisinheritAfterTimeout( TaskHandle_t const pxMutexHolder,
+                                          UBaseType_t uxHighestPriorityWaitingTask ) ;
+
+
+
+
+UBaseType_t uxTaskGetTaskNumber( TaskHandle_t xTask ) ;
+
+
+
+
+
+void vTaskSetTaskNumber( TaskHandle_t xTask,
+                         const UBaseType_t uxHandle ) ;
+# 3017 "../../../../../../kernel/freertos/Source/include/task.h"
+void vTaskStepTick( const TickType_t xTicksToJump ) ;
+# 3033 "../../../../../../kernel/freertos/Source/include/task.h"
+eSleepModeStatus eTaskConfirmSleepModeStatus( void ) ;
+
+
+
+
+
+TaskHandle_t pvTaskIncrementMutexHeldCount( void ) ;
+
+
+
+
+
+void vTaskInternalSetTimeOutState( TimeOut_t * const pxTimeOut ) ;
+# 42 "../../../../../../kernel/freertos/Source/include/queue.h" 2
+
+
+
+
+
+
+struct QueueDefinition;
+typedef struct QueueDefinition * QueueHandle_t;
+
+
+
+
+
+
+typedef struct QueueDefinition * QueueSetHandle_t;
+
+
+
+
+
+
+typedef struct QueueDefinition * QueueSetMemberHandle_t;
+# 655 "../../../../../../kernel/freertos/Source/include/queue.h"
+BaseType_t xQueueGenericSend( QueueHandle_t xQueue,
+                              const void * const pvItemToQueue,
+                              TickType_t xTicksToWait,
+                              const BaseType_t xCopyPosition ) ;
+# 753 "../../../../../../kernel/freertos/Source/include/queue.h"
+BaseType_t xQueuePeek( QueueHandle_t xQueue,
+                       void * const pvBuffer,
+                       TickType_t xTicksToWait ) ;
+# 789 "../../../../../../kernel/freertos/Source/include/queue.h"
+BaseType_t xQueuePeekFromISR( QueueHandle_t xQueue,
+                              void * const pvBuffer ) ;
+# 882 "../../../../../../kernel/freertos/Source/include/queue.h"
+BaseType_t xQueueReceive( QueueHandle_t xQueue,
+                          void * const pvBuffer,
+                          TickType_t xTicksToWait ) ;
+# 901 "../../../../../../kernel/freertos/Source/include/queue.h"
+UBaseType_t uxQueueMessagesWaiting( const QueueHandle_t xQueue ) ;
+# 920 "../../../../../../kernel/freertos/Source/include/queue.h"
+UBaseType_t uxQueueSpacesAvailable( const QueueHandle_t xQueue ) ;
+# 936 "../../../../../../kernel/freertos/Source/include/queue.h"
+void vQueueDelete( QueueHandle_t xQueue ) ;
+# 1321 "../../../../../../kernel/freertos/Source/include/queue.h"
+BaseType_t xQueueGenericSendFromISR( QueueHandle_t xQueue,
+                                     const void * const pvItemToQueue,
+                                     BaseType_t * const pxHigherPriorityTaskWoken,
+                                     const BaseType_t xCopyPosition ) ;
+BaseType_t xQueueGiveFromISR( QueueHandle_t xQueue,
+                              BaseType_t * const pxHigherPriorityTaskWoken ) ;
+# 1415 "../../../../../../kernel/freertos/Source/include/queue.h"
+BaseType_t xQueueReceiveFromISR( QueueHandle_t xQueue,
+                                 void * const pvBuffer,
+                                 BaseType_t * const pxHigherPriorityTaskWoken ) ;
+
+
+
+
+
+BaseType_t xQueueIsQueueEmptyFromISR( const QueueHandle_t xQueue ) ;
+BaseType_t xQueueIsQueueFullFromISR( const QueueHandle_t xQueue ) ;
+UBaseType_t uxQueueMessagesWaitingFromISR( const QueueHandle_t xQueue ) ;
+# 1436 "../../../../../../kernel/freertos/Source/include/queue.h"
+BaseType_t xQueueCRSendFromISR( QueueHandle_t xQueue,
+                                const void * pvItemToQueue,
+                                BaseType_t xCoRoutinePreviouslyWoken );
+BaseType_t xQueueCRReceiveFromISR( QueueHandle_t xQueue,
+                                   void * pvBuffer,
+                                   BaseType_t * pxTaskWoken );
+BaseType_t xQueueCRSend( QueueHandle_t xQueue,
+                         const void * pvItemToQueue,
+                         TickType_t xTicksToWait );
+BaseType_t xQueueCRReceive( QueueHandle_t xQueue,
+                            void * pvBuffer,
+                            TickType_t xTicksToWait );
+
+
+
+
+
+
+QueueHandle_t xQueueCreateMutex( const uint8_t ucQueueType ) ;
+QueueHandle_t xQueueCreateMutexStatic( const uint8_t ucQueueType,
+                                       StaticQueue_t * pxStaticQueue ) ;
+QueueHandle_t xQueueCreateCountingSemaphore( const UBaseType_t uxMaxCount,
+                                             const UBaseType_t uxInitialCount ) ;
+QueueHandle_t xQueueCreateCountingSemaphoreStatic( const UBaseType_t uxMaxCount,
+                                                   const UBaseType_t uxInitialCount,
+                                                   StaticQueue_t * pxStaticQueue ) ;
+BaseType_t xQueueSemaphoreTake( QueueHandle_t xQueue,
+                                TickType_t xTicksToWait ) ;
+TaskHandle_t xQueueGetMutexHolder( QueueHandle_t xSemaphore ) ;
+TaskHandle_t xQueueGetMutexHolderFromISR( QueueHandle_t xSemaphore ) ;
+
+
+
+
+
+BaseType_t xQueueTakeMutexRecursive( QueueHandle_t xMutex,
+                                     TickType_t xTicksToWait ) ;
+BaseType_t xQueueGiveMutexRecursive( QueueHandle_t xMutex ) ;
+# 1543 "../../../../../../kernel/freertos/Source/include/queue.h"
+    QueueHandle_t xQueueGenericCreate( const UBaseType_t uxQueueLength,
+                                       const UBaseType_t uxItemSize,
+                                       const uint8_t ucQueueType ) ;
+# 1554 "../../../../../../kernel/freertos/Source/include/queue.h"
+    QueueHandle_t xQueueGenericCreateStatic( const UBaseType_t uxQueueLength,
+                                             const UBaseType_t uxItemSize,
+                                             uint8_t * pucQueueStorage,
+                                             StaticQueue_t * pxStaticQueue,
+                                             const uint8_t ucQueueType ) ;
+# 1609 "../../../../../../kernel/freertos/Source/include/queue.h"
+QueueSetHandle_t xQueueCreateSet( const UBaseType_t uxEventQueueLength ) ;
+# 1633 "../../../../../../kernel/freertos/Source/include/queue.h"
+BaseType_t xQueueAddToSet( QueueSetMemberHandle_t xQueueOrSemaphore,
+                           QueueSetHandle_t xQueueSet ) ;
+# 1653 "../../../../../../kernel/freertos/Source/include/queue.h"
+BaseType_t xQueueRemoveFromSet( QueueSetMemberHandle_t xQueueOrSemaphore,
+                                QueueSetHandle_t xQueueSet ) ;
+# 1690 "../../../../../../kernel/freertos/Source/include/queue.h"
+QueueSetMemberHandle_t xQueueSelectFromSet( QueueSetHandle_t xQueueSet,
+                                            const TickType_t xTicksToWait ) ;
+
+
+
+
+QueueSetMemberHandle_t xQueueSelectFromSetFromISR( QueueSetHandle_t xQueueSet ) ;
+
+
+void vQueueWaitForMessageRestricted( QueueHandle_t xQueue,
+                                     TickType_t xTicksToWait,
+                                     const BaseType_t xWaitIndefinitely ) ;
+BaseType_t xQueueGenericReset( QueueHandle_t xQueue,
+                               BaseType_t xNewQueue ) ;
+void vQueueSetQueueNumber( QueueHandle_t xQueue,
+                           UBaseType_t uxQueueNumber ) ;
+UBaseType_t uxQueueGetQueueNumber( QueueHandle_t xQueue ) ;
+uint8_t ucQueueGetQueueType( QueueHandle_t xQueue ) ;
+# 35 "../../../../../../kernel/freertos/Source/include\\semphr.h" 2
+
+typedef QueueHandle_t SemaphoreHandle_t;
+# 43 "../../../../../../kernel/freertos/dpl/SemaphoreP_freertos.c" 2
+# 55 "../../../../../../kernel/freertos/dpl/SemaphoreP_freertos.c"
+SemaphoreP_Handle SemaphoreP_construct(SemaphoreP_Struct *handle,
+    unsigned int count, SemaphoreP_Params *params)
+{
+    SemaphoreHandle_t sem = 0;
+
+
+    SemaphoreP_Params semParams;
+    if (params == 0)
+    {
+        params = &semParams;
+        SemaphoreP_Params_init(params);
+    }
+
+    if (params->mode == SemaphoreP_Mode_COUNTING)
+    {
+# 83 "../../../../../../kernel/freertos/dpl/SemaphoreP_freertos.c"
+        sem = xQueueCreateCountingSemaphoreStatic( ( (UBaseType_t)0xffff ), ( (UBaseType_t)count ), ( (StaticSemaphore_t *)handle ) );
+
+    }
+    else
+    {
+        sem = xQueueGenericCreateStatic( ( UBaseType_t ) 1, ( ( uint8_t ) 0U ), 0, (StaticSemaphore_t *)handle, ( ( uint8_t ) 3U ) );
+        if ((sem != 0) && (count != 0))
+        {
+            xQueueGenericSend( ( QueueHandle_t ) ( sem ), 0, ( ( TickType_t ) 0U ), ( ( BaseType_t ) 0 ) );
+        }
+    }
+
+
+    return ((SemaphoreP_Handle)sem);
+}
+
+
+
+
+SemaphoreP_Handle SemaphoreP_constructBinary(SemaphoreP_Struct *handle,
+    unsigned int count)
+{
+    SemaphoreHandle_t sem = 0;
+
+
+    sem = xQueueGenericCreateStatic( ( UBaseType_t ) 1, ( ( uint8_t ) 0U ), 0, (StaticSemaphore_t *)handle, ( ( uint8_t ) 3U ) );
+    if ((sem != 0) && (count != 0))
+    {
+        xQueueGenericSend( ( QueueHandle_t ) ( sem ), 0, ( ( TickType_t ) 0U ), ( ( BaseType_t ) 0 ) );
+    }
+
+
+    return ((SemaphoreP_Handle)sem);
+}
+
+
+
+
+SemaphoreP_Handle SemaphoreP_create(unsigned int count,
+                                    SemaphoreP_Params *params)
+{
+    SemaphoreHandle_t sem = 0;
+    SemaphoreP_Params semParams;
+
+    if (params == 0) {
+        params = &semParams;
+        SemaphoreP_Params_init(params);
+    }
+
+    if (params->mode == SemaphoreP_Mode_COUNTING) {
+# 146 "../../../../../../kernel/freertos/dpl/SemaphoreP_freertos.c"
+        sem = xQueueCreateCountingSemaphore( ( (UBaseType_t)0xffff ), ( (UBaseType_t)count ) );
+
+
+    }
+    else {
+        sem = xQueueGenericCreate( ( UBaseType_t ) 1, ( ( uint8_t ) 0U ), ( ( uint8_t ) 3U ) );
+        if ((sem != 0) && (count != 0)) {
+            xQueueGenericSend( ( QueueHandle_t ) ( sem ), 0, ( ( TickType_t ) 0U ), ( ( BaseType_t ) 0 ) );
+        }
+    }
+
+    return ((SemaphoreP_Handle)sem);
+}
+
+
+
+
+SemaphoreP_Handle SemaphoreP_createBinary(unsigned int count)
+{
+    SemaphoreHandle_t sem = 0;
+
+    sem = xQueueGenericCreate( ( UBaseType_t ) 1, ( ( uint8_t ) 0U ), ( ( uint8_t ) 3U ) );
+    if ((sem != 0) && (count != 0)) {
+        xQueueGenericSend( ( QueueHandle_t ) ( sem ), 0, ( ( TickType_t ) 0U ), ( ( BaseType_t ) 0 ) );
+    }
+
+    return ((SemaphoreP_Handle)sem);
+}
+
+
+
+
+void SemaphoreP_delete(SemaphoreP_Handle handle)
+{
+    vQueueDelete( ( QueueHandle_t ) ( (SemaphoreHandle_t)handle ) );
+}
+
+
+
+
+void SemaphoreP_destruct(SemaphoreP_Struct *semP)
+{}
+
+
+
+
+void SemaphoreP_Params_init(SemaphoreP_Params *params)
+{
+    params->mode = SemaphoreP_Mode_COUNTING;
+    params->callback = 0;
+}
+
+
+
+
+SemaphoreP_Status SemaphoreP_pend(SemaphoreP_Handle handle, uint32_t timeout)
+{
+    BaseType_t status;
+    TickType_t ticksFR;
+    uint32_t tickPeriod;
+    uint64_t timeUS;
+
+    if (HwiP_inISR())
+    {
+
+        status = xQueueReceiveFromISR( ( QueueHandle_t ) ( (SemaphoreHandle_t)handle ), 0, ( 0 ) );
+    }
+
+
+    else
+    {
+
+
+        tickPeriod = ClockP_getSystemTickPeriod();
+        if (tickPeriod != (1000000 / ((TickType_t) 1000)))
+        {
+            timeUS = timeout * (uint64_t)tickPeriod;
+            ticksFR = (TickType_t)(timeUS / (1000000 / ((TickType_t) 1000)));
+        }
+        else
+        {
+            ticksFR = timeout;
+        }
+        status = xQueueSemaphoreTake( ( (SemaphoreHandle_t)handle ), ( ticksFR ) );
+    }
+
+    if (status == ( ( BaseType_t ) 1 ))
+    {
+        return (SemaphoreP_OK);
+    }
+
+    return (SemaphoreP_TIMEOUT);
+}
+
+
+
+
+void SemaphoreP_post(SemaphoreP_Handle handle)
+{
+    BaseType_t xHigherPriorityTaskWoken;
+
+    if (!HwiP_inISR()) {
+
+        xQueueGenericSend( ( QueueHandle_t ) ( (SemaphoreHandle_t)handle ), 0, ( ( TickType_t ) 0U ), ( ( BaseType_t ) 0 ) );
+    }
+    else {
+        xQueueGiveFromISR( ( QueueHandle_t ) ( (SemaphoreHandle_t)handle ), ( &xHigherPriorityTaskWoken ) );
+
+    }
+}
+
+
+
+
+
+size_t SemaphoreP_staticObjectSize(void)
+{
+    return (sizeof(StaticSemaphore_t));
+}
